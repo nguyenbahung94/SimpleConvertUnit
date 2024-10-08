@@ -1,4 +1,4 @@
-package com.example.pokedexcompose.core.designsystem.utils
+package com.billy.simpleunitconvert.core.designsystem.utils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity
