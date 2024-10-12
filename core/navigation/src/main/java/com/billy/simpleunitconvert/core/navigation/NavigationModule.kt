@@ -13,7 +13,7 @@ internal interface NavigationModule {
     @Binds
     @Singleton
     fun provideComposeNavigator(
-        pokedexComposeNavigator: SimpleUnitComposeNavigator,
+        composeNavigator: SimpleUnitComposeNavigator,
     ): AppComposeNavigator<SimpleUnitScreen>
 }
 

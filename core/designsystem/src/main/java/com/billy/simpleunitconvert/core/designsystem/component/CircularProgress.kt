@@ -22,7 +22,9 @@ fun BoxScope.CircularProgress() {
 @Preview
 @Composable
 private fun CircularProgressPreview() {
-    SimpleUnitConvertTheme {  Box(modifier = Modifier.fillMaxSize()) {
-        CircularProgress()
-    }  }
+    SimpleUnitConvertTheme {
+        Box(modifier = Modifier.fillMaxSize()) {
+            CircularProgress()
+        }
+    }
 }

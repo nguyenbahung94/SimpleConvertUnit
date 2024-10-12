@@ -16,7 +16,7 @@ import androidx.compose.ui.semantics.testTagsAsResourceId
  * Local providers for various properties we connect to our components, for styling.
  */
 private val LocalColors = compositionLocalOf<Colors> {
-    error("No colors provided! Make sure to wrap all usages of Pokedex components in PokedexTheme.")
+    error("No colors provided! Make sure to wrap all usages of components in Theme.")
 }
 
 @OptIn(ExperimentalComposeUiApi::class)

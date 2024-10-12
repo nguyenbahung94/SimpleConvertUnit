@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class SimpleUnitComposeNavigator @Inject constructor() : AppComposeNavigator<SimpleUnitScreen>() {
 
-    override fun navigate(route: PokedexScreen, optionsBuilder: (NavOptionsBuilder.() -> Unit)?) {
+    override fun navigate(route: SimpleUnitScreen, optionsBuilder: (NavOptionsBuilder.() -> Unit)?) {
         val options = optionsBuilder?.let { navOptions(it) }
         navigationCommands.tryEmit(ComposeNavigationCommand.NavigateToRoute(route, options))
     }

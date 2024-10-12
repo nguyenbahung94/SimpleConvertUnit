@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simple Unit Convert</string>
+    <string name="tv_des_search">Search</string>
+    <string name="tv_hint_search"> Search for units</string>
 </resources>

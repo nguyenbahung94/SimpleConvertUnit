@@ -40,6 +40,11 @@ data class Colors(
     val orange: Color,
     val green: Color,
     val blue: Color,
+    val green4D7A02: Color,
+    val backgroundCard: Color,
+    val grayE4E0E1: Color,
+    val color6A7F7B: Color,
+    val green8ABFA3: Color
 ) {
 
     companion object {
@@ -82,6 +87,11 @@ data class Colors(
             orange = colorResource(id = R.color.orange),
             green = colorResource(id = R.color.green),
             blue = colorResource(id = R.color.blue),
+            green4D7A02 = colorResource(id = R.color.green_4D7A02),
+            backgroundCard = colorResource(id = R.color.background_card_dark),
+            grayE4E0E1 = colorResource(id = R.color.gray_E4E0E1),
+            color6A7F7B = colorResource(id = R.color.color_6A7F7B),
+            green8ABFA3 = colorResource(id = R.color.green_8ABFA3)
         )
 
         /**
@@ -123,6 +133,11 @@ data class Colors(
             orange = colorResource(id = R.color.orange),
             green = colorResource(id = R.color.green),
             blue = colorResource(id = R.color.blue),
+            green4D7A02 = colorResource(id = R.color.green_4D7A02),
+            backgroundCard = colorResource(id = R.color.background_card_light),
+            grayE4E0E1 = colorResource(id = R.color.gray_E4E0E1),
+            color6A7F7B = colorResource(id = R.color.color_6A7F7B),
+            green8ABFA3 = colorResource(id = R.color.green_8ABFA3)
         )
     }
 }

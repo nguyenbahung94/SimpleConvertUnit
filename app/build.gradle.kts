@@ -85,9 +85,9 @@ android {
 dependencies {
 
     // cores
-  //  implementation(projects.core.model)
-  //  implementation(projects.core.designsystem)
-  //  implementation(projects.core.navigation)
+    implementation(projects.core.model)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.navigation)
 
     // compose
     implementation(libs.androidx.activity.compose)
