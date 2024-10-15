@@ -17,10 +17,10 @@ import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertThem
 fun SectionTitle(title: String) {
     Text(
         text = title,
-        color = SimpleConvertUnitTheme.colors.blue,
+        color = SimpleConvertUnitTheme.colors.title,
         fontWeight = FontWeight.Bold,
         style = MaterialTheme.typography.bodyLarge,
-        modifier = Modifier.padding(12.dp).fillMaxWidth()
+        modifier = Modifier.padding(start = 12.dp).fillMaxWidth()
     )
 }
 

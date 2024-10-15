@@ -84,6 +84,9 @@ android {
 
 dependencies {
 
+    //features
+    implementation(projects.feature.home)
+
     // cores
     implementation(projects.core.model)
     implementation(projects.core.designsystem)

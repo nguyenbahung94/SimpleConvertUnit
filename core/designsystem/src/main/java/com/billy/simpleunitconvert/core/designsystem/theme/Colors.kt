@@ -19,39 +19,14 @@ data class Colors(
     val white56: Color,
     val white70: Color,
     val black: Color,
-    val gray21: Color,
-    val bug: Color,
-    val dark: Color,
-    val dragon: Color,
-    val electric: Color,
-    val fairy: Color,
-    val fire: Color,
-    val fighting: Color,
-    val flying: Color,
-    val ghost: Color,
-    val steel: Color,
-    val ice: Color,
-    val poison: Color,
-    val psychic: Color,
-    val rock: Color,
-    val water: Color,
-    val grass: Color,
-    val ground: Color,
-    val orange: Color,
-    val green: Color,
-    val blue: Color,
-    val green4D7A02: Color,
-    val backgroundCard: Color,
-    val grayE4E0E1: Color,
-    val color6A7F7B: Color,
-    val green8ABFA3: Color
+    val title: Color,
+    val subtitle: Color,
+    val backgroundCard: Color
 ) {
 
-    companion object {
-        /**
+    companion object { /**
          * Provides the default colors for the light mode of the app.
          *
-         * @return A [Colors] instance holding our color palette.
          */
         @Composable
         fun defaultDarkColors(): Colors = Colors(
@@ -66,38 +41,13 @@ data class Colors(
             white56 = colorResource(id = R.color.white_56_dark),
             white70 = colorResource(id = R.color.white_70_dark),
             black = colorResource(id = R.color.black_dark),
-            gray21 = colorResource(id = R.color.gray_21),
-            bug = colorResource(id = R.color.bug),
-            dark = colorResource(id = R.color.dark),
-            dragon = colorResource(id = R.color.dragon),
-            electric = colorResource(id = R.color.electric),
-            fairy = colorResource(id = R.color.fairy),
-            fire = colorResource(id = R.color.fire),
-            fighting = colorResource(id = R.color.fighting),
-            flying = colorResource(id = R.color.flying),
-            ghost = colorResource(id = R.color.ghost),
-            steel = colorResource(id = R.color.steel),
-            ice = colorResource(id = R.color.ice),
-            poison = colorResource(id = R.color.poison),
-            psychic = colorResource(id = R.color.psychic),
-            rock = colorResource(id = R.color.rock),
-            water = colorResource(id = R.color.water),
-            grass = colorResource(id = R.color.grass),
-            ground = colorResource(id = R.color.ground),
-            orange = colorResource(id = R.color.orange),
-            green = colorResource(id = R.color.green),
-            blue = colorResource(id = R.color.blue),
-            green4D7A02 = colorResource(id = R.color.green_4D7A02),
-            backgroundCard = colorResource(id = R.color.background_card_dark),
-            grayE4E0E1 = colorResource(id = R.color.gray_E4E0E1),
-            color6A7F7B = colorResource(id = R.color.color_6A7F7B),
-            green8ABFA3 = colorResource(id = R.color.green_8ABFA3)
+            title = colorResource(id = R.color.text_title_dark),
+            subtitle = colorResource(id = R.color.text_sub_dark),
+            backgroundCard = colorResource(id = R.color.background_card_dark)
         )
-
         /**
          * Provides the default colors for the light mode of the app.
          *
-         * @return A [Colors] instance holding our color palette.
          */
         @Composable
         fun defaultLightColors(): Colors = Colors(
@@ -112,32 +62,9 @@ data class Colors(
             white56 = colorResource(id = R.color.white_56),
             white70 = colorResource(id = R.color.white_70),
             black = colorResource(id = R.color.black),
-            gray21 = colorResource(id = R.color.gray_21),
-            bug = colorResource(id = R.color.bug),
-            dark = colorResource(id = R.color.dark),
-            dragon = colorResource(id = R.color.dragon),
-            electric = colorResource(id = R.color.electric),
-            fairy = colorResource(id = R.color.fairy),
-            fire = colorResource(id = R.color.fire),
-            fighting = colorResource(id = R.color.fighting),
-            flying = colorResource(id = R.color.flying),
-            ghost = colorResource(id = R.color.ghost),
-            steel = colorResource(id = R.color.steel),
-            ice = colorResource(id = R.color.ice),
-            poison = colorResource(id = R.color.poison),
-            psychic = colorResource(id = R.color.psychic),
-            rock = colorResource(id = R.color.rock),
-            water = colorResource(id = R.color.water),
-            grass = colorResource(id = R.color.grass),
-            ground = colorResource(id = R.color.ground),
-            orange = colorResource(id = R.color.orange),
-            green = colorResource(id = R.color.green),
-            blue = colorResource(id = R.color.blue),
-            green4D7A02 = colorResource(id = R.color.green_4D7A02),
-            backgroundCard = colorResource(id = R.color.background_card_light),
-            grayE4E0E1 = colorResource(id = R.color.gray_E4E0E1),
-            color6A7F7B = colorResource(id = R.color.color_6A7F7B),
-            green8ABFA3 = colorResource(id = R.color.green_8ABFA3)
+            title = colorResource(id = R.color.text_title),
+            subtitle = colorResource(id = R.color.text_sub),
+            backgroundCard = colorResource(id = R.color.background_card_light)
         )
     }
 }

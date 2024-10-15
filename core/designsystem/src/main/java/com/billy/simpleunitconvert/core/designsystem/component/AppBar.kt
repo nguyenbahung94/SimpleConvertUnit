@@ -38,11 +38,11 @@ fun SimpleUnitConvertAppBar() {
                     .fillMaxWidth()
                     .padding(end = 16.dp)
                     .border(
-                        border = BorderStroke(1.dp, SimpleConvertUnitTheme.colors.green8ABFA3),
+                        border = BorderStroke(1.dp, SimpleConvertUnitTheme.colors.backgroundCard),
                         shape = RoundedCornerShape(12.dp),
                         )
                     .background(
-                        color = SimpleConvertUnitTheme.colors.green8ABFA3,
+                        color = SimpleConvertUnitTheme.colors.backgroundCard,
                         shape = RoundedCornerShape(12.dp),
                     )
                     .padding(8.dp), contentAlignment = Alignment.CenterStart
@@ -54,7 +54,7 @@ fun SimpleUnitConvertAppBar() {
                   Icon(
                       imageVector = Icons.Default.Search,
                       contentDescription = "search",
-                      tint = SimpleConvertUnitTheme.colors.absoluteWhite,
+                      tint = SimpleConvertUnitTheme.colors.title,
                       modifier = Modifier.size(20.dp),
                   )
 
@@ -64,13 +64,13 @@ fun SimpleUnitConvertAppBar() {
                       text = stringResource(id = R.string.tv_hint_search),
                       fontSize = 16.sp,
                       fontWeight = FontWeight.Normal,
-                      color = SimpleConvertUnitTheme.colors.absoluteWhite,
+                      color = SimpleConvertUnitTheme.colors.title,
                   )
               }
             }
         },
         colors = TopAppBarDefaults.topAppBarColors().copy(
-            containerColor = SimpleConvertUnitTheme.colors.primary,
+            containerColor = SimpleConvertUnitTheme.colors.background,
         ),
     )
 }

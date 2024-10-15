@@ -1,13 +1,21 @@
 package com.billy.simpleunitconvert.feature.home
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,12 +30,18 @@ import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 internal fun HomeContent(
-    UiState: HomeUiState,
     sectionUnitList: ImmutableList<HomeUnit>,
 ) {
-        sectionUnitList.forEach { homeUnit ->
-            VerticalContent(homeUnit)
+    // Use LazyColumn for scrolling
+    LazyColumn(
+        modifier = Modifier.fillMaxSize(),
+    ) {
+        // Iterate over each section
+        items(sectionUnitList) { homeUnit ->
+            VerticalContent(homeUnit) // Call VerticalContent for each section
+            Spacer(modifier = Modifier.height(16.dp)) // Add space between sections
         }
+    }
 }
 
 @Composable
@@ -35,21 +49,52 @@ fun VerticalContent(
     homeUnit: HomeUnit
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 4.dp)
     ) {
-        //title
+        // Section title
         SectionTitle(homeUnit.title)
-        //list card
-        LazyVerticalGrid(
-            modifier = Modifier.testTag("homeUnitCard"),
-            columns = GridCells.Fixed(3),
-            contentPadding = PaddingValues(6.dp)
-        ) {
-            items(homeUnit.unitList) { unitConvert ->
-                HomeUnitCard(unitConvert)
+
+        // Display a grid-like layout using LazyColumn with rows
+        val itemsInEachRow = 3
+        val unitList = homeUnit.unitList.chunked(itemsInEachRow) // Split the list into chunks
+
+        unitList.forEach { rowItems ->
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(1.dp)
+            ) {
+                rowItems.forEach { unitConvert ->
+                    HomeUnitCard(unitConvert, modifier = Modifier.weight(1f))
+                }
+
+                // If rowItems are less than itemsInEachRow, add empty space to fill the row
+                repeat(itemsInEachRow - rowItems.size) {
+                    Spacer(modifier = Modifier.weight(1f))
+                }
             }
         }
     }
+
+//    Column(
+//        modifier = Modifier.fillMaxWidth()
+//    ) {
+//        //title
+//        SectionTitle(homeUnit.title)
+//        //list card
+//        LazyVerticalGrid(
+//            modifier = Modifier.testTag("homeUnitCard").fillMaxWidth(),
+//            columns = GridCells.Fixed(3),
+//            contentPadding = PaddingValues(6.dp),
+//            verticalArrangement = Arrangement.spacedBy(12.dp), // Space between grid items
+//            horizontalArrangement = Arrangement.spacedBy(12.dp)
+//        ) {
+//            items(homeUnit.unitList) { unitConvert ->
+//                HomeUnitCard(unitConvert)
+//            }
+//        }
+//    }
 }
 
 
@@ -58,7 +103,7 @@ fun VerticalContent(
 @Composable
 private fun HomeContentPreview() {
     SimpleUnitConvertTheme {
-        HomeContent(UiState = HomeUiState.Idle, sectionUnitList = mutableListOf<HomeUnit>().apply {
+        HomeContent(sectionUnitList = mutableListOf<HomeUnit>().apply {
             add(HomeUnit("Common", mutableListOf<UnitConvert>().apply {
                 add(UnitConvert("image1", "name 1", "category"))
                 add(UnitConvert("image2", "name 2", "category"))

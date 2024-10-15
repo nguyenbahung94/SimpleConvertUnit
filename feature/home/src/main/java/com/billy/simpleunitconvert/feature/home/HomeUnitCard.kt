@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -28,15 +30,22 @@ import com.billy.simpleunitconvert.core.designsystem.R.drawable as designsystem
 
 @Composable
 internal fun HomeUnitCard(
-    unitConvert: UnitConvert
+    unitConvert: UnitConvert,
+    modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = Modifier
-            .padding(8.dp)
+        modifier = modifier
+            .padding(start = 11.dp, end = 11.dp, top = 8.dp, bottom = 8.dp)
             .fillMaxWidth()
             .clickable { /* Handle click event */ },
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent)
+        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+        shape = RoundedCornerShape(14.dp),
+        colors = CardColors(
+            containerColor = SimpleConvertUnitTheme.colors.primary,
+            contentColor =  SimpleConvertUnitTheme.colors.primary,
+            disabledContainerColor =  SimpleConvertUnitTheme.colors.primary,
+            disabledContentColor =  SimpleConvertUnitTheme.colors.primary
+        )
     ) {
         Column(
             modifier = Modifier
@@ -48,7 +57,7 @@ internal fun HomeUnitCard(
             Icon(
                 painter = painterResource(id = designsystem.icon_exchange),
                 contentDescription = "search",
-                modifier = Modifier.size(48.dp),
+                modifier = Modifier.size(38.dp),
                 tint = Color.Unspecified
             )
 
@@ -57,7 +66,7 @@ internal fun HomeUnitCard(
                 style = MaterialTheme.typography.bodyMedium,
                 modifier = Modifier.padding(top = 8.dp),
                 fontSize = 16.sp,
-                color = SimpleConvertUnitTheme.colors.white
+                color = SimpleConvertUnitTheme.colors.title
             )
         }
 

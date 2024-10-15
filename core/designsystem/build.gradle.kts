@@ -10,6 +10,8 @@ android {
 
 dependencies {
     libs.apply {
+        api(bundles.landscapistBundle)
+
         api(libs.androidx.compose.runtime)
         api(libs.androidx.compose.ui)
         api(libs.androidx.compose.ui.tooling)
