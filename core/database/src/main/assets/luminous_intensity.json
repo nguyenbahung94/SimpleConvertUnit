@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Candle (international)",
+    "symbol": "c",
+    "conversionFactor": 1,
+    "category": "luminous_intensity",
+    "popular": true
+  },
+  {
+    "name": "Candle (German)",
+    "symbol": "c (German)",
+    "conversionFactor": 1.0526315789,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Candle (UK)",
+    "symbol": "c (UK)",
+    "conversionFactor": 1.0416666667,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Decimal candle",
+    "symbol": "decimal candle",
+    "conversionFactor": 1,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Candle (pentane)",
+    "symbol": "c (pentane)",
+    "conversionFactor": 1,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Pentane candle (10 candle power)",
+    "symbol": "pentane candle (10 c.p.)",
+    "conversionFactor": 10,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Hefner candle",
+    "symbol": "hefner candle",
+    "conversionFactor": 0.9000000001,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Carcel unit",
+    "symbol": "carcel unit",
+    "conversionFactor": 9.610000003,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Bougie decimal",
+    "symbol": "bougie decimal",
+    "conversionFactor": 1,
+    "category": "luminous_intensity",
+    "popular": false
+  },
+  {
+    "name": "Lumen per steradian",
+    "symbol": "lm/sr",
+    "conversionFactor": 1,
+    "category": "luminous_intensity",
+    "popular": false
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Newton Meter",
+    "symbol": "N*m",
+    "conversionFactor": 1,
+    "category": "moment_of_force",
+    "popular": true
+  },
+  {
+    "name": "Kilonewton Meter",
+    "symbol": "kN*m",
+    "conversionFactor": 1000,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Millinewton Meter",
+    "symbol": "mN*m",
+    "conversionFactor": 0.001,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Micronewton Meter",
+    "symbol": "µN*m",
+    "conversionFactor": 1.0e-6,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Ton-force (Short) Meter",
+    "symbol": "tonf (short)*m",
+    "conversionFactor": 8896.44,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Ton-force (Long) Meter",
+    "symbol": "tonf (long)*m",
+    "conversionFactor": 9964.02,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Ton-force (Metric) Meter",
+    "symbol": "tonf (metric)*m",
+    "conversionFactor": 9806.65,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Kilogram-force Meter",
+    "symbol": "kgf·m",
+    "conversionFactor": 9.80665,
+    "category": "moment_of_force",
+    "popular": true
+  },
+  {
+    "name": "Gram-force Centimeter",
+    "symbol": "gf·cm",
+    "conversionFactor": 9.80665e-5,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Pound-force Foot",
+    "symbol": "lbf*ft",
+    "conversionFactor": 1.35582,
+    "category": "moment_of_force",
+    "popular": true
+  },
+  {
+    "name": "Poundal Foot",
+    "symbol": "pdl*ft",
+    "conversionFactor": 0.0421401,
+    "category": "moment_of_force"
+  },
+  {
+    "name": "Poundal Inch",
+    "symbol": "pdl*in",
+    "conversionFactor": 0.003511675,
+    "category": "moment_of_force"
+  }
+]

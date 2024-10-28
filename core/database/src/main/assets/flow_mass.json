@@ -1,0 +1,219 @@
+[
+  {
+    "name": "Kilogram per second",
+    "symbol": "kg/s",
+    "conversionFactor": 1,
+    "category": "flow_mass",
+    "popular": true
+  },
+  {
+    "name": "Gram per second",
+    "symbol": "g/s",
+    "conversionFactor": 0.001,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per minute",
+    "symbol": "g/min",
+    "conversionFactor": 1.66667E-5,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per hour",
+    "symbol": "g/h",
+    "conversionFactor": 2.7777777777778E-7,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per day",
+    "symbol": "g/d",
+    "conversionFactor": 1.1574074074074E-8,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Milligram per minute",
+    "symbol": "mg/min",
+    "conversionFactor": 1.6666666666667E-8,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Milligram per hour",
+    "symbol": "mg/h",
+    "conversionFactor": 2.7777777777778E-10,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Milligram per day",
+    "symbol": "mg/d",
+    "conversionFactor": 1.1574074074074E-11,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per minute",
+    "symbol": "kg/min",
+    "conversionFactor": 0.0166666667,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per hour",
+    "symbol": "kg/h",
+    "conversionFactor": 0.0002777778,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per day",
+    "symbol": "kg/d",
+    "conversionFactor": 1.15741E-5,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Exagram per second",
+    "symbol": "Eg/s",
+    "conversionFactor": 1.0E+15,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Petagram per second",
+    "symbol": "Pg/s",
+    "conversionFactor": 1000000000000,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Teragram per second",
+    "symbol": "Tg/s",
+    "conversionFactor": 1000000000,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Gigagram per second",
+    "symbol": "Gg/s",
+    "conversionFactor": 1000000,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Megagram per second",
+    "symbol": "Mg/s",
+    "conversionFactor": 1000,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Hectogram per second",
+    "symbol": "hg/s",
+    "conversionFactor": 0.1,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Dekagram per second",
+    "symbol": "dag/s",
+    "conversionFactor": 0.01,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Decigram per second",
+    "symbol": "dg/s",
+    "conversionFactor": 0.0001,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Centigram per second",
+    "symbol": "cg/s",
+    "conversionFactor": 1.0E-5,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Milligram per second",
+    "symbol": "mg/s",
+    "conversionFactor": 1.0E-6,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Microgram per second",
+    "symbol": "µg/s",
+    "conversionFactor": 1.0E-9,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Ton (metric) per second",
+    "symbol": "t/s",
+    "conversionFactor": 1000,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Ton (metric) per minute",
+    "symbol": "t/min",
+    "conversionFactor": 16.6666666667,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Ton (metric) per hour",
+    "symbol": "t/h",
+    "conversionFactor": 0.2777777778,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Ton (metric) per day",
+    "symbol": "t/d",
+    "conversionFactor": 0.0115740741,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Ton (short) per hour",
+    "symbol": "ton (US)/h",
+    "conversionFactor": 0.2519957611,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per second",
+    "symbol": "lb/s",
+    "conversionFactor": 0.45359237,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per minute",
+    "symbol": "lb/min",
+    "conversionFactor": 0.0075598728,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per hour",
+    "symbol": "lb/h",
+    "conversionFactor": 0.0001259979,
+    "category": "flow_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per day",
+    "symbol": "lb/d",
+    "conversionFactor": 5.2499116898148E-6,
+    "category": "flow_mass",
+    "popular": false
+  }
+]

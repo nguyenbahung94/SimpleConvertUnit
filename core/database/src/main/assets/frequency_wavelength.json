@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Hertz",
+    "symbol": "Hz",
+    "conversionFactor": 1,
+    "category": "frequency_wavelength",
+    "popular": true
+  },
+  {
+    "name": "Exahertz",
+    "symbol": "EHz",
+    "conversionFactor": 1.0E+18,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Petahertz",
+    "symbol": "PHz",
+    "conversionFactor": 1.0E+15,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Terahertz",
+    "symbol": "THz",
+    "conversionFactor": 1000000000000,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Gigahertz",
+    "symbol": "GHz",
+    "conversionFactor": 1000000000,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Megahertz",
+    "symbol": "MHz",
+    "conversionFactor": 1000000,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Kilohertz",
+    "symbol": "kHz",
+    "conversionFactor": 1000,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Hectohertz",
+    "symbol": "hHz",
+    "conversionFactor": 100,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Dekahertz",
+    "symbol": "daHz",
+    "conversionFactor": 10,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Decihertz",
+    "symbol": "dHz",
+    "conversionFactor": 0.1,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Centihertz",
+    "symbol": "cHz",
+    "conversionFactor": 0.01,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Millihertz",
+    "symbol": "mHz",
+    "conversionFactor": 0.001,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Microhertz",
+    "symbol": "µHz",
+    "conversionFactor": 1.0E-6,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Nanohertz",
+    "symbol": "nHz",
+    "conversionFactor": 1.0E-9,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Picohertz",
+    "symbol": "pHz",
+    "conversionFactor": 1.0E-12,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Femtohertz",
+    "symbol": "fHz",
+    "conversionFactor": 1.0E-15,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Attohertz",
+    "symbol": "aHz",
+    "conversionFactor": 1.0E-18,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Cycle per second",
+    "symbol": "cycle/s",
+    "conversionFactor": 1,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in exametres",
+    "symbol": "λ (Em)",
+    "conversionFactor": 2.99792458E-10,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in petametres",
+    "symbol": "λ (Pm)",
+    "conversionFactor": 2.99792458E-7,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in terametres",
+    "symbol": "λ (Tm)",
+    "conversionFactor": 0.0002997925,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in gigametres",
+    "symbol": "λ (Gm)",
+    "conversionFactor": 0.299792458,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in megametres",
+    "symbol": "λ (Mm)",
+    "conversionFactor": 299.792458,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in kilometres",
+    "symbol": "λ (km)",
+    "conversionFactor": 299792.458,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in hectometres",
+    "symbol": "λ (hm)",
+    "conversionFactor": 2997924.58,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in dekametres",
+    "symbol": "λ (dam)",
+    "conversionFactor": 29979245.8,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in metres",
+    "symbol": "λ (m)",
+    "conversionFactor": 299792458,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in decimetres",
+    "symbol": "λ (dm)",
+    "conversionFactor": 2997924580,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in centimetres",
+    "symbol": "λ (cm)",
+    "conversionFactor": 29979245800,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in millimetres",
+    "symbol": "λ (mm)",
+    "conversionFactor": 299792458000,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in micrometres",
+    "symbol": "λ (µm)",
+    "conversionFactor": 2.99792458E+14,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Wavelength in nanometres",
+    "symbol": "λ (nm)",
+    "conversionFactor": 2.99792458E+17,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Electron Compton wavelength",
+    "symbol": "e⁻ Compton λ",
+    "conversionFactor": 1.235589789993E+20,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Proton Compton wavelength",
+    "symbol": "p⁺ Compton λ",
+    "conversionFactor": 2.2687315327002E+23,
+    "category": "frequency_wavelength",
+    "popular": false
+  },
+  {
+    "name": "Neutron Compton wavelength",
+    "symbol": "n⁰ Compton λ",
+    "conversionFactor": 2.2718587447278E+23,
+    "category": "frequency_wavelength",
+    "popular": false
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Ampere",
+    "symbol": "A",
+    "conversionFactor": 1,
+    "category": "current",
+    "popular": true
+  },
+  {
+    "name": "Kiloampere",
+    "symbol": "kA",
+    "conversionFactor": 1000,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "Milliampere",
+    "symbol": "mA",
+    "conversionFactor": 0.001,
+    "category": "current",
+    "popular": true
+  },
+  {
+    "name": "Biot",
+    "symbol": "Bi",
+    "conversionFactor": 10,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "Abampere",
+    "symbol": "abA",
+    "conversionFactor": 10,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "EMU of current",
+    "symbol": "EMU",
+    "conversionFactor": 10,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "Statampere",
+    "symbol": "stA",
+    "conversionFactor": 3.335641E-10,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "ESU of current",
+    "symbol": "ESU",
+    "conversionFactor": 3.335641E-10,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "CGS e.m. unit",
+    "symbol": "CGS e.m. unit",
+    "conversionFactor": 10,
+    "category": "current",
+    "popular": false
+  },
+  {
+    "name": "CGS e.s. unit",
+    "symbol": "CGS e.s. unit",
+    "conversionFactor": 3.335641E-10,
+    "category": "current",
+    "popular": false
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Degree",
+    "symbol": "°",
+    "conversionFactor": 1,
+    "category": "angle",
+    "popular": true
+  },
+  {
+    "name": "Radian",
+    "symbol": "rad",
+    "conversionFactor": 57.2957795131,
+    "category": "angle",
+    "popular": true
+  },
+  {
+    "name": "Gradian",
+    "symbol": "gon",
+    "conversionFactor": 0.9,
+    "category": "angle"
+  },
+  {
+    "name": "Arcminute",
+    "symbol": "'",
+    "conversionFactor": 0.0166666667,
+    "category": "angle"
+  },
+  {
+    "name": "Arcsecond",
+    "symbol": "\"",
+    "conversionFactor": 0.0002777778,
+    "category": "angle"
+  },
+  {
+    "name": "Sign",
+    "symbol": "sign",
+    "conversionFactor": 30,
+    "category": "angle"
+  },
+  {
+    "name": "Mil",
+    "symbol": "mil",
+    "conversionFactor": 0.05625,
+    "category": "angle"
+  },
+  {
+    "name": "Revolution",
+    "symbol": "rev",
+    "conversionFactor": 360,
+    "category": "angle"
+  },
+  {
+    "name": "Turn",
+    "symbol": "turn",
+    "conversionFactor": 360,
+    "category": "angle"
+  },
+  {
+    "name": "Quadrant",
+    "symbol": "quad",
+    "conversionFactor": 90,
+    "category": "angle"
+  },
+  {
+    "name": "Right Angle",
+    "symbol": "right angle",
+    "conversionFactor": 90,
+    "category": "angle"
+  },
+  {
+    "name": "Sextant",
+    "symbol": "sextant",
+    "conversionFactor": 60,
+    "category": "angle"
+  },
+  {
+    "name": "Milliradian",
+    "symbol": "mrad",
+    "conversionFactor": 0.0572957795,
+    "category": "angle"
+  }
+]

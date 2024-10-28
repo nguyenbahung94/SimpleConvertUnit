@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Coulomb per cubic meter",
+    "symbol": "C/m³",
+    "conversionFactor": 1,
+    "category": "volume_charge_density",
+    "popular": true
+  },
+  {
+    "name": "Coulomb per cubic centimeter",
+    "symbol": "C/cm³",
+    "conversionFactor": 1000000,
+    "category": "volume_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Coulomb per cubic inch",
+    "symbol": "C/in³",
+    "conversionFactor": 61023.744094732,
+    "category": "volume_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per cubic meter",
+    "symbol": "abC/m³",
+    "conversionFactor": 10,
+    "category": "volume_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per cubic centimeter",
+    "symbol": "abC/cm³",
+    "conversionFactor": 10000000,
+    "category": "volume_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per cubic inch",
+    "symbol": "abC/in³",
+    "conversionFactor": 610237.44094732,
+    "category": "volume_charge_density",
+    "popular": false
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Cubic Meter per Kilogram",
+    "symbol": "m³/kg",
+    "conversionFactor": 1,
+    "category": "specific_volume",
+    "popular": true
+  },
+  {
+    "name": "Cubic Centimeter per Gram",
+    "symbol": "cm³/g",
+    "conversionFactor": 0.001,
+    "category": "specific_volume",
+    "popular": true
+  },
+  {
+    "name": "Liter per Kilogram",
+    "symbol": "L/kg",
+    "conversionFactor": 0.001,
+    "category": "specific_volume",
+    "popular": true
+  },
+  {
+    "name": "Liter per Gram",
+    "symbol": "L/g",
+    "conversionFactor": 1,
+    "category": "specific_volume"
+  },
+  {
+    "name": "Cubic Foot per Kilogram",
+    "symbol": "ft³/kg",
+    "conversionFactor": 0.0283168466,
+    "category": "specific_volume",
+    "popular": true
+  },
+  {
+    "name": "Cubic Foot per Pound",
+    "symbol": "ft³/lb",
+    "conversionFactor": 0.06242796,
+    "category": "specific_volume"
+  },
+  {
+    "name": "Gallon (US) per Pound",
+    "symbol": "gal (US)/lb",
+    "conversionFactor": 0.0083454039,
+    "category": "specific_volume"
+  },
+  {
+    "name": "Gallon (UK) per Pound",
+    "symbol": "gal (UK)/lb",
+    "conversionFactor": 0.0100224128,
+    "category": "specific_volume"
+  }
+]

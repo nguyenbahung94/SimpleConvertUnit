@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Kilogram Square Meter",
+    "symbol": "kg·m²",
+    "conversionFactor": 1,
+    "category": "moment_of_inertia",
+    "popular": true
+  },
+  {
+    "name": "Kilogram Square Centimeter",
+    "symbol": "kg·cm²",
+    "conversionFactor": 0.0001,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Kilogram Square Millimeter",
+    "symbol": "kg·mm²",
+    "conversionFactor": 1.0e-6,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Gram Square Centimeter",
+    "symbol": "g·cm²",
+    "conversionFactor": 1.0e-7,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Gram Square Millimeter",
+    "symbol": "g·mm²",
+    "conversionFactor": 1.0e-9,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Kilogram-force Meter Square Second",
+    "symbol": "kgf·m²·s",
+    "conversionFactor": 9.8066499998,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Kilogram-force Centimeter Square Second",
+    "symbol": "kgf·cm²·s",
+    "conversionFactor": 0.0980665,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Ounce Square Inch",
+    "symbol": "oz·in²",
+    "conversionFactor": 1.829e-5,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Ounce-force Inch Square Second",
+    "symbol": "ozf·in²·s",
+    "conversionFactor": 0.0070615519,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Pound Square Foot",
+    "symbol": "lb·ft²",
+    "conversionFactor": 0.0421401101,
+    "category": "moment_of_inertia",
+    "popular": true
+  },
+  {
+    "name": "Pound-force Foot Square Second",
+    "symbol": "lbf·ft²·s",
+    "conversionFactor": 1.3558179619,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Pound Square Inch",
+    "symbol": "lb·in²",
+    "conversionFactor": 0.0002926397,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Pound-force Inch Square Second",
+    "symbol": "lbf·in²·s",
+    "conversionFactor": 0.1129848302,
+    "category": "moment_of_inertia"
+  },
+  {
+    "name": "Slug Square Foot",
+    "symbol": "slug·ft²",
+    "conversionFactor": 1.3558179619,
+    "category": "moment_of_inertia"
+  }
+]

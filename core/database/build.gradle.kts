@@ -35,7 +35,7 @@ dependencies {
     testImplementation(libs.androidx.arch.core.testing)
 
     // json parsing
-    implementation(libs.kotlinx.serialization.json)
+    api(libs.kotlinx.serialization.json)
 
     // unit test
     testImplementation(libs.junit)

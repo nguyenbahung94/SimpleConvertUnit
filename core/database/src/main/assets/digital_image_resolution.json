@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Dot per meter",
+    "symbol": "dot/m",
+    "conversionFactor": 1,
+    "category": "digital_image_resolution",
+    "popular": true
+  },
+  {
+    "name": "Dot per millimeter",
+    "symbol": "dot/mm",
+    "conversionFactor": 1000,
+    "category": "digital_image_resolution",
+    "popular": false
+  },
+  {
+    "name": "Dot per inch",
+    "symbol": "dot/in",
+    "conversionFactor": 39.3700787402,
+    "category": "digital_image_resolution",
+    "popular": false
+  },
+  {
+    "name": "Pixel per inch",
+    "symbol": "pixel/in",
+    "conversionFactor": 39.3700787402,
+    "category": "digital_image_resolution",
+    "popular": false
+  }
+]

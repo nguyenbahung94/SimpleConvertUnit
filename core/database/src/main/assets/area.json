@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Square Meter",
+    "symbol": "m²",
+    "conversionFactor": 1,
+    "category": "area",
+    "popular": true
+  },
+  {
+    "name": "Square Kilometer",
+    "symbol": "km²",
+    "conversionFactor": 1000000,
+    "category": "area"
+  },
+  {
+    "name": "Square Centimeter",
+    "symbol": "cm²",
+    "conversionFactor": 0.0001,
+    "category": "area"
+  },
+  {
+    "name": "Square Millimeter",
+    "symbol": "mm²",
+    "conversionFactor": 1e-6,
+    "category": "area"
+  },
+  {
+    "name": "Square Micrometer",
+    "symbol": "µm²",
+    "conversionFactor": 1e-12,
+    "category": "area"
+  },
+  {
+    "name": "Hectare",
+    "symbol": "ha",
+    "conversionFactor": 10000,
+    "category": "area",
+    "popular": true
+  },
+  {
+    "name": "Acre",
+    "symbol": "ac",
+    "conversionFactor": 4046.8564224,
+    "category": "area",
+    "popular": true
+  },
+  {
+    "name": "Square Mile",
+    "symbol": "mi²",
+    "conversionFactor": 2589988.110336,
+    "category": "area",
+    "popular": true
+  },
+  {
+    "name": "Square Yard",
+    "symbol": "yd²",
+    "conversionFactor": 0.83612736,
+    "category": "area",
+    "popular": true
+  },
+  {
+    "name": "Square Foot",
+    "symbol": "ft²",
+    "conversionFactor": 0.09290304,
+    "category": "area",
+    "popular": true
+  },
+  {
+    "name": "Square Inch",
+    "symbol": "in²",
+    "conversionFactor": 0.00064516,
+    "category": "area"
+  },
+  {
+    "name": "Square Hectometer",
+    "symbol": "hm²",
+    "conversionFactor": 10000,
+    "category": "area"
+  },
+  {
+    "name": "Square Dekameter",
+    "symbol": "dam²",
+    "conversionFactor": 100,
+    "category": "area"
+  },
+  {
+    "name": "Square Decimeter",
+    "symbol": "dm²",
+    "conversionFactor": 0.01,
+    "category": "area"
+  },
+  {
+    "name": "Square Nanometer",
+    "symbol": "nm²",
+    "conversionFactor": 1e-18,
+    "category": "area"
+  },
+  {
+    "name": "Are",
+    "symbol": "a",
+    "conversionFactor": 100,
+    "category": "area"
+  },
+  {
+    "name": "Barn",
+    "symbol": "b",
+    "conversionFactor": 1e-28,
+    "category": "area"
+  },
+  {
+    "name": "Square Mile (US Survey)",
+    "symbol": "mi² (US survey)",
+    "conversionFactor": 2589998.4703195,
+    "category": "area"
+  },
+  {
+    "name": "Square Foot (US Survey)",
+    "symbol": "ft² (US survey)",
+    "conversionFactor": 0.0929034116,
+    "category": "area"
+  },
+  {
+    "name": "Circular Inch",
+    "symbol": "circ in",
+    "conversionFactor": 0.0005067075,
+    "category": "area"
+  },
+  {
+    "name": "Township",
+    "symbol": "twp",
+    "conversionFactor": 93239571.972096,
+    "category": "area"
+  },
+  {
+    "name": "Section",
+    "symbol": "section",
+    "conversionFactor": 2589988.110336,
+    "category": "area"
+  },
+  {
+    "name": "Acre (US Survey)",
+    "symbol": "ac (US survey)",
+    "conversionFactor": 4046.8726098743,
+    "category": "area"
+  },
+  {
+    "name": "Rood",
+    "symbol": "rood",
+    "conversionFactor": 1011.7141056,
+    "category": "area"
+  },
+  {
+    "name": "Square Chain",
+    "symbol": "ch²",
+    "conversionFactor": 404.68564224,
+    "category": "area"
+  },
+  {
+    "name": "Square Rod",
+    "symbol": "rd²",
+    "conversionFactor": 25.29285264,
+    "category": "area"
+  },
+  {
+    "name": "Square Rod (US Survey)",
+    "symbol": "rd² (US survey)",
+    "conversionFactor": 25.2929538117,
+    "category": "area"
+  },
+  {
+    "name": "Square Perch",
+    "symbol": "perch²",
+    "conversionFactor": 25.29285264,
+    "category": "area"
+  },
+  {
+    "name": "Square Pole",
+    "symbol": "pole²",
+    "conversionFactor": 25.29285264,
+    "category": "area"
+  },
+  {
+    "name": "Square Mil",
+    "symbol": "mil²",
+    "conversionFactor": 6.4516e-10,
+    "category": "area"
+  },
+  {
+    "name": "Circular Mil",
+    "symbol": "cmil",
+    "conversionFactor": 5.067074790975e-10,
+    "category": "area"
+  },
+  {
+    "name": "Homestead",
+    "symbol": "homestead",
+    "conversionFactor": 647497.027584,
+    "category": "area"
+  },
+  {
+    "name": "Sabin",
+    "symbol": "sabin",
+    "conversionFactor": 0.09290304,
+    "category": "area"
+  },
+  {
+    "name": "Arpent",
+    "symbol": "arpent",
+    "conversionFactor": 3418.8929236669,
+    "category": "area"
+  },
+  {
+    "name": "Cuerda",
+    "symbol": "cda",
+    "conversionFactor": 3930.395625,
+    "category": "area"
+  },
+  {
+    "name": "Plaza",
+    "symbol": "plaza",
+    "conversionFactor": 6400,
+    "category": "area"
+  },
+  {
+    "name": "Varas Castellanas Cuad",
+    "symbol": "varas castellanas cuad",
+    "conversionFactor": 0.698737,
+    "category": "area"
+  },
+  {
+    "name": "Varas Conuqueras Cuad",
+    "symbol": "varas conuqueras cuad",
+    "conversionFactor": 6.288633,
+    "category": "area"
+  },
+  {
+    "name": "Electron Cross Section",
+    "symbol": "σₑ",
+    "conversionFactor": 6.6524615999999e-29,
+    "category": "area"
+  }
+]

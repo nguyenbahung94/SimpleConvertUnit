@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Joule per kilogram",
+    "symbol": "J/kg",
+    "conversionFactor": 1,
+    "category": "fuel_efficiency_mass",
+    "popular": true
+  },
+  {
+    "name": "Kilojoule per kilogram",
+    "symbol": "kJ/kg",
+    "conversionFactor": 1000,
+    "category": "fuel_efficiency_mass",
+    "popular": true
+  },
+  {
+    "name": "Calorie (IT) per gram",
+    "symbol": "cal/g",
+    "conversionFactor": 4186.8,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Calorie (th) per gram",
+    "symbol": "cal (th)/g",
+    "conversionFactor": 4184.000000005,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Btu (IT) per pound",
+    "symbol": "Btu/lb",
+    "conversionFactor": 2326,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Btu (th) per pound",
+    "symbol": "Btu (th)/lb",
+    "conversionFactor": 2324.4444444446,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per joule",
+    "symbol": "kg/J",
+    "conversionFactor": 1,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per kilojoule",
+    "symbol": "kg/kJ",
+    "conversionFactor": 1000,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per calorie (IT)",
+    "symbol": "g/cal",
+    "conversionFactor": 4186.8,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per calorie (th)",
+    "symbol": "g/cal (th)",
+    "conversionFactor": 4184.000000005,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per Btu (IT)",
+    "symbol": "lb/Btu",
+    "conversionFactor": 2326,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per Btu (th)",
+    "symbol": "lb/Btu (th)",
+    "conversionFactor": 2324.4444444446,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Pound per horsepower-hour",
+    "symbol": "lb/hp·h",
+    "conversionFactor": 5918352.5016,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per horsepower (metric)-hour",
+    "symbol": "g/hp (metric)/h",
+    "conversionFactor": 2647795500,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  },
+  {
+    "name": "Gram per kilowatt-hour",
+    "symbol": "g/kW·h",
+    "conversionFactor": 3600000000,
+    "category": "fuel_efficiency_mass",
+    "popular": false
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Coulomb per meter",
+    "symbol": "C/m",
+    "conversionFactor": 1,
+    "category": "linear_charge_density",
+    "popular": true
+  },
+  {
+    "name": "Coulomb per centimeter",
+    "symbol": "C/cm",
+    "conversionFactor": 100,
+    "category": "linear_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Coulomb per inch",
+    "symbol": "C/in",
+    "conversionFactor": 39.3700787402,
+    "category": "linear_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per meter",
+    "symbol": "abC/m",
+    "conversionFactor": 10,
+    "category": "linear_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per centimeter",
+    "symbol": "abC/cm",
+    "conversionFactor": 1000,
+    "category": "linear_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per inch",
+    "symbol": "abC/in",
+    "conversionFactor": 393.7007874016,
+    "category": "linear_charge_density",
+    "popular": false
+  }
+]

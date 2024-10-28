@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Watt per square meter",
+    "symbol": "W/m²",
+    "conversionFactor": 1,
+    "category": "heat_flux_density",
+    "popular": true
+  },
+  {
+    "name": "Kilowatt per square meter",
+    "symbol": "kW/m²",
+    "conversionFactor": 1000,
+    "category": "heat_flux_density",
+    "popular": true
+  },
+  {
+    "name": "Watt per square centimeter",
+    "symbol": "W/cm²",
+    "conversionFactor": 10000,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Watt per square inch",
+    "symbol": "W/in²",
+    "conversionFactor": 1550.0031012075,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Joule per second per square meter",
+    "symbol": "J/s·m²",
+    "conversionFactor": 1,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per hour per square meter",
+    "symbol": "kcal_IT/h·m²",
+    "conversionFactor": 1.1629999999,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per hour per square foot",
+    "symbol": "kcal_IT/h·ft²",
+    "conversionFactor": 12.5184278205,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per second per square centimeter",
+    "symbol": "cal_IT/s·cm²",
+    "conversionFactor": 41868.00000482,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per minute per square centimeter",
+    "symbol": "cal_IT/min·cm²",
+    "conversionFactor": 697.8000000803,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per hour per square centimeter",
+    "symbol": "cal_IT/h·cm²",
+    "conversionFactor": 11.6300000008,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Calorie (th) per second per square centimeter",
+    "symbol": "cal_th/s·cm²",
+    "conversionFactor": 41839.999999942,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Calorie (th) per minute per square centimeter",
+    "symbol": "cal_th/min·cm²",
+    "conversionFactor": 697.3333333314,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Calorie (th) per hour per square centimeter",
+    "symbol": "cal_th/h·cm²",
+    "conversionFactor": 11.6222222222,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Dyne per hour per centimeter",
+    "symbol": "dyne/h·cm",
+    "conversionFactor": 2.7777777777778E-7,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Erg per hour per square millimeter",
+    "symbol": "erg/h·mm²",
+    "conversionFactor": 2.77778E-5,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Foot pound per minute per square foot",
+    "symbol": "ft·lb/min·ft²",
+    "conversionFactor": 0.2432317156,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Horsepower per square foot",
+    "symbol": "hp/ft²",
+    "conversionFactor": 8026.6466174305,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Horsepower (metric) per square foot",
+    "symbol": "hp_metric/ft²",
+    "conversionFactor": 7916.8426564296,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per second per square foot",
+    "symbol": "BTU_IT/s·ft²",
+    "conversionFactor": 11356.526682221,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per minute per square foot",
+    "symbol": "BTU_IT/min·ft²",
+    "conversionFactor": 189.2754465477,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per hour per square foot",
+    "symbol": "BTU_IT/h·ft²",
+    "conversionFactor": 3.1545907451,
+    "category": "heat_flux_density",
+    "popular": true
+  },
+  {
+    "name": "BTU (th) per second per square inch",
+    "symbol": "BTU_th/s·in²",
+    "conversionFactor": 1634246.1784508,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (th) per second per square foot",
+    "symbol": "BTU_th/s·ft²",
+    "conversionFactor": 11348.93179479,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (th) per minute per square foot",
+    "symbol": "BTU_th/min·ft²",
+    "conversionFactor": 189.1488632466,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (th) per hour per square foot",
+    "symbol": "BTU_th/h·ft²",
+    "conversionFactor": 3.1524810541,
+    "category": "heat_flux_density",
+    "popular": false
+  },
+  {
+    "name": "CHU per hour per square foot",
+    "symbol": "CHU/h·ft²",
+    "conversionFactor": 5.6782633986,
+    "category": "heat_flux_density",
+    "popular": false
+  }
+]

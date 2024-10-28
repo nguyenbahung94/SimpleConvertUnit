@@ -1,0 +1,199 @@
+[
+  {
+    "name": "Meter per Second",
+    "symbol": "m/s",
+    "conversionFactor": 1,
+    "category": "speed",
+    "popular": true
+  },
+  {
+    "name": "Kilometer per Hour",
+    "symbol": "km/h",
+    "conversionFactor": 0.2777777778,
+    "category": "speed",
+    "popular": true
+  },
+  {
+    "name": "Mile per Hour",
+    "symbol": "mph",
+    "conversionFactor": 0.44704,
+    "category": "speed",
+    "popular": true
+  },
+  {
+    "name": "Meter per Hour",
+    "symbol": "m/h",
+    "conversionFactor": 0.0002777778,
+    "category": "speed"
+  },
+  {
+    "name": "Meter per Minute",
+    "symbol": "m/min",
+    "conversionFactor": 0.0166666667,
+    "category": "speed"
+  },
+  {
+    "name": "Kilometer per Minute",
+    "symbol": "km/min",
+    "conversionFactor": 16.6666666667,
+    "category": "speed"
+  },
+  {
+    "name": "Kilometer per Second",
+    "symbol": "km/s",
+    "conversionFactor": 1000,
+    "category": "speed"
+  },
+  {
+    "name": "Centimeter per Hour",
+    "symbol": "cm/h",
+    "conversionFactor": 2.7777777777778e-6,
+    "category": "speed"
+  },
+  {
+    "name": "Centimeter per Minute",
+    "symbol": "cm/min",
+    "conversionFactor": 0.0001666667,
+    "category": "speed"
+  },
+  {
+    "name": "Centimeter per Second",
+    "symbol": "cm/s",
+    "conversionFactor": 0.01,
+    "category": "speed"
+  },
+  {
+    "name": "Millimeter per Hour",
+    "symbol": "mm/h",
+    "conversionFactor": 2.7777777777778e-7,
+    "category": "speed"
+  },
+  {
+    "name": "Millimeter per Minute",
+    "symbol": "mm/min",
+    "conversionFactor": 1.66667e-5,
+    "category": "speed"
+  },
+  {
+    "name": "Millimeter per Second",
+    "symbol": "mm/s",
+    "conversionFactor": 0.001,
+    "category": "speed"
+  },
+  {
+    "name": "Foot per Hour",
+    "symbol": "ft/h",
+    "conversionFactor": 8.46667e-5,
+    "category": "speed"
+  },
+  {
+    "name": "Foot per Minute",
+    "symbol": "ft/min",
+    "conversionFactor": 0.00508,
+    "category": "speed"
+  },
+  {
+    "name": "Foot per Second",
+    "symbol": "ft/s",
+    "conversionFactor": 0.3048,
+    "category": "speed",
+    "popular": true
+  },
+  {
+    "name": "Yard per Hour",
+    "symbol": "yd/h",
+    "conversionFactor": 0.000254,
+    "category": "speed"
+  },
+  {
+    "name": "Yard per Minute",
+    "symbol": "yd/min",
+    "conversionFactor": 0.01524,
+    "category": "speed"
+  },
+  {
+    "name": "Yard per Second",
+    "symbol": "yd/s",
+    "conversionFactor": 0.9144,
+    "category": "speed"
+  },
+  {
+    "name": "Mile per Minute",
+    "symbol": "mi/min",
+    "conversionFactor": 26.8224,
+    "category": "speed"
+  },
+  {
+    "name": "Mile per Second",
+    "symbol": "mi/s",
+    "conversionFactor": 1609.344,
+    "category": "speed"
+  },
+  {
+    "name": "Knot",
+    "symbol": "kn",
+    "conversionFactor": 0.5144444444,
+    "category": "speed",
+    "popular": true
+  },
+  {
+    "name": "Knot (UK)",
+    "symbol": "kn (UK)",
+    "conversionFactor": 0.5147733333,
+    "category": "speed"
+  },
+  {
+    "name": "Speed of Light in Vacuum",
+    "symbol": "c",
+    "conversionFactor": 299792458,
+    "category": "speed"
+  },
+  {
+    "name": "First Cosmic Velocity",
+    "symbol": "V₁",
+    "conversionFactor": 7900,
+    "category": "speed"
+  },
+  {
+    "name": "Second Cosmic Velocity",
+    "symbol": "V₂",
+    "conversionFactor": 11200,
+    "category": "speed"
+  },
+  {
+    "name": "Third Cosmic Velocity",
+    "symbol": "V₃",
+    "conversionFactor": 16670,
+    "category": "speed"
+  },
+  {
+    "name": "Earth's Orbital Velocity",
+    "symbol": "Vₑ",
+    "conversionFactor": 29765,
+    "category": "speed"
+  },
+  {
+    "name": "Speed of Sound in Pure Water",
+    "symbol": "cₛ (water)",
+    "conversionFactor": 1482.7,
+    "category": "speed"
+  },
+  {
+    "name": "Speed of Sound in Sea Water (20°C, 10 m deep)",
+    "symbol": "cₛ (sea water)",
+    "conversionFactor": 1521.6,
+    "category": "speed"
+  },
+  {
+    "name": "Mach (20°C, 1 atm)",
+    "symbol": "Mach",
+    "conversionFactor": 343.6,
+    "category": "speed"
+  },
+  {
+    "name": "Mach (SI Standard)",
+    "symbol": "Mach (SI)",
+    "conversionFactor": 295.0464,
+    "category": "speed"
+  }
+]

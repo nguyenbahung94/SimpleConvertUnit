@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Kilogram per pascal per second per square meter",
+    "symbol": "kg/(Pa·s·m²)",
+    "conversionFactor": 1,
+    "category": "permeability",
+    "popular": true
+  },
+  {
+    "name": "Permeability (0°C)",
+    "symbol": "perm (0°C)",
+    "conversionFactor": 5.72135E-11,
+    "category": "permeability",
+    "popular": false
+  },
+  {
+    "name": "Permeability (23°C)",
+    "symbol": "perm (23°C)",
+    "conversionFactor": 5.74525E-11,
+    "category": "permeability",
+    "popular": false
+  },
+  {
+    "name": "Permeability inches (0°C)",
+    "symbol": "perm in (0°C)",
+    "conversionFactor": 1.45322E-12,
+    "category": "permeability",
+    "popular": false
+  },
+  {
+    "name": "Permeability inches (23°C)",
+    "symbol": "perm in (23°C)",
+    "conversionFactor": 1.45929E-12,
+    "category": "permeability",
+    "popular": false
+  }
+]

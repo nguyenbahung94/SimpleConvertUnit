@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Kelvin",
+    "symbol": "K",
+    "conversionFactor": 1,
+    "category": "temperature_interval",
+    "popular": true
+  },
+  {
+    "name": "Degree Celsius",
+    "symbol": "°C",
+    "conversionFactor": 1,
+    "category": "temperature_interval",
+    "popular": true
+  },
+  {
+    "name": "Degree Centigrade",
+    "symbol": "°C",
+    "conversionFactor": 1,
+    "category": "temperature_interval",
+    "popular": false
+  },
+  {
+    "name": "Degree Fahrenheit",
+    "symbol": "°F",
+    "conversionFactor": 0.5555555556,
+    "category": "temperature_interval",
+    "popular": true
+  },
+  {
+    "name": "Degree Rankine",
+    "symbol": "°R",
+    "conversionFactor": 0.5555555556,
+    "category": "temperature_interval",
+    "popular": false
+  },
+  {
+    "name": "Degree Reaumur",
+    "symbol": "°r",
+    "conversionFactor": 1.25,
+    "category": "temperature_interval",
+    "popular": false
+  }
+]

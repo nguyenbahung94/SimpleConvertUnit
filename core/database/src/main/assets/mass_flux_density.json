@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Gram per second per square meter",
+    "symbol": "g/(s·m²)",
+    "conversionFactor": 1,
+    "category": "mass_flux_density",
+    "popular": true
+  },
+  {
+    "name": "Kilogram per hour per square meter",
+    "symbol": "kg/(h·m²)",
+    "conversionFactor": 0.2777777778,
+    "category": "mass_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per hour per square foot",
+    "symbol": "kg/(h·ft²)",
+    "conversionFactor": 2.9899751173,
+    "category": "mass_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per second per square meter",
+    "symbol": "kg/(s·m²)",
+    "conversionFactor": 1000,
+    "category": "mass_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Gram per second per square centimeter",
+    "symbol": "g/(s·cm²)",
+    "conversionFactor": 10000,
+    "category": "mass_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Pound per hour per square foot",
+    "symbol": "lb/(h·ft²)",
+    "conversionFactor": 1.3562299132,
+    "category": "mass_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Pound per second per square foot",
+    "symbol": "lb/(s·ft²)",
+    "conversionFactor": 4882.4276872752,
+    "category": "mass_flux_density",
+    "popular": false
+  }
+]

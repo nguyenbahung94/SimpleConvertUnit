@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Radian per Square Second",
+    "symbol": "rad/s²",
+    "conversionFactor": 1,
+    "category": "acceleration_angular",
+    "popular": true
+  },
+  {
+    "name": "Radian per Square Minute",
+    "symbol": "rad/min²",
+    "conversionFactor": 0.0002777778,
+    "category": "acceleration_angular"
+  },
+  {
+    "name": "Revolution per Square Second",
+    "symbol": "rev/s²",
+    "conversionFactor": 6.2831853069,
+    "category": "acceleration_angular"
+  },
+  {
+    "name": "Revolution per Minute per Second",
+    "symbol": "rev/min/s",
+    "conversionFactor": 0.1047197551,
+    "category": "acceleration_angular"
+  },
+  {
+    "name": "Revolution per Square Minute",
+    "symbol": "rev/min²",
+    "conversionFactor": 0.0017453293,
+    "category": "acceleration_angular"
+  }
+]

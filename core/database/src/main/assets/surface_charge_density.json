@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Coulomb per square meter",
+    "symbol": "C/m²",
+    "conversionFactor": 1,
+    "category": "surface_charge_density",
+    "popular": true
+  },
+  {
+    "name": "Coulomb per square centimeter",
+    "symbol": "C/cm²",
+    "conversionFactor": 10000,
+    "category": "surface_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Coulomb per square inch",
+    "symbol": "C/in²",
+    "conversionFactor": 1550.0031000062,
+    "category": "surface_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per square meter",
+    "symbol": "abC/m²",
+    "conversionFactor": 10,
+    "category": "surface_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per square centimeter",
+    "symbol": "abC/cm²",
+    "conversionFactor": 100000,
+    "category": "surface_charge_density",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb per square inch",
+    "symbol": "abC/in²",
+    "conversionFactor": 15500.031000062,
+    "category": "surface_charge_density",
+    "popular": false
+  }
+]

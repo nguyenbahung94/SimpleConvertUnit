@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Lux",
+    "symbol": "lx",
+    "conversionFactor": 1,
+    "category": "illumination",
+    "popular": true
+  },
+  {
+    "name": "Meter-candle",
+    "symbol": "m·c",
+    "conversionFactor": 1,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Centimeter-candle",
+    "symbol": "cm·c",
+    "conversionFactor": 10000,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Foot-candle",
+    "symbol": "ft·c",
+    "conversionFactor": 10.7639104167,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Flame",
+    "symbol": "flame",
+    "conversionFactor": 43.0556416668,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Phot",
+    "symbol": "ph",
+    "conversionFactor": 10000,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Nox",
+    "symbol": "nox",
+    "conversionFactor": 0.001,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Candela steradian per square meter",
+    "symbol": "cd·sr/m²",
+    "conversionFactor": 1,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Lumen per square meter",
+    "symbol": "lm/m²",
+    "conversionFactor": 1,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Lumen per square centimeter",
+    "symbol": "lm/cm²",
+    "conversionFactor": 10000,
+    "category": "illumination",
+    "popular": false
+  },
+  {
+    "name": "Lumen per square foot",
+    "symbol": "lm/ft²",
+    "conversionFactor": 10.7639104167,
+    "category": "illumination",
+    "popular": false
+  },

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Siemens per meter",
+    "symbol": "S/m",
+    "conversionFactor": 1,
+    "category": "electric_conductivity",
+    "popular": true
+  },
+  {
+    "name": "Picosiemens per meter",
+    "symbol": "pS/m",
+    "conversionFactor": 1.0E-12,
+    "category": "electric_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Mho per meter",
+    "symbol": "mho/m",
+    "conversionFactor": 1,
+    "category": "electric_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Mho per centimeter",
+    "symbol": "mho/cm",
+    "conversionFactor": 100,
+    "category": "electric_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Abmho per meter",
+    "symbol": "abmho/m",
+    "conversionFactor": 1000000000,
+    "category": "electric_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Abmho per centimeter",
+    "symbol": "abmho/cm",
+    "conversionFactor": 100000000000,
+    "category": "electric_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Statmho per meter",
+    "symbol": "stmho/m",
+    "conversionFactor": 1.1126534560019E-12,
+    "category": "electric_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Statmho per centimeter",
+    "symbol": "stmho/cm",
+    "conversionFactor": 1.1126534560019E-10,
+    "category": "electric_conductivity",
+    "popular": false
+  }
+]

@@ -1,0 +1,570 @@
+[
+  {
+    "homeGroup": "ENG",
+    "name": "Volume",
+    "shortName": "VOL",
+    "image": "length.png",
+    "category": "volume",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Area",
+    "shortName": "ARE",
+    "image": "area.png",
+    "category": "area",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Energy",
+    "shortName": "ENE",
+    "image": "energy.png",
+    "category": "energy",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Force",
+    "shortName": "FOR",
+    "image": "force.png",
+    "category": "force",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Speed",
+    "shortName": "SPE",
+    "image": "speed.png",
+    "category": "speed",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Fuel Consumption",
+    "shortName": "FUE",
+    "image": "fuel_consumption.png",
+    "category": "fuel_consumption",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Data Storage",
+    "shortName": "DAT",
+    "image": "data_storage.png",
+    "category": "data_storage",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Currency",
+    "shortName": "CUR",
+    "image": "currency.png",
+    "category": "currency",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Acceleration",
+    "shortName": "ACC",
+    "image": "acceleration.png",
+    "category": "acceleration",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Density",
+    "shortName": "DEN",
+    "image": "density.png",
+    "category": "density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Moment of Inertia",
+    "shortName": "MOI",
+    "image": "moment_of_inertia.png",
+    "category": "moment_of_inertia",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Torque",
+    "shortName": "TOR",
+    "image": "torque.png",
+    "category": "torque",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Temperature",
+    "shortName": "TEM",
+    "image": "temperature.png",
+    "category": "temperature",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Pressure",
+    "shortName": "PRE",
+    "image": "pressure.png",
+    "category": "pressure",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Power",
+    "shortName": "POW",
+    "image": "power.png",
+    "category": "power",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Time",
+    "shortName": "TIM",
+    "image": "time.png",
+    "category": "time",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Angle",
+    "shortName": "ANG",
+    "image": "angle.png",
+    "category": "angle",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Numbers",
+    "shortName": "NUM",
+    "image": "numbers.png",
+    "category": "numbers",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Volume - Dry",
+    "shortName": "VOD",
+    "image": "volume_dry.png",
+    "category": "volume_dry",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Velocity - Angular",
+    "shortName": "VEA",
+    "image": "velocity_angular.png",
+    "category": "velocity_angular",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Acceleration - Angular",
+    "shortName": "ACA",
+    "image": "acceleration_angular.png",
+    "category": "acceleration_angular",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Specific Volume",
+    "shortName": "SPV",
+    "image": "specific_volume.png",
+    "category": "specific_volume",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Moment of Force",
+    "shortName": "MOF",
+    "image": "moment_of_force.png",
+    "category": "moment_of_force",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Fuel Efficiency - Mass",
+    "shortName": "FUE",
+    "image": "fuel_efficiency_mass.png",
+    "category": "fuel_efficiency_mass",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Fuel Efficiency - Volume",
+    "shortName": "FUE",
+    "image": "fuel_efficiency_volume.png",
+    "category": "fuel_efficiency_volume",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Temperature Interval",
+    "shortName": "TEM",
+    "image": "temperature_interval.png",
+    "category": "temperature_interval",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Thermal Expansion",
+    "shortName": "THE",
+    "image": "thermal_expansion.png",
+    "category": "thermal_expansion",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Thermal Resistance",
+    "shortName": "THE",
+    "image": "thermal_resistance.png",
+    "category": "thermal_resistance",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Thermal Conductivity",
+    "shortName": "THE",
+    "image": "thermal_conductivity.png",
+    "category": "thermal_conductivity",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Specific Heat Capacity",
+    "shortName": "SPE",
+    "image": "specific_heat_capacity.png",
+    "category": "specific_heat_capacity",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Heat Density",
+    "shortName": "HEA",
+    "image": "heat_density.png",
+    "category": "heat_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Heat Flux Density",
+    "shortName": "HEA",
+    "image": "heat_flux_density.png",
+    "category": "heat_flux_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "HEA",
+    "name": "Heat Transfer Coefficient",
+    "shortName": "HEA",
+    "image": "heat_transfer_coefficient.png",
+    "category": "heat_transfer_coefficient",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Flow",
+    "shortName": "FLO",
+    "image": "flow.png",
+    "category": "flow",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Flow - Mass",
+    "shortName": "FLO",
+    "image": "flow_mass.png",
+    "category": "flow_mass",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Flow - Molar",
+    "shortName": "FLO",
+    "image": "flow_molar.png",
+    "category": "flow_molar",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Mass Flux Density",
+    "shortName": "MAS",
+    "image": "mass_flux_density.png",
+    "category": "mass_flux_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Concentration - Molar",
+    "shortName": "CON",
+    "image": "concentration_molar.png",
+    "category": "concentration_molar",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Concentration - Solution",
+    "shortName": "CON",
+    "image": "concentration_solution.png",
+    "category": "concentration_solution",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Viscosity - Dynamic",
+    "shortName": "VIS",
+    "image": "viscosity_dynamic.png",
+    "category": "viscosity_dynamic",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Viscosity - Kinematic",
+    "shortName": "VIS",
+    "image": "viscosity_kinematic.png",
+    "category": "viscosity_kinematic",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Surface Tension",
+    "shortName": "SUR",
+    "image": "surface_tension.png",
+    "category": "surface_tension",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "FLU",
+    "name": "Permeability",
+    "shortName": "PER",
+    "image": "permeability.png",
+    "category": "permeability",
+    "isFavorite": false
+  },
+    {
+      "homeGroup": "LIG",
+      "name": "Luminance",
+      "shortName": "LUM",
+      "image": "luminance.png",
+      "category": "luminance",
+      "isFavorite": false
+    },
+    {
+      "homeGroup": "LIG",
+      "name": "Luminous Intensity",
+      "shortName": "LUM",
+      "image": "luminous_intensity.png",
+      "category": "luminous_intensity",
+      "isFavorite": false
+    },
+    {
+      "homeGroup": "LIG",
+      "name": "Illuminance",
+      "shortName": "ILL",
+      "image": "illuminance.png",
+      "category": "illuminance",
+      "isFavorite": false
+    },
+    {
+      "homeGroup": "LIG",
+      "name": "Digital Image Resolution",
+      "shortName": "DIG",
+      "image": "digital_image_resolution.png",
+      "category": "digital_image_resolution",
+      "isFavorite": false
+    },
+    {
+      "homeGroup": "LIG",
+      "name": "Frequency Wavelength",
+      "shortName": "FRE",
+      "image": "frequency_wavelength.png",
+      "category": "frequency_wavelength",
+      "isFavorite": false
+    },
+  {
+    "homeGroup": "ELE",
+    "name": "Charge",
+    "shortName": "CHA",
+    "image": "charge.png",
+    "category": "charge",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Linear Charge Density",
+    "shortName": "LIN",
+    "image": "linear_charge_density.png",
+    "category": "linear_charge_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Surface Charge Density",
+    "shortName": "SUR",
+    "image": "surface_charge_density.png",
+    "category": "surface_charge_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Volume Charge Density",
+    "shortName": "VOL",
+    "image": "volume_charge_density.png",
+    "category": "volume_charge_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Current",
+    "shortName": "CUR",
+    "image": "current.png",
+    "category": "current",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Linear Current Density",
+    "shortName": "LIN",
+    "image": "linear_current_density.png",
+    "category": "linear_current_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Surface Current Density",
+    "shortName": "SUR",
+    "image": "surface_current_density.png",
+    "category": "surface_current_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electric Field Strength",
+    "shortName": "ELE",
+    "image": "electric_field_strength.png",
+    "category": "electric_field_strength",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electric Potential",
+    "shortName": "ELE",
+    "image": "electric_potential.png",
+    "category": "electric_potential",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electric Resistance",
+    "shortName": "ELE",
+    "image": "electric_resistance.png",
+    "category": "electric_resistance",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electric Resistivity",
+    "shortName": "ELE",
+    "image": "electric_resistivity.png",
+    "category": "electric_resistivity",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electric Conductance",
+    "shortName": "ELE",
+    "image": "electric_conductance.png",
+    "category": "electric_conductance",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electric Conductivity",
+    "shortName": "ELE",
+    "image": "electric_conductivity.png",
+    "category": "electric_conductivity",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Electrostatic Capacitance",
+    "shortName": "ELE",
+    "image": "electrostatic_capacitance.png",
+    "category": "electrostatic_capacitance",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ELE",
+    "name": "Inductance",
+    "shortName": "IND",
+    "image": "inductance.png",
+    "category": "inductance",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "MAG",
+    "name": "Magneto Motive Force",
+    "shortName": "MMF",
+    "image": "magneto_motive_force.png",
+    "category": "magneto_motive_force",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "MAG",
+    "name": "Magnetic Field Strength",
+    "shortName": "MFS",
+    "image": "magnetic_field_strength.png",
+    "category": "magnetic_field_strength",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "MAG",
+    "name": "Magnetic Flux",
+    "shortName": "FLX",
+    "image": "magnetic_flux.png",
+    "category": "magnetic_flux",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "MAG",
+    "name": "Magnetic Flux Density",
+    "shortName": "MFD",
+    "image": "magnetic_flux_density.png",
+    "category": "magnetic_flux_density",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "RAD",
+    "name": "Radiation",
+    "shortName": "RAD",
+    "image": "radiation.png",
+    "category": "radiation",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "RAD",
+    "name": "Radiation-Activity",
+    "shortName": "RAD_ACT",
+    "image": "radiation_activity.png",
+    "category": "radiation_activity",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "RAD",
+    "name": "Radiation-Exposure",
+    "shortName": "RAD_EXP",
+    "image": "radiation_exposure.png",
+    "category": "radiation_exposure",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "RAD",
+    "name": "Radiation-Absorbed Dose",
+    "shortName": "RAD_ABS",
+    "image": "radiation_absorbed_dose.png",
+    "category": "radiation_absorbed_dose",
+    "isFavorite": false
+  }
+]

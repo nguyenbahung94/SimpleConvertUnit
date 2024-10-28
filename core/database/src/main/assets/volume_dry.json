@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Liter",
+    "symbol": "L",
+    "conversionFactor": 1,
+    "category": "volume_dry",
+    "popular": true
+  },
+  {
+    "name": "Barrel Dry (US)",
+    "symbol": "bbl dry (US)",
+    "conversionFactor": 115.6271236039,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Pint Dry (US)",
+    "symbol": "pt dry (US)",
+    "conversionFactor": 0.5506104714,
+    "category": "volume_dry",
+    "popular": true
+  },
+  {
+    "name": "Quart Dry (US)",
+    "symbol": "qt dry (US)",
+    "conversionFactor": 1.1012209428,
+    "category": "volume_dry",
+    "popular": true
+  },
+  {
+    "name": "Peck (US)",
+    "symbol": "pk (US)",
+    "conversionFactor": 8.8097675424,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Peck (UK)",
+    "symbol": "pk (UK)",
+    "conversionFactor": 9.09218,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Bushel (US)",
+    "symbol": "bu (US)",
+    "conversionFactor": 35.2390701696,
+    "category": "volume_dry",
+    "popular": true
+  },
+  {
+    "name": "Bushel (UK)",
+    "symbol": "bu (UK)",
+    "conversionFactor": 36.36872,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Cor (Biblical)",
+    "symbol": "cor",
+    "conversionFactor": 219.9999892918,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Homer (Biblical)",
+    "symbol": "homer",
+    "conversionFactor": 219.9999892918,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Ephah (Biblical)",
+    "symbol": "ephah",
+    "conversionFactor": 21.9999989292,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Seah (Biblical)",
+    "symbol": "seah",
+    "conversionFactor": 7.3333329764,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Omer (Biblical)",
+    "symbol": "omer",
+    "conversionFactor": 2.1999998929,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Cab (Biblical)",
+    "symbol": "cab",
+    "conversionFactor": 1.2222221627,
+    "category": "volume_dry"
+  },
+  {
+    "name": "Log (Biblical)",
+    "symbol": "log",
+    "conversionFactor": 0.3055555407,
+    "category": "volume_dry"
+  }
+]

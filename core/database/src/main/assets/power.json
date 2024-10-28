@@ -1,0 +1,439 @@
+[
+  {
+    "name": "Watt",
+    "symbol": "W",
+    "conversionFactor": 1,
+    "category": "power",
+    "popular": true
+  },
+  {
+    "name": "Exawatt",
+    "symbol": "EW",
+    "conversionFactor": 1e+18,
+    "category": "power"
+  },
+  {
+    "name": "Petawatt",
+    "symbol": "PW",
+    "conversionFactor": 1e+15,
+    "category": "power"
+  },
+  {
+    "name": "Terawatt",
+    "symbol": "TW",
+    "conversionFactor": 1e+12,
+    "category": "power"
+  },
+  {
+    "name": "Gigawatt",
+    "symbol": "GW",
+    "conversionFactor": 1e+9,
+    "category": "power"
+  },
+  {
+    "name": "Megawatt",
+    "symbol": "MW",
+    "conversionFactor": 1e+6,
+    "category": "power"
+  },
+  {
+    "name": "Kilowatt",
+    "symbol": "kW",
+    "conversionFactor": 1000,
+    "category": "power",
+    "popular": true
+  },
+  {
+    "name": "Hectowatt",
+    "symbol": "hW",
+    "conversionFactor": 100,
+    "category": "power"
+  },
+  {
+    "name": "Dekawatt",
+    "symbol": "daW",
+    "conversionFactor": 10,
+    "category": "power"
+  },
+  {
+    "name": "Deciwatt",
+    "symbol": "dW",
+    "conversionFactor": 0.1,
+    "category": "power"
+  },
+  {
+    "name": "Centiwatt",
+    "symbol": "cW",
+    "conversionFactor": 0.01,
+    "category": "power"
+  },
+  {
+    "name": "Milliwatt",
+    "symbol": "mW",
+    "conversionFactor": 0.001,
+    "category": "power"
+  },
+  {
+    "name": "Microwatt",
+    "symbol": "µW",
+    "conversionFactor": 1e-6,
+    "category": "power"
+  },
+  {
+    "name": "Nanowatt",
+    "symbol": "nW",
+    "conversionFactor": 1e-9,
+    "category": "power"
+  },
+  {
+    "name": "Picowatt",
+    "symbol": "pW",
+    "conversionFactor": 1e-12,
+    "category": "power"
+  },
+  {
+    "name": "Femtowatt",
+    "symbol": "fW",
+    "conversionFactor": 1e-15,
+    "category": "power"
+  },
+  {
+    "name": "Attowatt",
+    "symbol": "aW",
+    "conversionFactor": 1e-18,
+    "category": "power"
+  },
+  {
+    "name": "Horsepower",
+    "symbol": "hp",
+    "conversionFactor": 745.6998715823,
+    "category": "power",
+    "popular": true
+  },
+  {
+    "name": "Horsepower (Metric)",
+    "symbol": "hp (metric)",
+    "conversionFactor": 735.49875,
+    "category": "power"
+  },
+  {
+    "name": "Horsepower (Boiler)",
+    "symbol": "hp (boiler)",
+    "conversionFactor": 9809.5000000002,
+    "category": "power"
+  },
+  {
+    "name": "Horsepower (Electric)",
+    "symbol": "hp (electric)",
+    "conversionFactor": 746,
+    "category": "power"
+  },
+  {
+    "name": "Horsepower (Water)",
+    "symbol": "hp (water)",
+    "conversionFactor": 746.043,
+    "category": "power"
+  },
+  {
+    "name": "Pferdestärke",
+    "symbol": "ps",
+    "conversionFactor": 735.49875,
+    "category": "power"
+  },
+  {
+    "name": "BTU (IT) per Hour",
+    "symbol": "BTU/h",
+    "conversionFactor": 0.2930710702,
+    "category": "power",
+    "popular": true
+  },
+  {
+    "name": "BTU (IT) per Minute",
+    "symbol": "BTU/min",
+    "conversionFactor": 17.5842642103,
+    "category": "power"
+  },
+  {
+    "name": "BTU (IT) per Second",
+    "symbol": "BTU/s",
+    "conversionFactor": 1055.05585262,
+    "category": "power"
+  },
+  {
+    "name": "BTU (th) per Hour",
+    "symbol": "BTU (th)/h",
+    "conversionFactor": 0.292875,
+    "category": "power"
+  },
+  {
+    "name": "BTU (th) per Minute",
+    "symbol": "BTU (th)/min",
+    "conversionFactor": 17.5724999996,
+    "category": "power"
+  },
+  {
+    "name": "BTU (th) per Second",
+    "symbol": "BTU (th)/s",
+    "conversionFactor": 1054.3499999744,
+    "category": "power"
+  },
+  {
+    "name": "MBTU (IT) per Hour",
+    "symbol": "MBTU/h",
+    "conversionFactor": 293071.07017222,
+    "category": "power"
+  },
+  {
+    "name": "MBH",
+    "symbol": "MBH",
+    "conversionFactor": 293.0710701722,
+    "category": "power"
+  },
+  {
+    "name": "Ton (Refrigeration)",
+    "symbol": "ton",
+    "conversionFactor": 3516.8528420667,
+    "category": "power",
+    "popular": true
+  },
+  {
+    "name": "Kilocalorie (IT) per Hour",
+    "symbol": "kcal/h",
+    "conversionFactor": 1.163,
+    "category": "power"
+  },
+  {
+    "name": "Kilocalorie (IT) per Minute",
+    "symbol": "kcal/min",
+    "conversionFactor": 69.78,
+    "category": "power"
+  },
+  {
+    "name": "Kilocalorie (IT) per Second",
+    "symbol": "kcal/s",
+    "conversionFactor": 4186.8,
+    "category": "power"
+  },
+  {
+    "name": "Kilocalorie (th) per Hour",
+    "symbol": "kcal (th)/h",
+    "conversionFactor": 1.1622222222,
+    "category": "power"
+  },
+  {
+    "name": "Kilocalorie (th) per Minute",
+    "symbol": "kcal (th)/min",
+    "conversionFactor": 69.7333333333,
+    "category": "power"
+  },
+  {
+    "name": "Kilocalorie (th) per Second",
+    "symbol": "kcal (th)/s",
+    "conversionFactor": 4184,
+    "category": "power"
+  },
+  {
+    "name": "Calorie (IT) per Hour",
+    "symbol": "cal/h",
+    "conversionFactor": 0.001163,
+    "category": "power"
+  },
+  {
+    "name": "Calorie (IT) per Minute",
+    "symbol": "cal/min",
+    "conversionFactor": 0.06978,
+    "category": "power"
+  },
+  {
+    "name": "Calorie (IT) per Second",
+    "symbol": "cal/s",
+    "conversionFactor": 4.1868,
+    "category": "power"
+  },
+  {
+    "name": "Calorie (th) per Hour",
+    "symbol": "cal (th)/h",
+    "conversionFactor": 0.0011622222,
+    "category": "power"
+  },
+  {
+    "name": "Calorie (th) per Minute",
+    "symbol": "cal (th)/min",
+    "conversionFactor": 0.0697333333,
+    "category": "power"
+  },
+  {
+    "name": "Calorie (th) per Second",
+    "symbol": "cal (th)/s",
+    "conversionFactor": 4.184,
+    "category": "power"
+  },
+  {
+    "name": "Foot Pound-force per Hour",
+    "symbol": "ft·lbf/h",
+    "conversionFactor": 0.0003766161,
+    "category": "power"
+  },
+  {
+    "name": "Foot Pound-force per Minute",
+    "symbol": "ft·lbf/min",
+    "conversionFactor": 0.0225969658,
+    "category": "power"
+  },
+  {
+    "name": "Foot Pound-force per Second",
+    "symbol": "ft·lbf/s",
+    "conversionFactor": 1.3558179483,
+    "category": "power"
+  },
+  {
+    "name": "Erg per Second",
+    "symbol": "erg/s",
+    "conversionFactor": 1e-7,
+    "category": "power"
+  },
+  {
+    "name": "Kilovolt-Ampere",
+    "symbol": "kVA",
+    "conversionFactor": 1000,
+    "category": "power"
+  },
+  {
+    "name": "Volt-Ampere",
+    "symbol": "VA",
+    "conversionFactor": 1,
+    "category": "power"
+  },
+  {
+    "name": "Newton Meter per Second",
+    "symbol": "N·m/s",
+    "conversionFactor": 1,
+    "category": "power"
+  },
+  {
+    "name": "Joule per Second",
+    "symbol": "J/s",
+    "conversionFactor": 1,
+    "category": "power"
+  },
+  {
+    "name": "Exajoule per Second",
+    "symbol": "EJ/s",
+    "conversionFactor": 1e+18,
+    "category": "power"
+  },
+  {
+    "name": "Petajoule per Second",
+    "symbol": "PJ/s",
+    "conversionFactor": 1e+15,
+    "category": "power"
+  },
+  {
+    "name": "Terajoule per Second",
+    "symbol": "TJ/s",
+    "conversionFactor": 1e+12,
+    "category": "power"
+  },
+  {
+    "name": "Gigajoule per Second",
+    "symbol": "GJ/s",
+    "conversionFactor": 1e+9,
+    "category": "power"
+  },
+  {
+    "name": "Megajoule per Second",
+    "symbol": "MJ/s",
+    "conversionFactor": 1e+6,
+    "category": "power"
+  },
+  {
+    "name": "Kilojoule per Second",
+    "symbol": "kJ/s",
+    "conversionFactor": 1000,
+    "category": "power"
+  },
+  {
+    "name": "Hectojoule per Second",
+    "symbol": "hJ/s",
+    "conversionFactor": 100,
+    "category": "power"
+  },
+  {
+    "name": "Dekajoule per Second",
+    "symbol": "daJ/s",
+    "conversionFactor": 10,
+    "category": "power"
+  },
+  {
+    "name": "Decijoule per Second",
+    "symbol": "dJ/s",
+    "conversionFactor": 0.1,
+    "category": "power"
+  },
+  {
+    "name": "Centijoule per Second",
+    "symbol": "cJ/s",
+    "conversionFactor": 0.01,
+    "category": "power"
+  },
+  {
+    "name": "Millijoule per Second",
+    "symbol": "mJ/s",
+    "conversionFactor": 0.001,
+    "category": "power"
+  },
+  {
+    "name": "Microjoule per Second",
+    "symbol": "µJ/s",
+    "conversionFactor": 1e-6,
+    "category": "power"
+  },
+  {
+    "name": "Nanojoule per Second",
+    "symbol": "nJ/s",
+    "conversionFactor": 1e-9,
+    "category": "power"
+  },
+  {
+    "name": "Picojoule per Second",
+    "symbol": "pJ/s",
+    "conversionFactor": 1e-12,
+    "category": "power"
+  },
+  {
+    "name": "Femtojoule per Second",
+    "symbol": "fJ/s",
+    "conversionFactor": 1e-15,
+    "category": "power"
+  },
+  {
+    "name": "Attojoule per Second",
+    "symbol": "aJ/s",
+    "conversionFactor": 1e-18,
+    "category": "power"
+  },
+  {
+    "name": "Joule per Hour",
+    "symbol": "J/h",
+    "conversionFactor": 0.0002777778,
+    "category": "power"
+  },
+  {
+    "name": "Joule per Minute",
+    "symbol": "J/min",
+    "conversionFactor": 0.0166666667,
+    "category": "power"
+  },
+  {
+    "name": "Kilojoule per Hour",
+    "symbol": "kJ/h",
+    "conversionFactor": 0.2777777778,
+    "category": "power"
+  },
+  {
+    "name": "Kilojoule per Minute",
+    "symbol": "kJ/min",
+    "conversionFactor": 16.6666666667,
+    "category": "power"
+  }
+]

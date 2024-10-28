@@ -1,0 +1,30 @@
+[
+  {
+    "groupName": "Engineering",
+    "shortName": "ENG"
+  },
+  {
+    "groupName": "Heat",
+    "shortName": "HEA"
+  },
+  {
+    "groupName": "Fluids",
+    "shortName": "FLU"
+  },
+  {
+    "groupName": "Light",
+    "shortName": "LIG"
+  },
+  {
+    "groupName": "Electricity",
+    "shortName": "ELE"
+  },
+  {
+    "groupName": "Magnetic",
+    "shortName": "MAG"
+  },
+  {
+    "groupName": "Radiology",
+    "shortName": "RAD"
+  }
+]

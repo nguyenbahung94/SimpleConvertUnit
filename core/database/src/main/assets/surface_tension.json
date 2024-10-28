@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Newton per meter",
+    "symbol": "N/m",
+    "conversionFactor": 1,
+    "category": "surface_tension",
+    "popular": true
+  },
+  {
+    "name": "Millinewton per meter",
+    "symbol": "mN/m",
+    "conversionFactor": 0.001,
+    "category": "surface_tension",
+    "popular": false
+  },
+  {
+    "name": "Gram-force per centimeter",
+    "symbol": "gf/cm",
+    "conversionFactor": 0.980665,
+    "category": "surface_tension",
+    "popular": false
+  },
+  {
+    "name": "Dyne per centimeter",
+    "symbol": "dyn/cm",
+    "conversionFactor": 0.001,
+    "category": "surface_tension",
+    "popular": false
+  },
+  {
+    "name": "Erg per square centimeter",
+    "symbol": "erg/cm²",
+    "conversionFactor": 0.001,
+    "category": "surface_tension",
+    "popular": false
+  },
+  {
+    "name": "Erg per square millimeter",
+    "symbol": "erg/mm²",
+    "conversionFactor": 0.1,
+    "category": "surface_tension",
+    "popular": false
+  },
+  {
+    "name": "Poundal per inch",
+    "symbol": "pdl/in",
+    "conversionFactor": 5.443108491,
+    "category": "surface_tension",
+    "popular": false
+  },
+  {
+    "name": "Pound-force per inch",
+    "symbol": "lbf/in",
+    "conversionFactor": 175.1268369864,
+    "category": "surface_tension",
+    "popular": false
+  }
+]

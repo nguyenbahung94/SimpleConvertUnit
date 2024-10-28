@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Mole per cubic meter",
+    "symbol": "mol/m³",
+    "conversionFactor": 1,
+    "category": "concentration_molar",
+    "popular": true
+  },
+  {
+    "name": "Mole per liter",
+    "symbol": "mol/L",
+    "conversionFactor": 1000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Mole per cubic centimeter",
+    "symbol": "mol/cm³",
+    "conversionFactor": 1000000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Mole per cubic millimeter",
+    "symbol": "mol/mm³",
+    "conversionFactor": 1000000000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomole per cubic meter",
+    "symbol": "kmol/m³",
+    "conversionFactor": 1000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomole per liter",
+    "symbol": "kmol/L",
+    "conversionFactor": 1000000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomole per cubic centimeter",
+    "symbol": "kmol/cm³",
+    "conversionFactor": 1000000000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomole per cubic millimeter",
+    "symbol": "kmol/mm³",
+    "conversionFactor": 1000000000000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimole per cubic meter",
+    "symbol": "mmol/m³",
+    "conversionFactor": 0.001,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimole per liter",
+    "symbol": "mmol/L",
+    "conversionFactor": 1,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimole per cubic centimeter",
+    "symbol": "mmol/cm³",
+    "conversionFactor": 1000,
+    "category": "concentration_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimole per cubic millimeter",
+    "symbol": "mmol/mm³",
+    "conversionFactor": 1000000,
+    "category": "concentration_molar",
+    "popular": false
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Henry",
+    "symbol": "H",
+    "conversionFactor": 1,
+    "category": "inductance",
+    "popular": true
+  },
+  {
+    "name": "Exahenry",
+    "symbol": "EH",
+    "conversionFactor": 1.0E+18,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Petahenry",
+    "symbol": "PH",
+    "conversionFactor": 1.0E+15,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Terahenry",
+    "symbol": "TH",
+    "conversionFactor": 1000000000000,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Gigahenry",
+    "symbol": "GH",
+    "conversionFactor": 1000000000,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Megahenry",
+    "symbol": "MH",
+    "conversionFactor": 1000000,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Kilohenry",
+    "symbol": "kH",
+    "conversionFactor": 1000,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Hectohenry",
+    "symbol": "hH",
+    "conversionFactor": 100,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Dekahenry",
+    "symbol": "daH",
+    "conversionFactor": 10,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Decihenry",
+    "symbol": "dH",
+    "conversionFactor": 0.1,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Centihenry",
+    "symbol": "cH",
+    "conversionFactor": 0.01,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Millihenry",
+    "symbol": "mH",
+    "conversionFactor": 0.001,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Microhenry",
+    "symbol": "µH",
+    "conversionFactor": 1.0E-6,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Nanohenry",
+    "symbol": "nH",
+    "conversionFactor": 1.0E-9,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Picohenry",
+    "symbol": "pH",
+    "conversionFactor": 1.0E-12,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Femtohenry",
+    "symbol": "fH",
+    "conversionFactor": 1.0E-15,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Attohenry",
+    "symbol": "aH",
+    "conversionFactor": 1.0E-18,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Weber per ampere",
+    "symbol": "Wb/A",
+    "conversionFactor": 1,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Abhenry",
+    "symbol": "abH",
+    "conversionFactor": 1.0E-9,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "EMU of inductance",
+    "symbol": "EMU",
+    "conversionFactor": 1.0E-9,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "Stathenry",
+    "symbol": "stH",
+    "conversionFactor": 898755200000,
+    "category": "inductance",
+    "popular": false
+  },
+  {
+    "name": "ESU of inductance",
+    "symbol": "ESU",
+    "conversionFactor": 898755200000,
+    "category": "inductance",
+    "popular": false
+  }
+]

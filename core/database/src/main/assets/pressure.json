@@ -1,0 +1,321 @@
+[
+  {
+    "name": "Pascal",
+    "symbol": "Pa",
+    "conversionFactor": 1,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Kilopascal",
+    "symbol": "kPa",
+    "conversionFactor": 1000,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Bar",
+    "symbol": "bar",
+    "conversionFactor": 100000,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Pound per Square Inch",
+    "symbol": "psi",
+    "conversionFactor": 6894.7572931783,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Ksi",
+    "symbol": "ksi",
+    "conversionFactor": 6894757.2931783,
+    "category": "pressure"
+  },
+  {
+    "name": "Standard Atmosphere",
+    "symbol": "atm",
+    "conversionFactor": 101325,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Exapascal",
+    "symbol": "EPa",
+    "conversionFactor": 1e+18,
+    "category": "pressure"
+  },
+  {
+    "name": "Petapascal",
+    "symbol": "PPa",
+    "conversionFactor": 1e+15,
+    "category": "pressure"
+  },
+  {
+    "name": "Terapascal",
+    "symbol": "TPa",
+    "conversionFactor": 1e+12,
+    "category": "pressure"
+  },
+  {
+    "name": "Gigapascal",
+    "symbol": "GPa",
+    "conversionFactor": 1e+9,
+    "category": "pressure"
+  },
+  {
+    "name": "Megapascal",
+    "symbol": "MPa",
+    "conversionFactor": 1e+6,
+    "category": "pressure"
+  },
+  {
+    "name": "Hectopascal",
+    "symbol": "hPa",
+    "conversionFactor": 100,
+    "category": "pressure"
+  },
+  {
+    "name": "Dekapascal",
+    "symbol": "daPa",
+    "conversionFactor": 10,
+    "category": "pressure"
+  },
+  {
+    "name": "Decipascal",
+    "symbol": "dPa",
+    "conversionFactor": 0.1,
+    "category": "pressure"
+  },
+  {
+    "name": "Centipascal",
+    "symbol": "cPa",
+    "conversionFactor": 0.01,
+    "category": "pressure"
+  },
+  {
+    "name": "Millipascal",
+    "symbol": "mPa",
+    "conversionFactor": 0.001,
+    "category": "pressure"
+  },
+  {
+    "name": "Micropascal",
+    "symbol": "µPa",
+    "conversionFactor": 1e-6,
+    "category": "pressure"
+  },
+  {
+    "name": "Nanopascal",
+    "symbol": "nPa",
+    "conversionFactor": 1e-9,
+    "category": "pressure"
+  },
+  {
+    "name": "Picopascal",
+    "symbol": "pPa",
+    "conversionFactor": 1e-12,
+    "category": "pressure"
+  },
+  {
+    "name": "Femtopascal",
+    "symbol": "fPa",
+    "conversionFactor": 1e-15,
+    "category": "pressure"
+  },
+  {
+    "name": "Attopascal",
+    "symbol": "aPa",
+    "conversionFactor": 1e-18,
+    "category": "pressure"
+  },
+  {
+    "name": "Newton per Square Meter",
+    "symbol": "N/m²",
+    "conversionFactor": 1,
+    "category": "pressure"
+  },
+  {
+    "name": "Newton per Square Centimeter",
+    "symbol": "N/cm²",
+    "conversionFactor": 10000,
+    "category": "pressure"
+  },
+  {
+    "name": "Newton per Square Millimeter",
+    "symbol": "N/mm²",
+    "conversionFactor": 1000000,
+    "category": "pressure"
+  },
+  {
+    "name": "Kilonewton per Square Meter",
+    "symbol": "kN/m²",
+    "conversionFactor": 1000,
+    "category": "pressure"
+  },
+  {
+    "name": "Millibar",
+    "symbol": "mbar",
+    "conversionFactor": 100,
+    "category": "pressure"
+  },
+  {
+    "name": "Microbar",
+    "symbol": "µbar",
+    "conversionFactor": 0.1,
+    "category": "pressure"
+  },
+  {
+    "name": "Dyne per Square Centimeter",
+    "symbol": "dyn/cm²",
+    "conversionFactor": 0.1,
+    "category": "pressure"
+  },
+  {
+    "name": "Kilogram-force per Square Meter",
+    "symbol": "kgf/m²",
+    "conversionFactor": 9.80665,
+    "category": "pressure"
+  },
+  {
+    "name": "Kilogram-force per Square Centimeter",
+    "symbol": "kgf/cm²",
+    "conversionFactor": 98066.5,
+    "category": "pressure"
+  },
+  {
+    "name": "Kilogram-force per Square Millimeter",
+    "symbol": "kgf/mm²",
+    "conversionFactor": 9806650,
+    "category": "pressure"
+  },
+  {
+    "name": "Gram-force per Square Centimeter",
+    "symbol": "gf/cm²",
+    "conversionFactor": 98.0665,
+    "category": "pressure"
+  },
+  {
+    "name": "Short Ton-force per Square Foot",
+    "symbol": "tonf (short)/ft²",
+    "conversionFactor": 95760.517960678,
+    "category": "pressure"
+  },
+  {
+    "name": "Short Ton-force per Square Inch",
+    "symbol": "tonf (short)/in²",
+    "conversionFactor": 13789514.586338,
+    "category": "pressure"
+  },
+  {
+    "name": "Long Ton-force per Square Foot",
+    "symbol": "tonf (long)/ft²",
+    "conversionFactor": 107251.78011595,
+    "category": "pressure"
+  },
+  {
+    "name": "Long Ton-force per Square Inch",
+    "symbol": "tonf (long)/in²",
+    "conversionFactor": 15444256.336697,
+    "category": "pressure"
+  },
+  {
+    "name": "Kip-force per Square Inch",
+    "symbol": "kipf/in²",
+    "conversionFactor": 6894757.2931783,
+    "category": "pressure"
+  },
+  {
+    "name": "Pound-force per Square Foot",
+    "symbol": "lbf/ft²",
+    "conversionFactor": 47.8802589804,
+    "category": "pressure"
+  },
+  {
+    "name": "Pound-force per Square Inch",
+    "symbol": "lbf/in²",
+    "conversionFactor": 6894.7572931783,
+    "category": "pressure"
+  },
+  {
+    "name": "Poundal per Square Foot",
+    "symbol": "pdl/ft²",
+    "conversionFactor": 1.4881639436,
+    "category": "pressure"
+  },
+  {
+    "name": "Torr",
+    "symbol": "Torr",
+    "conversionFactor": 133.3223684211,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Centimeter of Mercury (0°C)",
+    "symbol": "cmHg",
+    "conversionFactor": 1333.22,
+    "category": "pressure"
+  },
+  {
+    "name": "Millimeter of Mercury (0°C)",
+    "symbol": "mmHg",
+    "conversionFactor": 133.322,
+    "category": "pressure",
+    "popular": true
+  },
+  {
+    "name": "Inch of Mercury (32°F)",
+    "symbol": "inHg (32°F)",
+    "conversionFactor": 3386.38,
+    "category": "pressure"
+  },
+  {
+    "name": "Inch of Mercury (60°F)",
+    "symbol": "inHg (60°F)",
+    "conversionFactor": 3376.85,
+    "category": "pressure"
+  },
+  {
+    "name": "Centimeter of Water (4°C)",
+    "symbol": "cmH₂O (4°C)",
+    "conversionFactor": 98.0638,
+    "category": "pressure"
+  },
+  {
+    "name": "Millimeter of Water (4°C)",
+    "symbol": "mmH₂O (4°C)",
+    "conversionFactor": 9.80638,
+    "category": "pressure"
+  },
+  {
+    "name": "Inch of Water (4°C)",
+    "symbol": "inH₂O (4°C)",
+    "conversionFactor": 249.082,
+    "category": "pressure"
+  },
+  {
+    "name": "Foot of Water (4°C)",
+    "symbol": "ftH₂O (4°C)",
+    "conversionFactor": 2988.98,
+    "category": "pressure"
+  },
+  {
+    "name": "Inch of Water (60°F)",
+    "symbol": "inH₂O (60°F)",
+    "conversionFactor": 248.843,
+    "category": "pressure"
+  },
+  {
+    "name": "Foot of Water (60°F)",
+    "symbol": "ftH₂O (60°F)",
+    "conversionFactor": 2986.116,
+    "category": "pressure"
+  },
+  {
+    "name": "Atmosphere Technical",
+    "symbol": "at",
+    "conversionFactor": 98066.500000003,
+    "category": "pressure"
+  }
+]

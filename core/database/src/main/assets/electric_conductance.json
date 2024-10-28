@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Siemens",
+    "symbol": "S",
+    "conversionFactor": 1,
+    "category": "electric_conductance",
+    "popular": true
+  },
+  {
+    "name": "Megasiemens",
+    "symbol": "MS",
+    "conversionFactor": 1000000,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Kilosiemens",
+    "symbol": "kS",
+    "conversionFactor": 1000,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Millisiemens",
+    "symbol": "mS",
+    "conversionFactor": 0.001,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Microsiemens",
+    "symbol": "µS",
+    "conversionFactor": 1.0E-6,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Ampere per volt",
+    "symbol": "A/V",
+    "conversionFactor": 1,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Mho",
+    "symbol": "mho",
+    "conversionFactor": 1,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Gemmho",
+    "symbol": "gemmho",
+    "conversionFactor": 1.0E-6,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Micromho",
+    "symbol": "µmho",
+    "conversionFactor": 1.0E-6,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Abmho",
+    "symbol": "abmho",
+    "conversionFactor": 1000000000,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Statmho",
+    "symbol": "statmho",
+    "conversionFactor": 1.1123470522803E-12,
+    "category": "electric_conductance",
+    "popular": false
+  },
+  {
+    "name": "Quantized Hall conductance",
+    "symbol": "QHC",
+    "conversionFactor": 3.87405E-5,
+    "category": "electric_conductance",
+    "popular": false
+  }
+]

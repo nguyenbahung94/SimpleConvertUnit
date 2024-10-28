@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Watt per square meter per Kelvin",
+    "symbol": "W/(m²·K)",
+    "conversionFactor": 1,
+    "category": "heat_transfer_coefficient",
+    "popular": true
+  },
+  {
+    "name": "Watt per square meter per Celsius",
+    "symbol": "W/(m²·°C)",
+    "conversionFactor": 1,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "Joule per second per square meter per Kelvin",
+    "symbol": "J/s·m²·K",
+    "conversionFactor": 1,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per second per square centimeter per Celsius",
+    "symbol": "cal_IT/s·cm²·°C",
+    "conversionFactor": 41868.00000482,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per hour per square meter per Celsius",
+    "symbol": "kcal_IT/h·m²·°C",
+    "conversionFactor": 1.163,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per hour per square foot per Celsius",
+    "symbol": "kcal_IT/h·ft²·°C",
+    "conversionFactor": 12.5184278205,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per second per square foot per Fahrenheit",
+    "symbol": "BTU_IT/s·ft²·°F",
+    "conversionFactor": 20441.748028012,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "BTU (th) per second per square foot per Fahrenheit",
+    "symbol": "BTU_th/s·ft²·°F",
+    "conversionFactor": 20428.077230618,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per hour per square foot per Fahrenheit",
+    "symbol": "BTU_IT/h·ft²·°F",
+    "conversionFactor": 5.6782633411,
+    "category": "heat_transfer_coefficient",
+    "popular": true
+  },
+  {
+    "name": "BTU (th) per hour per square foot per Fahrenheit",
+    "symbol": "BTU_th/h·ft²·°F",
+    "conversionFactor": 5.6744658974,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  },
+  {
+    "name": "CHU per hour per square foot per Celsius",
+    "symbol": "CHU/h·ft²·°C",
+    "conversionFactor": 5.6782633411,
+    "category": "heat_transfer_coefficient",
+    "popular": false
+  }
+]

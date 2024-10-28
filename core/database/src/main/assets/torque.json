@@ -1,0 +1,125 @@
+[
+  {
+    "name": "Newton Meter",
+    "symbol": "N*m",
+    "conversionFactor": 1,
+    "category": "torque",
+    "popular": true
+  },
+  {
+    "name": "Newton Centimeter",
+    "symbol": "N*cm",
+    "conversionFactor": 0.01,
+    "category": "torque"
+  },
+  {
+    "name": "Newton Millimeter",
+    "symbol": "N*mm",
+    "conversionFactor": 0.001,
+    "category": "torque"
+  },
+  {
+    "name": "Kilonewton Meter",
+    "symbol": "kN*m",
+    "conversionFactor": 1000,
+    "category": "torque"
+  },
+  {
+    "name": "Dyne Meter",
+    "symbol": "dyn*m",
+    "conversionFactor": 1.0e-5,
+    "category": "torque"
+  },
+  {
+    "name": "Dyne Centimeter",
+    "symbol": "dyn*cm",
+    "conversionFactor": 1.0e-7,
+    "category": "torque"
+  },
+  {
+    "name": "Dyne Millimeter",
+    "symbol": "dyn*mm",
+    "conversionFactor": 1.0e-8,
+    "category": "torque"
+  },
+  {
+    "name": "Kilogram-force Meter",
+    "symbol": "kgf*m",
+    "conversionFactor": 9.80665,
+    "category": "torque",
+    "popular": true
+  },
+  {
+    "name": "Kilogram-force Centimeter",
+    "symbol": "kgf*cm",
+    "conversionFactor": 0.0980665,
+    "category": "torque"
+  },
+  {
+    "name": "Kilogram-force Millimeter",
+    "symbol": "kgf*mm",
+    "conversionFactor": 0.00980665,
+    "category": "torque"
+  },
+  {
+    "name": "Gram-force Meter",
+    "symbol": "gf*m",
+    "conversionFactor": 0.00980665,
+    "category": "torque"
+  },
+  {
+    "name": "Gram-force Centimeter",
+    "symbol": "gf*cm",
+    "conversionFactor": 9.80665e-5,
+    "category": "torque"
+  },
+  {
+    "name": "Gram-force Millimeter",
+    "symbol": "gf*mm",
+    "conversionFactor": 9.80665e-6,
+    "category": "torque"
+  },
+  {
+    "name": "Ounce-force Foot",
+    "symbol": "ozf*ft",
+    "conversionFactor": 0.084738624,
+    "category": "torque"
+  },
+  {
+    "name": "Ounce-force Inch",
+    "symbol": "ozf*in",
+    "conversionFactor": 0.007061552,
+    "category": "torque"
+  },
+  {
+    "name": "Pound-force Foot",
+    "symbol": "lbf*ft",
+    "conversionFactor": 1.355818,
+    "category": "torque",
+    "popular": true
+  },
+  {
+    "name": "Pound-force Inch",
+    "symbol": "lbf*in",
+    "conversionFactor": 0.1129848333,
+    "category": "torque"
+  },
+  {
+    "name": "Poundal Foot",
+    "symbol": "pdl*ft",
+    "conversionFactor": 0.0421401,
+    "category": "torque"
+  },
+  {
+    "name": "Poundal Inch",
+    "symbol": "pdl*in",
+    "conversionFactor": 0.003511675,
+    "category": "torque"
+  },
+  {
+    "name": "Slug Square Foot",
+    "symbol": "slug*ft²",
+    "conversionFactor": 1.3558179619,
+    "category": "torque"
+  }
+]

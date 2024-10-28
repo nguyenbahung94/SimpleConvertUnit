@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Watt per meter per Kelvin",
+    "symbol": "W/(m·K)",
+    "conversionFactor": 1,
+    "category": "thermal_conductivity",
+    "popular": true
+  },
+  {
+    "name": "Watt per centimeter per Celsius",
+    "symbol": "W/cm·°C",
+    "conversionFactor": 100,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Kilowatt per meter per Kelvin",
+    "symbol": "kW/(m·K)",
+    "conversionFactor": 1000,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per second per centimeter per Celsius",
+    "symbol": "cal/(s·cm·°C)",
+    "conversionFactor": 418.6800000009,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Calorie (th) per second per centimeter per Celsius",
+    "symbol": "cal/(s·cm·°C)",
+    "conversionFactor": 418.3999999994,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per hour per meter per Celsius",
+    "symbol": "kcal/(h·m·°C)",
+    "conversionFactor": 1.163,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (th) per hour per meter per Celsius",
+    "symbol": "kcal/(h·m·°C)",
+    "conversionFactor": 1.1622222222,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Btu (IT) inch per second per square foot per Fahrenheit",
+    "symbol": "Btu·in/(s·ft²·°F)",
+    "conversionFactor": 519.2203999105,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Btu (th) inch per second per square foot per Fahrenheit",
+    "symbol": "Btu·in/(s·ft²·°F)",
+    "conversionFactor": 518.8731616576,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Btu (IT) foot per hour per square foot per Fahrenheit",
+    "symbol": "Btu·ft/(h·ft²·°F)",
+    "conversionFactor": 1.7307346664,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Btu (th) foot per hour per square foot per Fahrenheit",
+    "symbol": "Btu·ft/(h·ft²·°F)",
+    "conversionFactor": 1.7295772055,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Btu (IT) inch per hour per square foot per Fahrenheit",
+    "symbol": "Btu·in/(h·ft²·°F)",
+    "conversionFactor": 0.1442278889,
+    "category": "thermal_conductivity",
+    "popular": false
+  },
+  {
+    "name": "Btu (th) inch per hour per square foot per Fahrenheit",
+    "symbol": "Btu·in/(h·ft²·°F)",
+    "conversionFactor": 0.1441314338,
+    "category": "thermal_conductivity",
+    "popular": false
+  }
+]
+

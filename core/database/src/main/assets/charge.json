@@ -1,0 +1,121 @@
+[
+  {
+    "name": "Coulomb",
+    "symbol": "C",
+    "conversionFactor": 1,
+    "category": "charge",
+    "popular": true
+  },
+  {
+    "name": "Megacoulomb",
+    "symbol": "MC",
+    "conversionFactor": 1000000,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Kilocoulomb",
+    "symbol": "kC",
+    "conversionFactor": 1000,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Millicoulomb",
+    "symbol": "mC",
+    "conversionFactor": 0.001,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Microcoulomb",
+    "symbol": "µC",
+    "conversionFactor": 1.0E-6,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Nanocoulomb",
+    "symbol": "nC",
+    "conversionFactor": 1.0E-9,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Picocoulomb",
+    "symbol": "pC",
+    "conversionFactor": 1.0E-12,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Abcoulomb",
+    "symbol": "abC",
+    "conversionFactor": 10,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "EMU of charge",
+    "symbol": "EMU",
+    "conversionFactor": 10,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Statcoulomb",
+    "symbol": "stC",
+    "conversionFactor": 3.335640951982E-10,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "ESU of charge",
+    "symbol": "ESU",
+    "conversionFactor": 3.335640951982E-10,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Franklin",
+    "symbol": "Fr",
+    "conversionFactor": 3.335640951982E-10,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Ampere-hour",
+    "symbol": "A·h",
+    "conversionFactor": 3600,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Ampere-minute",
+    "symbol": "A·min",
+    "conversionFactor": 60,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Ampere-second",
+    "symbol": "A·s",
+    "conversionFactor": 1,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Faraday (based on carbon 12)",
+    "symbol": "Faraday (C-12)",
+    "conversionFactor": 96485.309000004,
+    "category": "charge",
+    "popular": false
+  },
+  {
+    "name": "Elementary charge",
+    "symbol": "e",
+    "conversionFactor": 1.60217733E-19,
+    "category": "charge",
+    "popular": false
+  }
+]

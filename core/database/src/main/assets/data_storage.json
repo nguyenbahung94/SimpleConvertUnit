@@ -1,0 +1,268 @@
+[
+  {
+    "name": "Bit",
+    "symbol": "b",
+    "conversionFactor": 1,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Nibble",
+    "symbol": "nibble",
+    "conversionFactor": 4,
+    "category": "data_storage"
+  },
+  {
+    "name": "Byte",
+    "symbol": "B",
+    "conversionFactor": 8,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Character",
+    "symbol": "char",
+    "conversionFactor": 8,
+    "category": "data_storage"
+  },
+  {
+    "name": "Word",
+    "symbol": "word",
+    "conversionFactor": 16,
+    "category": "data_storage"
+  },
+  {
+    "name": "MAPM-Word",
+    "symbol": "MAPM-word",
+    "conversionFactor": 32,
+    "category": "data_storage"
+  },
+  {
+    "name": "Quadruple-Word",
+    "symbol": "quadruple-word",
+    "conversionFactor": 64,
+    "category": "data_storage"
+  },
+  {
+    "name": "Block",
+    "symbol": "block",
+    "conversionFactor": 4096,
+    "category": "data_storage"
+  },
+  {
+    "name": "Kilobit",
+    "symbol": "kb",
+    "conversionFactor": 1024,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Kilobyte",
+    "symbol": "kB",
+    "conversionFactor": 8192,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Kilobyte (10³ bytes)",
+    "symbol": "kB (10³ bytes)",
+    "conversionFactor": 8000,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Megabit",
+    "symbol": "Mb",
+    "conversionFactor": 1048576,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Megabyte",
+    "symbol": "MB",
+    "conversionFactor": 8388608,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Megabyte (10⁶ bytes)",
+    "symbol": "MB (10⁶ bytes)",
+    "conversionFactor": 8000000,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Gigabit",
+    "symbol": "Gb",
+    "conversionFactor": 1073741824,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Gigabyte",
+    "symbol": "GB",
+    "conversionFactor": 8589934592,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Gigabyte (10⁹ bytes)",
+    "symbol": "GB (10⁹ bytes)",
+    "conversionFactor": 8000000000,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Terabit",
+    "symbol": "Tb",
+    "conversionFactor": 1099511627776,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Terabyte",
+    "symbol": "TB",
+    "conversionFactor": 8796093022208,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Terabyte (10¹² bytes)",
+    "symbol": "TB (10¹² bytes)",
+    "conversionFactor": 8000000000000,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Petabit",
+    "symbol": "Pb",
+    "conversionFactor": 1125899906842624,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Petabyte",
+    "symbol": "PB",
+    "conversionFactor": 9007199254740992,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Petabyte (10¹⁵ bytes)",
+    "symbol": "PB (10¹⁵ bytes)",
+    "conversionFactor": 8000000000000000,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Exabit",
+    "symbol": "Eb",
+    "conversionFactor": 1.1529215046068e+18,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Exabyte",
+    "symbol": "EB",
+    "conversionFactor": 9.2233720368548e+18,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Exabyte (10¹⁸ bytes)",
+    "symbol": "EB (10¹⁸ bytes)",
+    "conversionFactor": 8.0e+18,
+    "category": "data_storage",
+    "popular": true
+  },
+  {
+    "name": "Floppy Disk (3.5\" DD)",
+    "symbol": "Floppy Disk (3.5\" DD)",
+    "conversionFactor": 5830656,
+    "category": "data_storage"
+  },
+  {
+    "name": "Floppy Disk (3.5\" HD)",
+    "symbol": "Floppy Disk (3.5\" HD)",
+    "conversionFactor": 11661312,
+    "category": "data_storage"
+  },
+  {
+    "name": "Floppy Disk (3.5\" ED)",
+    "symbol": "Floppy Disk (3.5\" ED)",
+    "conversionFactor": 23322624,
+    "category": "data_storage"
+  },
+  {
+    "name": "Floppy Disk (5.25\" DD)",
+    "symbol": "Floppy Disk (5.25\" DD)",
+    "conversionFactor": 2915328,
+    "category": "data_storage"
+  },
+  {
+    "name": "Floppy Disk (5.25\" HD)",
+    "symbol": "Floppy Disk (5.25\" HD)",
+    "conversionFactor": 9711616,
+    "category": "data_storage"
+  },
+  {
+    "name": "Zip 100",
+    "symbol": "Zip 100",
+    "conversionFactor": 803454976,
+    "category": "data_storage"
+  },
+  {
+    "name": "Zip 250",
+    "symbol": "Zip 250",
+    "conversionFactor": 2008637440,
+    "category": "data_storage"
+  },
+  {
+    "name": "Jaz 1GB",
+    "symbol": "Jaz 1GB",
+    "conversionFactor": 8589934592,
+    "category": "data_storage"
+  },
+  {
+    "name": "Jaz 2GB",
+    "symbol": "Jaz 2GB",
+    "conversionFactor": 17179869184,
+    "category": "data_storage"
+  },
+  {
+    "name": "CD (74 Minute)",
+    "symbol": "CD (74 min)",
+    "conversionFactor": 5448466432,
+    "category": "data_storage"
+  },
+  {
+    "name": "CD (80 Minute)",
+    "symbol": "CD (80 min)",
+    "conversionFactor": 5890233976,
+    "category": "data_storage"
+  },
+  {
+    "name": "DVD (1 Layer, 1 Side)",
+    "symbol": "DVD (1L, 1S)",
+    "conversionFactor": 40372692582.4,
+    "category": "data_storage"
+  },
+  {
+    "name": "DVD (2 Layer, 1 Side)",
+    "symbol": "DVD (2L, 1S)",
+    "conversionFactor": 73014444032,
+    "category": "data_storage"
+  },
+  {
+    "name": "DVD (1 Layer, 2 Side)",
+    "symbol": "DVD (1L, 2S)",
+    "conversionFactor": 80745385164.8,
+    "category": "data_storage"
+  },
+  {
+    "name": "DVD (2 Layer, 2 Side)",
+    "symbol": "DVD (2L, 2S)",
+    "conversionFactor": 146028888064,
+    "category": "data_storage"
+  }
+]

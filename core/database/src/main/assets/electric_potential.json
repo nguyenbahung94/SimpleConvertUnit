@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Volt",
+    "symbol": "V",
+    "conversionFactor": 1,
+    "category": "electric_potential",
+    "popular": true
+  },
+  {
+    "name": "Watt per ampere",
+    "symbol": "W/A",
+    "conversionFactor": 1,
+    "category": "electric_potential",
+    "popular": false
+  },
+  {
+    "name": "Abvolt",
+    "symbol": "abV",
+    "conversionFactor": 1.0E-8,
+    "category": "electric_potential",
+    "popular": false
+  },
+  {
+    "name": "EMU of electric potential",
+    "symbol": "EMU",
+    "conversionFactor": 1.0E-8,
+    "category": "electric_potential",
+    "popular": false
+  },
+  {
+    "name": "Statvolt",
+    "symbol": "stV",
+    "conversionFactor": 299.7925,
+    "category": "electric_potential",
+    "popular": false
+  },
+  {
+    "name": "ESU of electric potential",
+    "symbol": "ESU",
+    "conversionFactor": 299.7925,
+    "category": "electric_potential",
+    "popular": false
+  }
+]

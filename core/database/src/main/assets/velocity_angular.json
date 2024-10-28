@@ -1,0 +1,78 @@
+[
+  {
+    "name": "Radian per Second",
+    "symbol": "rad/s",
+    "conversionFactor": 1,
+    "category": "velocity_angular",
+    "popular": true
+  },
+  {
+    "name": "Radian per Day",
+    "symbol": "rad/d",
+    "conversionFactor": 1.15741e-5,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Radian per Hour",
+    "symbol": "rad/h",
+    "conversionFactor": 0.0002777778,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Radian per Minute",
+    "symbol": "rad/min",
+    "conversionFactor": 0.0166666667,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Degree per Day",
+    "symbol": "°/d",
+    "conversionFactor": 2.0200570046231e-7,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Degree per Hour",
+    "symbol": "°/h",
+    "conversionFactor": 4.8481368110954e-6,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Degree per Minute",
+    "symbol": "°/min",
+    "conversionFactor": 0.0002908882,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Degree per Second",
+    "symbol": "°/s",
+    "conversionFactor": 0.0174532925,
+    "category": "velocity_angular",
+    "popular": true
+  },
+  {
+    "name": "Revolution per Day",
+    "symbol": "rev/d",
+    "conversionFactor": 7.27221e-5,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Revolution per Hour",
+    "symbol": "rev/h",
+    "conversionFactor": 0.0017453293,
+    "category": "velocity_angular"
+  },
+  {
+    "name": "Revolution per Minute",
+    "symbol": "rev/min",
+    "conversionFactor": 0.1047197551,
+    "category": "velocity_angular",
+    "popular": true
+  },
+  {
+    "name": "Revolution per Second",
+    "symbol": "rev/s",
+    "conversionFactor": 6.2831853072,
+    "category": "velocity_angular",
+    "popular": true
+  }
+]

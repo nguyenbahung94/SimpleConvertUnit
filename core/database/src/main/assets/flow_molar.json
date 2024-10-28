@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Mole per second",
+    "symbol": "mol/s",
+    "conversionFactor": 1,
+    "category": "flow_molar",
+    "popular": true
+  },
+  {
+    "name": "Examol per second",
+    "symbol": "Emol/s",
+    "conversionFactor": 1.0E+18,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Petamol per second",
+    "symbol": "Pmol/s",
+    "conversionFactor": 1.0E+15,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Teramol per second",
+    "symbol": "Tmol/s",
+    "conversionFactor": 1000000000000,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Gigamol per second",
+    "symbol": "Gmol/s",
+    "conversionFactor": 1000000000,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Megamol per second",
+    "symbol": "Mmol/s",
+    "conversionFactor": 1000000,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomol per second",
+    "symbol": "kmol/s",
+    "conversionFactor": 1000,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Hectomol per second",
+    "symbol": "hmol/s",
+    "conversionFactor": 100,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Dekamol per second",
+    "symbol": "damol/s",
+    "conversionFactor": 10,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Decimol per second",
+    "symbol": "dmol/s",
+    "conversionFactor": 0.1,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Centimol per second",
+    "symbol": "cmol/s",
+    "conversionFactor": 0.01,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimol per second",
+    "symbol": "mmol/s",
+    "conversionFactor": 0.001,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Micromol per second",
+    "symbol": "µmol/s",
+    "conversionFactor": 1.0E-6,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Nanomol per second",
+    "symbol": "nmol/s",
+    "conversionFactor": 1.0E-9,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Picomol per second",
+    "symbol": "pmol/s",
+    "conversionFactor": 1.0E-12,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Femtomol per second",
+    "symbol": "fmol/s",
+    "conversionFactor": 1.0E-15,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Attomol per second",
+    "symbol": "amol/s",
+    "conversionFactor": 1.0E-18,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Mole per minute",
+    "symbol": "mol/min",
+    "conversionFactor": 0.0166666667,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Mole per hour",
+    "symbol": "mol/h",
+    "conversionFactor": 0.0002777778,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Mole per day",
+    "symbol": "mol/d",
+    "conversionFactor": 1.15741E-5,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimol per minute",
+    "symbol": "mmol/min",
+    "conversionFactor": 1.66667E-5,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimol per hour",
+    "symbol": "mmol/h",
+    "conversionFactor": 2.7777777777778E-7,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Millimol per day",
+    "symbol": "mmol/d",
+    "conversionFactor": 1.1574074074074E-8,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomol per minute",
+    "symbol": "kmol/min",
+    "conversionFactor": 16.6666666667,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomol per hour",
+    "symbol": "kmol/h",
+    "conversionFactor": 0.2777777778,
+    "category": "flow_molar",
+    "popular": false
+  },
+  {
+    "name": "Kilomol per day",
+    "symbol": "kmol/d",
+    "conversionFactor": 0.0115740741,
+    "category": "flow_molar",
+    "popular": false
+  }
+]

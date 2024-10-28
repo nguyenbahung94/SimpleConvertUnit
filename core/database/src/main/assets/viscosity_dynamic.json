@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Pascal second",
+    "symbol": "Pa·s",
+    "conversionFactor": 1,
+    "category": "viscosity_dynamic",
+    "popular": true
+  },
+  {
+    "name": "Kilogram-force second per square meter",
+    "symbol": "kgf·s/m²",
+    "conversionFactor": 9.80665,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Newton second per square meter",
+    "symbol": "N·s/m²",
+    "conversionFactor": 1,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Millinewton second per square meter",
+    "symbol": "mN·s/m²",
+    "conversionFactor": 0.001,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Dyne second per square centimeter",
+    "symbol": "dyn·s/cm²",
+    "conversionFactor": 0.1,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Poise",
+    "symbol": "P",
+    "conversionFactor": 0.1,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Exapoise",
+    "symbol": "EP",
+    "conversionFactor": 1.0E+17,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Petapoise",
+    "symbol": "PP",
+    "conversionFactor": 1.0E+14,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Terapoise",
+    "symbol": "TP",
+    "conversionFactor": 100000000000,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Gigapoise",
+    "symbol": "GP",
+    "conversionFactor": 100000000,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Megapoise",
+    "symbol": "MP",
+    "conversionFactor": 100000,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Kilopoise",
+    "symbol": "kP",
+    "conversionFactor": 100,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Hectopoise",
+    "symbol": "hP",
+    "conversionFactor": 10,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Dekapoise",
+    "symbol": "daP",
+    "conversionFactor": 1,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Decipoise",
+    "symbol": "dP",
+    "conversionFactor": 0.01,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Centipoise",
+    "symbol": "cP",
+    "conversionFactor": 0.001,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Millipoise",
+    "symbol": "mP",
+    "conversionFactor": 0.0001,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Micropoise",
+    "symbol": "µP",
+    "conversionFactor": 1.0E-7,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Nanopoise",
+    "symbol": "nP",
+    "conversionFactor": 1.0E-10,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Picopoise",
+    "symbol": "pP",
+    "conversionFactor": 1.0E-13,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Femtopoise",
+    "symbol": "fP",
+    "conversionFactor": 1.0E-16,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Attopoise",
+    "symbol": "aP",
+    "conversionFactor": 1.0E-19,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Pound-force second per square inch",
+    "symbol": "lbf·s/in²",
+    "conversionFactor": 6894.7572931684,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Pound-force second per square foot",
+    "symbol": "lbf·s/ft²",
+    "conversionFactor": 47.8802589802,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Poundal second per square foot",
+    "symbol": "pdl·s/ft²",
+    "conversionFactor": 1.4881639436,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Gram per centimeter per second",
+    "symbol": "g/(cm·s)",
+    "conversionFactor": 0.1,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Slug per foot per second",
+    "symbol": "slug/(ft·s)",
+    "conversionFactor": 47.8802589802,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Pound per foot per second",
+    "symbol": "lb/(ft·s)",
+    "conversionFactor": 1.4881639436,
+    "category": "viscosity_dynamic",
+    "popular": false
+  },
+  {
+    "name": "Pound per foot per hour",
+    "symbol": "lb/(ft·h)",
+    "conversionFactor": 0.0004133789,
+    "category": "viscosity_dynamic",
+    "popular": false
+  }
+]

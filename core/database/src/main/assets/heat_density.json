@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Joule per square meter",
+    "symbol": "J/m²",
+    "conversionFactor": 1,
+    "category": "heat_density",
+    "popular": true
+  },
+  {
+    "name": "Calorie (th) per square centimeter",
+    "symbol": "cal_th/cm²",
+    "conversionFactor": 41839.999999999,
+    "category": "heat_density",
+    "popular": false
+  },
+  {
+    "name": "Langley",
+    "symbol": "langley",
+    "conversionFactor": 41839.999999999,
+    "category": "heat_density",
+    "popular": true
+  },
+  {
+    "name": "BTU (IT) per square foot",
+    "symbol": "BTU_IT/ft²",
+    "conversionFactor": 11356.526682227,
+    "category": "heat_density",
+    "popular": false
+  },
+  {
+    "name": "BTU (th) per square foot",
+    "symbol": "BTU_th/ft²",
+    "conversionFactor": 11348.931794793,
+    "category": "heat_density",
+    "popular": false
+  }
+]

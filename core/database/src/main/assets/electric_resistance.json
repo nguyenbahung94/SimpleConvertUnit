@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Ohm",
+    "symbol": "Ω",
+    "conversionFactor": 1,
+    "category": "electric_resistance",
+    "popular": true
+  },
+  {
+    "name": "Megohm",
+    "symbol": "MΩ",
+    "conversionFactor": 1000000,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "Microhm",
+    "symbol": "µΩ",
+    "conversionFactor": 1.0E-6,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "Volt per ampere",
+    "symbol": "V/A",
+    "conversionFactor": 1,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "Reciprocal siemens",
+    "symbol": "1/S",
+    "conversionFactor": 1,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "Abohm",
+    "symbol": "abΩ",
+    "conversionFactor": 1.0E-9,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "EMU of resistance",
+    "symbol": "EMU",
+    "conversionFactor": 1.0E-9,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "Statohm",
+    "symbol": "stΩ",
+    "conversionFactor": 898755200000,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "ESU of resistance",
+    "symbol": "ESU",
+    "conversionFactor": 898755200000,
+    "category": "electric_resistance",
+    "popular": false
+  },
+  {
+    "name": "Quantized Hall resistance",
+    "symbol": "QHR",
+    "conversionFactor": 25812.8056,
+    "category": "electric_resistance",
+    "popular": false
+  }
+]

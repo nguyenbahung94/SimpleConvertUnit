@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Kelvin per Watt",
+    "symbol": "K/W",
+    "conversionFactor": 1,
+    "category": "thermal_resistance",
+    "popular": true
+  },
+  {
+    "name": "Degree Fahrenheit hour per Btu (IT)",
+    "symbol": "°F·h/Btu (IT)",
+    "conversionFactor": 1.8956342406,
+    "category": "thermal_resistance",
+    "popular": false
+  },
+  {
+    "name": "Degree Fahrenheit hour per Btu (th)",
+    "symbol": "°F·h/Btu (th)",
+    "conversionFactor": 1.8969028295,
+    "category": "thermal_resistance",
+    "popular": false
+  },
+  {
+    "name": "Degree Fahrenheit second per Btu (IT)",
+    "symbol": "°F·s/Btu (IT)",
+    "conversionFactor": 0.0005265651,
+    "category": "thermal_resistance",
+    "popular": false
+  },
+  {
+    "name": "Degree Fahrenheit second per Btu (th)",
+    "symbol": "°F·s/Btu (th)",
+    "conversionFactor": 0.0005269175,
+    "category": "thermal_resistance",
+    "popular": false
+  }
+]
+

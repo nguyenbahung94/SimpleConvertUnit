@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Candela per square meter",
+    "symbol": "cd/m²",
+    "conversionFactor": 1,
+    "category": "luminance",
+    "popular": true
+  },
+  {
+    "name": "Candela per square centimeter",
+    "symbol": "cd/cm²",
+    "conversionFactor": 10000,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Candela per square foot",
+    "symbol": "cd/ft²",
+    "conversionFactor": 10.7639104167,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Candela per square inch",
+    "symbol": "cd/in²",
+    "conversionFactor": 1550.0031000062,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Kilocandela per square meter",
+    "symbol": "kcd/m²",
+    "conversionFactor": 1000,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Stilb",
+    "symbol": "sb",
+    "conversionFactor": 10000,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Lumen per square meter per steradian",
+    "symbol": "lm/(m²·sr)",
+    "conversionFactor": 1,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Lumen per square centimeter per steradian",
+    "symbol": "lm/(cm²·sr)",
+    "conversionFactor": 10000,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Lumen per square foot per steradian",
+    "symbol": "lm/(ft²·sr)",
+    "conversionFactor": 10.7639104167,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Watt per square centimeter per steradian (at 555 nm)",
+    "symbol": "W/(cm²·sr) (at 555 nm)",
+    "conversionFactor": 6830000,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Nit",
+    "symbol": "nt",
+    "conversionFactor": 1,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Millinit",
+    "symbol": "mnt",
+    "conversionFactor": 0.001,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Lambert",
+    "symbol": "L",
+    "conversionFactor": 3183.0988618379,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Millilambert",
+    "symbol": "mL",
+    "conversionFactor": 3.1830988618,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Foot-lambert",
+    "symbol": "fL",
+    "conversionFactor": 3.4262590996,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Apostilb",
+    "symbol": "asb",
+    "conversionFactor": 0.3183098862,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Blondel",
+    "symbol": "blondel",
+    "conversionFactor": 0.3183098862,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Bril",
+    "symbol": "bril",
+    "conversionFactor": 3.1830988618379E-8,
+    "category": "luminance",
+    "popular": false
+  },
+  {
+    "name": "Skot",
+    "symbol": "skot",
+    "conversionFactor": 0.0003183099,
+    "category": "luminance",
+    "popular": false
+  }
+]

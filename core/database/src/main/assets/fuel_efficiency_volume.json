@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Joule per cubic meter",
+    "symbol": "J/m³",
+    "conversionFactor": 1,
+    "category": "fuel_efficiency_volume",
+    "popular": true
+  },
+  {
+    "name": "Joule per liter",
+    "symbol": "J/L",
+    "conversionFactor": 1000,
+    "category": "fuel_efficiency_volume",
+    "popular": true
+  },
+  {
+    "name": "Megajoule per cubic meter",
+    "symbol": "MJ/m³",
+    "conversionFactor": 1000000,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Kilojoule per cubic meter",
+    "symbol": "kJ/m³",
+    "conversionFactor": 1000,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per cubic meter",
+    "symbol": "kcal (IT)/m³",
+    "conversionFactor": 4186.800000482,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per cubic centimeter",
+    "symbol": "cal (IT)/cm³",
+    "conversionFactor": 4186800.000482,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Therm per cubic foot",
+    "symbol": "therm/ft³",
+    "conversionFactor": 3725894617.319,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Therm per gallon (UK)",
+    "symbol": "therm/gallon (UK)",
+    "conversionFactor": 23207984510.267,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Btu (IT) per cubic foot",
+    "symbol": "Btu/ft³",
+    "conversionFactor": 37258.945807808,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Btu (th) per cubic foot",
+    "symbol": "Btu (th)/ft³",
+    "conversionFactor": 37234.028198186,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "CHU per cubic foot",
+    "symbol": "CHU/ft³",
+    "conversionFactor": 67066.103121737,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Cubic meter per joule",
+    "symbol": "m³/J",
+    "conversionFactor": 1,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Liter per joule",
+    "symbol": "L/J",
+    "conversionFactor": 1000,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Gallon (US) per horsepower",
+    "symbol": "gal (US)/hp",
+    "conversionFactor": 709175035.869,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  },
+  {
+    "name": "Gallon (US) per horsepower",
+    "symbol": "gal (US)/hp",
+    "conversionFactor": 699473571.46,
+    "category": "fuel_efficiency_volume",
+    "popular": false
+  }
+]

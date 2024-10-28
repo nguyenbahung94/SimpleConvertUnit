@@ -1,0 +1,258 @@
+[
+  {
+    "name": "Kilogram per Cubic Meter",
+    "symbol": "kg/m³",
+    "conversionFactor": 1,
+    "category": "density",
+    "popular": true
+  },
+  {
+    "name": "Gram per Cubic Centimeter",
+    "symbol": "g/cm³",
+    "conversionFactor": 1000,
+    "category": "density",
+    "popular": true
+  },
+  {
+    "name": "Kilogram per Cubic Centimeter",
+    "symbol": "kg/cm³",
+    "conversionFactor": 1000000,
+    "category": "density"
+  },
+  {
+    "name": "Gram per Cubic Meter",
+    "symbol": "g/m³",
+    "conversionFactor": 0.001,
+    "category": "density"
+  },
+  {
+    "name": "Gram per Cubic Millimeter",
+    "symbol": "g/mm³",
+    "conversionFactor": 1000000,
+    "category": "density"
+  },
+  {
+    "name": "Milligram per Cubic Meter",
+    "symbol": "mg/m³",
+    "conversionFactor": 0.001,
+    "category": "density"
+  },
+  {
+    "name": "Milligram per Cubic Centimeter",
+    "symbol": "mg/cm³",
+    "conversionFactor": 1,
+    "category": "density"
+  },
+  {
+    "name": "Milligram per Cubic Millimeter",
+    "symbol": "mg/mm³",
+    "conversionFactor": 1000,
+    "category": "density"
+  },
+  {
+    "name": "Exagram per Liter",
+    "symbol": "Eg/L",
+    "conversionFactor": 1.0e+18,
+    "category": "density"
+  },
+  {
+    "name": "Petagram per Liter",
+    "symbol": "Pg/L",
+    "conversionFactor": 1.0e+15,
+    "category": "density"
+  },
+  {
+    "name": "Teragram per Liter",
+    "symbol": "Tg/L",
+    "conversionFactor": 1000000000000,
+    "category": "density"
+  },
+  {
+    "name": "Gigagram per Liter",
+    "symbol": "Gg/L",
+    "conversionFactor": 1000000000,
+    "category": "density"
+  },
+  {
+    "name": "Megagram per Liter",
+    "symbol": "Mg/L",
+    "conversionFactor": 1000000,
+    "category": "density"
+  },
+  {
+    "name": "Kilogram per Liter",
+    "symbol": "kg/L",
+    "conversionFactor": 1000,
+    "category": "density",
+    "popular": true
+  },
+  {
+    "name": "Hectogram per Liter",
+    "symbol": "hg/L",
+    "conversionFactor": 100,
+    "category": "density"
+  },
+  {
+    "name": "Dekagram per Liter",
+    "symbol": "dag/L",
+    "conversionFactor": 10,
+    "category": "density"
+  },
+  {
+    "name": "Gram per Liter",
+    "symbol": "g/L",
+    "conversionFactor": 1,
+    "category": "density"
+  },
+  {
+    "name": "Decigram per Liter",
+    "symbol": "dg/L",
+    "conversionFactor": 0.1,
+    "category": "density"
+  },
+  {
+    "name": "Centigram per Liter",
+    "symbol": "cg/L",
+    "conversionFactor": 0.01,
+    "category": "density"
+  },
+  {
+    "name": "Milligram per Liter",
+    "symbol": "mg/L",
+    "conversionFactor": 0.001,
+    "category": "density"
+  },
+  {
+    "name": "Microgram per Liter",
+    "symbol": "µg/L",
+    "conversionFactor": 1.0e-6,
+    "category": "density"
+  },
+  {
+    "name": "Nanogram per Liter",
+    "symbol": "ng/L",
+    "conversionFactor": 1.0e-9,
+    "category": "density"
+  },
+  {
+    "name": "Picogram per Liter",
+    "symbol": "pg/L",
+    "conversionFactor": 1.0e-12,
+    "category": "density"
+  },
+  {
+    "name": "Femtogram per Liter",
+    "symbol": "fg/L",
+    "conversionFactor": 1.0e-15,
+    "category": "density"
+  },
+  {
+    "name": "Attogram per Liter",
+    "symbol": "ag/L",
+    "conversionFactor": 1.0e-18,
+    "category": "density"
+  },
+  {
+    "name": "Pound per Cubic Inch",
+    "symbol": "lb/in³",
+    "conversionFactor": 27679.904710191,
+    "category": "density"
+  },
+  {
+    "name": "Pound per Cubic Foot",
+    "symbol": "lb/ft³",
+    "conversionFactor": 16.018463374,
+    "category": "density",
+    "popular": true
+  },
+  {
+    "name": "Pound per Cubic Yard",
+    "symbol": "lb/yd³",
+    "conversionFactor": 0.5932764213,
+    "category": "density"
+  },
+  {
+    "name": "Pound per Gallon (US)",
+    "symbol": "lb/gallon (US)",
+    "conversionFactor": 119.8264273167,
+    "category": "density"
+  },
+  {
+    "name": "Pound per Gallon (UK)",
+    "symbol": "lb/gallon (UK)",
+    "conversionFactor": 99.7763726631,
+    "category": "density"
+  },
+  {
+    "name": "Ounce per Cubic Inch",
+    "symbol": "oz/in³",
+    "conversionFactor": 1729.9940443869,
+    "category": "density"
+  },
+  {
+    "name": "Ounce per Cubic Foot",
+    "symbol": "oz/ft³",
+    "conversionFactor": 1.0011539609,
+    "category": "density"
+  },
+  {
+    "name": "Ounce per Gallon (US)",
+    "symbol": "oz/gallon (US)",
+    "conversionFactor": 7.4891517073,
+    "category": "density"
+  },
+  {
+    "name": "Ounce per Gallon (UK)",
+    "symbol": "oz/gallon (UK)",
+    "conversionFactor": 6.2360232914,
+    "category": "density"
+  },
+  {
+    "name": "Grain per Gallon (US)",
+    "symbol": "grain/gallon (US)",
+    "conversionFactor": 0.017118061,
+    "category": "density"
+  },
+  {
+    "name": "Grain per Gallon (UK)",
+    "symbol": "grain/gallon (UK)",
+    "conversionFactor": 0.0142537675,
+    "category": "density"
+  },
+  {
+    "name": "Grain per Cubic Foot",
+    "symbol": "gr/ft³",
+    "conversionFactor": 0.0022883519,
+    "category": "density"
+  },
+  {
+    "name": "Ton (Short) per Cubic Yard",
+    "symbol": "ton (short)/yd³",
+    "conversionFactor": 1186.552842515,
+    "category": "density"
+  },
+  {
+    "name": "Ton (Long) per Cubic Yard",
+    "symbol": "ton (long)/yd³",
+    "conversionFactor": 1328.9391836174,
+    "category": "density"
+  },
+  {
+    "name": "Slug per Cubic Foot",
+    "symbol": "slug/ft³",
+    "conversionFactor": 515.3788183932,
+    "category": "density"
+  },
+  {
+    "name": "Psi per 1000 Feet",
+    "symbol": "psi/1000ft",
+    "conversionFactor": 2.3066587258,
+    "category": "density"
+  },
+  {
+    "name": "Earth's Density (Mean)",
+    "symbol": "Earth's density (mean)",
+    "conversionFactor": 5518,
+    "category": "density"
+  }
+]

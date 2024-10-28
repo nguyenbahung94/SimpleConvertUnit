@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Square meter per second",
+    "symbol": "m²/s",
+    "conversionFactor": 1,
+    "category": "viscosity_kinematic",
+    "popular": true
+  },
+  {
+    "name": "Square meter per hour",
+    "symbol": "m²/h",
+    "conversionFactor": 0.0002777778,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Square centimeter per second",
+    "symbol": "cm²/s",
+    "conversionFactor": 0.0001,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Square millimeter per second",
+    "symbol": "mm²/s",
+    "conversionFactor": 1.0E-6,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Square foot per second",
+    "symbol": "ft²/s",
+    "conversionFactor": 0.09290304,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Square foot per hour",
+    "symbol": "ft²/h",
+    "conversionFactor": 2.58064E-5,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Square inch per second",
+    "symbol": "in²/s",
+    "conversionFactor": 0.00064516,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Stokes",
+    "symbol": "St",
+    "conversionFactor": 0.0001,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Exastokes",
+    "symbol": "ESt",
+    "conversionFactor": 1.0E+14,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Petastokes",
+    "symbol": "PSt",
+    "conversionFactor": 100000000000,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Terastokes",
+    "symbol": "TSt",
+    "conversionFactor": 100000000,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Gigastokes",
+    "symbol": "GSt",
+    "conversionFactor": 100000,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Megastokes",
+    "symbol": "MSt",
+    "conversionFactor": 100,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Kilostokes",
+    "symbol": "kSt",
+    "conversionFactor": 0.1,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Hectostokes",
+    "symbol": "hSt",
+    "conversionFactor": 0.01,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Dekastokes",
+    "symbol": "daSt",
+    "conversionFactor": 0.001,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Decistokes",
+    "symbol": "dSt",
+    "conversionFactor": 1.0E-5,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Centistokes",
+    "symbol": "cSt",
+    "conversionFactor": 1.0E-6,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Millistokes",
+    "symbol": "mSt",
+    "conversionFactor": 1.0E-7,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Microstokes",
+    "symbol": "µSt",
+    "conversionFactor": 1.0E-10,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Nanostokes",
+    "symbol": "nSt",
+    "conversionFactor": 1.0E-13,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Picostokes",
+    "symbol": "pSt",
+    "conversionFactor": 1.0E-16,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Femtostokes",
+    "symbol": "fSt",
+    "conversionFactor": 1.0E-19,
+    "category": "viscosity_kinematic",
+    "popular": false
+  },
+  {
+    "name": "Attostokes",
+    "symbol": "aSt",
+    "conversionFactor": 1.0E-22,
+    "category": "viscosity_kinematic",
+    "popular": false
+  }
+]

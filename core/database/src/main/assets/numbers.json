@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Decimal",
+    "symbol": "dec",
+    "conversionFactor": 10,
+    "category": "numbers",
+    "popular": true
+  },
+  {
+    "name": "Binary",
+    "symbol": "bin",
+    "conversionFactor": 2,
+    "category": "numbers",
+    "popular": true
+  },
+  {
+    "name": "Hexadecimal",
+    "symbol": "hex",
+    "conversionFactor": 16,
+    "category": "numbers",
+    "popular": true
+  },
+  {
+    "name": "Octal",
+    "symbol": "oct",
+    "conversionFactor": 8,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-3",
+    "symbol": "base3",
+    "conversionFactor": 3,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-5",
+    "symbol": "base5",
+    "conversionFactor": 5,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-7",
+    "symbol": "base7",
+    "conversionFactor": 7,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-12",
+    "symbol": "base12",
+    "conversionFactor": 12,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-20",
+    "symbol": "base20",
+    "conversionFactor": 20,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-60",
+    "symbol": "base60",
+    "conversionFactor": 60,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-64",
+    "symbol": "base64",
+    "conversionFactor": 64,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-36",
+    "symbol": "base36",
+    "conversionFactor": 36,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-58",
+    "symbol": "base58",
+    "conversionFactor": 58,
+    "category": "numbers"
+  },
+  {
+    "name": "Base-62",
+    "symbol": "base62",
+    "conversionFactor": 62,
+    "category": "numbers"
+  }
+]

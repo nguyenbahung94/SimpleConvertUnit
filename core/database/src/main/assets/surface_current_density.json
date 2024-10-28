@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Ampere per square meter",
+    "symbol": "A/m²",
+    "conversionFactor": 1,
+    "category": "surface_current_density",
+    "popular": true
+  },
+  {
+    "name": "Ampere per square centimeter",
+    "symbol": "A/cm²",
+    "conversionFactor": 10000,
+    "category": "surface_current_density",
+    "popular": false
+  },
+  {
+    "name": "Ampere per square inch",
+    "symbol": "A/in²",
+    "conversionFactor": 1550.0031000062,
+    "category": "surface_current_density",
+    "popular": false
+  },
+  {
+    "name": "Ampere per square mil",
+    "symbol": "A/mi²",
+    "conversionFactor": 1550003100.0062,
+    "category": "surface_current_density",
+    "popular": false
+  },
+  {
+    "name": "Ampere per circular mil",
+    "symbol": "A/cmil",
+    "conversionFactor": 1973525240.9908,
+    "category": "surface_current_density",
+    "popular": false
+  },
+  {
+    "name": "Abampere per square centimeter",
+    "symbol": "abA/cm²",
+    "conversionFactor": 100000,
+    "category": "surface_current_density",
+    "popular": false
+  }
+]

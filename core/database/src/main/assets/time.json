@@ -1,0 +1,207 @@
+[
+  {
+    "name": "Second",
+    "symbol": "s",
+    "conversionFactor": 1,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Millisecond",
+    "symbol": "ms",
+    "conversionFactor": 0.001,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Microsecond",
+    "symbol": "µs",
+    "conversionFactor": 1e-6,
+    "category": "time"
+  },
+  {
+    "name": "Nanosecond",
+    "symbol": "ns",
+    "conversionFactor": 1e-9,
+    "category": "time"
+  },
+  {
+    "name": "Picosecond",
+    "symbol": "ps",
+    "conversionFactor": 1e-12,
+    "category": "time"
+  },
+  {
+    "name": "Femtosecond",
+    "symbol": "fs",
+    "conversionFactor": 1e-15,
+    "category": "time"
+  },
+  {
+    "name": "Attosecond",
+    "symbol": "as",
+    "conversionFactor": 1e-18,
+    "category": "time"
+  },
+  {
+    "name": "Shake",
+    "symbol": "shake",
+    "conversionFactor": 1e-8,
+    "category": "time"
+  },
+  {
+    "name": "Minute",
+    "symbol": "min",
+    "conversionFactor": 60,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Hour",
+    "symbol": "h",
+    "conversionFactor": 3600,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Day",
+    "symbol": "d",
+    "conversionFactor": 86400,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Week",
+    "symbol": "week",
+    "conversionFactor": 604800,
+    "category": "time"
+  },
+  {
+    "name": "Fortnight",
+    "symbol": "fortnight",
+    "conversionFactor": 1209600,
+    "category": "time"
+  },
+  {
+    "name": "Month",
+    "symbol": "month",
+    "conversionFactor": 2628000,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Month (Synodic)",
+    "symbol": "month (synodic)",
+    "conversionFactor": 2551443.84,
+    "category": "time"
+  },
+  {
+    "name": "Year",
+    "symbol": "y",
+    "conversionFactor": 31557600,
+    "category": "time",
+    "popular": true
+  },
+  {
+    "name": "Year (Julian)",
+    "symbol": "year (Julian)",
+    "conversionFactor": 31557600,
+    "category": "time"
+  },
+  {
+    "name": "Year (Leap)",
+    "symbol": "year (leap)",
+    "conversionFactor": 31622400,
+    "category": "time"
+  },
+  {
+    "name": "Year (Tropical)",
+    "symbol": "year (tropical)",
+    "conversionFactor": 31556930,
+    "category": "time"
+  },
+  {
+    "name": "Year (Sidereal)",
+    "symbol": "year (sidereal)",
+    "conversionFactor": 31558149.54,
+    "category": "time"
+  },
+  {
+    "name": "Decade",
+    "symbol": "decade",
+    "conversionFactor": 315576000,
+    "category": "time"
+  },
+  {
+    "name": "Century",
+    "symbol": "century",
+    "conversionFactor": 3155760000,
+    "category": "time"
+  },
+  {
+    "name": "Millennium",
+    "symbol": "millennium",
+    "conversionFactor": 31557600000,
+    "category": "time"
+  },
+  {
+    "name": "Quinquennial",
+    "symbol": "quinquennial",
+    "conversionFactor": 157680000,
+    "category": "time"
+  },
+  {
+    "name": "Septennial",
+    "symbol": "septennial",
+    "conversionFactor": 220752000,
+    "category": "time"
+  },
+  {
+    "name": "Octennial",
+    "symbol": "octennial",
+    "conversionFactor": 252288000,
+    "category": "time"
+  },
+  {
+    "name": "Novennial",
+    "symbol": "novennial",
+    "conversionFactor": 283824000,
+    "category": "time"
+  },
+  {
+    "name": "Quindecennial",
+    "symbol": "quindecennial",
+    "conversionFactor": 473040000,
+    "category": "time"
+  },
+  {
+    "name": "Day (Sidereal)",
+    "symbol": "day (sidereal)",
+    "conversionFactor": 86164.09,
+    "category": "time"
+  },
+  {
+    "name": "Hour (Sidereal)",
+    "symbol": "hour (sidereal)",
+    "conversionFactor": 3590.1704166667,
+    "category": "time"
+  },
+  {
+    "name": "Minute (Sidereal)",
+    "symbol": "min (sidereal)",
+    "conversionFactor": 59.8361736111,
+    "category": "time"
+  },
+  {
+    "name": "Second (Sidereal)",
+    "symbol": "s (sidereal)",
+    "conversionFactor": 0.9972695602,
+    "category": "time"
+  },
+  {
+    "name": "Planck Time",
+    "symbol": "tₚ",
+    "conversionFactor": 5.39056e-44,
+    "category": "time"
+  }
+]

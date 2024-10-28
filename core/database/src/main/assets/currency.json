@@ -1,0 +1,931 @@
+[
+  {
+    "name": "United States Dollar",
+    "symbol": "USD",
+    "conversionFactor": 1,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Euro",
+    "symbol": "EUR",
+    "conversionFactor": 1.0800605698,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Australian Dollar",
+    "symbol": "AUD",
+    "conversionFactor": 0.6606001552,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Canadian Dollar",
+    "symbol": "CAD",
+    "conversionFactor": 0.7198128487,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Swiss Franc",
+    "symbol": "CHF",
+    "conversionFactor": 1.1535355866,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Chinese Yuan",
+    "symbol": "CNY",
+    "conversionFactor": 0.1404277429,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "British Pound Sterling",
+    "symbol": "GBP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Indian Rupee",
+    "symbol": "INR",
+    "conversionFactor": 0.0118902883,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Japanese Yen",
+    "symbol": "JPY",
+    "conversionFactor": 0.006566635,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Mexican Peso",
+    "symbol": "MXN",
+    "conversionFactor": 0.0500402824,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "United Arab Emirates Dirham",
+    "symbol": "AED",
+    "conversionFactor": 0.2722570106,
+    "category": "currency"
+  },
+  {
+    "name": "Afghan Afghani",
+    "symbol": "AFN",
+    "conversionFactor": 0.0149936147,
+    "category": "currency"
+  },
+  {
+    "name": "Albanian Lek",
+    "symbol": "ALL",
+    "conversionFactor": 0.0109581012,
+    "category": "currency"
+  },
+  {
+    "name": "Armenian Dram",
+    "symbol": "AMD",
+    "conversionFactor": 0.0025785136,
+    "category": "currency"
+  },
+  {
+    "name": "Netherlands Antillean Guilder",
+    "symbol": "ANG",
+    "conversionFactor": 0.5536908478,
+    "category": "currency"
+  },
+  {
+    "name": "Angolan Kwanza",
+    "symbol": "AOA",
+    "conversionFactor": 0.0011000483,
+    "category": "currency"
+  },
+  {
+    "name": "Argentine Peso",
+    "symbol": "ARS",
+    "conversionFactor": 0.0010156667,
+    "category": "currency"
+  },
+  {
+    "name": "Aruban Florin",
+    "symbol": "AWG",
+    "conversionFactor": 0.5555555556,
+    "category": "currency"
+  },
+  {
+    "name": "Azerbaijani Manat",
+    "symbol": "AZN",
+    "conversionFactor": 0.5882352941,
+    "category": "currency"
+  },
+  {
+    "name": "Bosnia-Herzegovina Convertible Mark",
+    "symbol": "BAM",
+    "conversionFactor": 0.5522753468,
+    "category": "currency"
+  },
+  {
+    "name": "Barbadian Dollar",
+    "symbol": "BBD",
+    "conversionFactor": 0.5,
+    "category": "currency"
+  },
+  {
+    "name": "Bangladeshi Taka",
+    "symbol": "BDT",
+    "conversionFactor": 0.0083505222,
+    "category": "currency"
+  },
+  {
+    "name": "Bulgarian Lev",
+    "symbol": "BGN",
+    "conversionFactor": 0.5521853841,
+    "category": "currency"
+  },
+  {
+    "name": "Bahraini Dinar",
+    "symbol": "BHD",
+    "conversionFactor": 2.6541743527,
+    "category": "currency"
+  },
+  {
+    "name": "Burundian Franc",
+    "symbol": "BIF",
+    "conversionFactor": 0.0003436117,
+    "category": "currency"
+  },
+  {
+    "name": "Bermudan Dollar",
+    "symbol": "BMD",
+    "conversionFactor": 1,
+    "category": "currency"
+  },
+  {
+    "name": "Brunei Dollar",
+    "symbol": "BND",
+    "conversionFactor": 0.755606601,
+    "category": "currency"
+  },
+  {
+    "name": "Bolivian Boliviano",
+    "symbol": "BOB",
+    "conversionFactor": 0.1444024137,
+    "category": "currency"
+  },
+  {
+    "name": "Brazilian Real",
+    "symbol": "BRL",
+    "conversionFactor": 0.1752080596,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Bahamian Dollar",
+    "symbol": "BSD",
+    "conversionFactor": 1,
+    "category": "currency"
+  },
+  {
+    "name": "Bitcoin",
+    "symbol": "BTC",
+    "conversionFactor": 67089.919075469,
+    "category": "currency"
+  },
+  {
+    "name": "Bhutanese Ngultrum",
+    "symbol": "BTN",
+    "conversionFactor": 0.0118691081,
+    "category": "currency"
+  },
+  {
+    "name": "Botswanan Pula",
+    "symbol": "BWP",
+    "conversionFactor": 0.0746416993,
+    "category": "currency"
+  },
+  {
+    "name": "Belarusian Ruble",
+    "symbol": "BYN",
+    "conversionFactor": 0.3049262048,
+    "category": "currency"
+  },
+  {
+    "name": "Belize Dollar",
+    "symbol": "BZD",
+    "conversionFactor": 0.4950683764,
+    "category": "currency"
+  },
+  {
+    "name": "Congolese Franc",
+    "symbol": "CDF",
+    "conversionFactor": 0.0003511169,
+    "category": "currency"
+  },
+  {
+    "name": "Chilean Unit of Account (UF)",
+    "symbol": "CLF",
+    "conversionFactor": 29.109539196,
+    "category": "currency"
+  },
+  {
+    "name": "Chilean Peso",
+    "symbol": "CLP",
+    "conversionFactor": 0.0010549636,
+    "category": "currency"
+  },
+  {
+    "name": "Chinese Yuan (Offshore)",
+    "symbol": "CNH",
+    "conversionFactor": 0.1401679212,
+    "category": "currency"
+  },
+  {
+    "name": "Colombian Peso",
+    "symbol": "COP",
+    "conversionFactor": 0.0002308687,
+    "category": "currency"
+  },
+  {
+    "name": "Costa Rican Colón",
+    "symbol": "CRC",
+    "conversionFactor": 0.0019374811,
+    "category": "currency"
+  },
+  {
+    "name": "Cuban Convertible Peso",
+    "symbol": "CUC",
+    "conversionFactor": 1,
+    "category": "currency"
+  },
+  {
+    "name": "Cuban Peso",
+    "symbol": "CUP",
+    "conversionFactor": 0.0388349515,
+    "category": "currency"
+  },
+  {
+    "name": "Cape Verdean Escudo",
+    "symbol": "CVE",
+    "conversionFactor": 0.0097958578,
+    "category": "currency"
+  },
+  {
+    "name": "Czech Republic Koruna",
+    "symbol": "CZK",
+    "conversionFactor": 0.0426803244,
+    "category": "currency"
+  },
+  {
+    "name": "Djiboutian Franc",
+    "symbol": "DJF",
+    "conversionFactor": 0.0056038389,
+    "category": "currency"
+  },
+  {
+    "name": "Danish Krone",
+    "symbol": "DKK",
+    "conversionFactor": 0.1446905792,
+    "category": "currency"
+  },
+  {
+    "name": "Dominican Peso",
+    "symbol": "DOP",
+    "conversionFactor": 0.0165717239,
+    "category": "currency"
+  },
+  {
+    "name": "Algerian Dinar",
+    "symbol": "DZD",
+    "conversionFactor": 0.0074895778,
+    "category": "currency"
+  },
+  {
+    "name": "Egyptian Pound",
+    "symbol": "EGP",
+    "conversionFactor": 0.0205128933,
+    "category": "currency"
+  },
+  {
+    "name": "Eritrean Nakfa",
+    "symbol": "ERN",
+    "conversionFactor": 0.0666666667,
+    "category": "currency"
+  },
+  {
+    "name": "Ethiopian Birr",
+    "symbol": "ETB",
+    "conversionFactor": 0.0082235008,
+    "category": "currency"
+  },
+  {
+    "name": "Fijian Dollar",
+    "symbol": "FJD",
+    "conversionFactor": 0.4447903925,
+    "category": "currency"
+  },
+  {
+    "name": "Falkland Islands Pound",
+    "symbol": "FKP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency"
+  },
+  {
+    "name": "Georgian Lari",
+    "symbol": "GEL",
+    "conversionFactor": 0.3676470588,
+    "category": "currency"
+  },
+  {
+    "name": "Guernsey Pound",
+    "symbol": "GGP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency"
+  },
+  {
+    "name": "Ghanaian Cedi",
+    "symbol": "GHS",
+    "conversionFactor": 0.0620948544,
+    "category": "currency"
+  },
+  {
+    "name": "Gibraltar Pound",
+    "symbol": "GIP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency"
+  },
+  {
+    "name": "Gambian Dalasi",
+    "symbol": "GMD",
+    "conversionFactor": 0.0143884892,
+    "category": "currency"
+  },
+  {
+    "name": "Guinean Franc",
+    "symbol": "GNF",
+    "conversionFactor": 0.0001157086,
+    "category": "currency"
+  },
+  {
+    "name": "Guatemalan Quetzal",
+    "symbol": "GTQ",
+    "conversionFactor": 0.1290027456,
+    "category": "currency"
+  },
+  {
+    "name": "Guyanaese Dollar",
+    "symbol": "GYD",
+    "conversionFactor": 0.0047696718,
+    "category": "currency"
+  },
+  {
+    "name": "Hong Kong Dollar",
+    "symbol": "HKD",
+    "conversionFactor": 0.1286943317,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Honduran Lempira",
+    "symbol": "HNL",
+    "conversionFactor": 0.0395829681,
+    "category": "currency"
+  },
+  {
+    "name": "Croatian Kuna",
+    "symbol": "HRK",
+    "conversionFactor": 0.1432894677,
+    "category": "currency"
+  },
+  {
+    "name": "Haitian Gourde",
+    "symbol": "HTG",
+    "conversionFactor": 0.0075799307,
+    "category": "currency"
+  },
+  {
+    "name": "Hungarian Forint",
+    "symbol": "HUF",
+    "conversionFactor": 0.0026717965,
+    "category": "currency"
+  },
+  {
+    "name": "Indonesian Rupiah",
+    "symbol": "IDR",
+    "conversionFactor": 0.0000637142,
+    "category": "currency"
+  },
+  {
+    "name": "Israeli New Sheqel",
+    "symbol": "ILS",
+    "conversionFactor": 0.263949744,
+    "category": "currency"
+  },
+  {
+    "name": "Manx Pound",
+    "symbol": "IMP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency"
+  },
+  {
+    "name": "Iraqi Dinar",
+    "symbol": "IQD",
+    "conversionFactor": 0.0007617343,
+    "category": "currency"
+  },
+  {
+    "name": "Iranian Rial",
+    "symbol": "IRR",
+    "conversionFactor": 0.0000237501,
+    "category": "currency"
+  },
+  {
+    "name": "Icelandic Króna",
+    "symbol": "ISK",
+    "conversionFactor": 0.0072400811,
+    "category": "currency"
+  },
+  {
+    "name": "Jersey Pound",
+    "symbol": "JEP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency"
+  },
+  {
+    "name": "Jamaican Dollar",
+    "symbol": "JMD",
+    "conversionFactor": 0.0062992926,
+    "category": "currency"
+  },
+  {
+    "name": "Jordanian Dinar",
+    "symbol": "JOD",
+    "conversionFactor": 1.4106361969,
+    "category": "currency"
+  },
+  {
+    "name": "Kenyan Shilling",
+    "symbol": "KES",
+    "conversionFactor": 0.0077357469,
+    "category": "currency"
+  },
+  {
+    "name": "Kyrgystani Som",
+    "symbol": "KGS",
+    "conversionFactor": 0.0116550117,
+    "category": "currency"
+  },
+  {
+    "name": "Cambodian Riel",
+    "symbol": "KHR",
+    "conversionFactor": 0.0002457087,
+    "category": "currency"
+  },
+  {
+    "name": "Comorian Franc",
+    "symbol": "KMF",
+    "conversionFactor": 0.0021980433,
+    "category": "currency"
+  },
+  {
+    "name": "North Korean Won",
+    "symbol": "KPW",
+    "conversionFactor": 0.0011111111,
+    "category": "currency"
+  },
+  {
+    "name": "South Korean Won",
+    "symbol": "KRW",
+    "conversionFactor": 0.0007201187,
+    "category": "currency"
+  },
+  {
+    "name": "Kuwaiti Dinar",
+    "symbol": "KWD",
+    "conversionFactor": 3.2659673142,
+    "category": "currency"
+  },
+  {
+    "name": "Cayman Islands Dollar",
+    "symbol": "KYD",
+    "conversionFactor": 1.1974943628,
+    "category": "currency"
+  },
+  {
+    "name": "Kazakhstani Tenge",
+    "symbol": "KZT",
+    "conversionFactor": 0.0020514717,
+    "category": "currency"
+  },
+  {
+    "name": "Laotian Kip",
+    "symbol": "LAK",
+    "conversionFactor": 0.0000454293,
+    "category": "currency"
+  },
+  {
+    "name": "Lebanese Pound",
+    "symbol": "LBP",
+    "conversionFactor": 0.0000111442,
+    "category": "currency"
+  },
+  {
+    "name": "Sri Lankan Rupee",
+    "symbol": "LKR",
+    "conversionFactor": 0.0033982089,
+    "category": "currency"
+  },
+  {
+    "name": "Liberian Dollar",
+    "symbol": "LRD",
+    "conversionFactor": 0.0051972285,
+    "category": "currency"
+  },
+  {
+    "name": "Lesotho Loti",
+    "symbol": "LSL",
+    "conversionFactor": 0.0565284542,
+    "category": "currency"
+  },
+  {
+    "name": "Libyan Dinar",
+    "symbol": "LYD",
+    "conversionFactor": 0.2071614898,
+    "category": "currency"
+  },
+  {
+    "name": "Moroccan Dirham",
+    "symbol": "MAD",
+    "conversionFactor": 0.1010581802,
+    "category": "currency"
+  },
+  {
+    "name": "Moldovan Leu",
+    "symbol": "MDL",
+    "conversionFactor": 0.0555913533,
+    "category": "currency"
+  },
+  {
+    "name": "Malagasy Ariary",
+    "symbol": "MGA",
+    "conversionFactor": 0.000216548,
+    "category": "currency"
+  },
+  {
+    "name": "Macedonian Denar",
+    "symbol": "MKD",
+    "conversionFactor": 0.0175550481,
+    "category": "currency"
+  },
+  {
+    "name": "Myanma Kyat",
+    "symbol": "MMK",
+    "conversionFactor": 0.0004766444,
+    "category": "currency"
+  },
+  {
+    "name": "Mongolian Tugrik",
+    "symbol": "MNT",
+    "conversionFactor": 0.0002942908,
+    "category": "currency"
+  },
+  {
+    "name": "Macanese Pataca",
+    "symbol": "MOP",
+    "conversionFactor": 0.1246860095,
+    "category": "currency"
+  },
+  {
+    "name": "Mauritanian Ouguiya",
+    "symbol": "MRU",
+    "conversionFactor": 0.0250728875,
+    "category": "currency"
+  },
+  {
+    "name": "Mauritian Rupee",
+    "symbol": "MUR",
+    "conversionFactor": 0.02168727,
+    "category": "currency"
+  },
+  {
+    "name": "Maldivian Rufiyaa",
+    "symbol": "MVR",
+    "conversionFactor": 0.0651041667,
+    "category": "currency"
+  },
+  {
+    "name": "Malawian Kwacha",
+    "symbol": "MWK",
+    "conversionFactor": 0.000575492,
+    "category": "currency"
+  },
+  {
+    "name": "Malaysian Ringgit",
+    "symbol": "MYR",
+    "conversionFactor": 0.2304147465,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Mozambican Metical",
+    "symbol": "MZN",
+    "conversionFactor": 0.0156470051,
+    "category": "currency"
+  },
+  {
+    "name": "Namibian Dollar",
+    "symbol": "NAD",
+    "conversionFactor": 0.0565292339,
+    "category": "currency"
+  },
+  {
+    "name": "Nigerian Naira",
+    "symbol": "NGN",
+    "conversionFactor": 0.0006079027,
+    "category": "currency"
+  },
+  {
+    "name": "Nicaraguan Córdoba",
+    "symbol": "NIO",
+    "conversionFactor": 0.0271187529,
+    "category": "currency"
+  },
+  {
+    "name": "Norwegian Krone",
+    "symbol": "NOK",
+    "conversionFactor": 0.0911311195,
+    "category": "currency"
+  },
+  {
+    "name": "Nepalese Rupee",
+    "symbol": "NPR",
+    "conversionFactor": 0.0074182202,
+    "category": "currency"
+  },
+  {
+    "name": "New Zealand Dollar",
+    "symbol": "NZD",
+    "conversionFactor": 0.5974497261,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Omani Rial",
+    "symbol": "OMR",
+    "conversionFactor": 2.5975712709,
+    "category": "currency"
+  },
+  {
+    "name": "Panamanian Balboa",
+    "symbol": "PAB",
+    "conversionFactor": 1,
+    "category": "currency"
+  },
+  {
+    "name": "Peruvian Nuevo Sol",
+    "symbol": "PEN",
+    "conversionFactor": 0.2657497944,
+    "category": "currency"
+  },
+  {
+    "name": "Papua New Guinean Kina",
+    "symbol": "PGK",
+    "conversionFactor": 0.2493398105,
+    "category": "currency"
+  },
+  {
+    "name": "Philippine Peso",
+    "symbol": "PHP",
+    "conversionFactor": 0.0171294472,
+    "category": "currency"
+  },
+  {
+    "name": "Pakistani Rupee",
+    "symbol": "PKR",
+    "conversionFactor": 0.0035946994,
+    "category": "currency"
+  },
+  {
+    "name": "Polish Zloty",
+    "symbol": "PLN",
+    "conversionFactor": 0.2484348604,
+    "category": "currency"
+  },
+  {
+    "name": "Paraguayan Guarani",
+    "symbol": "PYG",
+    "conversionFactor": 0.0001249483,
+    "category": "currency"
+  },
+  {
+    "name": "Qatari Rial",
+    "symbol": "QAR",
+    "conversionFactor": 0.2736124837,
+    "category": "currency"
+  },
+  {
+    "name": "Romanian Leu",
+    "symbol": "RON",
+    "conversionFactor": 0.2170421496,
+    "category": "currency"
+  },
+  {
+    "name": "Serbian Dinar",
+    "symbol": "RSD",
+    "conversionFactor": 0.0092268855,
+    "category": "currency"
+  },
+  {
+    "name": "Russian Ruble",
+    "symbol": "RUB",
+    "conversionFactor": 0.010289085,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Rwandan Franc",
+    "symbol": "RWF",
+    "conversionFactor": 0.0007378517,
+    "category": "currency"
+  },
+  {
+    "name": "Saudi Riyal",
+    "symbol": "SAR",
+    "conversionFactor": 0.2662491879,
+    "category": "currency"
+  },
+  {
+    "name": "Solomon Islands Dollar",
+    "symbol": "SBD",
+    "conversionFactor": 0.1197453065,
+    "category": "currency"
+  },
+  {
+    "name": "Seychellois Rupee",
+    "symbol": "SCR",
+    "conversionFactor": 0.075679557,
+    "category": "currency"
+  },
+  {
+    "name": "Sudanese Pound",
+    "symbol": "SDG",
+    "conversionFactor": 0.0016625104,
+    "category": "currency"
+  },
+  {
+    "name": "Swedish Krona",
+    "symbol": "SEK",
+    "conversionFactor": 0.0941530929,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Singapore Dollar",
+    "symbol": "SGD",
+    "conversionFactor": 0.7571168988,
+    "category": "currency",
+    "popular": true
+  },
+  {
+    "name": "Saint Helena Pound",
+    "symbol": "SHP",
+    "conversionFactor": 1.2961006811,
+    "category": "currency"
+  },
+  {
+    "name": "Sierra Leonean Leone",
+    "symbol": "SLL",
+    "conversionFactor": 0.0000476883,
+    "category": "currency"
+  },
+  {
+    "name": "Somali Shilling",
+    "symbol": "SOS",
+    "conversionFactor": 0.0017461036,
+    "category": "currency"
+  },
+  {
+    "name": "Surinamese Dollar",
+    "symbol": "SRD",
+    "conversionFactor": 0.029873932,
+    "category": "currency"
+  },
+  {
+    "name": "South Sudanese Pound",
+    "symbol": "SSP",
+    "conversionFactor": 0.0076769538,
+    "category": "currency"
+  },
+  {
+    "name": "São Tomé and Príncipe Dobra (pre-2018)",
+    "symbol": "STD (pre-2018)",
+    "conversionFactor": 0.0000448797,
+    "category": "currency"
+  },
+  {
+    "name": "São Tomé and Príncipe Dobra",
+    "symbol": "STN",
+    "conversionFactor": 0.0440873467,
+    "category": "currency"
+  },
+  {
+    "name": "Salvadoran Colón",
+    "symbol": "SVC",
+    "conversionFactor": 0.1140470887,
+    "category": "currency"
+  },
+  {
+    "name": "Syrian Pound",
+    "symbol": "SYP",
+    "conversionFactor": 0.0003980052,
+    "category": "currency"
+  },
+  {
+    "name": "Swazi Lilangeni",
+    "symbol": "SZL",
+    "conversionFactor": 0.056548871,
+    "category": "currency"
+  },
+  {
+    "name": "Thai Baht",
+    "symbol": "THB",
+    "conversionFactor": 0.0297302871,
+    "category": "currency"
+  },
+  {
+    "name": "Tajikistani Somoni",
+    "symbol": "TJS",
+    "conversionFactor": 0.0937637276,
+    "category": "currency"
+  },
+  {
+    "name": "Turkmenistani Manat",
+    "symbol": "TMT",
+    "conversionFactor": 0.2857142857,
+    "category": "currency"
+  },
+  {
+    "name": "Tunisian Dinar",
+    "symbol": "TND",
+    "conversionFactor": 0.3216712494,
+    "category": "currency"
+  },
+  {
+    "name": "Tongan Pa'anga",
+    "symbol": "TOP",
+    "conversionFactor": 0.4212850035,
+    "category": "currency"
+  },
+  {
+    "name": "Turkish Lira",
+    "symbol": "TRY",
+    "conversionFactor": 0.0291618298,
+    "category": "currency"
+  },
+  {
+    "name": "Trinidad and Tobago Dollar",
+    "symbol": "TTD",
+    "conversionFactor": 0.1468799324,
+    "category": "currency"
+  },
+  {
+    "name": "New Taiwan Dollar",
+    "symbol": "TWD",
+    "conversionFactor": 0.0311732359,
+    "category": "currency"
+  },
+  {
+    "name": "Tanzanian Shilling",
+    "symbol": "TZS",
+    "conversionFactor": 0.0003665852,
+    "category": "currency"
+  },
+  {
+    "name": "Ukrainian Hryvnia",
+    "symbol": "UAH",
+    "conversionFactor": 0.024131436,
+    "category": "currency"
+  },
+  {
+    "name": "Ugandan Shilling",
+    "symbol": "UGX",
+    "conversionFactor": 0.0002720754,
+    "category": "currency"
+  },
+  {
+    "name": "Uruguayan Peso",
+    "symbol": "UYU",
+    "conversionFactor": 0.0240265003,
+    "category": "currency"
+  },
+  {
+    "name": "Uzbekistan Som",
+    "symbol": "UZS",
+    "conversionFactor": 0.0000778643,
+    "category": "currency"
+  }
+]

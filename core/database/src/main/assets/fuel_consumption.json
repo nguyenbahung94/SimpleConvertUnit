@@ -1,0 +1,230 @@
+[
+  {
+    "name": "Meter per Liter",
+    "symbol": "m/L",
+    "conversionFactor": 1,
+    "category": "fuel_consumption",
+    "popular": true
+  },
+  {
+    "name": "Exameter per Liter",
+    "symbol": "Em/L",
+    "conversionFactor": 1e+18,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Petameter per Liter",
+    "symbol": "Pm/L",
+    "conversionFactor": 1e+15,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Terameter per Liter",
+    "symbol": "Tm/L",
+    "conversionFactor": 1e+12,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Gigameter per Liter",
+    "symbol": "Gm/L",
+    "conversionFactor": 1e+9,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Megameter per Liter",
+    "symbol": "Mm/L",
+    "conversionFactor": 1e+6,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Kilometer per Liter",
+    "symbol": "km/L",
+    "conversionFactor": 1000,
+    "category": "fuel_consumption",
+    "popular": true
+  },
+  {
+    "name": "Hectometer per Liter",
+    "symbol": "hm/L",
+    "conversionFactor": 100,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Dekameter per Liter",
+    "symbol": "dam/L",
+    "conversionFactor": 10,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Centimeter per Liter",
+    "symbol": "cm/L",
+    "conversionFactor": 0.01,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Mile per Liter (US)",
+    "symbol": "mi/L",
+    "conversionFactor": 1609.344,
+    "category": "fuel_consumption",
+    "popular": true
+  },
+  {
+    "name": "Nautical Mile per Liter",
+    "symbol": "n.mile/L",
+    "conversionFactor": 1853.24496,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Nautical Mile per Gallon (US)",
+    "symbol": "n.mile/gallon (US)",
+    "conversionFactor": 489.5755247,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Kilometer per Gallon (US)",
+    "symbol": "km/gallon (US)",
+    "conversionFactor": 264.1720524,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Gallon (US)",
+    "symbol": "m/gallon (US)",
+    "conversionFactor": 0.2641720524,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Gallon (UK)",
+    "symbol": "m/gallon (UK)",
+    "conversionFactor": 0.2199687986,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Mile per Gallon (US)",
+    "symbol": "mi/gallon (US)",
+    "conversionFactor": 425.1437075,
+    "category": "fuel_consumption",
+    "popular": true
+  },
+  {
+    "name": "Mile per Gallon (UK)",
+    "symbol": "mi/gallon (UK)",
+    "conversionFactor": 354.00619,
+    "category": "fuel_consumption",
+    "popular": true
+  },
+  {
+    "name": "Liter per Meter",
+    "symbol": "L/m",
+    "conversionFactor": 0.001,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Liter per 100 Kilometers",
+    "symbol": "L/100 km",
+    "conversionFactor": 0.00001,
+    "category": "fuel_consumption",
+    "popular": true
+  },
+  {
+    "name": "Gallon per Mile (US)",
+    "symbol": "gallon (US)/mile",
+    "conversionFactor": 0.00235215,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Gallon per Mile (UK)",
+    "symbol": "gallon (UK)/mile",
+    "conversionFactor": 0.00282855,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Gallon per 100 Mile (US)",
+    "symbol": "gallon (US)/100 mi",
+    "conversionFactor": 0.0000235215,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Gallon per 100 Mile (UK)",
+    "symbol": "gallon (UK)/100 mi",
+    "conversionFactor": 0.0000282855,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cubic Meter",
+    "symbol": "m/m³",
+    "conversionFactor": 0.001,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cubic Centimeter",
+    "symbol": "m/cm³",
+    "conversionFactor": 1000,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cubic Yard",
+    "symbol": "m/yd³",
+    "conversionFactor": 0.0013079506,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cubic Foot",
+    "symbol": "m/ft³",
+    "conversionFactor": 0.0353146667,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cubic Inch",
+    "symbol": "m/in³",
+    "conversionFactor": 61.02374409,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Quart (US)",
+    "symbol": "m/quart (US)",
+    "conversionFactor": 1.056688209,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Quart (UK)",
+    "symbol": "m/quart (UK)",
+    "conversionFactor": 0.8798751948,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Pint (US)",
+    "symbol": "m/pt (US)",
+    "conversionFactor": 2.113376419,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Pint (UK)",
+    "symbol": "m/pt (UK)",
+    "conversionFactor": 1.759750389,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cup (US)",
+    "symbol": "m/cup (US)",
+    "conversionFactor": 4.226752838,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Cup (UK)",
+    "symbol": "m/cup (UK)",
+    "conversionFactor": 3.519500777,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Fluid Ounce (US)",
+    "symbol": "m/fluid ounce (US)",
+    "conversionFactor": 33.8140227,
+    "category": "fuel_consumption"
+  },
+  {
+    "name": "Meter per Fluid Ounce (UK)",
+    "symbol": "m/fluid ounce (UK)",
+    "conversionFactor": 35.19500777,
+    "category": "fuel_consumption"
+  }
+]

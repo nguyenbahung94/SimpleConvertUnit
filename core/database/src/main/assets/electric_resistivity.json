@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Ohm meter",
+    "symbol": "Ω·m",
+    "conversionFactor": 1,
+    "category": "electric_resistivity",
+    "popular": true
+  },
+  {
+    "name": "Ohm centimeter",
+    "symbol": "Ω·cm",
+    "conversionFactor": 0.01,
+    "category": "electric_resistivity",
+    "popular": false
+  },
+  {
+    "name": "Ohm inch",
+    "symbol": "Ω·in",
+    "conversionFactor": 0.0254,
+    "category": "electric_resistivity",
+    "popular": false
+  },
+  {
+    "name": "Microhm centimeter",
+    "symbol": "µΩ·cm",
+    "conversionFactor": 1.0E-8,
+    "category": "electric_resistivity",
+    "popular": false
+  },
+  {
+    "name": "Microhm inch",
+    "symbol": "µΩ·in",
+    "conversionFactor": 2.5400000000102E-8,
+    "category": "electric_resistivity",
+    "popular": false
+  },
+  {
+    "name": "Abohm centimeter",
+    "symbol": "abΩ·cm",
+    "conversionFactor": 1.0E-11,
+    "category": "electric_resistivity",
+    "popular": false
+  },
+  {
+    "name": "Statohm centimeter",
+    "symbol": "stΩ·cm",
+    "conversionFactor": 8987524324.0156,
+    "category": "electric_resistivity",
+    "popular": false
+  },
+  {
+    "name": "Circular mil ohm per foot",
+    "symbol": "cmil·Ω/ft",
+    "conversionFactor": 1.6624261130101E-9,
+    "category": "electric_resistivity",
+    "popular": false
+  }
+]

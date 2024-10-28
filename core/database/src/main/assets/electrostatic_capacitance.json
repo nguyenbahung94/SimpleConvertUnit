@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Farad",
+    "symbol": "F",
+    "conversionFactor": 1,
+    "category": "electrostatic_capacitance",
+    "popular": true
+  },
+  {
+    "name": "Exafarad",
+    "symbol": "EF",
+    "conversionFactor": 1.0E+18,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Petafarad",
+    "symbol": "PF",
+    "conversionFactor": 1.0E+15,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Terafarad",
+    "symbol": "TF",
+    "conversionFactor": 1000000000000,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Gigafarad",
+    "symbol": "GF",
+    "conversionFactor": 1000000000,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Megafarad",
+    "symbol": "MF",
+    "conversionFactor": 1000000,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Kilofarad",
+    "symbol": "kF",
+    "conversionFactor": 1000,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Hectofarad",
+    "symbol": "hF",
+    "conversionFactor": 100,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Dekafarad",
+    "symbol": "daF",
+    "conversionFactor": 10,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Decifarad",
+    "symbol": "dF",
+    "conversionFactor": 0.1,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Centifarad",
+    "symbol": "cF",
+    "conversionFactor": 0.01,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Millifarad",
+    "symbol": "mF",
+    "conversionFactor": 0.001,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Microfarad",
+    "symbol": "µF",
+    "conversionFactor": 1.0E-6,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Nanofarad",
+    "symbol": "nF",
+    "conversionFactor": 1.0E-9,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Picofarad",
+    "symbol": "pF",
+    "conversionFactor": 1.0E-12,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Femtofarad",
+    "symbol": "fF",
+    "conversionFactor": 1.0E-15,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Attofarad",
+    "symbol": "aF",
+    "conversionFactor": 1.0E-18,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Coulomb per volt",
+    "symbol": "C/V",
+    "conversionFactor": 1,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Abfarad",
+    "symbol": "abF",
+    "conversionFactor": 1000000000,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "EMU of capacitance",
+    "symbol": "EMU",
+    "conversionFactor": 1000000000,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "Statfarad",
+    "symbol": "stF",
+    "conversionFactor": 1.112650056054E-12,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  },
+  {
+    "name": "ESU of capacitance",
+    "symbol": "ESU",
+    "conversionFactor": 1.112650056054E-12,
+    "category": "electrostatic_capacitance",
+    "popular": false
+  }
+]

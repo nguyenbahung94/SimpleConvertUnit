@@ -1,0 +1,408 @@
+[
+  {
+    "name": "Cubic meter per second",
+    "symbol": "m³/s",
+    "conversionFactor": 1,
+    "category": "flow",
+    "popular": true
+  },
+  {
+    "name": "Cubic meter per day",
+    "symbol": "m³/d",
+    "conversionFactor": 1.15741E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic meter per hour",
+    "symbol": "m³/h",
+    "conversionFactor": 0.0002777778,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic meter per minute",
+    "symbol": "m³/min",
+    "conversionFactor": 0.0166666667,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic centimeter per day",
+    "symbol": "cm³/d",
+    "conversionFactor": 1.1574074074074E-11,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic centimeter per hour",
+    "symbol": "cm³/h",
+    "conversionFactor": 2.7777777777778E-10,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic centimeter per minute",
+    "symbol": "cm³/min",
+    "conversionFactor": 1.6666666666667E-8,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic centimeter per second",
+    "symbol": "cm³/s",
+    "conversionFactor": 1.0E-6,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Liter per day",
+    "symbol": "L/d",
+    "conversionFactor": 1.1574074074074E-8,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Liter per hour",
+    "symbol": "L/h",
+    "conversionFactor": 2.7777777777778E-7,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Liter per minute",
+    "symbol": "L/min",
+    "conversionFactor": 1.66667E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Liter per second",
+    "symbol": "L/s",
+    "conversionFactor": 0.001,
+    "category": "flow",
+    "popular": true
+  },
+  {
+    "name": "Milliliter per day",
+    "symbol": "mL/d",
+    "conversionFactor": 1.1574074074074E-11,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Milliliter per hour",
+    "symbol": "mL/h",
+    "conversionFactor": 2.7777777777778E-10,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Milliliter per minute",
+    "symbol": "mL/min",
+    "conversionFactor": 1.6666666666667E-8,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Milliliter per second",
+    "symbol": "mL/s",
+    "conversionFactor": 1.0E-6,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (US) per day",
+    "symbol": "gal_US/d",
+    "conversionFactor": 4.3812636388889E-8,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (US) per hour",
+    "symbol": "gal_US/h",
+    "conversionFactor": 1.0515032733333E-6,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (US) per minute",
+    "symbol": "gal_US/min",
+    "conversionFactor": 6.30902E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (US) per second",
+    "symbol": "gal_US/s",
+    "conversionFactor": 0.0037854118,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (UK) per day",
+    "symbol": "gal_UK/d",
+    "conversionFactor": 5.2616782407407E-8,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (UK) per hour",
+    "symbol": "gal_UK/h",
+    "conversionFactor": 1.2628027777778E-6,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (UK) per minute",
+    "symbol": "gal_UK/min",
+    "conversionFactor": 7.57682E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Gallon (UK) per second",
+    "symbol": "gal_UK/s",
+    "conversionFactor": 0.00454609,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Kilobarrel (US) per day",
+    "symbol": "kbbl_US/d",
+    "conversionFactor": 0.0018401307,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Barrel (US) per day",
+    "symbol": "bbl_US/d",
+    "conversionFactor": 1.8401307283333E-6,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Barrel (US) per hour",
+    "symbol": "bbl_US/h",
+    "conversionFactor": 4.41631E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Barrel (US) per minute",
+    "symbol": "bbl_US/min",
+    "conversionFactor": 0.0026497882,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Barrel (US) per second",
+    "symbol": "bbl_US/s",
+    "conversionFactor": 0.1589872949,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Acre-foot per year",
+    "symbol": "ac·ft/y",
+    "conversionFactor": 3.91136E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Acre-foot per day",
+    "symbol": "ac·ft/d",
+    "conversionFactor": 0.0142764673,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Acre-foot per hour",
+    "symbol": "ac·ft/h",
+    "conversionFactor": 0.3426352143,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Hundred-cubic foot per day",
+    "symbol": "hcf/d",
+    "conversionFactor": 3.27741E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Hundred-cubic foot per hour",
+    "symbol": "hcf/h",
+    "conversionFactor": 0.0007865791,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Hundred-cubic foot per minute",
+    "symbol": "hcf/min",
+    "conversionFactor": 0.0471947443,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Ounce per hour",
+    "symbol": "oz/h",
+    "conversionFactor": 8.2148693229167E-9,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Ounce per minute",
+    "symbol": "oz/min",
+    "conversionFactor": 4.92892159375E-7,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Ounce per second",
+    "symbol": "oz/s",
+    "conversionFactor": 2.95735E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Ounce (UK) per hour",
+    "symbol": "oz_UK/h",
+    "conversionFactor": 7.8925178504774E-9,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Ounce (UK) per minute",
+    "symbol": "oz_UK/min",
+    "conversionFactor": 4.7355107102865E-7,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Ounce (UK) per second",
+    "symbol": "oz_UK/s",
+    "conversionFactor": 2.84131E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic yard per hour",
+    "symbol": "yd³/h",
+    "conversionFactor": 0.0002123763,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic yard per minute",
+    "symbol": "yd³/min",
+    "conversionFactor": 0.012742581,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic yard per second",
+    "symbol": "yd³/s",
+    "conversionFactor": 0.764554858,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic foot per hour",
+    "symbol": "ft³/h",
+    "conversionFactor": 7.86579072E-6,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic foot per minute",
+    "symbol": "ft³/min",
+    "conversionFactor": 0.0004719474,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic foot per second",
+    "symbol": "ft³/s",
+    "conversionFactor": 0.0283168466,
+    "category": "flow",
+    "popular": true
+  },
+  {
+    "name": "Cubic inch per hour",
+    "symbol": "in³/h",
+    "conversionFactor": 4.5519622224454E-9,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic inch per minute",
+    "symbol": "in³/min",
+    "conversionFactor": 2.7311773333333E-7,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Cubic inch per second",
+    "symbol": "in³/s",
+    "conversionFactor": 1.63871E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Pound per second (Gasoline at 15.5°C)",
+    "symbol": "lb/s (Gasoline)",
+    "conversionFactor": 0.0006135189,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Pound per minute (Gasoline at 15.5°C)",
+    "symbol": "lb/min (Gasoline)",
+    "conversionFactor": 1.02253E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Pound per hour (Gasoline at 15.5°C)",
+    "symbol": "lb/h (Gasoline)",
+    "conversionFactor": 1.704219244213E-7,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Pound per day (Gasoline at 15.5°C)",
+    "symbol": "lb/d (Gasoline)",
+    "conversionFactor": 7.1009135150463E-9,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per second (Gasoline at 15.5°C)",
+    "symbol": "kg/s (Gasoline)",
+    "conversionFactor": 0.0013525777,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per minute (Gasoline at 15.5°C)",
+    "symbol": "kg/min (Gasoline)",
+    "conversionFactor": 2.2543E-5,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per hour (Gasoline at 15.5°C)",
+    "symbol": "kg/h (Gasoline)",
+    "conversionFactor": 3.7571602974537E-7,
+    "category": "flow",
+    "popular": false
+  },
+  {
+    "name": "Kilogram per day (Gasoline at 15.5°C)",
+    "symbol": "kg/d (Gasoline)",
+    "conversionFactor": 1.5654834571759E-8,
+    "category": "flow",
+    "popular": false
+  }
+]

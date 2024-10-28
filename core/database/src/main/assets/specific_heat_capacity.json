@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Joule per kilogram per Kelvin",
+    "symbol": "J/(kg·K)",
+    "conversionFactor": 1,
+    "category": "specific_heat_capacity",
+    "popular": true
+  },
+  {
+    "name": "Joule per kilogram per Celsius",
+    "symbol": "J/(kg·°C)",
+    "conversionFactor": 1,
+    "category": "specific_heat_capacity",
+    "popular": true
+  },
+  {
+    "name": "Joule per gram per Celsius",
+    "symbol": "J/(g·°C)",
+    "conversionFactor": 1000,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Kilojoule per kilogram per Kelvin",
+    "symbol": "kJ/(kg·K)",
+    "conversionFactor": 1000,
+    "category": "specific_heat_capacity",
+    "popular": true
+  },
+  {
+    "name": "Kilojoule per kilogram per Celsius",
+    "symbol": "kJ/(kg·°C)",
+    "conversionFactor": 1000,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per gram per Celsius",
+    "symbol": "cal_IT/(g·°C)",
+    "conversionFactor": 4186.8000000087,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Calorie (IT) per gram per Fahrenheit",
+    "symbol": "cal_IT/(g·°F)",
+    "conversionFactor": 4186.8000000087,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Calorie (th) per gram per Celsius",
+    "symbol": "cal_th/(g·°C)",
+    "conversionFactor": 4184,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per kilogram per Celsius",
+    "symbol": "kcal_IT/(kg·°C)",
+    "conversionFactor": 4186.8000000087,
+    "category": "specific_heat_capacity",
+    "popular": true
+  },
+  {
+    "name": "Kilocalorie (th) per kilogram per Celsius",
+    "symbol": "kcal_th/(kg·°C)",
+    "conversionFactor": 4184,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Kilocalorie (IT) per kilogram per Kelvin",
+    "symbol": "kcal_IT/(kg·K)",
+    "conversionFactor": 4186.8000000087,
+    "category": "specific_heat_capacity",
+    "popular": true
+  },
+  {
+    "name": "Kilocalorie (th) per kilogram per Kelvin",
+    "symbol": "kcal_th/(kg·K)",
+    "conversionFactor": 4184,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Kilogram-force meter per kilogram per Kelvin",
+    "symbol": "kgf·m/(kg·K)",
+    "conversionFactor": 9.80665,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "Pound-force foot per pound per Rankine",
+    "symbol": "lbf·ft/(lb·°R)",
+    "conversionFactor": 5.380320456,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per pound per Fahrenheit",
+    "symbol": "BTU_IT/(lb·°F)",
+    "conversionFactor": 4186.8000000087,
+    "category": "specific_heat_capacity",
+    "popular": true
+  },
+  {
+    "name": "BTU (th) per pound per Fahrenheit",
+    "symbol": "BTU_th/(lb·°F)",
+    "conversionFactor": 4184,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per pound per Rankine",
+    "symbol": "BTU_IT/(lb·°R)",
+    "conversionFactor": 4186.8000000087,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "BTU (th) per pound per Rankine",
+    "symbol": "BTU_th/(lb·°R)",
+    "conversionFactor": 4184,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "BTU (IT) per pound per Celsius",
+    "symbol": "BTU_IT/(lb·°C)",
+    "conversionFactor": 2326.0000001596,
+    "category": "specific_heat_capacity",
+    "popular": false
+  },
+  {
+    "name": "CHU per pound per Celsius",
+    "symbol": "CHU/(lb·°C)",
+    "conversionFactor": 4186.800000482,
+    "category": "specific_heat_capacity",
+    "popular": false
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Length per Kelvin",
+    "symbol": "1/K",
+    "conversionFactor": 1,
+    "category": "thermal_expansion",
+    "popular": true
+  },
+  {
+    "name": "Length per Degree Celsius",
+    "symbol": "1/°C",
+    "conversionFactor": 1,
+    "category": "thermal_expansion",
+    "popular": true
+  },
+  {
+    "name": "Length per Degree Fahrenheit",
+    "symbol": "1/°F",
+    "conversionFactor": 1.8,
+    "category": "thermal_expansion",
+    "popular": false
+  },
+  {
+    "name": "Length per Degree Rankine",
+    "symbol": "1/°R",
+    "conversionFactor": 1.8,
+    "category": "thermal_expansion",
+    "popular": false
+  },
+  {
+    "name": "Length per Degree Reaumur",
+    "symbol": "1/°Re",
+    "conversionFactor": 0.8,
+    "category": "thermal_expansion",
+    "popular": false
+  }
+]

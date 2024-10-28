@@ -1,0 +1,203 @@
+[
+  {
+    "name": "Newton",
+    "symbol": "N",
+    "conversionFactor": 1,
+    "category": "force",
+    "popular": true
+  },
+  {
+    "name": "Kilonewton",
+    "symbol": "kN",
+    "conversionFactor": 1000,
+    "category": "force"
+  },
+  {
+    "name": "Gram-force",
+    "symbol": "gf",
+    "conversionFactor": 0.00980665,
+    "category": "force"
+  },
+  {
+    "name": "Kilogram-force",
+    "symbol": "kgf",
+    "conversionFactor": 9.80665,
+    "category": "force",
+    "popular": true
+  },
+  {
+    "name": "Ton-force (metric)",
+    "symbol": "tf",
+    "conversionFactor": 9806.65,
+    "category": "force"
+  },
+  {
+    "name": "Exanewton",
+    "symbol": "EN",
+    "conversionFactor": 1e+18,
+    "category": "force"
+  },
+  {
+    "name": "Petanewton",
+    "symbol": "PT",
+    "conversionFactor": 1e+15,
+    "category": "force"
+  },
+  {
+    "name": "Teranewton",
+    "symbol": "TN",
+    "conversionFactor": 1e+12,
+    "category": "force"
+  },
+  {
+    "name": "Giganewton",
+    "symbol": "GN",
+    "conversionFactor": 1e+9,
+    "category": "force"
+  },
+  {
+    "name": "Meganewton",
+    "symbol": "MN",
+    "conversionFactor": 1e+6,
+    "category": "force"
+  },
+  {
+    "name": "Hectonewton",
+    "symbol": "hN",
+    "conversionFactor": 100,
+    "category": "force"
+  },
+  {
+    "name": "Dekanewton",
+    "symbol": "daN",
+    "conversionFactor": 10,
+    "category": "force"
+  },
+  {
+    "name": "Decinewton",
+    "symbol": "dN",
+    "conversionFactor": 0.1,
+    "category": "force"
+  },
+  {
+    "name": "Centinewton",
+    "symbol": "cN",
+    "conversionFactor": 0.01,
+    "category": "force"
+  },
+  {
+    "name": "Millinewton",
+    "symbol": "mN",
+    "conversionFactor": 0.001,
+    "category": "force"
+  },
+  {
+    "name": "Micronewton",
+    "symbol": "µN",
+    "conversionFactor": 1e-6,
+    "category": "force"
+  },
+  {
+    "name": "Nanonewton",
+    "symbol": "nN",
+    "conversionFactor": 1e-9,
+    "category": "force"
+  },
+  {
+    "name": "Piconewton",
+    "symbol": "pN",
+    "conversionFactor": 1e-12,
+    "category": "force"
+  },
+  {
+    "name": "Femtonewton",
+    "symbol": "fN",
+    "conversionFactor": 1e-15,
+    "category": "force"
+  },
+  {
+    "name": "Attonewton",
+    "symbol": "aN",
+    "conversionFactor": 1e-18,
+    "category": "force"
+  },
+  {
+    "name": "Dyne",
+    "symbol": "dyn",
+    "conversionFactor": 1e-5,
+    "category": "force"
+  },
+  {
+    "name": "Joule per Meter",
+    "symbol": "J/m",
+    "conversionFactor": 1,
+    "category": "force"
+  },
+  {
+    "name": "Joule per Centimeter",
+    "symbol": "J/cm",
+    "conversionFactor": 0.01,
+    "category": "force"
+  },
+  {
+    "name": "Ton-force (short)",
+    "symbol": "tonf (short)",
+    "conversionFactor": 8896.443230521,
+    "category": "force"
+  },
+  {
+    "name": "Ton-force (long)",
+    "symbol": "tonf (long)",
+    "conversionFactor": 9964.0164181707,
+    "category": "force"
+  },
+  {
+    "name": "Kip-force",
+    "symbol": "kipf",
+    "conversionFactor": 4448.2216152548,
+    "category": "force"
+  },
+  {
+    "name": "Kilopound-force",
+    "symbol": "kipf",
+    "conversionFactor": 4448.2216152548,
+    "category": "force"
+  },
+  {
+    "name": "Pound-force",
+    "symbol": "lbf",
+    "conversionFactor": 4.4482216153,
+    "category": "force",
+    "popular": true
+  },
+  {
+    "name": "Ounce-force",
+    "symbol": "ozf",
+    "conversionFactor": 0.278013851,
+    "category": "force"
+  },
+  {
+    "name": "Poundal",
+    "symbol": "pdl",
+    "conversionFactor": 0.1382549544,
+    "category": "force"
+  },
+  {
+    "name": "Pound Foot per Square Second",
+    "symbol": "lb·ft/s²",
+    "conversionFactor": 0.1382549544,
+    "category": "force"
+  },
+  {
+    "name": "Pond",
+    "symbol": "p",
+    "conversionFactor": 0.00980665,
+    "category": "force"
+  },
+  {
+    "name": "Kilopond",
+    "symbol": "kp",
+    "conversionFactor": 9.80665,
+    "category": "force"
+  }
+]

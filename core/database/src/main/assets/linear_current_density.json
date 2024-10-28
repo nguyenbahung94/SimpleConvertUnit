@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Ampere per meter",
+    "symbol": "A/m",
+    "conversionFactor": 1,
+    "category": "linear_current_density",
+    "popular": true
+  },
+  {
+    "name": "Ampere per centimeter",
+    "symbol": "A/cm",
+    "conversionFactor": 100,
+    "category": "linear_current_density",
+    "popular": false
+  },
+  {
+    "name": "Ampere per inch",
+    "symbol": "A/in",
+    "conversionFactor": 39.3700787402,
+    "category": "linear_current_density",
+    "popular": false
+  },
+  {
+    "name": "Abampere per meter",
+    "symbol": "abA/m",
+    "conversionFactor": 10,
+    "category": "linear_current_density",
+    "popular": false
+  },
+  {
+    "name": "Abampere per centimeter",
+    "symbol": "abA/cm",
+    "conversionFactor": 1000,
+    "category": "linear_current_density",
+    "popular": false
+  },
+  {
+    "name": "Abampere per inch",
+    "symbol": "abA/in",
+    "conversionFactor": 393.7007874016,
+    "category": "linear_current_density",
+    "popular": false
+  },
+  {
+    "name": "Oersted",
+    "symbol": "Oe",
+    "conversionFactor": 79.5774715102,
+    "category": "linear_current_density",
+    "popular": false
+  },
+  {
+    "name": "Gilbert per centimeter",
+    "symbol": "Gi/cm",
+    "conversionFactor": 79.5774715102,
+    "category": "linear_current_density",
+    "popular": false
+  }
+]

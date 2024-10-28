@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Volt per meter",
+    "symbol": "V/m",
+    "conversionFactor": 1,
+    "category": "electric_field_strength",
+    "popular": true
+  },
+  {
+    "name": "Kilovolt per meter",
+    "symbol": "kV/m",
+    "conversionFactor": 1000,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Kilovolt per centimeter",
+    "symbol": "kV/cm",
+    "conversionFactor": 100000,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Volt per centimeter",
+    "symbol": "V/cm",
+    "conversionFactor": 100,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Millivolt per meter",
+    "symbol": "mV/m",
+    "conversionFactor": 0.001,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Microvolt per meter",
+    "symbol": "µV/m",
+    "conversionFactor": 1.0E-6,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Kilovolt per inch",
+    "symbol": "kV/in",
+    "conversionFactor": 39370.078740157,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Volt per inch",
+    "symbol": "V/in",
+    "conversionFactor": 39.3700787402,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Volt per mil",
+    "symbol": "V/mil",
+    "conversionFactor": 39370.078740157,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Abvolt per centimeter",
+    "symbol": "abV/cm",
+    "conversionFactor": 1.0E-6,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Statvolt per centimeter",
+    "symbol": "stV/cm",
+    "conversionFactor": 29979.19999934,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Statvolt per inch",
+    "symbol": "stV/in",
+    "conversionFactor": 11802.834645298,
+    "category": "electric_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Newton per coulomb",
+    "symbol": "N/C",
+    "conversionFactor": 1,
+    "category": "electric_field_strength",
+    "popular": false
+  }
+]

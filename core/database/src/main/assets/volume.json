@@ -1,0 +1,302 @@
+{
+  "units": [
+    {
+      "name": "Cubic meter",
+      "symbol": "m^3",
+      "conversionFactor": 1,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cubic kilometer",
+      "symbol": "km^3",
+      "conversionFactor": 1000000000,
+      "category": "Volume"
+    },
+    {
+      "name": "Cubic centimeter",
+      "symbol": "cm^3",
+      "conversionFactor": 1.0E-6,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cubic millimeter",
+      "symbol": "mm^3",
+      "conversionFactor": 1.0E-9,
+      "category": "Volume"
+    },
+    {
+      "name": "Liter",
+      "symbol": "L",
+      "conversionFactor": 0.001,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Milliliter",
+      "symbol": "mL",
+      "conversionFactor": 1.0E-6,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Gallon (US)",
+      "symbol": "gal (US)",
+      "conversionFactor": 0.0037854118,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Quart (US)",
+      "symbol": "qt (US)",
+      "conversionFactor": 0.0009463529,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Pint (US)",
+      "symbol": "pt (US)",
+      "conversionFactor": 0.0004731765,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cup (US)",
+      "symbol": "cup (US)",
+      "conversionFactor": 0.0002365882,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Tablespoon (US)",
+      "symbol": "tbsp (US)",
+      "conversionFactor": 1.47868E-5,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Teaspoon (US)",
+      "symbol": "tsp (US)",
+      "conversionFactor": 4.92892159375E-6,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cubic mile",
+      "symbol": "mi^3",
+      "conversionFactor": 4168181825.4406,
+      "category": "Volume"
+    },
+    {
+      "name": "Cubic yard",
+      "symbol": "yd^3",
+      "conversionFactor": 0.764554858,
+      "category": "Volume"
+    },
+    {
+      "name": "Cubic foot",
+      "symbol": "ft^3",
+      "conversionFactor": 0.0283168466,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cubic inch",
+      "symbol": "in^3",
+      "conversionFactor": 1.63871E-5,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cubic decimeter",
+      "symbol": "dm^3",
+      "conversionFactor": 0.001,
+      "category": "Volume"
+    },
+    {
+      "name": "Exaliter",
+      "symbol": "EL",
+      "conversionFactor": 1.0E+15,
+      "category": "Volume"
+    },
+    {
+      "name": "Petaliter",
+      "symbol": "PL",
+      "conversionFactor": 1000000000000,
+      "category": "Volume"
+    },
+    {
+      "name": "Teraliter",
+      "symbol": "TL",
+      "conversionFactor": 1000000000,
+      "category": "Volume"
+    },
+    {
+      "name": "Gigaliter",
+      "symbol": "GL",
+      "conversionFactor": 1000000,
+      "category": "Volume"
+    },
+    {
+      "name": "Megaliter",
+      "symbol": "ML",
+      "conversionFactor": 1000,
+      "category": "Volume"
+    },
+    {
+      "name": "Kiloliter",
+      "symbol": "kL",
+      "conversionFactor": 1,
+      "category": "Volume"
+    },
+    {
+      "name": "Hectoliter",
+      "symbol": "hL",
+      "conversionFactor": 0.1,
+      "category": "Volume"
+    },
+    {
+      "name": "Dekaliter",
+      "symbol": "daL",
+      "conversionFactor": 0.01,
+      "category": "Volume"
+    },
+    {
+      "name": "Deciliter",
+      "symbol": "dL",
+      "conversionFactor": 0.0001,
+      "category": "Volume"
+    },
+    {
+      "name": "Centiliter",
+      "symbol": "cL",
+      "conversionFactor": 1.0E-5,
+      "category": "Volume"
+    },
+    {
+      "name": "Microliter",
+      "symbol": "µL",
+      "conversionFactor": 1.0E-9,
+      "category": "Volume"
+    },
+    {
+      "name": "Nanoliter",
+      "symbol": "nL",
+      "conversionFactor": 1.0E-12,
+      "category": "Volume"
+    },
+    {
+      "name": "Picoliter",
+      "symbol": "pL",
+      "conversionFactor": 1.0E-15,
+      "category": "Volume"
+    },
+    {
+      "name": "Fluid ounce (US)",
+      "symbol": "fl oz (US)",
+      "conversionFactor": 2.95735E-5,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Fluid ounce (UK)",
+      "symbol": "fl oz (UK)",
+      "conversionFactor": 2.84131E-5,
+      "category": "Volume"
+    },
+    {
+      "name": "Gill (US)",
+      "symbol": "gi (US)",
+      "conversionFactor": 0.0001182941,
+      "category": "Volume"
+    },
+    {
+      "name": "Gill (UK)",
+      "symbol": "gi (UK)",
+      "conversionFactor": 0.0001420653,
+      "category": "Volume"
+    },
+    {
+      "name": "Minim (US)",
+      "symbol": "minim (US)",
+      "conversionFactor": 6.1611519921875E-8,
+      "category": "Volume"
+    },
+    {
+      "name": "Minim (UK)",
+      "symbol": "minim (UK)",
+      "conversionFactor": 5.9193880208333E-8,
+      "category": "Volume"
+    },
+    {
+      "name": "Ton register",
+      "symbol": "ton reg",
+      "conversionFactor": 2.8316846592,
+      "category": "Volume"
+    },
+    {
+      "name": "CC",
+      "symbol": "cc",
+      "conversionFactor": 1.0E-6,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Drop",
+      "symbol": "drop",
+      "conversionFactor": 5.0E-8,
+      "category": "Volume"
+    },
+    {
+      "name": "Barrel (oil)",
+      "symbol": "bbl (oil)",
+      "conversionFactor": 0.1589872949,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Barrel (US)",
+      "symbol": "bbl (US)",
+      "conversionFactor": 0.1192404712,
+      "category": "Volume"
+    },
+    {
+      "name": "Barrel (UK)",
+      "symbol": "bbl (UK)",
+      "conversionFactor": 0.16365924,
+      "category": "Volume"
+    },
+    {
+      "name": "Gallon (UK)",
+      "symbol": "gal (UK)",
+      "conversionFactor": 0.00454609,
+      "category": "Volume"
+    },
+    {
+      "name": "Quart (UK)",
+      "symbol": "qt (UK)",
+      "conversionFactor": 0.0011365225,
+      "category": "Volume"
+    },
+    {
+      "name": "Pint (UK)",
+      "symbol": "pt (UK)",
+      "conversionFactor": 0.0005682613,
+      "category": "Volume"
+    },
+    {
+      "name": "Cup (metric)",
+      "symbol": "cup (metric)",
+      "conversionFactor": 0.00025,
+      "category": "Volume",
+      "popular": true
+    },
+    {
+      "name": "Cup (UK)",
+      "symbol": "cup (UK)",
+      "conversionFactor": 0.0002841306,
+      "category": "Volume"
+    }
+  ]
+}

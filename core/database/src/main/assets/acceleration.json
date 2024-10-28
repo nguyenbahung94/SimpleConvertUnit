@@ -1,0 +1,120 @@
+[
+  {
+    "name": "Meter per Square Second",
+    "symbol": "m/s²",
+    "conversionFactor": 1,
+    "category": "acceleration",
+    "popular": true
+  },
+  {
+    "name": "Decimeter per Square Second",
+    "symbol": "dm/s²",
+    "conversionFactor": 0.1,
+    "category": "acceleration"
+  },
+  {
+    "name": "Kilometer per Square Second",
+    "symbol": "km/s²",
+    "conversionFactor": 1000,
+    "category": "acceleration"
+  },
+  {
+    "name": "Hectometer per Square Second",
+    "symbol": "hm/s²",
+    "conversionFactor": 100,
+    "category": "acceleration"
+  },
+  {
+    "name": "Dekameter per Square Second",
+    "symbol": "dam/s²",
+    "conversionFactor": 10,
+    "category": "acceleration"
+  },
+  {
+    "name": "Centimeter per Square Second",
+    "symbol": "cm/s²",
+    "conversionFactor": 0.01,
+    "category": "acceleration"
+  },
+  {
+    "name": "Millimeter per Square Second",
+    "symbol": "mm/s²",
+    "conversionFactor": 0.001,
+    "category": "acceleration"
+  },
+  {
+    "name": "Micrometer per Square Second",
+    "symbol": "µm/s²",
+    "conversionFactor": 1e-6,
+    "category": "acceleration"
+  },
+  {
+    "name": "Nanometer per Square Second",
+    "symbol": "nm/s²",
+    "conversionFactor": 1e-9,
+    "category": "acceleration"
+  },
+  {
+    "name": "Picometer per Square Second",
+    "symbol": "pm/s²",
+    "conversionFactor": 1e-12,
+    "category": "acceleration"
+  },
+  {
+    "name": "Femtometer per Square Second",
+    "symbol": "fm/s²",
+    "conversionFactor": 1e-15,
+    "category": "acceleration"
+  },
+  {
+    "name": "Attometer per Square Second",
+    "symbol": "am/s²",
+    "conversionFactor": 1e-18,
+    "category": "acceleration"
+  },
+  {
+    "name": "Gal",
+    "symbol": "Gal",
+    "conversionFactor": 0.01,
+    "category": "acceleration",
+    "popular": true
+  },
+  {
+    "name": "Galileo",
+    "symbol": "Gal",
+    "conversionFactor": 0.01,
+    "category": "acceleration"
+  },
+  {
+    "name": "Mile per Square Second",
+    "symbol": "mi/s²",
+    "conversionFactor": 1609.344,
+    "category": "acceleration"
+  },
+  {
+    "name": "Yard per Square Second",
+    "symbol": "yd/s²",
+    "conversionFactor": 0.9144,
+    "category": "acceleration"
+  },
+  {
+    "name": "Foot per Square Second",
+    "symbol": "ft/s²",
+    "conversionFactor": 0.3048,
+    "category": "acceleration",
+    "popular": true
+  },
+  {
+    "name": "Inch per Square Second",
+    "symbol": "in/s²",
+    "conversionFactor": 0.0254,
+    "category": "acceleration"
+  },
+  {
+    "name": "Acceleration of Gravity",
+    "symbol": "g",
+    "conversionFactor": 9.80665,
+    "category": "acceleration",
+    "popular": true
+  }
+]
