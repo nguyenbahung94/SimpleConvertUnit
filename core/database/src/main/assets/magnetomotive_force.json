@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Ampere Turn",
+    "symbol": "At",
+    "conversionFactor": 1,
+    "category": "magnetomotive_force",
+    "popular": true
+  },
+  {
+    "name": "Kiloampere Turn",
+    "symbol": "kAt",
+    "conversionFactor": 1000,
+    "category": "magnetomotive_force",
+    "popular": false
+  },
+  {
+    "name": "Milliampere Turn",
+    "symbol": "mAt",
+    "conversionFactor": 0.001,
+    "category": "magnetomotive_force",
+    "popular": false
+  },
+  {
+    "name": "Abampere Turn",
+    "symbol": "abAt",
+    "conversionFactor": 10,
+    "category": "magnetomotive_force",
+    "popular": false
+  },
+  {
+    "name": "Gilbert",
+    "symbol": "Gi",
+    "conversionFactor": 0.7957747151,
+    "category": "magnetomotive_force",
+    "popular": false
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Weber",
+    "symbol": "Wb",
+    "conversionFactor": 1,
+    "category": "magnetic_flux",
+    "popular": true
+  },
+  {
+    "name": "Milliweber",
+    "symbol": "mWb",
+    "conversionFactor": 0.001,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Microweber",
+    "symbol": "µWb",
+    "conversionFactor": 1.0E-6,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Volt Second",
+    "symbol": "V*s",
+    "conversionFactor": 1,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Unit Pole",
+    "symbol": "unit_pole",
+    "conversionFactor": 1.256637061436E-7,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Megaline",
+    "symbol": "megaline",
+    "conversionFactor": 0.01,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Kiloline",
+    "symbol": "kiloline",
+    "conversionFactor": 1.0E-5,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Line",
+    "symbol": "line",
+    "conversionFactor": 1.0E-8,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Maxwell",
+    "symbol": "Mx",
+    "conversionFactor": 1.0E-8,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Tesla Square Meter",
+    "symbol": "T*m^2",
+    "conversionFactor": 1,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Tesla Square Centimeter",
+    "symbol": "T*cm^2",
+    "conversionFactor": 0.0001,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Gauss Square Centimeter",
+    "symbol": "G*cm^2",
+    "conversionFactor": 1.0E-8,
+    "category": "magnetic_flux",
+    "popular": false
+  },
+  {
+    "name": "Magnetic Flux Quantum",
+    "symbol": "flux_quantum",
+    "conversionFactor": 2.06783461E-15,
+    "category": "magnetic_flux",
+    "popular": false
+  }
+]

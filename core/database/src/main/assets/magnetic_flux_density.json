@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Tesla",
+    "symbol": "T",
+    "conversionFactor": 1,
+    "category": "magnetic_flux_density",
+    "popular": true
+  },
+  {
+    "name": "Weber per Square Meter",
+    "symbol": "Wb/m^2",
+    "conversionFactor": 1,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Weber per Square Centimeter",
+    "symbol": "Wb/cm^2",
+    "conversionFactor": 10000,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Weber per Square Inch",
+    "symbol": "Wb/in^2",
+    "conversionFactor": 1550.0031000062,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Maxwell per Square Meter",
+    "symbol": "Mx/m^2",
+    "conversionFactor": 1,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Maxwell per Square Centimeter",
+    "symbol": "Mx/cm^2",
+    "conversionFactor": 0.0001,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Maxwell per Square Inch",
+    "symbol": "Mx/in^2",
+    "conversionFactor": 1.55E-5,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Gauss",
+    "symbol": "Gs",
+    "conversionFactor": 0.0001,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Line per Square Centimeter",
+    "symbol": "line/cm^2",
+    "conversionFactor": 0.0001,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Line per Square Inch",
+    "symbol": "line/in^2",
+    "conversionFactor": 1.55E-5,
+    "category": "magnetic_flux_density",
+    "popular": false
+  },
+  {
+    "name": "Gamma",
+    "symbol": "gamma",
+    "conversionFactor": 1.0E-9,
+    "category": "magnetic_flux_density",
+    "popular": false
+  }
+]

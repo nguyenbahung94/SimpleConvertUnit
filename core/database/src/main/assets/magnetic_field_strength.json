@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Ampere per Meter",
+    "symbol": "A/m",
+    "conversionFactor": 1,
+    "category": "magnetic_field_strength",
+    "popular": true
+  },
+  {
+    "name": "Ampere Turn per Meter",
+    "symbol": "At/m",
+    "conversionFactor": 1,
+    "category": "magnetic_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Kiloampere per Meter",
+    "symbol": "kA/m",
+    "conversionFactor": 1000,
+    "category": "magnetic_field_strength",
+    "popular": false
+  },
+  {
+    "name": "Oersted",
+    "symbol": "Oe",
+    "conversionFactor": 79.5774715459,
+    "category": "magnetic_field_strength",
+    "popular": false
+  }
+]

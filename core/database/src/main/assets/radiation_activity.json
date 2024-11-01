@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Becquerel",
+    "symbol": "Bq",
+    "conversionFactor": 1,
+    "category": "radiation_activity",
+    "popular": true
+  },
+  {
+    "name": "Terabecquerel",
+    "symbol": "TBq",
+    "conversionFactor": 1000000000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Gigabecquerel",
+    "symbol": "GBq",
+    "conversionFactor": 1000000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Megabecquerel",
+    "symbol": "MBq",
+    "conversionFactor": 1000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Kilobecquerel",
+    "symbol": "kBq",
+    "conversionFactor": 1000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Millibecquerel",
+    "symbol": "mBq",
+    "conversionFactor": 0.001,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Curie",
+    "symbol": "Ci",
+    "conversionFactor": 37000000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Kilocurie",
+    "symbol": "kCi",
+    "conversionFactor": 37000000000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Millicurie",
+    "symbol": "mCi",
+    "conversionFactor": 37000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Microcurie",
+    "symbol": "µCi",
+    "conversionFactor": 37000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Nanocurie",
+    "symbol": "nCi",
+    "conversionFactor": 37,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Picocurie",
+    "symbol": "pCi",
+    "conversionFactor": 0.037,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Rutherford",
+    "symbol": "Rd",
+    "conversionFactor": 1000000,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "One per Second",
+    "symbol": "1/s",
+    "conversionFactor": 1,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Disintegrations per Second",
+    "symbol": "dis/s",
+    "conversionFactor": 1,
+    "category": "radiation_activity",
+    "popular": false
+  },
+  {
+    "name": "Disintegrations per Minute",
+    "symbol": "dis/min",
+    "conversionFactor": 0.0166666667,
+    "category": "radiation_activity",
+    "popular": false
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Coulomb per Kilogram",
+    "symbol": "C/kg",
+    "conversionFactor": 1,
+    "category": "radiation_exposure",
+    "popular": true
+  },
+  {
+    "name": "Millicoulomb per Kilogram",
+    "symbol": "mC/kg",
+    "conversionFactor": 0.001,
+    "category": "radiation_exposure",
+    "popular": false
+  },
+  {
+    "name": "Microcoulomb per Kilogram",
+    "symbol": "µC/kg",
+    "conversionFactor": 1.0E-6,
+    "category": "radiation_exposure",
+    "popular": false
+  },
+  {
+    "name": "Roentgen",
+    "symbol": "R",
+    "conversionFactor": 0.000258,
+    "category": "radiation_exposure",
+    "popular": false
+  },
+  {
+    "name": "Tissue Roentgen",
+    "symbol": "tissue R",
+    "conversionFactor": 0.000258,
+    "category": "radiation_exposure",
+    "popular": false
+  },
+  {
+    "name": "Parker",
+    "symbol": "parker",
+    "conversionFactor": 0.000258,
+    "category": "radiation_exposure",
+    "popular": false
+  },
+  {
+    "name": "Rep",
+    "symbol": "rep",
+    "conversionFactor": 0.000258,
+    "category": "radiation_exposure",
+    "popular": false
+  }
+]

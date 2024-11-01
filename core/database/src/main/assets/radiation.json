@@ -1,0 +1,156 @@
+[
+  {
+    "name": "Gray per Second",
+    "symbol": "Gy/s",
+    "conversionFactor": 1,
+    "category": "radiation",
+    "popular": true
+  },
+  {
+    "name": "Exagray per Second",
+    "symbol": "EGy/s",
+    "conversionFactor": 1.0E+18,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Petagray per Second",
+    "symbol": "PGy/s",
+    "conversionFactor": 1.0E+15,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Teragray per Second",
+    "symbol": "TGy/s",
+    "conversionFactor": 1000000000000,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Gigagray per Second",
+    "symbol": "GGy/s",
+    "conversionFactor": 1000000000,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Megagray per Second",
+    "symbol": "MGy/s",
+    "conversionFactor": 1000000,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Kilogray per Second",
+    "symbol": "kGy/s",
+    "conversionFactor": 1000,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Hectogray per Second",
+    "symbol": "hGy/s",
+    "conversionFactor": 100,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Dekagray per Second",
+    "symbol": "daGy/s",
+    "conversionFactor": 10,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Decigray per Second",
+    "symbol": "dGy/s",
+    "conversionFactor": 0.1,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Centigray per Second",
+    "symbol": "cGy/s",
+    "conversionFactor": 0.01,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Milligray per Second",
+    "symbol": "mGy/s",
+    "conversionFactor": 0.001,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Microgray per Second",
+    "symbol": "µGy/s",
+    "conversionFactor": 1.0E-6,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Nanogray per Second",
+    "symbol": "nGy/s",
+    "conversionFactor": 1.0E-9,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Picogray per Second",
+    "symbol": "pGy/s",
+    "conversionFactor": 1.0E-12,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Femtogray per Second",
+    "symbol": "fGy/s",
+    "conversionFactor": 1.0E-15,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Attogray per Second",
+    "symbol": "aGy/s",
+    "conversionFactor": 1.0E-18,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Rad per Second",
+    "symbol": "rd/s",
+    "conversionFactor": 0.01,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Joule per Kilogram per Second",
+    "symbol": "J/kg/s",
+    "conversionFactor": 1,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Watt per Kilogram",
+    "symbol": "W/kg",
+    "conversionFactor": 1,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Sievert per Second",
+    "symbol": "Sv/s",
+    "conversionFactor": 1,
+    "category": "radiation",
+    "popular": false
+  },
+  {
+    "name": "Rem per Second",
+    "symbol": "rem/s",
+    "conversionFactor": 0.01,
+    "category": "radiation",
+    "popular": false
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Rad",
+    "symbol": "rd",
+    "conversionFactor": 1,
+    "category": "radiation_exposure_dose",
+    "popular": true
+  },
+  {
+    "name": "Millirad",
+    "symbol": "mrd",
+    "conversionFactor": 0.001,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Joule per Kilogram",
+    "symbol": "J/kg",
+    "conversionFactor": 100,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Joule per Gram",
+    "symbol": "J/g",
+    "conversionFactor": 100000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Joule per Centigram",
+    "symbol": "J/cg",
+    "conversionFactor": 10000000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Joule per Milligram",
+    "symbol": "J/mg",
+    "conversionFactor": 100000000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Gray",
+    "symbol": "Gy",
+    "conversionFactor": 100,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Exagray",
+    "symbol": "EGy",
+    "conversionFactor": 1.0E+20,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Petagray",
+    "symbol": "PGy",
+    "conversionFactor": 1.0E+17,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Teragray",
+    "symbol": "TGy",
+    "conversionFactor": 1.0E+14,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Gigagray",
+    "symbol": "GGy",
+    "conversionFactor": 100000000000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Megagray",
+    "symbol": "MGy",
+    "conversionFactor": 100000000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Kilogray",
+    "symbol": "kGy",
+    "conversionFactor": 100000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Hectogray",
+    "symbol": "hGy",
+    "conversionFactor": 10000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Dekagray",
+    "symbol": "daGy",
+    "conversionFactor": 1000,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Decigray",
+    "symbol": "dGy",
+    "conversionFactor": 10,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Centigray",
+    "symbol": "cGy",
+    "conversionFactor": 1,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Milligray",
+    "symbol": "mGy",
+    "conversionFactor": 0.1,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Microgray",
+    "symbol": "µGy",
+    "conversionFactor": 0.0001,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Nanogray",
+    "symbol": "nGy",
+    "conversionFactor": 1.0E-7,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Picogray",
+    "symbol": "pGy",
+    "conversionFactor": 1.0E-10,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Femtogray",
+    "symbol": "fGy",
+    "conversionFactor": 1.0E-13,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  },
+  {
+    "name": "Attogray",
+    "symbol": "aGy",
+    "conversionFactor": 1.0E-16,
+    "category": "radiation_exposure_dose",
+    "popular": false
+  }
+]
