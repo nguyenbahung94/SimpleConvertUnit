@@ -2,31 +2,28 @@ package com.billy.simpleunitconvert.feature.home
 
 import android.content.res.Configuration
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.utils.getResIdByName
 import com.billy.simpleunitconvert.core.model.UnitConvert
-import com.billy.simpleunitconvert.core.designsystem.R.drawable as designsystem
+import com.billy.simpleunitconvert.feature.common.TextUnitCommon
 
 @Composable
 internal fun HomeUnitCard(
@@ -35,43 +32,38 @@ internal fun HomeUnitCard(
 ) {
     Card(
         modifier = modifier
-            .padding(start = 11.dp, end = 11.dp, top = 8.dp, bottom = 8.dp)
+            .padding(horizontal = 11.dp, vertical = 6.dp)
             .fillMaxWidth()
             .clickable { /* Handle click event */ },
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(14.dp),
-        colors = CardColors(
+        colors = CardDefaults.cardColors(
             containerColor = SimpleConvertUnitTheme.colors.primary,
-            contentColor =  SimpleConvertUnitTheme.colors.primary,
-            disabledContainerColor =  SimpleConvertUnitTheme.colors.primary,
-            disabledContentColor =  SimpleConvertUnitTheme.colors.primary
+            contentColor = SimpleConvertUnitTheme.colors.primary,
+            disabledContainerColor = SimpleConvertUnitTheme.colors.primary,
+            disabledContentColor = SimpleConvertUnitTheme.colors.primary
         )
     ) {
-        Column(
+        Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.SpaceAround
+                .padding(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
-                painter = painterResource(id = designsystem.icon_exchange),
+                painter = painterResource(id = unitConvert.image.getResIdByName()),
                 contentDescription = "search",
-                modifier = Modifier.size(38.dp),
+                modifier = Modifier.size(25.dp)
+                    .clip(RoundedCornerShape(10.dp)),
                 tint = Color.Unspecified
             )
 
-            Text(
-                text = unitConvert.name,
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(top = 8.dp),
-                fontSize = 16.sp,
-                color = SimpleConvertUnitTheme.colors.title
-            )
+            TextUnitCommon(name = unitConvert.name)
         }
-
     }
 }
+
+
 
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
@@ -79,7 +71,12 @@ internal fun HomeUnitCard(
 private fun UnitCardPreview() {
    SimpleUnitConvertTheme {
        HomeUnitCard(
-           unitConvert = UnitConvert("image1", "name 1", "category")
+           unitConvert = UnitConvert(
+               image = "image",
+               name = "name",
+               shortName = "shortName",
+               category = "category"
+           )
        )
    }
 }

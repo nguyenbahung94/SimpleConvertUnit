@@ -4,6 +4,7 @@
     <color name="colorPrimary">#eaeaea</color>
     <color name="colorPrimaryDark">#eaeaea</color>
     <color name="colorAccent">#eaeaea</color>
+    <color name="color_background_unit">#788CE2</color>
 
     <!-- dark colors-->
     <color name="background_dark">#cacaca</color>

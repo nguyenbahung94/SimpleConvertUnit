@@ -1,292 +1,290 @@
-{
-  "units": [
-    {
-      "name": "Joule",
-      "symbol": "J",
-      "conversionFactor": 1,
-      "category": "energy",
-      "popular": true
-    },
-    {
-      "name": "Kilojoule",
-      "symbol": "kJ",
-      "conversionFactor": 1000,
-      "category": "energy",
-      "popular": true
-    },
-    {
-      "name": "Kilowatt-hour",
-      "symbol": "kWh",
-      "conversionFactor": 3600000,
-      "category": "energy"
-    },
-    {
-      "name": "Watt-hour",
-      "symbol": "Wh",
-      "conversionFactor": 3600,
-      "category": "energy"
-    },
-    {
-      "name": "Calorie (nutritional)",
-      "symbol": "Cal",
-      "conversionFactor": 4186.8,
-      "category": "energy"
-    },
-    {
-      "name": "Horsepower (metric) hour",
-      "symbol": "hp*hr",
-      "conversionFactor": 2647795.5,
-      "category": "energy"
-    },
-    {
-      "name": "BTU (International Table)",
-      "symbol": "Btu(IT)",
-      "conversionFactor": 1055.05585262,
-      "category": "energy"
-    },
-    {
-      "name": "BTU (thermochemical)",
-      "symbol": "Btu(th)",
-      "conversionFactor": 1054.3499999744,
-      "category": "energy"
-    },
-    {
-      "name": "Gigajoule",
-      "symbol": "GJ",
-      "conversionFactor": 1000000000,
-      "category": "energy"
-    },
-    {
-      "name": "Megajoule",
-      "symbol": "MJ",
-      "conversionFactor": 1000000,
-      "category": "energy"
-    },
-    {
-      "name": "Millijoule",
-      "symbol": "mJ",
-      "conversionFactor": 0.001,
-      "category": "energy"
-    },
-    {
-      "name": "Microjoule",
-      "symbol": "µJ",
-      "conversionFactor": 1.0E-6,
-      "category": "energy"
-    },
-    {
-      "name": "Nanojoule",
-      "symbol": "nJ",
-      "conversionFactor": 1.0E-9,
-      "category": "energy"
-    },
-    {
-      "name": "Attojoule",
-      "symbol": "aJ",
-      "conversionFactor": 1.0E-18,
-      "category": "energy"
-    },
-    {
-      "name": "Megaelectron-volt",
-      "symbol": "MeV",
-      "conversionFactor": 1.6021766339999E-13,
-      "category": "energy"
-    },
-    {
-      "name": "Kiloelectron-volt",
-      "symbol": "keV",
-      "conversionFactor": 1.6021766339999E-16,
-      "category": "energy"
-    },
-    {
-      "name": "Electron-volt",
-      "symbol": "eV",
-      "conversionFactor": 1.6021766339999E-19,
-      "category": "energy"
-    },
-    {
-      "name": "Erg",
-      "symbol": "erg",
-      "conversionFactor": 1.0E-7,
-      "category": "energy"
-    },
-    {
-      "name": "Gigawatt-hour",
-      "symbol": "GWh",
-      "conversionFactor": 3600000000000,
-      "category": "energy"
-    },
-    {
-      "name": "Megawatt-hour",
-      "symbol": "MWh",
-      "conversionFactor": 3600000000,
-      "category": "energy"
-    },
-    {
-      "name": "Kilowatt-second",
-      "symbol": "kWs",
-      "conversionFactor": 1000,
-      "category": "energy"
-    },
-    {
-      "name": "Watt-second",
-      "symbol": "Ws",
-      "conversionFactor": 1,
-      "category": "energy"
-    },
-    {
-      "name": "Newton meter",
-      "symbol": "Nm",
-      "conversionFactor": 1,
-      "category": "energy",
-      "popular": true
-    },
-    {
-      "name": "Horsepower hour",
-      "symbol": "hp*hr",
-      "conversionFactor": 2684519.5368856,
-      "category": "energy"
-    },
-    {
-      "name": "Kilocalorie (International Table)",
-      "symbol": "kcal(IT)",
-      "conversionFactor": 4186.8,
-      "category": "energy",
-      "popular": true
-    },
-    {
-      "name": "Kilocalorie (thermochemical)",
-      "symbol": "kcal(th)",
-      "conversionFactor": 4184,
-      "category": "energy"
-    },
-    {
-      "name": "Calorie (International Table)",
-      "symbol": "cal(IT)",
-      "conversionFactor": 4.1868,
-      "category": "energy",
-      "popular": true
-    },
-    {
-      "name": "Calorie (thermochemical)",
-      "symbol": "cal(th)",
-      "conversionFactor": 4.184,
-      "category": "energy"
-    },
-    {
-      "name": "Mega BTU (IT)",
-      "symbol": "MBtu(IT)",
-      "conversionFactor": 1055055852.62,
-      "category": "energy"
-    },
-    {
-      "name": "Ton-hour (refrigeration)",
-      "symbol": "ton*hr",
-      "conversionFactor": 12660670.23144,
-      "category": "energy"
-    },
-    {
-      "name": "Fuel oil equivalent @kiloliter",
-      "symbol": "FOE/kl",
-      "conversionFactor": 40197627984.822,
-      "category": "energy"
-    },
-    {
-      "name": "Fuel oil equivalent @barrel (US)",
-      "symbol": "FOE/bbl(US)",
-      "conversionFactor": 6383087908.3509,
-      "category": "energy"
-    },
-    {
-      "name": "Gigaton (explosives)",
-      "symbol": "Gton",
-      "conversionFactor": 4.184E+18,
-      "category": "energy"
-    },
-    {
-      "name": "Megaton (explosives)",
-      "symbol": "Mton",
-      "conversionFactor": 4.184E+15,
-      "category": "energy"
-    },
-    {
-      "name": "Kiloton (explosives)",
-      "symbol": "kton",
-      "conversionFactor": 4184000000000,
-      "category": "energy"
-    },
-    {
-      "name": "Ton (explosives)",
-      "symbol": "ton",
-      "conversionFactor": 4184000000,
-      "category": "energy"
-    },
-    {
-      "name": "Dyne centimeter",
-      "symbol": "dyn*cm",
-      "conversionFactor": 1.0E-7,
-      "category": "energy"
-    },
-    {
-      "name": "Gram-force meter",
-      "symbol": "gf*m",
-      "conversionFactor": 0.00980665,
-      "category": "energy"
-    },
-    {
-      "name": "Gram-force centimeter",
-      "symbol": "gf*cm",
-      "conversionFactor": 9.80665E-5,
-      "category": "energy"
-    },
-    {
-      "name": "Kilogram-force centimeter",
-      "symbol": "kgf*cm",
-      "conversionFactor": 0.0980665,
-      "category": "energy"
-    },
-    {
-      "name": "Kilogram-force meter",
-      "symbol": "kgf*m",
-      "conversionFactor": 9.8066499997,
-      "category": "energy"
-    },
-    {
-      "name": "Kilopond meter",
-      "symbol": "kp*m",
-      "conversionFactor": 9.8066499997,
-      "category": "energy"
-    },
-    {
-      "name": "Pound-force foot",
-      "symbol": "lbf*ft",
-      "conversionFactor": 1.3558179483,
-      "category": "energy",
-      "popular": true
-    },
-    {
-      "name": "Pound-force inch",
-      "symbol": "lbf*in",
-      "conversionFactor": 0.112984829,
-      "category": "energy"
-    },
-    {
-      "name": "Ounce-force inch",
-      "symbol": "ozf*in",
-      "conversionFactor": 0.0070615518,
-      "category": "energy"
-    },
-    {
-      "name": "Foot-pound",
-      "symbol": "ft*lbf",
-      "conversionFactor": 1.3558179483,
-      "category": "energy"
-    },
-    {
-      "name": "Inch-pound",
-      "symbol": "in*lbf",
-      "conversionFactor": 0.112984829,
-      "category": "energy"
-    }
-  ]
-}
+[
+  {
+    "name": "Joule",
+    "symbol": "J",
+    "conversionFactor": 1,
+    "category": "energy",
+    "popular": true
+  },
+  {
+    "name": "Kilojoule",
+    "symbol": "kJ",
+    "conversionFactor": 1000,
+    "category": "energy",
+    "popular": true
+  },
+  {
+    "name": "Kilowatt-hour",
+    "symbol": "kWh",
+    "conversionFactor": 3600000,
+    "category": "energy"
+  },
+  {
+    "name": "Watt-hour",
+    "symbol": "Wh",
+    "conversionFactor": 3600,
+    "category": "energy"
+  },
+  {
+    "name": "Calorie (nutritional)",
+    "symbol": "Cal",
+    "conversionFactor": 4186.8,
+    "category": "energy"
+  },
+  {
+    "name": "Horsepower (metric) hour",
+    "symbol": "hp*hr",
+    "conversionFactor": 2647795.5,
+    "category": "energy"
+  },
+  {
+    "name": "BTU (International Table)",
+    "symbol": "Btu(IT)",
+    "conversionFactor": 1055.05585262,
+    "category": "energy"
+  },
+  {
+    "name": "BTU (thermochemical)",
+    "symbol": "Btu(th)",
+    "conversionFactor": 1054.3499999744,
+    "category": "energy"
+  },
+  {
+    "name": "Gigajoule",
+    "symbol": "GJ",
+    "conversionFactor": 1000000000,
+    "category": "energy"
+  },
+  {
+    "name": "Megajoule",
+    "symbol": "MJ",
+    "conversionFactor": 1000000,
+    "category": "energy"
+  },
+  {
+    "name": "Millijoule",
+    "symbol": "mJ",
+    "conversionFactor": 0.001,
+    "category": "energy"
+  },
+  {
+    "name": "Microjoule",
+    "symbol": "µJ",
+    "conversionFactor": 1.0E-6,
+    "category": "energy"
+  },
+  {
+    "name": "Nanojoule",
+    "symbol": "nJ",
+    "conversionFactor": 1.0E-9,
+    "category": "energy"
+  },
+  {
+    "name": "Attojoule",
+    "symbol": "aJ",
+    "conversionFactor": 1.0E-18,
+    "category": "energy"
+  },
+  {
+    "name": "Megaelectron-volt",
+    "symbol": "MeV",
+    "conversionFactor": 1.6021766339999E-13,
+    "category": "energy"
+  },
+  {
+    "name": "Kiloelectron-volt",
+    "symbol": "keV",
+    "conversionFactor": 1.6021766339999E-16,
+    "category": "energy"
+  },
+  {
+    "name": "Electron-volt",
+    "symbol": "eV",
+    "conversionFactor": 1.6021766339999E-19,
+    "category": "energy"
+  },
+  {
+    "name": "Erg",
+    "symbol": "erg",
+    "conversionFactor": 1.0E-7,
+    "category": "energy"
+  },
+  {
+    "name": "Gigawatt-hour",
+    "symbol": "GWh",
+    "conversionFactor": 3600000000000,
+    "category": "energy"
+  },
+  {
+    "name": "Megawatt-hour",
+    "symbol": "MWh",
+    "conversionFactor": 3600000000,
+    "category": "energy"
+  },
+  {
+    "name": "Kilowatt-second",
+    "symbol": "kWs",
+    "conversionFactor": 1000,
+    "category": "energy"
+  },
+  {
+    "name": "Watt-second",
+    "symbol": "Ws",
+    "conversionFactor": 1,
+    "category": "energy"
+  },
+  {
+    "name": "Newton meter",
+    "symbol": "Nm",
+    "conversionFactor": 1,
+    "category": "energy",
+    "popular": true
+  },
+  {
+    "name": "Horsepower hour",
+    "symbol": "hp*hr",
+    "conversionFactor": 2684519.5368856,
+    "category": "energy"
+  },
+  {
+    "name": "Kilocalorie (International Table)",
+    "symbol": "kcal(IT)",
+    "conversionFactor": 4186.8,
+    "category": "energy",
+    "popular": true
+  },
+  {
+    "name": "Kilocalorie (thermochemical)",
+    "symbol": "kcal(th)",
+    "conversionFactor": 4184,
+    "category": "energy"
+  },
+  {
+    "name": "Calorie (International Table)",
+    "symbol": "cal(IT)",
+    "conversionFactor": 4.1868,
+    "category": "energy",
+    "popular": true
+  },
+  {
+    "name": "Calorie (thermochemical)",
+    "symbol": "cal(th)",
+    "conversionFactor": 4.184,
+    "category": "energy"
+  },
+  {
+    "name": "Mega BTU (IT)",
+    "symbol": "MBtu(IT)",
+    "conversionFactor": 1055055852.62,
+    "category": "energy"
+  },
+  {
+    "name": "Ton-hour (refrigeration)",
+    "symbol": "ton*hr",
+    "conversionFactor": 12660670.23144,
+    "category": "energy"
+  },
+  {
+    "name": "Fuel oil equivalent @kiloliter",
+    "symbol": "FOE/kl",
+    "conversionFactor": 40197627984.822,
+    "category": "energy"
+  },
+  {
+    "name": "Fuel oil equivalent @barrel (US)",
+    "symbol": "FOE/bbl(US)",
+    "conversionFactor": 6383087908.3509,
+    "category": "energy"
+  },
+  {
+    "name": "Gigaton (explosives)",
+    "symbol": "Gton",
+    "conversionFactor": 4.184E+18,
+    "category": "energy"
+  },
+  {
+    "name": "Megaton (explosives)",
+    "symbol": "Mton",
+    "conversionFactor": 4.184E+15,
+    "category": "energy"
+  },
+  {
+    "name": "Kiloton (explosives)",
+    "symbol": "kton",
+    "conversionFactor": 4184000000000,
+    "category": "energy"
+  },
+  {
+    "name": "Ton (explosives)",
+    "symbol": "ton",
+    "conversionFactor": 4184000000,
+    "category": "energy"
+  },
+  {
+    "name": "Dyne centimeter",
+    "symbol": "dyn*cm",
+    "conversionFactor": 1.0E-7,
+    "category": "energy"
+  },
+  {
+    "name": "Gram-force meter",
+    "symbol": "gf*m",
+    "conversionFactor": 0.00980665,
+    "category": "energy"
+  },
+  {
+    "name": "Gram-force centimeter",
+    "symbol": "gf*cm",
+    "conversionFactor": 9.80665E-5,
+    "category": "energy"
+  },
+  {
+    "name": "Kilogram-force centimeter",
+    "symbol": "kgf*cm",
+    "conversionFactor": 0.0980665,
+    "category": "energy"
+  },
+  {
+    "name": "Kilogram-force meter",
+    "symbol": "kgf*m",
+    "conversionFactor": 9.8066499997,
+    "category": "energy"
+  },
+  {
+    "name": "Kilopond meter",
+    "symbol": "kp*m",
+    "conversionFactor": 9.8066499997,
+    "category": "energy"
+  },
+  {
+    "name": "Pound-force foot",
+    "symbol": "lbf*ft",
+    "conversionFactor": 1.3558179483,
+    "category": "energy",
+    "popular": true
+  },
+  {
+    "name": "Pound-force inch",
+    "symbol": "lbf*in",
+    "conversionFactor": 0.112984829,
+    "category": "energy"
+  },
+  {
+    "name": "Ounce-force inch",
+    "symbol": "ozf*in",
+    "conversionFactor": 0.0070615518,
+    "category": "energy"
+  },
+  {
+    "name": "Foot-pound",
+    "symbol": "ft*lbf",
+    "conversionFactor": 1.3558179483,
+    "category": "energy"
+  },
+  {
+    "name": "Inch-pound",
+    "symbol": "in*lbf",
+    "conversionFactor": 0.112984829,
+    "category": "energy"
+  }
+]

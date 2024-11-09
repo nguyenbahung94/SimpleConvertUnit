@@ -2,21 +2,47 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "3bf3b3d9fecd2724529d8a62fac9ac2a",
+    "identityHash": "86aa208de1a4adf05b7c18ecfc894681",
     "entities": [
       {
-        "tableName": "UnitEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `symbol` TEXT NOT NULL, `name` TEXT NOT NULL, `conversionFactorToMeter` REAL NOT NULL, `category` TEXT NOT NULL)",
+        "tableName": "HomeUnitEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shortName` TEXT NOT NULL, `groupName` TEXT NOT NULL, PRIMARY KEY(`shortName`))",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
+            "fieldPath": "shortName",
+            "columnName": "shortName",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "symbol",
-            "columnName": "symbol",
+            "fieldPath": "groupName",
+            "columnName": "groupName",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "shortName"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "UnitConvertEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`category` TEXT NOT NULL, `homeGroup` TEXT NOT NULL, `name` TEXT NOT NULL, `shortName` TEXT NOT NULL, `image` TEXT NOT NULL, `isFavorite` INTEGER NOT NULL, PRIMARY KEY(`category`), FOREIGN KEY(`homeGroup`) REFERENCES `HomeUnitEntity`(`shortName`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "homeGroup",
+            "columnName": "homeGroup",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -27,15 +53,95 @@
             "notNull": true
           },
           {
-            "fieldPath": "conversionFactorToMeter",
-            "columnName": "conversionFactorToMeter",
-            "affinity": "REAL",
+            "fieldPath": "shortName",
+            "columnName": "shortName",
+            "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "category",
-            "columnName": "category",
+            "fieldPath": "image",
+            "columnName": "image",
             "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "category"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "HomeUnitEntity",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "homeGroup"
+            ],
+            "referencedColumns": [
+              "shortName"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "UnitItemEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unitCategory` TEXT NOT NULL, `unitName` TEXT NOT NULL, `symbol` TEXT NOT NULL, `conversion` REAL, `scale` REAL, `offset` REAL, `popular` INTEGER NOT NULL, FOREIGN KEY(`unitCategory`) REFERENCES `UnitConvertEntity`(`category`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitCategory",
+            "columnName": "unitCategory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitName",
+            "columnName": "unitName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "symbol",
+            "columnName": "symbol",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conversion",
+            "columnName": "conversion",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "scale",
+            "columnName": "scale",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "offset",
+            "columnName": "offset",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "popular",
+            "columnName": "popular",
+            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -46,13 +152,25 @@
           ]
         },
         "indices": [],
-        "foreignKeys": []
+        "foreignKeys": [
+          {
+            "table": "UnitConvertEntity",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "unitCategory"
+            ],
+            "referencedColumns": [
+              "category"
+            ]
+          }
+        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3bf3b3d9fecd2724529d8a62fac9ac2a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '86aa208de1a4adf05b7c18ecfc894681')"
     ]
   }
 }

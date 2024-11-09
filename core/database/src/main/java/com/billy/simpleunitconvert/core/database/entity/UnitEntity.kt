@@ -7,20 +7,9 @@ import androidx.room.PrimaryKey
 import androidx.room.Relation
 
 @Entity
-data class UnitEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
-    val symbol: String,
-    val name: String,
-    val conversionFactorToMeter: Double,
-    val category: String
-)
-
-@Entity
 data class HomeUnitEntity(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey val shortName: String,
     val groupName: String,
-    val shortName: String,
 )
 
 @Entity(
@@ -32,13 +21,11 @@ data class HomeUnitEntity(
     )]
 )
 data class UnitConvertEntity(
-    @PrimaryKey(autoGenerate = true)
-    val id: Int = 0,
+    @PrimaryKey val category: String,
     val homeGroup: String,
     val name: String,
     val shortName: String,
     val image: String,
-    val category: String,
     val isFavorite: Boolean
 )
 
@@ -59,7 +46,10 @@ data class UnitItemEntity(
     val unitCategory: String,
     val unitName: String,
     val symbol: String,
-    val conversion: Double
+    val conversion: Double?,
+    val scale: Double?,
+    val offset: Double?,
+    val popular: Boolean
 )
 
 data class HomeUnitWithUnitConvert(

@@ -4,7 +4,7 @@
     "symbol": "K",
     "scaleFactor": 1.0,
     "offset": 0.0,
-    "category": "Temperature",
+    "category": "temperature",
     "popular": true
   },
   {
@@ -12,7 +12,7 @@
     "symbol": "°C",
     "scaleFactor": 1.0,
     "offset": 273.15,
-    "category": "Temperature",
+    "category": "temperature",
     "popular": true
   },
   {
@@ -20,7 +20,7 @@
     "symbol": "°F",
     "scaleFactor": 0.5555555556,
     "offset": 255.9277777778,
-    "category": "Temperature",
+    "category": "temperature",
     "popular": true
   },
   {
@@ -28,41 +28,41 @@
     "symbol": "°R",
     "scaleFactor": 0.5555555556,
     "offset": 0.0,
-    "category": "Temperature"
+    "category": "temperature"
   },
   {
     "name": "Réaumur",
     "symbol": "°Ré",
     "scaleFactor": 1.25,
     "offset": 273.15,
-    "category": "Temperature"
+    "category": "temperature"
   },
   {
     "name": "Delisle",
     "symbol": "°De",
     "scaleFactor": -0.6666666667,
     "offset": 373.15,
-    "category": "Temperature"
+    "category": "temperature"
   },
   {
     "name": "Newton",
     "symbol": "°N",
     "scaleFactor": 3.0303030303,
     "offset": 273.15,
-    "category": "Temperature"
+    "category": "temperature"
   },
   {
     "name": "Rømer",
     "symbol": "°Rø",
     "scaleFactor": 1.9047619048,
     "offset": 258.8642857143,
-    "category": "Temperature"
+    "category": "temperature"
   },
   {
     "name": "Triple point of water",
     "symbol": "TPW",
     "scaleFactor": 1.0,
     "offset": 273.16,
-    "category": "Temperature"
+    "category": "temperature"
   }
 ]

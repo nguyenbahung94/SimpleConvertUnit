@@ -1,37 +1,46 @@
 package com.billy.simpleunitconvert.core.database.entity.mapper
 
-import com.billy.simpleunitconvert.core.database.entity.UnitEntity
-import com.billy.simpleunitconvert.core.model.UnitItem
+import com.billy.simpleunitconvert.core.database.entity.UnitConvertEntity
+import com.billy.simpleunitconvert.core.model.UnitConvertData
 
-object UnitEntityMapper : EntityMapper<List<UnitItem>, List<UnitEntity>> {
+object UnitEntityMapper : EntityMapper<List<UnitConvertData>, List<UnitConvertEntity>> {
 
-    override fun asEntity(domain: List<UnitItem>): List<UnitEntity> {
-        return domain.map { unit ->
-            UnitEntity(
-                symbol = unit.symbol,
-                name = unit.name,
-                conversionFactorToMeter = unit.conversionFactorToMeter,
-                category = unit.category
-            )
+    override fun asEntity(domain: List<UnitConvertData>): List<UnitConvertEntity> {
+        return domain.map { unitConvertData ->
+            with(unitConvertData) {
+                UnitConvertEntity(
+                    category = category,
+                    homeGroup = homeGroup,
+                    name = name,
+                    shortName = shortName,
+                    image = image,
+                    isFavorite = isFavorite
+
+                )
+            }
         }
     }
 
-    override fun asDomain(entity: List<UnitEntity>): List<UnitItem> {
-        return entity.map { unitEntity ->
-            UnitItem(
-                symbol = unitEntity.symbol,
-                name = unitEntity.name,
-                conversionFactorToMeter = unitEntity.conversionFactorToMeter,
-                category = unitEntity.category
-            )
+    override fun asDomain(entity: List<UnitConvertEntity>): List<UnitConvertData> {
+        return entity.map { unitConvertEntity ->
+            with(unitConvertEntity) {
+                UnitConvertData(
+                    category = category,
+                    homeGroup = homeGroup,
+                    name = name,
+                    shortName = shortName,
+                    image = image,
+                    isFavorite = isFavorite
+                )
+            }
         }
     }
 }
 
-fun List<UnitItem>.asEntity(): List<UnitEntity> {
+fun List<UnitConvertData>.asEntity(): List<UnitConvertEntity> {
     return UnitEntityMapper.asEntity(this)
 }
 
-fun List<UnitEntity>?.asDomain(): List<UnitItem> {
-    return UnitEntityMapper.asDomain(this.orEmpty())
+fun List<UnitConvertEntity>.asDomain(): List<UnitConvertData> {
+    return UnitEntityMapper.asDomain(this)
 }

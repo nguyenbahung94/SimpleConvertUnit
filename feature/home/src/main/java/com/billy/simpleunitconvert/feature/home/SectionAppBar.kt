@@ -1,9 +1,10 @@
-package com.billy.simpleunitconvert.core.designsystem.component
+package com.billy.simpleunitconvert.feature.home
 
 import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -30,7 +31,9 @@ import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitThem
 import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
 
 @Composable
-fun SimpleUnitConvertAppBar() {
+fun SimpleUnitConvertAppBar(
+    onNavigateToSearch: () -> Unit
+) {
     TopAppBar(
         title = {
             Box(
@@ -45,7 +48,9 @@ fun SimpleUnitConvertAppBar() {
                         color = SimpleConvertUnitTheme.colors.backgroundCard,
                         shape = RoundedCornerShape(12.dp),
                     )
-                    .padding(8.dp), contentAlignment = Alignment.CenterStart
+                    .padding(8.dp)
+                    .clickable { onNavigateToSearch() }
+                , contentAlignment = Alignment.CenterStart
             ) {
               Row(
                   verticalAlignment = Alignment.CenterVertically,
@@ -80,6 +85,6 @@ fun SimpleUnitConvertAppBar() {
 @Composable
 private fun SimpleUitConvertAppBarPreview() {
     SimpleUnitConvertTheme {
-        SimpleUnitConvertAppBar()
+        SimpleUnitConvertAppBar( onNavigateToSearch = {})
     }
 }

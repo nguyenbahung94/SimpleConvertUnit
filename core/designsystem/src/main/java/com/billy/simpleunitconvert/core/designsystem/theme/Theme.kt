@@ -24,7 +24,7 @@ private val LocalColors = compositionLocalOf<Colors> {
 fun SimpleUnitConvertTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     colors: Colors = if (darkTheme) {
-        Colors.defaultDarkColors()
+        Colors.defaultLightColors()
     } else {
         Colors.defaultLightColors()
     },

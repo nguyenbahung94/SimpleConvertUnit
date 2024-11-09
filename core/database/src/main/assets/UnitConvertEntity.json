@@ -3,7 +3,7 @@
     "homeGroup": "ENG",
     "name": "Volume",
     "shortName": "VOL",
-    "image": "length.png",
+    "image": "volume.png",
     "category": "volume",
     "isFavorite": false
   },
@@ -364,7 +364,7 @@
       "name": "Illuminance",
       "shortName": "ILL",
       "image": "illuminance.png",
-      "category": "illuminance",
+      "category": "illumination",
       "isFavorite": false
     },
     {

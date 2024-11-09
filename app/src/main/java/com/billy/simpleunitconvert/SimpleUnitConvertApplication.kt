@@ -16,8 +16,7 @@ class SimpleUnitConvertApplication: Application() {
 
     @Inject
     lateinit var createDatabaseRepository: CreateDatabaseRepository
-    @Inject
-    lateinit var queryDatabaseRepository: QueryDataBaseRepository
+
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     override fun onCreate() {
@@ -26,11 +25,6 @@ class SimpleUnitConvertApplication: Application() {
     }
 
     private fun initializeDatabase() {
-        appScope.launch {
-            queryDatabaseRepository.queryAllUnit().collect {
-                Log.e("initializeDatabase","allUnit: $it")
-            }
-        }
        appScope.launch {
           runCatching {
               createDatabaseRepository.readDataSaveToDatabase()

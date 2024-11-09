@@ -1,5 +1,9 @@
 [
   {
+    "groupName": "Favorites",
+    "shortName": "FAV"
+  },
+  {
     "groupName": "Engineering",
     "shortName": "ENG"
   },

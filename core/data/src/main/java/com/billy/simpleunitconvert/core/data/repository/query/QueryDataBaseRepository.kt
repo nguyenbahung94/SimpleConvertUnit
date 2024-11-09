@@ -1,11 +1,15 @@
 package com.billy.simpleunitconvert.core.data.repository.query
 
-import com.billy.simpleunitconvert.core.model.UnitItem
+import androidx.annotation.WorkerThread
+import com.billy.simpleunitconvert.core.model.HomeUnit
+import com.billy.simpleunitconvert.core.model.UnitItemData
 import kotlinx.coroutines.flow.Flow
 
 interface QueryDataBaseRepository {
 
-    suspend fun queryAllUnit(): Flow<List<UnitItem>>
+    @WorkerThread
+    fun queryHomeUnits(): Flow<List<HomeUnit>>
 
-    suspend fun queryUnitByCategory(category: String)
+    @WorkerThread
+    fun queryUnitByKeWord(keyWord: String): Flow<List<UnitItemData>>
 }
