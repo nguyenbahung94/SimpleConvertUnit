@@ -2,11 +2,14 @@ package com.billy.simpleunitconvert.feature.search
 
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.viewModelScope
+import androidx.paging.PagingData
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
+import com.billy.simpleunitconvert.core.model.UnitItemData
 import com.billy.simpleunitconvert.core.viewmodel.BaseViewModel
 import com.billy.simpleunitconvert.core.viewmodel.ViewModelStateFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -28,17 +31,17 @@ class SearchViewModel @Inject constructor(
     val searchQuery: StateFlow<String> = _searchQuery
 
     @OptIn(FlowPreview::class)
-    val searchResults = searchQuery
+    val searchResults: StateFlow<PagingData<UnitItemData>> = searchQuery
         .debounce(400)
         .flatMapLatest { query ->
             queryDataBaseRepository.queryUnitByKeWord(query).catch { e ->
                 uiState.value = SearchUiState.Error(e.message)
-                emit(emptyList())
+                emit(PagingData.empty())
             }
         }.stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000L),
-            initialValue = emptyList()
+            initialValue = PagingData.empty()
         )
 
 

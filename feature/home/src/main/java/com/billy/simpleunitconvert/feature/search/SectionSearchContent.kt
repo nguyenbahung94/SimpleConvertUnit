@@ -1,6 +1,7 @@
 package com.billy.simpleunitconvert.feature.search
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -13,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -35,11 +35,10 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.paging.compose.LazyPagingItems
 import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
 import com.billy.simpleunitconvert.core.model.UnitItemData
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 
 @Composable
@@ -100,16 +99,19 @@ fun SearchBar(
 
 @Composable
 fun SearchResults(
-    results: ImmutableList<UnitItemData>,
+    results: LazyPagingItems<UnitItemData>,
 ) {
+    Log.e("SearchResults","results = ${results.itemCount}")
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .padding(top = 8.dp)
     ) {
-        items(results) { item ->
-            ItemSearch(itemSearch = item)
-            Spacer(modifier = Modifier.padding(4.dp))
+        items(results.itemCount) { index ->
+           results[index]?.let {
+               ItemSearch(itemSearch = it)
+               Spacer(modifier = Modifier.padding(4.dp))
+           }
         }
     }
 }
@@ -153,52 +155,3 @@ fun EmptyResultsPreview() {
     }
 }
 
-@Composable
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-fun SearchResultsPreview() {
-    SimpleUnitConvertTheme {
-        SearchResults(
-            results = listOf(
-                UnitItemData(
-                    symbol = "quaerendum",
-                    name = "Charlie Simmons",
-                    conversionFactor = null,
-                    scaleFactor = null,
-                    offset = null,
-                    category = "primis",
-                    popular = false
-
-                ),
-                UnitItemData(
-                    symbol = "quaerendum",
-                    name = "Charlie Simmons",
-                    conversionFactor = null,
-                    scaleFactor = null,
-                    offset = null,
-                    category = "primis",
-                    popular = false
-
-                ),
-                UnitItemData(
-                    symbol = "quaerendum",
-                    name = "Charlie Simmons",
-                    conversionFactor = null,
-                    scaleFactor = null,
-                    offset = null,
-                    category = "primis",
-                    popular = false
-
-                ), UnitItemData(
-                    symbol = "quaerendum",
-                    name = "Charlie Simmons",
-                    conversionFactor = null,
-                    scaleFactor = null,
-                    offset = null,
-                    category = "primis",
-                    popular = false
-
-                )
-            ).toImmutableList()
-        )
-    }
-}

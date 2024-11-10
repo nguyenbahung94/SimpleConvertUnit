@@ -10,9 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
-import kotlinx.collections.immutable.toImmutableList
 
 
 @Composable
@@ -21,7 +21,7 @@ fun SearchScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
-    val searchResults by viewModel.searchResults.collectAsStateWithLifecycle()
+    val searchResults =  viewModel.searchResults.collectAsLazyPagingItems()
     val composeNavigator = currentComposeNavigator
     Column(
         modifier = Modifier.fillMaxWidth()
@@ -36,13 +36,14 @@ fun SearchScreen(
         )
 
         Log.e("currentState","uiState: $uiState")
-        if (searchQuery.isNotEmpty() && searchResults.isEmpty()) {
+
+        if (searchQuery.isNotEmpty() && searchResults.itemCount == 0) {
             EmptyResults()
             return
         }
 
         SearchResults(
-            results = searchResults.toImmutableList()
+            results = searchResults,
         )
 
     }

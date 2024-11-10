@@ -16,6 +16,7 @@ dependencies {
 
     // kotlinx
     api(libs.kotlinx.immutable.collection)
+    implementation(libs.androidx.paging.runtime)
 
     // coroutines
     implementation(libs.kotlinx.coroutines.android)

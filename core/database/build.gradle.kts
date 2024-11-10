@@ -33,6 +33,8 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
     testImplementation(libs.androidx.arch.core.testing)
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.room.paging)
 
     // json parsing
     api(libs.kotlinx.serialization.json)

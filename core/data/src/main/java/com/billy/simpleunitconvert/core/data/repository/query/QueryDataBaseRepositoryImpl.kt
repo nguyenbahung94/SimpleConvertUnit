@@ -1,8 +1,13 @@
 package com.billy.simpleunitconvert.core.data.repository.query
 
 import android.util.Log
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.map
 import com.billy.simpleunitconvert.core.database.UnitDao
 import com.billy.simpleunitconvert.core.database.entity.HomeUnitWithUnitConvert
+import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
 import com.billy.simpleunitconvert.core.database.entity.mapper.asDomain
 import com.billy.simpleunitconvert.core.model.HomeUnit
 import com.billy.simpleunitconvert.core.model.UnitConvert
@@ -14,6 +19,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 
@@ -28,17 +34,31 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
     }.flowOn(ioDispatcher)
         .catch { Log.e("queryHomeUnits", "error: ${it.message}") }
 
-    override  fun queryUnitByKeWord(keyWord: String): Flow<List<UnitItemData>> = flow {
-        Log.e("queryUnitByKeWord","keyword: $keyWord")
-        val unitItems = unitDao.searchUnitItem(keyWord)
-        if (keyWord.isEmpty() || keyWord.isBlank()) {
-            emit(unitItems.filter { it.popular }.asDomain())
-            return@flow
-        }
-        emit(unitItems.asDomain())
+    override fun queryUnitByKeWord(keyWord: String): Flow<PagingData<UnitItemData>> {
+        return Pager(config = PagingConfig(
+            pageSize = 15,
+            initialLoadSize = 15,
+            prefetchDistance = 3,
+            enablePlaceholders = false
+        ), pagingSourceFactory = {
+            unitDao.searchUnitItem(keyWord)
+        }).flow.map { pagingData -> pagingData.map { transformer(it) } }
+            .flowOn(ioDispatcher)
+            .catch { Log.e("queryUnitByKeWord", "error: ${it.message}") }
+    }
 
-    }.flowOn(ioDispatcher)
-        .catch { Log.e("queryUnitByCategory", "error: ${it.message}")
+    private fun transformer(itemEntity: UnitItemEntity): UnitItemData {
+        return with(itemEntity) {
+            UnitItemData(
+                symbol = symbol,
+                name = unitName,
+                conversionFactor = conversion,
+                scaleFactor = scale,
+                offset = offset,
+                category = unitCategory,
+                popular = popular
+            )
+        }
     }
 
     private fun transformer(homeUnits: List<HomeUnitWithUnitConvert>): List<HomeUnit> {

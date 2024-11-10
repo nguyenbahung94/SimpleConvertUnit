@@ -1,5 +1,6 @@
 package com.billy.simpleunitconvert.core.database
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -26,7 +27,7 @@ interface UnitDao {
     suspend fun getHomeUnitList(): List<HomeUnitWithUnitConvert>
 
     @Query("SELECT * FROM UnitItemEntity WHERE symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%'")
-    suspend fun searchUnitItem(keyword: String): List<UnitItemEntity>
+    fun searchUnitItem(keyword: String): PagingSource<Int, UnitItemEntity>
 
     @Query("SELECT * FROM UnitConvertEntity WHERE category = :category_")
     suspend fun getUnitListByCategory(category_: String): List<UnitConvertWithUnitItem>
