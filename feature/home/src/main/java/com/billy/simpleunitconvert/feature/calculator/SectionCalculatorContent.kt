@@ -7,15 +7,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 
 @Composable
-fun SectionCalculatorContent() {
-    val input = remember { mutableStateOf("") }
+fun SectionCalculatorContent(
+    input: String,
+    result: String,
+    handleButtonClick: () -> Unit
+) {
 
     Column(
         modifier = Modifier.fillMaxWidth()
@@ -23,11 +24,12 @@ fun SectionCalculatorContent() {
             .padding(AppUnitTheme.dimens.dp16),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        UnitDisplayBox()
+        UnitDisplayBox(
+        input,
+        result,
+        )
         CalculatorButtons(
-            onButtonClick = {value ->
-                input.value += value
-            },
+            onButtonClick = { handleButtonClick() },
             modifier = Modifier.fillMaxWidth()
                 .fillMaxHeight(0.45f)
         )
@@ -43,6 +45,6 @@ fun SectionCalculatorContent() {
 @Preview(showBackground = true, device = "spec:width=1280dp,height=800dp,dpi=240")
 fun SectionCalculatorContentPreview() {
     AppUnitTheme {
-        SectionCalculatorContent()
+
     }
 }

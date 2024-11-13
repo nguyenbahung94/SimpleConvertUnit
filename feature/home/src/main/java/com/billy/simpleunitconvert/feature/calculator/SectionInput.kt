@@ -33,11 +33,14 @@ import com.billy.simpleunitconvert.feature.common.TextSingleLineUnit
 
 
 @Composable
-fun UnitDisplayBox() {
+fun UnitDisplayBox(
+    input: String,
+    result: String,
+) {
     Column(
         modifier = Modifier.fillMaxWidth(),
     ) {
-        UnitDisplayNumbers()
+        UnitDisplayNumbers(input)
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
         Icon(
             painter = painterResource(com.billy.simpleunitconvert.core.designsystem.R.drawable.icon_swap2),
@@ -49,13 +52,15 @@ fun UnitDisplayBox() {
                 .rotate(90f),
         )
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
-        UnitDisplayNumbers()
+        UnitDisplayNumbers(input)
     }
 }
 
 
 @Composable
-fun UnitDisplayNumbers() {
+fun UnitDisplayNumbers(
+    input: String
+) {
     Box(
         modifier = Modifier.fillMaxWidth()
             .height(AppUnitTheme.dimens.dp90)
@@ -72,7 +77,7 @@ fun UnitDisplayNumbers() {
             DisplayNumbersRow("Length", "m")
             Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp8)) // Space between rows
             // Second Row: Number text centered below the first row
-            InputTextDisplay("11111111111111111234567890123412342256782222222229012.2.2.1221222")
+            InputTextDisplay(input)
         }
 
         Column(
@@ -85,7 +90,7 @@ fun UnitDisplayNumbers() {
             DisplayNumbersRow("Length", "m")
             Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp8)) // Space between rows
             // Second Row: Number text centered below the first row
-            InputTextDisplay("11111111111111111234567890123412342256782222222229012.2.2.1221222")
+            InputTextDisplay("")
         }
     }
 }
@@ -103,9 +108,9 @@ fun DisplayNumbersRow(name: String, unit: String) {
 }
 
 @Composable
-fun InputTextDisplay(text: String) {
+fun InputTextDisplay(value: String) {
     TextSingleLineUnit(
-        text = text,
+        text = value,
         defaultFontSize = AppUnitTheme.dimens.sp23,
         modifier = Modifier
             .fillMaxWidth(),
@@ -148,6 +153,6 @@ fun UnitTextBox(text: String, color: Color, showIcon: Boolean = false) {
 @Preview(showBackground = true)
 fun UnitDisplayBoxPreview() {
     AppUnitTheme {
-        UnitDisplayBox()
+      //  UnitDisplayBox()
     }
 }
