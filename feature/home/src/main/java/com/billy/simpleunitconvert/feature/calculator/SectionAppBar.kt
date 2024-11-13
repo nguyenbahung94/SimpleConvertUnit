@@ -1,6 +1,5 @@
-package com.billy.simpleunitconvert.feature.search
+package com.billy.simpleunitconvert.feature.calculator
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -12,6 +11,9 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -22,12 +24,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 
 @Composable
-internal fun AppBarSearchScreen(
-    onClickBack: () -> Unit,
+internal fun AppBarCalculatorScreen(
+    onClickFavorite: () -> Unit,
+    onClickMore: () -> Unit,
+    isFavorite: Boolean = false,
 ) {
+    val currentNavigator =  currentComposeNavigator
     Surface(
         color = AppUnitTheme.colors.background,
         modifier = Modifier
@@ -38,25 +46,34 @@ internal fun AppBarSearchScreen(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth().height(AppUnitTheme.dimens.dp44)
         ) {
-            IconButton(onClick = { onClickBack() }) {
+            IconButton(onClick = { currentNavigator.navigateUp() }) {
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
             Text(
-                text = "Search units",
+                text = "Convert unit",
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Left,
                 style = MaterialTheme.typography.headlineSmall,
-                fontSize = AppUnitTheme.dimens.sp20,
+                fontSize = AppUnitTheme.dimens.sp20
             )
+            IconButton(onClick = {}) {
+                Icon(
+                    imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+                     contentDescription = "Favorite")
+            }
+
+            IconButton(onClick = {}) {
+                Icon(Icons.Default.MoreVert, contentDescription = "More")
+            }
         }
     }
 }
 
 @Composable
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
-fun TopAppBarSearchPreview() {
+@Preview
+fun AppBarCalculatorScreenPreview() {
     AppUnitTheme {
-        AppBarSearchScreen(onClickBack = {})
-    }
+       AppBarCalculatorScreen(onClickFavorite = {}, onClickMore = {})
+   }
 }

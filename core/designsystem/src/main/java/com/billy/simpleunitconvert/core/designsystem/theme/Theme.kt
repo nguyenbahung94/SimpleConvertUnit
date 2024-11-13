@@ -1,5 +1,6 @@
 package com.billy.simpleunitconvert.core.designsystem.theme
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -9,8 +10,12 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
+import com.billy.simpleunitconvert.core.designsystem.utils.DimensSet
+import com.billy.simpleunitconvert.core.designsystem.utils.Dimensions
+import com.billy.simpleunitconvert.core.designsystem.utils.LocalAppDimens
 
 /**
  * Local providers for various properties we connect to our components, for styling.
@@ -21,7 +26,7 @@ private val LocalColors = compositionLocalOf<Colors> {
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
-fun SimpleUnitConvertTheme(
+fun AppUnitTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     colors: Colors = if (darkTheme) {
         Colors.defaultLightColors()
@@ -31,9 +36,28 @@ fun SimpleUnitConvertTheme(
     background: Background = Background.defaultBackground(darkTheme),
     content: @Composable () -> Unit,
 ) {
+
+    val configuration = LocalConfiguration.current
+
+    val dimensions =  when(configuration.screenWidthDp){
+        in 0..360 -> {
+            DimensSet.smallest
+        }
+        in 361..400 -> {
+            DimensSet.small
+        }
+        else -> {
+            DimensSet.normal
+        }
+    }
+
+    Log.e("AppUnitTheme","configurationscreenWidthDp = $configuration.screenWidthDp")
+    Log.e("AppUnitTheme","dimensions = $dimensions")
+
     CompositionLocalProvider(
         LocalColors provides colors,
         LocalBackgroundTheme provides background,
+        LocalAppDimens provides dimensions,
     ) {
         Box(
             modifier = Modifier
@@ -43,9 +67,10 @@ fun SimpleUnitConvertTheme(
             content()
         }
     }
+
 }
 
-object SimpleConvertUnitTheme {
+object AppUnitTheme {
     val colors: Colors
         @Composable
         @ReadOnlyComposable
@@ -55,6 +80,11 @@ object SimpleConvertUnitTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalBackgroundTheme.current
+
+    val dimens: Dimensions
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalAppDimens.current
 }
 
 

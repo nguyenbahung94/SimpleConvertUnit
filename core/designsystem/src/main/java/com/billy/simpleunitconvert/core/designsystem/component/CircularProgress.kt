@@ -8,21 +8,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 
 @Composable
 fun BoxScope.CircularProgress() {
     CircularProgressIndicator(
         modifier = Modifier.align(Alignment.Center),
-        color = SimpleConvertUnitTheme.colors.primary,
+        color = AppUnitTheme.colors.primary,
     )
 }
 
 @Preview
 @Composable
 private fun CircularProgressPreview() {
-    SimpleUnitConvertTheme {
+    AppUnitTheme {
         Box(modifier = Modifier.fillMaxSize()) {
             CircularProgress()
         }

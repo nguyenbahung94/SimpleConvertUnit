@@ -27,8 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.R
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 
 @Composable
 fun SimpleUnitConvertAppBar(
@@ -39,13 +38,13 @@ fun SimpleUnitConvertAppBar(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(end = 16.dp)
+                    .padding(end = AppUnitTheme.dimens.dp16)
                     .border(
-                        border = BorderStroke(1.dp, SimpleConvertUnitTheme.colors.backgroundCard),
+                        border = BorderStroke(1.dp, AppUnitTheme.colors.backgroundCard),
                         shape = RoundedCornerShape(12.dp),
                         )
                     .background(
-                        color = SimpleConvertUnitTheme.colors.backgroundCard,
+                        color = AppUnitTheme.colors.backgroundCard,
                         shape = RoundedCornerShape(12.dp),
                     )
                     .padding(8.dp)
@@ -59,23 +58,23 @@ fun SimpleUnitConvertAppBar(
                   Icon(
                       imageVector = Icons.Default.Search,
                       contentDescription = "search",
-                      tint = SimpleConvertUnitTheme.colors.title,
-                      modifier = Modifier.size(20.dp),
+                      tint = AppUnitTheme.colors.title,
+                      modifier = Modifier.size(AppUnitTheme.dimens.dp20),
                   )
 
-                  Spacer(modifier = Modifier.size(8.dp))
+                  Spacer(modifier = Modifier.size(AppUnitTheme.dimens.dp8))
 
                   Text(
                       text = stringResource(id = R.string.tv_hint_search),
-                      fontSize = 16.sp,
+                      fontSize = AppUnitTheme.dimens.sp16,
                       fontWeight = FontWeight.Normal,
-                      color = SimpleConvertUnitTheme.colors.title,
+                      color = AppUnitTheme.colors.title,
                   )
               }
             }
         },
         colors = TopAppBarDefaults.topAppBarColors().copy(
-            containerColor = SimpleConvertUnitTheme.colors.background,
+            containerColor = AppUnitTheme.colors.background,
         ),
     )
 }
@@ -84,7 +83,7 @@ fun SimpleUnitConvertAppBar(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun SimpleUitConvertAppBarPreview() {
-    SimpleUnitConvertTheme {
+    AppUnitTheme {
         SimpleUnitConvertAppBar( onNavigateToSearch = {})
     }
 }

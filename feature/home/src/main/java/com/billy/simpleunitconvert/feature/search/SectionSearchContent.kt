@@ -36,13 +36,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.UnitItemData
 
 
 @Composable
-fun SearchBar(
+internal fun SearchBar(
     query: String,
     onQueryChange: (String) -> Unit,
 ) {
@@ -54,13 +53,13 @@ fun SearchBar(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(10.dp)
+            .padding(AppUnitTheme.dimens.dp10)
             .border(
-                BorderStroke(1.dp, SimpleConvertUnitTheme.colors.backgroundCard),
+                BorderStroke(1.dp, AppUnitTheme.colors.backgroundCard),
                 shape = RoundedCornerShape(12.dp)
             )
             .background(
-                color = SimpleConvertUnitTheme.colors.backgroundCard,
+                color = AppUnitTheme.colors.backgroundCard,
                 shape = RoundedCornerShape(12.dp)
             )
     ) {
@@ -74,14 +73,14 @@ fun SearchBar(
             ,
             leadingIcon = {
                 Icon(Icons.Default.Search,
-                    modifier = Modifier.size(24.dp),
+                    modifier = Modifier.size(AppUnitTheme.dimens.dp24),
                     contentDescription = "Search Icon")
             },
             trailingIcon = {
                 if (query.isNotEmpty()) {
                    IconButton(onClick = { onQueryChange("") }) {
                        Icon(Icons.Default.Close,
-                           modifier = Modifier.size(24.dp),
+                           modifier = Modifier.size(AppUnitTheme.dimens.dp24),
                            contentDescription = "Clear search")
                    }
                 }
@@ -105,12 +104,12 @@ fun SearchResults(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 8.dp)
+            .padding(top = AppUnitTheme.dimens.dp8)
     ) {
         items(results.itemCount) { index ->
            results[index]?.let {
                ItemSearch(itemSearch = it)
-               Spacer(modifier = Modifier.padding(4.dp))
+               Spacer(modifier = Modifier.padding(AppUnitTheme.dimens.dp4))
            }
         }
     }
@@ -139,7 +138,7 @@ fun EmptyResults(
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 fun SearchBarPreview() {
-   SimpleUnitConvertTheme {
+    AppUnitTheme {
        SearchBar(
            query = "",
            onQueryChange = {}
@@ -150,7 +149,7 @@ fun SearchBarPreview() {
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun EmptyResultsPreview() {
-    SimpleUnitConvertTheme {
+    AppUnitTheme {
         EmptyResults()
     }
 }

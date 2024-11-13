@@ -27,8 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.HomeUnit
 import com.billy.simpleunitconvert.core.model.UnitConvert
 import kotlinx.collections.immutable.ImmutableList
@@ -48,7 +47,7 @@ internal fun HomeContent(
             VerticalContent(homeUnit, expandedStates[homeUnit.groupName] ?: true, onExpandToggle = {
                 expandedStates[homeUnit.groupName] = it
             })
-            Spacer(modifier = Modifier.height(16.dp)) // Add space between sections
+            Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp16)) // Add space between sections
         }
     }
 }
@@ -67,15 +66,15 @@ fun VerticalContent(
         Row(modifier = Modifier
             .fillMaxWidth()
             .clickable { onExpandToggle(!isExpanded) }
-            .padding(vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+            .padding(vertical = AppUnitTheme.dimens.dp8), verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = homeUnit.groupName,
-                color = SimpleConvertUnitTheme.colors.title,
+                color = AppUnitTheme.colors.title,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.bodyLarge,
-                fontSize = 18.sp,
+                fontSize = AppUnitTheme.dimens.sp18,
                 modifier = Modifier
-                    .padding(start = 12.dp)
+                    .padding(start = AppUnitTheme.dimens.dp12)
                     .weight(1f)
             )
 
@@ -99,7 +98,7 @@ fun VerticalContent(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun HomeContentPreview() {
-    SimpleUnitConvertTheme {
+    AppUnitTheme {
         HomeContent(sectionUnitList = mutableListOf<HomeUnit>().apply {
             add(HomeUnit("Common", "short name", mutableListOf<UnitConvert>().apply {
                 add(UnitConvert("image", "name", "shortName", "category"))

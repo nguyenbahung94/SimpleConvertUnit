@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 
 
@@ -26,7 +26,7 @@ fun SearchScreen(
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
-        TopAppBar(
+        AppBarSearchScreen(
             onClickBack = { composeNavigator.navigateUp() }
         )
 
@@ -52,7 +52,7 @@ fun SearchScreen(
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun SearchScreenPreview() {
-    SimpleUnitConvertTheme {
+    AppUnitTheme {
        SearchScreen()
    }
 }

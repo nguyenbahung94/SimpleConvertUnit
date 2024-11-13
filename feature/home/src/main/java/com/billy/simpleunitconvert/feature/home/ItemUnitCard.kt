@@ -19,10 +19,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.utils.getResIdByName
 import com.billy.simpleunitconvert.core.model.UnitConvert
+import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
+import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
 
 @Composable
@@ -30,35 +31,36 @@ internal fun HomeUnitCard(
     unitConvert: UnitConvert,
     modifier: Modifier = Modifier
 ) {
+    val currentComposeNavigator = currentComposeNavigator
     Card(
         modifier = modifier
-            .padding(horizontal = 11.dp, vertical = 6.dp)
+            .padding(horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6)
             .fillMaxWidth()
-            .clickable { /* Handle click event */ },
+            .clickable { currentComposeNavigator.navigate(SimpleUnitScreen.Calculator) },
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
-            containerColor = SimpleConvertUnitTheme.colors.primary,
-            contentColor = SimpleConvertUnitTheme.colors.primary,
-            disabledContainerColor = SimpleConvertUnitTheme.colors.primary,
-            disabledContentColor = SimpleConvertUnitTheme.colors.primary
+            containerColor = AppUnitTheme.colors.primary,
+            contentColor = AppUnitTheme.colors.primary,
+            disabledContainerColor = AppUnitTheme.colors.primary,
+            disabledContentColor = AppUnitTheme.colors.primary
         )
     ) {
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(8.dp),
+                .padding(AppUnitTheme.dimens.dp8),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
                 painter = painterResource(id = unitConvert.image.getResIdByName()),
                 contentDescription = "search",
-                modifier = Modifier.size(25.dp)
+                modifier = Modifier.size(AppUnitTheme.dimens.dp25)
                     .clip(RoundedCornerShape(10.dp)),
                 tint = Color.Unspecified
             )
 
-            TextUnitCommon(name = unitConvert.name)
+            TextUnitCommon(text = unitConvert.name)
         }
     }
 }
@@ -69,7 +71,7 @@ internal fun HomeUnitCard(
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun UnitCardPreview() {
-   SimpleUnitConvertTheme {
+    AppUnitTheme {
        HomeUnitCard(
            unitConvert = UnitConvert(
                image = "image",

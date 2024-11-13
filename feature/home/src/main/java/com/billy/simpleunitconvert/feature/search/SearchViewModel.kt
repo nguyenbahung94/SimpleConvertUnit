@@ -3,6 +3,7 @@ package com.billy.simpleunitconvert.feature.search
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
 import com.billy.simpleunitconvert.core.model.UnitItemData
 import com.billy.simpleunitconvert.core.viewmodel.BaseViewModel
@@ -38,7 +39,8 @@ class SearchViewModel @Inject constructor(
                 uiState.value = SearchUiState.Error(e.message)
                 emit(PagingData.empty())
             }
-        }.stateIn(
+        }.cachedIn(viewModelScope)
+        .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5000L),
             initialValue = PagingData.empty()

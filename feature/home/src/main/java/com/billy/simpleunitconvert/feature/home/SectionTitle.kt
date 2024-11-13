@@ -10,17 +10,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleConvertUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.theme.SimpleUnitConvertTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 
 @Composable
 fun SectionTitle(title: String) {
     Text(
         text = title,
-        color = SimpleConvertUnitTheme.colors.title,
+        color = AppUnitTheme.colors.title,
         fontWeight = FontWeight.Bold,
         style = MaterialTheme.typography.bodyLarge,
-        modifier = Modifier.padding(start = 12.dp).fillMaxWidth()
+        modifier = Modifier.padding(start = AppUnitTheme.dimens.dp12).fillMaxWidth()
     )
 }
 
@@ -28,7 +27,7 @@ fun SectionTitle(title: String) {
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun SectionTitlePreview() {
-    SimpleUnitConvertTheme {
+    AppUnitTheme {
         SectionTitle(title = "Section Title")
     }
 }

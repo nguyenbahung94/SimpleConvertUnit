@@ -8,7 +8,7 @@ sealed class SimpleUnitScreen {
     @Serializable
     data object Search : SimpleUnitScreen()
     @Serializable
-    data object Converter : SimpleUnitScreen()
+    data object Calculator : SimpleUnitScreen()
     @Serializable
     data object Settings : SimpleUnitScreen()
 }
