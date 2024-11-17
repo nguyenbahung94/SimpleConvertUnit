@@ -4,9 +4,9 @@ import android.content.Context
 import android.util.Log
 import com.billy.simpleunitconvert.core.database.UnitDao
 import com.billy.simpleunitconvert.core.database.entity.mapper.asEntity
-import com.billy.simpleunitconvert.core.model.HomeUnitData
-import com.billy.simpleunitconvert.core.model.UnitConvertData
-import com.billy.simpleunitconvert.core.model.UnitItemData
+import com.billy.simpleunitconvert.core.model.home.HomeUnitData
+import com.billy.simpleunitconvert.core.model.home.UnitConvertData
+import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.serialization.json.Json
 import javax.inject.Inject

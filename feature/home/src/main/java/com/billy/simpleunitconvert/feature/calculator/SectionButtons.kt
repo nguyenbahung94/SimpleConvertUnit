@@ -15,12 +15,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 
 @Composable
 internal fun CalculatorButtons(
     onButtonClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    LogCompositions("CalculatorButtons", "CalculatorButtons")
     val buttons = listOf(
         listOf("7", "8", "9"),
         listOf("4", "5", "6"),
@@ -55,6 +57,7 @@ fun CalculatorButton(
     onButtonClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    LogCompositions("CalculatorButton", "CalculatorButton")
     Button(
         onClick = { onButtonClick()},
         modifier = modifier.fillMaxSize(),
@@ -63,7 +66,6 @@ fun CalculatorButton(
             containerColor = AppUnitTheme.colors.backgroundUnit,
         ),
     ) {
-        Log.e("CalculatorButton","sp = ${AppUnitTheme.dimens.sp22}")
         Text(text = label, fontSize = AppUnitTheme.dimens.sp22, softWrap = false)
     }
 }

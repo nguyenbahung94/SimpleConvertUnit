@@ -1,7 +1,7 @@
 package com.billy.simpleunitconvert.core.database.entity.mapper
 
 import com.billy.simpleunitconvert.core.database.entity.UnitConvertEntity
-import com.billy.simpleunitconvert.core.model.UnitConvertData
+import com.billy.simpleunitconvert.core.model.home.UnitConvertData
 
 object UnitEntityMapper : EntityMapper<List<UnitConvertData>, List<UnitConvertEntity>> {
 

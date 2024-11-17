@@ -1,4 +1,4 @@
-package com.billy.simpleunitconvert.core.model
+package com.billy.simpleunitconvert.core.model.home
 
 import androidx.compose.runtime.Immutable
 

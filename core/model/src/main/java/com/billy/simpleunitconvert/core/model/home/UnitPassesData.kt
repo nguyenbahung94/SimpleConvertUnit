@@ -1,4 +1,4 @@
-package com.billy.simpleunitconvert.core.model
+package com.billy.simpleunitconvert.core.model.home
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

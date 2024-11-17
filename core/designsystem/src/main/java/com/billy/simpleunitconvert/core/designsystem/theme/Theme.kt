@@ -1,6 +1,6 @@
 package com.billy.simpleunitconvert.core.designsystem.theme
 
-import android.util.Log
+import android.content.res.Configuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
@@ -24,6 +24,14 @@ private val LocalColors = compositionLocalOf<Colors> {
     error("No colors provided! Make sure to wrap all usages of components in Theme.")
 }
 
+fun calculateDimensions(configuration: Configuration): Dimensions {
+    return when (configuration.screenWidthDp) {
+        in 0..360 -> DimensSet.smallest
+        in 361..400 -> DimensSet.small
+        else -> DimensSet.normal
+    }
+}
+
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun AppUnitTheme(
@@ -38,21 +46,7 @@ fun AppUnitTheme(
 ) {
 
     val configuration = LocalConfiguration.current
-
-    val dimensions =  when(configuration.screenWidthDp){
-        in 0..360 -> {
-            DimensSet.smallest
-        }
-        in 361..400 -> {
-            DimensSet.small
-        }
-        else -> {
-            DimensSet.normal
-        }
-    }
-
-    Log.e("AppUnitTheme","configurationscreenWidthDp = $configuration.screenWidthDp")
-    Log.e("AppUnitTheme","dimensions = $dimensions")
+    val dimensions = calculateDimensions(configuration)
 
     CompositionLocalProvider(
         LocalColors provides colors,

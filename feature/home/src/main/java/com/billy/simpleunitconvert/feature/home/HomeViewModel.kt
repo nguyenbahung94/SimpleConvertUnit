@@ -1,16 +1,17 @@
 package com.billy.simpleunitconvert.feature.home
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.viewModelScope
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
-import com.billy.simpleunitconvert.core.model.HomeUnit
+import com.billy.simpleunitconvert.core.model.home.HomeUnit
 import com.billy.simpleunitconvert.core.viewmodel.BaseViewModel
-import com.billy.simpleunitconvert.core.viewmodel.RestrictedApi
+import com.billy.simpleunitconvert.core.viewmodel.UiState
 import com.billy.simpleunitconvert.core.viewmodel.ViewModelStateFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
@@ -18,11 +19,15 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val queryDataBaseRepository: QueryDataBaseRepository
 ): BaseViewModel() {
-    internal val uiState: ViewModelStateFlow<HomeUiState> =  viewModelStateFlow(HomeUiState.Loading)
+    internal val uiState: ViewModelStateFlow<UiState<HomeState>> =  viewModelStateFlow(UiState(isLoading = true, data = HomeState("Home")))
 
     val homeUnit: StateFlow<List<HomeUnit>> = queryDataBaseRepository.queryHomeUnits()
+        .onStart {
+            uiState.value = uiState.value.copy(isLoading = true)
+        }
+        .onCompletion { uiState.value = uiState.value.copy(isLoading = false) }
         .catch { e ->
-            uiState.value = HomeUiState.Error(e.message)
+            uiState.value = uiState.value.copy(isLoading = false, error = e.message)
             emit(emptyList())
         }
         .stateIn(
@@ -33,15 +38,9 @@ class HomeViewModel @Inject constructor(
 
 }
 
-@Stable
-internal sealed interface HomeUiState {
-
-    data object Idle : HomeUiState
-
-    data object Loading : HomeUiState
-
-    data class Error(val message: String?) : HomeUiState
-}
+data class HomeState(
+    val homeState: String
+)
 
 
 

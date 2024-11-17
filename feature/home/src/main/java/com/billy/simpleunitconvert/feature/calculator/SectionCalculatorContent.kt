@@ -10,27 +10,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
+
 
 @Composable
 fun SectionCalculatorContent(
-    input: String,
-    result: String,
-    handleButtonClick: () -> Unit
+    calculatorState: CalculatorState,
+    onEvent: (CalculatorEvent) -> Unit,
+    modifier: Modifier = Modifier
 ) {
-
+    LogCompositions("SectionCalculatorContent", "SectionCalculatorContent")
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier
+            .fillMaxWidth()
             .fillMaxSize()
             .padding(AppUnitTheme.dimens.dp16),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-        UnitDisplayBox(
-        input,
-        result,
-        )
+
+        UnitDisplayBox(calculatorState)
         CalculatorButtons(
-            onButtonClick = { handleButtonClick() },
-            modifier = Modifier.fillMaxWidth()
+            onButtonClick = { onEvent(CalculatorEvent.OnClickButton(it)) },
+            modifier = modifier
+                .fillMaxWidth()
                 .fillMaxHeight(0.45f)
         )
     }

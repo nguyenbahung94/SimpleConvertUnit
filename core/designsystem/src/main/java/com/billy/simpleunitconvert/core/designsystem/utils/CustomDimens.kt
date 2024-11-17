@@ -1,24 +1,12 @@
 package com.billy.simpleunitconvert.core.designsystem.utils
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
-@Composable
-fun ProvideDimens(
-    dimensions: Dimensions,
-    content: @Composable () -> Unit
-) {
-    val dimensionSet = remember { dimensions }
-    CompositionLocalProvider(LocalAppDimens provides dimensionSet, content = content)
-}
 
 internal val LocalAppDimens = staticCompositionLocalOf {
     smallDimens

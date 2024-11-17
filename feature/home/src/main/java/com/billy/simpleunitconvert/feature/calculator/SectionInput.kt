@@ -19,6 +19,7 @@ import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -29,76 +30,84 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.feature.common.TextSingleLineUnit
 
 
 @Composable
 fun UnitDisplayBox(
-    input: String,
-    result: String,
+    calculatorState: CalculatorState,
+    modifier: Modifier = Modifier
 ) {
+    LogCompositions("UnitDisplayBox", "UnitDisplayBox")
     Column(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
     ) {
-        UnitDisplayNumbers(input)
+
+        UnitDisplayNumbers(calculatorState.unitInput.name, calculatorState.unitInput.symbol, calculatorState.calculatorDisplay.input)
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
         Icon(
             painter = painterResource(com.billy.simpleunitconvert.core.designsystem.R.drawable.icon_swap2),
             contentDescription = "swap",
             tint = Color.Unspecified,
-            modifier = Modifier
+            modifier = modifier
                 .size(AppUnitTheme.dimens.dp26)
                 .align(Alignment.CenterHorizontally)
                 .rotate(90f),
         )
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
-        UnitDisplayNumbers(input)
+        UnitDisplayNumbers(calculatorState.unitResult.name, calculatorState.unitResult.symbol, calculatorState.calculatorDisplay.result)
     }
 }
 
 
 @Composable
 fun UnitDisplayNumbers(
-    input: String
+    name: String,
+    unit: String,
+    value: String,
+    modifier: Modifier = Modifier
 ) {
+    LogCompositions("UnitDisplayNumbers", "UnitDisplayNumbers+$name $unit $value")
     Box(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
             .height(AppUnitTheme.dimens.dp90)
             .border(AppUnitTheme.dimens.dp2, color = AppUnitTheme.colors.backgroundUnit, shape = RoundedCornerShape(8.dp)),
         contentAlignment = Alignment.CenterStart
     ) {
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .padding(start = AppUnitTheme.dimens.dp8, end = AppUnitTheme.dimens.dp8),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             // First Row: Unit name on the left, Unit on the right
-            DisplayNumbersRow("Length", "m")
+            DisplayNumbersRow(name, unit)
             Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp8)) // Space between rows
             // Second Row: Number text centered below the first row
-            InputTextDisplay(input)
+            InputTextDisplay(value)
         }
 
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .padding(start = AppUnitTheme.dimens.dp8, end = AppUnitTheme.dimens.dp8),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             // First Row: Unit name on the left, Unit on the right
-            DisplayNumbersRow("Length", "m")
+            DisplayNumbersRow(name, unit)
             Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp8)) // Space between rows
             // Second Row: Number text centered below the first row
-            InputTextDisplay("")
+            InputTextDisplay(value)
         }
     }
 }
 
 @Composable
-fun DisplayNumbersRow(name: String, unit: String) {
+fun DisplayNumbersRow(name: String, unit: String, modifier: Modifier = Modifier) {
+    LogCompositions("DisplayNumbersRow", "DisplayNumbersRow + name: $name, unit: $unit")
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         UnitTextBox(text = name, color = AppUnitTheme.colors.absoluteWhite, showIcon = true)
@@ -108,11 +117,12 @@ fun DisplayNumbersRow(name: String, unit: String) {
 }
 
 @Composable
-fun InputTextDisplay(value: String) {
+fun InputTextDisplay(value: String, modifier: Modifier = Modifier) {
+    LogCompositions("InputTextDisplay", "InputTextDisplay + value: $value")
     TextSingleLineUnit(
         text = value,
         defaultFontSize = AppUnitTheme.dimens.sp23,
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth(),
         color = AppUnitTheme.colors.absoluteBlack
     )

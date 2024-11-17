@@ -21,9 +21,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.utils.getResIdByName
-import com.billy.simpleunitconvert.core.model.UnitConvert
+import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
+import com.billy.simpleunitconvert.core.model.home.UnitConvert
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.NavArgs
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
 
 @Composable
@@ -36,7 +38,7 @@ internal fun HomeUnitCard(
         modifier = modifier
             .padding(horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6)
             .fillMaxWidth()
-            .clickable { currentComposeNavigator.navigate(SimpleUnitScreen.Calculator) },
+            .clickable { currentComposeNavigator.navigate(SimpleUnitScreen.Calculator(UnitCategory(unitConvert.category))) },
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
@@ -59,7 +61,6 @@ internal fun HomeUnitCard(
                     .clip(RoundedCornerShape(10.dp)),
                 tint = Color.Unspecified
             )
-
             TextUnitCommon(text = unitConvert.name)
         }
     }

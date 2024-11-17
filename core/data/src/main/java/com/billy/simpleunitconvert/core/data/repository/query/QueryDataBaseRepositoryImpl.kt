@@ -8,9 +8,10 @@ import androidx.paging.map
 import com.billy.simpleunitconvert.core.database.UnitDao
 import com.billy.simpleunitconvert.core.database.entity.HomeUnitWithUnitConvert
 import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
-import com.billy.simpleunitconvert.core.model.HomeUnit
-import com.billy.simpleunitconvert.core.model.UnitConvert
-import com.billy.simpleunitconvert.core.model.UnitItemData
+import com.billy.simpleunitconvert.core.database.entity.mapper.asDomain
+import com.billy.simpleunitconvert.core.model.home.HomeUnit
+import com.billy.simpleunitconvert.core.model.home.UnitConvert
+import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.network.Dispatcher
 import com.billy.simpleunitconvert.core.network.SimpleUnitAppDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
@@ -45,6 +46,12 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
             .flowOn(ioDispatcher)
             .catch { Log.e("queryUnitByKeWord", "error: ${it.message}") }
     }
+
+    override fun queryUnitByCategory(category: String): Flow<List<UnitItemData>> = flow {
+        val unitListByCategory = unitDao.getUnitListByCategory(category)
+        emit(unitListByCategory.unitItems.asDomain())
+    }.flowOn(ioDispatcher)
+        .catch { Log.e("queryUnitByCategory", "error: ${it.message}") }
 
     private fun transformer(itemEntity: UnitItemEntity): UnitItemData {
         return with(itemEntity) {

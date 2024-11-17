@@ -1,5 +1,6 @@
 package com.billy.simpleunitconvert.feature.home
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,10 +30,16 @@ fun SimpleUnitHome(
               composeNavigator.navigate(SimpleUnitScreen.Search)
        })
 
+       Log.e("SimpleUnitHome","uiState ==: ${uiState.isLoading}")
+
+
+       Log.e("SimpleUnitHome","run here....")
        if (unitHomeList.isNotEmpty()) {
            //content
            HomeContent(unitHomeList.filter { it.unitConvert.isNotEmpty() }.toImmutableList())
-       } else {
+       }
+
+       if (uiState.isLoading) {
            Box(modifier = Modifier.fillMaxSize()) {
                CircularProgress()
            }

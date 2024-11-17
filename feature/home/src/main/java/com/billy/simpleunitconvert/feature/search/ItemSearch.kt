@@ -17,22 +17,36 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.model.UnitItemData
+import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
+import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
+import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.NavArgs
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
 
 @Composable
 fun ItemSearch(
     itemSearch: UnitItemData,
 ) {
+    LogCompositions("ItemSearch", "ItemSearch")
     val currentComposeNavigator = currentComposeNavigator
     Row(
-        modifier = Modifier.fillMaxWidth().padding(start = AppUnitTheme.dimens.dp8).clickable {
-            currentComposeNavigator.navigate(SimpleUnitScreen.Calculator)
-        },
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = AppUnitTheme.dimens.dp8)
+            .clickable {
+                currentComposeNavigator.navigate(
+                    SimpleUnitScreen.Calculator(
+                        UnitCategory(
+                            itemSearch.category
+                        )
+                    ),
+                )
+            },
         verticalAlignment = Alignment.CenterVertically,
     ) {
+        LogCompositions("ItemSearch", "inside ItemSearch")
         Box(
             modifier = Modifier
                 .padding(4.dp)

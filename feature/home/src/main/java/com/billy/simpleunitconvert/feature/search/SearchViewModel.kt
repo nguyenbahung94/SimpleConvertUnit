@@ -1,24 +1,23 @@
 package com.billy.simpleunitconvert.feature.search
 
-import androidx.compose.runtime.Stable
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
-import com.billy.simpleunitconvert.core.model.UnitItemData
+import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.viewmodel.BaseViewModel
+import com.billy.simpleunitconvert.core.viewmodel.UiState
 import com.billy.simpleunitconvert.core.viewmodel.ViewModelStateFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.WhileSubscribed
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
@@ -26,7 +25,7 @@ import javax.inject.Inject
 class SearchViewModel @Inject constructor(
    private val queryDataBaseRepository: QueryDataBaseRepository
 ): BaseViewModel() {
-    internal val uiState: ViewModelStateFlow<SearchUiState> =  viewModelStateFlow(SearchUiState.Loading)
+    internal val uiState: ViewModelStateFlow<UiState<SearchState>> =  viewModelStateFlow(UiState(isLoading = true, data = SearchState("")))
 
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery
@@ -35,8 +34,14 @@ class SearchViewModel @Inject constructor(
     val searchResults: StateFlow<PagingData<UnitItemData>> = searchQuery
         .debounce(400)
         .flatMapLatest { query ->
-            queryDataBaseRepository.queryUnitByKeWord(query).catch { e ->
-                uiState.value = SearchUiState.Error(e.message)
+            queryDataBaseRepository.queryUnitByKeWord(query)
+                .onStart { uiState.value = uiState.value.copy(isLoading = true) }
+                .map {
+                    uiState.value = uiState.value.copy(isLoading = false)
+                    it
+                }
+                .catch { e ->
+                uiState.value = uiState.value.copy(isLoading = false, error = e.message)
                 emit(PagingData.empty())
             }
         }.cachedIn(viewModelScope)
@@ -53,13 +58,6 @@ class SearchViewModel @Inject constructor(
 }
 
 
-
-@Stable
-internal sealed interface SearchUiState {
-
-    data object Idle : SearchUiState
-
-    data object Loading : SearchUiState
-
-    data class Error(val message: String?) : SearchUiState
-}
+data class SearchState(
+    val search: String
+)

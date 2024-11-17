@@ -46,19 +46,6 @@ fun TextSingleLineUnit(
     color: Color = AppUnitTheme.colors.subtitle,
     modifier: Modifier = Modifier
 ) {
-//    val density = LocalDensity.current
-//    val screenWidthDp = LocalConfiguration.current.screenWidthDp.dp
-//
-//    // Calculate the adjusted font size to fit the text within the screen width
-//    val adjustedFontSize = with(density) {
-//        // Estimate a suitable font size based on screen width and character count
-//        val screenWidthPx = screenWidthDp.toPx()
-//        val calculatedFontSizePx = screenWidthPx / MAX_NUMBER_LENGTH
-//        val fontSizeInSp = calculatedFontSizePx / density.density
-//
-//        fontSizeInSp.coerceIn(AppUnitTheme.dimens.sp22.value, defaultFontSize).sp
-//    }
-
     Log.e("TextSingleLineUnit","defaultFontSize = $defaultFontSize")
     Text(
         text = text.take(MAX_NUMBER_LENGTH),
@@ -74,4 +61,8 @@ fun TextSingleLineUnit(
 
 object Setting {
     const val MAX_NUMBER_LENGTH = 28
+}
+
+object NavArgs {
+    const val UNIT_CATEGORY = "unit_category"
 }

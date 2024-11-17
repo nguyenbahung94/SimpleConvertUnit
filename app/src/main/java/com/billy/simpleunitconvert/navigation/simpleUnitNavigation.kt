@@ -17,7 +17,9 @@ fun NavGraphBuilder.simpleUnitNavigation() {
         SearchScreen()
     }
 
-    composable<SimpleUnitScreen.Calculator> {
+    composable<SimpleUnitScreen.Calculator>(
+        typeMap = SimpleUnitScreen.Calculator.typeMap,
+    ) {
         CalculatorScreen()
     }
 }

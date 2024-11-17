@@ -29,6 +29,6 @@ interface UnitDao {
     @Query("SELECT * FROM UnitItemEntity WHERE symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%'")
     fun searchUnitItem(keyword: String): PagingSource<Int, UnitItemEntity>
 
-    @Query("SELECT * FROM UnitConvertEntity WHERE category = :category_")
-    suspend fun getUnitListByCategory(category_: String): List<UnitConvertWithUnitItem>
+    @Query("SELECT * FROM UnitConvertEntity WHERE category = :category")
+    suspend fun getUnitListByCategory(category: String): UnitConvertWithUnitItem
 }

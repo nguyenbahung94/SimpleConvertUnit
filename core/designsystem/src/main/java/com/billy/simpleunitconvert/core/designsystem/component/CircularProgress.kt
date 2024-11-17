@@ -14,7 +14,7 @@ import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 fun BoxScope.CircularProgress() {
     CircularProgressIndicator(
         modifier = Modifier.align(Alignment.Center),
-        color = AppUnitTheme.colors.primary,
+        color = AppUnitTheme.colors.backgroundUnit,
     )
 }
 
