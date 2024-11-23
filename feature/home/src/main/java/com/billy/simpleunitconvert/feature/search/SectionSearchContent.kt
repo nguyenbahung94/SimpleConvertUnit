@@ -44,7 +44,7 @@ import com.billy.simpleunitconvert.core.model.home.UnitItemData
 @Composable
 internal fun SearchBar(
     query: String,
-    onQueryChange: (String) -> Unit,
+    onEvent: (SearchEvent) -> Unit,
 ) {
     LogCompositions("SearchBar", "SearchBar")
     var isFocused by remember {
@@ -67,7 +67,7 @@ internal fun SearchBar(
         LogCompositions("SearchBar", "in side search bar")
         TextField(
             value = query,
-            onValueChange = onQueryChange,
+            onValueChange = { onEvent(SearchEvent.OnSearchQueryChange(it)) },
             label = if (query.isEmpty() && !isFocused) { { Text("Enter unit symbol or name....") } } else null,
             modifier = Modifier
                 .fillMaxWidth()
@@ -80,7 +80,7 @@ internal fun SearchBar(
             },
             trailingIcon = {
                 if (query.isNotEmpty()) {
-                   IconButton(onClick = { onQueryChange("") }) {
+                   IconButton(onClick = { onEvent(SearchEvent.OnSearchQueryChange("")) }) {
                        Icon(Icons.Default.Close,
                            modifier = Modifier.size(AppUnitTheme.dimens.dp24),
                            contentDescription = "Clear search")
@@ -101,6 +101,7 @@ internal fun SearchBar(
 @Composable
 fun SearchResults(
     results: LazyPagingItems<UnitItemData>,
+    onEvent: (SearchEvent) -> Unit
 ) {
     Log.e("SearchResults","results = ${results.itemCount}")
     LogCompositions("SearchResults", "SearchResults")
@@ -111,7 +112,7 @@ fun SearchResults(
     ) {
         items(results.itemCount) { index ->
            results[index]?.let {
-               ItemSearch(itemSearch = it)
+               ItemSearch(itemSearch = it, onEvent)
                Spacer(modifier = Modifier.padding(AppUnitTheme.dimens.dp4))
            }
         }
@@ -144,7 +145,7 @@ fun SearchBarPreview() {
     AppUnitTheme {
        SearchBar(
            query = "",
-           onQueryChange = {}
+           onEvent = {}
        )
    }
 }

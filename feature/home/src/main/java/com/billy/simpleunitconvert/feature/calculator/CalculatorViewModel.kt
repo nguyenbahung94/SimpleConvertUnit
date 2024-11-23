@@ -11,6 +11,7 @@ import com.billy.simpleunitconvert.core.viewmodel.BaseViewModel
 import com.billy.simpleunitconvert.core.viewmodel.StateExtensions.updateState
 import com.billy.simpleunitconvert.core.viewmodel.UiState
 import com.billy.simpleunitconvert.core.viewmodel.ViewModelStateFlow
+import com.billy.simpleunitconvert.feature.common.takeEnoughLength
 import com.billy.simpleunitconvert.feature.common.updateBatchData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -27,12 +28,18 @@ class CalculatorViewModel @Inject constructor(
     private var currentListUnit = mutableListOf<UnitItemData>()
     private var unitInput: UnitItemData? = null
     private var unitResult: UnitItemData? = null
+    private var categorySave: UnitCategory? = null
+    private var isClickUnitInput: Boolean? = null
 
     init {
-
          viewModelScope.launch {
              savedStateHandle.getStateFlow<UnitCategory?>("unitCategory", null).collect { unitCategory ->
-                    unitCategory?.let {category ->
+                    unitCategory?.let { category ->
+                        categorySave = category
+                        Log.e("CalculatorViewModel","category: $category")
+                        uiState.updateBatchData(
+                            category = category.category
+                        )
                         queryDataBaseRepository.queryUnitByCategory(category.category).collect {
                             currentListUnit = it.toMutableList()
                             initDataUnit()
@@ -40,6 +47,10 @@ class CalculatorViewModel @Inject constructor(
                     }
                 }
          }
+    }
+
+    fun getNameCategory(): String? {
+        return categorySave?.categoryName
     }
 
     private fun initDataUnit() {
@@ -53,8 +64,8 @@ class CalculatorViewModel @Inject constructor(
         Log.e("CalculatorViewModel", "unitInput: $unitInput")
         Log.e("CalculatorViewModel", "unitResult: $unitResult")
         uiState.updateBatchData(
-            updateUnitResult = { copy(name = unitInput!!.name, symbol = unitInput!!.symbol)},
-            updateUnitInput = { copy(name = unitResult!!.name, symbol = unitResult!!.symbol)}
+            updateUnitResult = { copy(name = unitResult!!.name, symbol = unitResult!!.symbol)},
+            updateUnitInput = { copy(name = unitInput!!.name, symbol = unitInput!!.symbol)},
         )
     }
 
@@ -63,7 +74,7 @@ class CalculatorViewModel @Inject constructor(
         val input = uiState.value.data.calculatorDisplay.input
         return when (newNumber) {
             "." -> {
-                if (!input.contains(".")) {
+                if (input.contains(".")) {
                     return null
                 }
                 input + newNumber
@@ -91,14 +102,55 @@ class CalculatorViewModel @Inject constructor(
 
             is CalculatorEvent.OnClickButton -> {
                 handleButtonClick(event.value)?.let { resultForInPut ->
-
+                   val result = calculatorResult(resultForInPut)
+                    uiState.updateBatchData(
+                        updateUnitCalculatorDisplay = {
+                            setValidData(input = resultForInPut,result = result)
+                        }
+                    )
                 }
+            }
+
+            is CalculatorEvent.OnClickSwap -> {
+                doSwapUnit(uiState.value.data.calculatorDisplay.input)
+            }
+
+            is CalculatorEvent.OnClickOpenSearch ->{
+                isClickUnitInput = event.isClickUnitInput
             }
         }
     }
 
-    private fun calculatorResult(input: String): String {
-        return input + "a"
+    private fun calculatorResult(value: String): String {
+        if (value.isEmpty()) {
+            return ""
+        }
+        if (unitInput?.conversionFactor !=null && unitResult?.conversionFactor != null) {
+           val baseValue = value.toDouble() * unitInput!!.conversionFactor!!
+            return (baseValue / unitResult!!.conversionFactor!!).toString()
+        }
+
+        if (unitInput?.scaleFactor !=null && unitInput?.offset !=null && unitResult?.scaleFactor != null && unitResult?.offset != null) {
+            val kelvin = (value.toDouble() * unitInput!!.scaleFactor!!) + unitInput!!.offset!!
+            return ((kelvin - unitResult!!.offset!!) / unitResult!!.scaleFactor!!).toString()
+        }
+        return "Has error when calculate, Please reinstall app"
+    }
+
+    private fun recalculate(value: String) {
+       val result = calculatorResult(value)
+        uiState.updateBatchData(
+            updateUnitResult = { copy(name = unitResult!!.name, symbol = unitResult!!.symbol)},
+            updateUnitInput = { copy(name = unitInput!!.name, symbol = unitInput!!.symbol)},
+            updateUnitCalculatorDisplay = {copy(input = value, result = result)}
+        )
+    }
+
+    private fun doSwapUnit(value: String) {
+        val temp = unitInput
+        unitInput = unitResult
+        unitResult = temp
+        recalculate(value)
     }
 
 }
@@ -107,6 +159,10 @@ sealed interface CalculatorEvent {
     data class OnClickButton(val value: String) : CalculatorEvent
 
     data object OnClickFavorite : CalculatorEvent
+
+    data object OnClickSwap : CalculatorEvent
+
+    data class OnClickOpenSearch(val isClickUnitInput: Boolean) : CalculatorEvent
 }
 
 @Stable
@@ -115,6 +171,7 @@ data class CalculatorState(
     val unitResult: UnitResultState = UnitResultState(),
     val calculatorDisplay: CalculatorDisplayState = CalculatorDisplayState(),
     val isFavorite: Boolean = false,
+    val category: String = "",
 )
 
 @Stable
@@ -134,6 +191,10 @@ data class CalculatorDisplayState(
     val input: String = "",
     val result: String = "",
     val isFavorite: Boolean = false,
-)
+) {
+   fun setValidData(input: String, result: String): CalculatorDisplayState {
+       return copy(input = input.takeEnoughLength(), result = result.takeEnoughLength())
+   }
+}
 
 

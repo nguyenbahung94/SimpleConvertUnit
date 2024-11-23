@@ -66,7 +66,8 @@ fun CalculatorButton(
             containerColor = AppUnitTheme.colors.backgroundUnit,
         ),
     ) {
-        Text(text = label, fontSize = AppUnitTheme.dimens.sp22, softWrap = false)
+
+        Text(text = label, fontSize = AppUnitTheme.dimens.sp28, softWrap = false)
     }
 }
 

@@ -12,7 +12,7 @@ data class  HomeUnit(
 @Immutable
 data class UnitConvert(
     val image: String,
-    val name: String,
+    val categoryName: String,
     val shortName: String,
     val category: String,
 )

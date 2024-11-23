@@ -22,27 +22,36 @@ import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
-import com.billy.simpleunitconvert.feature.common.NavArgs
+import com.billy.simpleunitconvert.feature.common.LocalCategoryProvider
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
 
 @Composable
 fun ItemSearch(
     itemSearch: UnitItemData,
+    onEvent: (SearchEvent) -> Unit = {}
 ) {
     LogCompositions("ItemSearch", "ItemSearch")
-    val currentComposeNavigator = currentComposeNavigator
+    val localCategory = LocalCategoryProvider.current
+    val composeNavigator = currentComposeNavigator
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = AppUnitTheme.dimens.dp8)
             .clickable {
-                currentComposeNavigator.navigate(
-                    SimpleUnitScreen.Calculator(
-                        UnitCategory(
-                            itemSearch.category
-                        )
-                    ),
+                onEvent(SearchEvent.OnSearchQueryChange(""))
+                val route =  SimpleUnitScreen.Calculator(
+                    UnitCategory(
+                        itemSearch.category,
+                        itemSearch.name
+                    )
                 )
+                if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
+                    composeNavigator.navigateBackWithResult("unitCategory", result =  UnitCategory(itemSearch.category, itemSearch.name, itemSelected = itemSearch.name ), null)
+                } else {
+                    composeNavigator.navigate(
+                        route
+                    )
+                }
             },
         verticalAlignment = Alignment.CenterVertically,
     ) {

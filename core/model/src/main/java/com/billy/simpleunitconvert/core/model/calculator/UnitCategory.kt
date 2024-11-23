@@ -8,4 +8,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UnitCategory(
     val category: String,
+    val categoryName: String,
+    val itemSelected: String? = null
 ) : Parcelable

@@ -27,12 +27,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.capitalizeFirstChar
 
 @Composable
 internal fun AppBarCalculatorScreen(
     onClickFavorite: () -> Unit,
     onClickMore: () -> Unit,
     isFavorite: Boolean = false,
+    title: String?
 ) {
     LogCompositions("AppBarCalculatorScreen", "AppBarCalculatorScreen")
     val currentNavigator =  currentComposeNavigator
@@ -51,7 +53,7 @@ internal fun AppBarCalculatorScreen(
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
             Text(
-                text = "Convert unit",
+                text = title?.capitalizeFirstChar() ?: "Convert unit",
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Left,
                 style = MaterialTheme.typography.headlineSmall,
@@ -74,6 +76,6 @@ internal fun AppBarCalculatorScreen(
 @Preview
 fun AppBarCalculatorScreenPreview() {
     AppUnitTheme {
-       AppBarCalculatorScreen(onClickFavorite = {}, onClickMore = {})
+       AppBarCalculatorScreen(onClickFavorite = {}, onClickMore = {}, isFavorite = false, title = "Convert unit")
    }
 }

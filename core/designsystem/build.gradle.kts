@@ -10,7 +10,7 @@ android {
 
 dependencies {
     libs.apply {
-        api(bundles.landscapistBundle)
+      //  api(bundles.landscapistBundle)
 
         api(libs.androidx.compose.runtime)
         api(libs.androidx.compose.ui)

@@ -7,11 +7,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
-
+import com.billy.simpleunitconvert.core.model.search.SearchCategory
+import com.billy.simpleunitconvert.feature.common.LocalCategoryProvider
 
 @Composable
 fun SectionCalculatorContent(
@@ -27,8 +29,9 @@ fun SectionCalculatorContent(
             .padding(AppUnitTheme.dimens.dp16),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-
-        UnitDisplayBox(calculatorState)
+        CompositionLocalProvider(LocalCategoryProvider provides SearchCategory(calculatorState.category)) {
+            UnitDisplayBox(calculatorState, onEvent)
+        }
         CalculatorButtons(
             onButtonClick = { onEvent(CalculatorEvent.OnClickButton(it)) },
             modifier = modifier

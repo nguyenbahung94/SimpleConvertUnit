@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billy.simpleunitconvert.core.designsystem.component.CircularProgress
+import com.billy.simpleunitconvert.core.model.search.SearchCategory
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import kotlinx.collections.immutable.toImmutableList
@@ -27,7 +28,7 @@ fun SimpleUnitHome(
    ) {
        //App bar
        SimpleUnitConvertAppBar( onNavigateToSearch = {
-              composeNavigator.navigate(SimpleUnitScreen.Search)
+              composeNavigator.navigate(SimpleUnitScreen.Search(SearchCategory(category = "")))
        })
 
        Log.e("SimpleUnitHome","uiState ==: ${uiState.isLoading}")

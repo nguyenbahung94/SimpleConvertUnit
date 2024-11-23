@@ -5,6 +5,7 @@ import android.util.Log
 import com.billy.simpleunitconvert.core.data.repository.init.CreateDatabaseRepository
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
 import dagger.hilt.android.HiltAndroidApp
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -1,9 +1,11 @@
 package com.billy.simpleunitconvert.core.model.home
 
+import androidx.compose.runtime.Immutable
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
+@Immutable
 data class HomeUnitData(
     @SerialName("shortName")
     val shortName: String,
@@ -12,6 +14,7 @@ data class HomeUnitData(
 )
 
 @Serializable
+@Immutable
 data class UnitConvertData(
     @SerialName("category")
     val category: String,
@@ -28,6 +31,7 @@ data class UnitConvertData(
 )
 
 @Serializable
+@Immutable
 data class UnitItemData(
     @SerialName("symbol")
     val symbol: String,

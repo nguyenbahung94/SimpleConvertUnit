@@ -121,6 +121,7 @@ dependencies {
 
     // di
     implementation(libs.hilt.android)
+    implementation(libs.androidx.animation.core)
     ksp(libs.hilt.compiler)
     androidTestImplementation(libs.hilt.testing)
     kspAndroidTest(libs.hilt.compiler)

@@ -7,7 +7,7 @@ import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 
 
 @Composable
-fun SimpleUnitNavHost(navHostController: NavHostController) {
+fun AnimatedNavigation(navHostController: NavHostController) {
     NavHost(
         navController = navHostController,
         startDestination = SimpleUnitScreen.Home,
@@ -15,3 +15,7 @@ fun SimpleUnitNavHost(navHostController: NavHostController) {
         simpleUnitNavigation()
     }
 }
+
+
+
+

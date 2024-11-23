@@ -23,6 +23,7 @@ fun CalculatorScreen(
 
         LogCompositions("CalculatorScreen", "CalculatorScreen")
         AppBarCalculatorScreen(
+            title = viewModel.getNameCategory(),
             onClickFavorite = {},
             onClickMore = {},
             isFavorite = false

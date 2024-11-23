@@ -6,7 +6,7 @@ import androidx.navigation.compose.rememberNavController
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.navigation.AppComposeNavigator
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
-import com.billy.simpleunitconvert.navigation.SimpleUnitNavHost
+import com.billy.simpleunitconvert.navigation.AnimatedNavigation
 
 @Composable
 fun SimpleUnitMain(composeNavigator: AppComposeNavigator<SimpleUnitScreen>) {
@@ -17,7 +17,7 @@ fun SimpleUnitMain(composeNavigator: AppComposeNavigator<SimpleUnitScreen>) {
             composeNavigator.handleNavigationCommands(navHostController)
         }
 
-        SimpleUnitNavHost(navHostController = navHostController)
+        AnimatedNavigation(navHostController = navHostController)
     }
 
 }

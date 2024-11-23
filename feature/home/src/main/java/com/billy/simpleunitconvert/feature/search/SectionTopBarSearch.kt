@@ -28,6 +28,7 @@ import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 @Composable
 internal fun AppBarSearchScreen(
     onClickBack: () -> Unit,
+    searchTitle: String?
 ) {
 
     Surface(
@@ -45,7 +46,7 @@ internal fun AppBarSearchScreen(
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
             Text(
-                text = "Search units",
+                text = getSearchText(searchTitle),
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Left,
                 style = MaterialTheme.typography.headlineSmall,
@@ -54,11 +55,12 @@ internal fun AppBarSearchScreen(
         }
     }
 }
+@Composable fun getSearchText(searchTitle: String?): String { return if (searchTitle.isNullOrEmpty()) "Search units" else "Search units $searchTitle" }
 
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 fun TopAppBarSearchPreview() {
     AppUnitTheme {
-        AppBarSearchScreen(onClickBack = {})
+        AppBarSearchScreen(onClickBack = {}, "")
     }
 }

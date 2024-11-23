@@ -34,14 +34,15 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
     }.flowOn(ioDispatcher)
         .catch { Log.e("queryHomeUnits", "error: ${it.message}") }
 
-    override fun queryUnitByKeWord(keyWord: String): Flow<PagingData<UnitItemData>> {
+    override fun queryUnitByKeWord(keyWord: String, category: String?): Flow<PagingData<UnitItemData>> {
         return Pager(config = PagingConfig(
             pageSize = 15,
             initialLoadSize = 15,
             prefetchDistance = 3,
             enablePlaceholders = false
         ), pagingSourceFactory = {
-            unitDao.searchUnitItem(keyWord)
+            Log.e("queryUnitByKeWord", "keyWord: $keyWord, category: $category")
+            unitDao.searchUnitItem(keyWord, category)
         }).flow.map { pagingData -> pagingData.map { transformer(it) } }
             .flowOn(ioDispatcher)
             .catch { Log.e("queryUnitByKeWord", "error: ${it.message}") }

@@ -26,8 +26,8 @@ interface UnitDao {
     @Query("SELECT * FROM HomeUnitEntity")
     suspend fun getHomeUnitList(): List<HomeUnitWithUnitConvert>
 
-    @Query("SELECT * FROM UnitItemEntity WHERE symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%'")
-    fun searchUnitItem(keyword: String): PagingSource<Int, UnitItemEntity>
+    @Query(""" SELECT * FROM UnitItemEntity WHERE (symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%') AND (COALESCE(:category, '') = '' OR unitCategory = :category) """)
+    fun searchUnitItem(keyword: String, category: String?): PagingSource<Int, UnitItemEntity>
 
     @Query("SELECT * FROM UnitConvertEntity WHERE category = :category")
     suspend fun getUnitListByCategory(category: String): UnitConvertWithUnitItem
