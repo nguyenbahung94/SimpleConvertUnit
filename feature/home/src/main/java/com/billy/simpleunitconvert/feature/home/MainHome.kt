@@ -31,10 +31,6 @@ fun SimpleUnitHome(
               composeNavigator.navigate(SimpleUnitScreen.Search(SearchCategory(category = "")))
        })
 
-       Log.e("SimpleUnitHome","uiState ==: ${uiState.isLoading}")
-
-
-       Log.e("SimpleUnitHome","run here....")
        if (unitHomeList.isNotEmpty()) {
            //content
            HomeContent(unitHomeList.filter { it.unitConvert.isNotEmpty() }.toImmutableList())

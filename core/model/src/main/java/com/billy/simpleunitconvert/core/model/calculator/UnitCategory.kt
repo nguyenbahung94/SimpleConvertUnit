@@ -11,3 +11,9 @@ data class UnitCategory(
     val categoryName: String,
     val itemSelected: String? = null
 ) : Parcelable
+
+@Parcelize
+@Serializable
+data class ItemSelected(
+    val itemSelected: String
+) : Parcelable

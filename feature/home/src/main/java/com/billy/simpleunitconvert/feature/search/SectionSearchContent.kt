@@ -103,7 +103,6 @@ fun SearchResults(
     results: LazyPagingItems<UnitItemData>,
     onEvent: (SearchEvent) -> Unit
 ) {
-    Log.e("SearchResults","results = ${results.itemCount}")
     LogCompositions("SearchResults", "SearchResults")
     LazyColumn(
         modifier = Modifier

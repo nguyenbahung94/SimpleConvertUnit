@@ -43,7 +43,7 @@ import com.billy.simpleunitconvert.feature.common.TextSingleLineUnitLayout
 fun UnitDisplayBox(
     calculatorState: CalculatorState,
     onEvent: (CalculatorEvent) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     LogCompositions("UnitDisplayBox", "UnitDisplayBox")
     Column(
@@ -54,7 +54,9 @@ fun UnitDisplayBox(
             calculatorState.unitInput.name,
             calculatorState.unitInput.symbol,
             calculatorState.calculatorDisplay.input,
-            isInput = true
+            anotherName = calculatorState.unitResult.name,
+            isInput = true,
+            onEvent = onEvent
         )
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
         Icon(
@@ -72,6 +74,8 @@ fun UnitDisplayBox(
             calculatorState.unitResult.name,
             calculatorState.unitResult.symbol,
             calculatorState.calculatorDisplay.result,
+            anotherName = calculatorState.unitInput.name,
+            onEvent = onEvent,
             isInput = false
         )
     }
@@ -83,8 +87,10 @@ fun UnitDisplayNumbers(
     name: String,
     unit: String,
     value: String,
+    anotherName: String,
     isInput: Boolean,
-    modifier: Modifier = Modifier
+    onEvent: (CalculatorEvent) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     LogCompositions("UnitDisplayNumbers", "UnitDisplayNumbers+$name $unit $value")
     Box(
@@ -103,28 +109,45 @@ fun UnitDisplayNumbers(
             verticalArrangement = Arrangement.SpaceEvenly
         ) {
             // First Row: Unit name on the left, Unit on the right
-            DisplayNumbersRow(name, unit, isInput)
+            DisplayNumbersRow(name = name, unit = unit, isInput = isInput, anotherName = anotherName, onEvent = onEvent )
             Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp8)) // Space between rows
             // Second Row: Number text centered below the first row
-            InputTextDisplay(value,
+            InputTextDisplay(
+                value,
                 Modifier
                     .height(AppUnitTheme.dimens.dp35)
                     .wrapContentSize(Alignment.CenterEnd)
-                    .fillMaxWidth())
+                    .fillMaxWidth()
+            )
         }
     }
 }
 
 @Composable
-fun DisplayNumbersRow(name: String, unit: String, isInput: Boolean, modifier: Modifier = Modifier) {
+fun DisplayNumbersRow(
+    name: String,
+    unit: String,
+    anotherName: String,
+    isInput: Boolean,
+    onEvent: (CalculatorEvent) -> Unit,
+    modifier: Modifier = Modifier,
+) {
     LogCompositions("DisplayNumbersRow", "DisplayNumbersRow + name: $name, unit: $unit")
+    val composeNavigator = currentComposeNavigator
+    val category = LocalCategoryProvider.current
     Row(
-        modifier = modifier,
-        verticalAlignment = Alignment.CenterVertically
+        modifier = modifier, verticalAlignment = Alignment.CenterVertically
     ) {
-        UnitTextBox(text = name, color = AppUnitTheme.colors.absoluteWhite, isInput = isInput, showIcon = true)
+        UnitTextBox(text = name,
+            color = AppUnitTheme.colors.absoluteWhite,
+            showIcon = true,
+            modifier = Modifier.clickable {
+                onEvent(CalculatorEvent.OnClickOpenSearch(isInput))
+                composeNavigator.navigate(SimpleUnitScreen.Search(SearchCategory(category = category?.category, nameIgnore = anotherName)))
+
+            })
         Spacer(modifier = Modifier.weight(1f)) // Spacer for alignment
-        UnitTextBox(text = unit, isInput = isInput, color = AppUnitTheme.colors.absoluteWhite)
+        UnitTextBox(text = unit, color = AppUnitTheme.colors.absoluteWhite)
     }
 }
 
@@ -140,12 +163,17 @@ fun InputTextDisplay(value: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun UnitTextBox(text: String, color: Color, isInput: Boolean, showIcon: Boolean = false) {
-    val composeNavigator = currentComposeNavigator
-    val category = LocalCategoryProvider.current
+fun UnitTextBox(
+    text: String,
+    color: Color,
+    showIcon: Boolean = false,
+    modifier: Modifier = Modifier,
+) {
     Box(
         modifier = Modifier
-            .background(AppUnitTheme.colors.backgroundUnit, shape = RoundedCornerShape(4.dp))
+            .background(
+                AppUnitTheme.colors.backgroundUnit, shape = RoundedCornerShape(4.dp)
+            )
             .border(
                 1.dp, color = AppUnitTheme.colors.backgroundUnit, shape = RoundedCornerShape(4.dp)
             )
@@ -153,9 +181,7 @@ fun UnitTextBox(text: String, color: Color, isInput: Boolean, showIcon: Boolean 
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically, // Aligns text and icon vertically centered
-            modifier = Modifier.wrapContentWidth().clickable {
-             composeNavigator.navigate(SimpleUnitScreen.Search(SearchCategory(category = category?.category)))
-            }
+            modifier = modifier.wrapContentWidth()
         ) {
             Text(
                 text = text,
@@ -182,9 +208,6 @@ fun UnitTextBox(text: String, color: Color, isInput: Boolean, showIcon: Boolean 
 @Preview(showBackground = true)
 fun UnitDisplayBoxPreview() {
     AppUnitTheme {
-        UnitDisplayBox(
-            calculatorState = CalculatorState(),
-            onEvent = {}
-        )
+        UnitDisplayBox(calculatorState = CalculatorState(), onEvent = {})
     }
 }

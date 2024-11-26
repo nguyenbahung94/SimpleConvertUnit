@@ -1,28 +1,25 @@
 package com.billy.simpleunitconvert.navigation
 
-import androidx.compose.animation.AnimatedContentScope
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
-import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
+import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
+import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.feature.calculator.CalculatorScreen
 import com.billy.simpleunitconvert.feature.home.SimpleUnitHome
 import com.billy.simpleunitconvert.feature.search.SearchScreen
-import kotlin.reflect.KClass
 import kotlin.reflect.KType
 
 
-fun NavGraphBuilder.simpleUnitNavigation() {
+fun NavGraphBuilder.simpleUnitNavigation(
+    navigationController: NavController
+) {
     animatedComposable<SimpleUnitScreen.Home> {
         SimpleUnitHome()
     }
@@ -36,7 +33,9 @@ fun NavGraphBuilder.simpleUnitNavigation() {
     animatedComposable<SimpleUnitScreen.Calculator>(
         typeMap = SimpleUnitScreen.Calculator.typeMap,
     ) {
-        CalculatorScreen()
+        val savedStateHandle = navigationController.currentBackStackEntry?.savedStateHandle
+        val itemResult = savedStateHandle?.get<ItemSelected>("itemSelected")
+        CalculatorScreen(itemResult)
     }
 }
 

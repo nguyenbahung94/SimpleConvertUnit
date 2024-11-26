@@ -18,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
+import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
 import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
@@ -28,7 +29,7 @@ import com.billy.simpleunitconvert.feature.common.TextUnitCommon
 @Composable
 fun ItemSearch(
     itemSearch: UnitItemData,
-    onEvent: (SearchEvent) -> Unit = {}
+    onEvent: (SearchEvent) -> Unit = {},
 ) {
     LogCompositions("ItemSearch", "ItemSearch")
     val localCategory = LocalCategoryProvider.current
@@ -39,14 +40,15 @@ fun ItemSearch(
             .padding(start = AppUnitTheme.dimens.dp8)
             .clickable {
                 onEvent(SearchEvent.OnSearchQueryChange(""))
-                val route =  SimpleUnitScreen.Calculator(
+                val route = SimpleUnitScreen.Calculator(
                     UnitCategory(
-                        itemSearch.category,
-                        itemSearch.name
+                        itemSearch.category, itemSearch.name
                     )
                 )
                 if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
-                    composeNavigator.navigateBackWithResult("unitCategory", result =  UnitCategory(itemSearch.category, itemSearch.name, itemSelected = itemSearch.name ), null)
+                    composeNavigator.navigateBackWithResult(
+                        "itemSelected", result = ItemSelected(itemSearch.name), null
+                    )
                 } else {
                     composeNavigator.navigate(
                         route
@@ -71,7 +73,11 @@ fun ItemSearch(
                 color = AppUnitTheme.colors.absoluteWhite
             )
         }
-        TextUnitCommon(text = itemSearch.name, padding = 4, color = AppUnitTheme.colors.absoluteBlack)
+        TextUnitCommon(
+            text = itemSearch.name,
+            padding = 4,
+            color = AppUnitTheme.colors.absoluteBlack
+        )
     }
 
 }

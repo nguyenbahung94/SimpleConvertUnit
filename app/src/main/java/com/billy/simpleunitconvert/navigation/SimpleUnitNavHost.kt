@@ -12,7 +12,7 @@ fun AnimatedNavigation(navHostController: NavHostController) {
         navController = navHostController,
         startDestination = SimpleUnitScreen.Home,
     ) {
-        simpleUnitNavigation()
+        simpleUnitNavigation(navigationController = navHostController)
     }
 }
 

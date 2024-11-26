@@ -3,6 +3,7 @@ package com.billy.simpleunitconvert.core.navigation
 import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.NavOptionsBuilder
+import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.onCompletion
@@ -58,13 +59,10 @@ abstract class AppComposeNavigator<T : Any> : Navigator() {
     val backStackEntry =
       navigationCommand.route?.let { getBackStackEntry(it) }
         ?: previousBackStackEntry
-    backStackEntry?.savedStateHandle?.set(
-      navigationCommand.key,
-      navigationCommand.result,
-    )
+    backStackEntry?.savedStateHandle?.set(navigationCommand.key, navigationCommand.result)
 
     navigationCommand.route?.let {
       popBackStack(it, false)
-    } ?: navigateUp()
+    } ?: popBackStack()
   }
 }

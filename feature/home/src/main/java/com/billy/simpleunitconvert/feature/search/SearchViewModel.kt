@@ -5,6 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import androidx.paging.filter
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.model.search.SearchCategory
@@ -42,8 +43,8 @@ class SearchViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             savedStateHandle.getStateFlow<SearchCategory?>("searchCategory", null)
-                .collect { searchBundleData ->
-                    searchBundleData?.let {
+                .collect { valueSearchCategory ->
+                    valueSearchCategory?.let {
                         searchCategory = it
                         _searchQuery.update { "" }
                     }
@@ -59,7 +60,7 @@ class SearchViewModel @Inject constructor(
                     .onStart { uiState.value = uiState.value.copy(isLoading = true) }
                     .map {
                         uiState.value = uiState.value.copy(isLoading = false)
-                        it
+                        it.filter { item -> item.name != searchCategory?.nameIgnore }
                     }.catch { e ->
                         uiState.value = uiState.value.copy(isLoading = false, error = e.message)
                         emit(PagingData.empty())

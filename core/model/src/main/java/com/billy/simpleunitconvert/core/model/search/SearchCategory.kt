@@ -7,5 +7,6 @@ import kotlinx.serialization.Serializable
 @Parcelize
 @Serializable
 data class SearchCategory(
-    val category: String?,
+    val category: String? = null,
+    val nameIgnore: String? = null,
 ): Parcelable
