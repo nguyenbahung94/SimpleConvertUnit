@@ -1,5 +1,9 @@
 package com.billy.simpleunitconvert.feature.calculator
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -21,20 +25,22 @@ import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.getSystemService
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.model.search.SearchCategory
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.BorderedActionText
 import com.billy.simpleunitconvert.feature.common.LocalCategoryProvider
 import com.billy.simpleunitconvert.feature.common.TextSingleLineUnitLayout
 
@@ -45,7 +51,6 @@ fun UnitDisplayBox(
     onEvent: (CalculatorEvent) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    LogCompositions("UnitDisplayBox", "UnitDisplayBox")
     Column(
         modifier = modifier.fillMaxWidth(),
     ) {
@@ -59,16 +64,6 @@ fun UnitDisplayBox(
             onEvent = onEvent
         )
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
-        Icon(
-            painter = painterResource(com.billy.simpleunitconvert.core.designsystem.R.drawable.icon_swap2),
-            contentDescription = "swap",
-            tint = Color.Unspecified,
-            modifier = Modifier
-                .size(AppUnitTheme.dimens.dp26)
-                .align(Alignment.CenterHorizontally)
-                .rotate(90f)
-                .clickable { onEvent(CalculatorEvent.OnClickSwap) },
-        )
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
         UnitDisplayNumbers(
             calculatorState.unitResult.name,
@@ -78,7 +73,41 @@ fun UnitDisplayBox(
             onEvent = onEvent,
             isInput = false
         )
+        Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp10))
+        CalculatorActionRow(onEvent = onEvent, value = calculatorState.calculatorDisplay.result)
     }
+}
+
+@Composable
+fun CalculatorActionRow(
+    modifier: Modifier = Modifier,
+    onEvent: (CalculatorEvent) -> Unit,
+    value: String
+) {
+    val context = LocalContext.current
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.End,
+    ) {
+        BorderedActionText(
+            text = "Swap unit"
+        ) {
+            onEvent(CalculatorEvent.OnClickSwap)
+        }
+        Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp10))
+        BorderedActionText(
+            text = "Copy unit"
+        ) {
+            copyUnitToClipboard(context, value)
+        }
+    }
+}
+
+private fun copyUnitToClipboard(context: Context, value: String) {
+    val clipboard =context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText("value", value)
+    clipboard.setPrimaryClip(clip)
+    Toast.makeText(context, "Copied to clipboard", Toast.LENGTH_SHORT).show()
 }
 
 
@@ -92,7 +121,6 @@ fun UnitDisplayNumbers(
     onEvent: (CalculatorEvent) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    LogCompositions("UnitDisplayNumbers", "UnitDisplayNumbers+$name $unit $value")
     Box(
         modifier = modifier
             .fillMaxWidth()
@@ -132,7 +160,6 @@ fun DisplayNumbersRow(
     onEvent: (CalculatorEvent) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    LogCompositions("DisplayNumbersRow", "DisplayNumbersRow + name: $name, unit: $unit")
     val composeNavigator = currentComposeNavigator
     val category = LocalCategoryProvider.current
     Row(
@@ -153,7 +180,6 @@ fun DisplayNumbersRow(
 
 @Composable
 fun InputTextDisplay(value: String, modifier: Modifier = Modifier) {
-    LogCompositions("InputTextDisplay", "InputTextDisplay + value: $value")
     TextSingleLineUnitLayout(
         text = value,
         defaultFontSize = AppUnitTheme.dimens.sp24,
@@ -204,10 +230,13 @@ fun UnitTextBox(
 }
 
 @Composable
-@PreviewScreenSizes
 @Preview(showBackground = true)
 fun UnitDisplayBoxPreview() {
     AppUnitTheme {
-        UnitDisplayBox(calculatorState = CalculatorState(), onEvent = {})
+        val searchCategory = SearchCategory(category = "volume", nameIgnore = "Cubic meter")
+        CompositionLocalProvider(LocalCategoryProvider provides searchCategory) {
+            // Your composable content
+            UnitDisplayBox(calculatorState = CalculatorState(), onEvent = {})
+        }
     }
 }

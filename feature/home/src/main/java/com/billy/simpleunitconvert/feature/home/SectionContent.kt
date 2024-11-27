@@ -27,7 +27,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.model.home.HomeUnit
 import com.billy.simpleunitconvert.core.model.home.UnitConvert
 import kotlinx.collections.immutable.ImmutableList
@@ -37,7 +36,6 @@ import kotlinx.collections.immutable.toImmutableList
 internal fun HomeContent(
     sectionUnitList: ImmutableList<HomeUnit>,
 ) {
-    LogCompositions("HomeContent", "HomeContent")
     val expandedStates = remember { mutableStateMapOf<String, Boolean>() }
     // Use LazyColumn for scrolling
     LazyColumn(

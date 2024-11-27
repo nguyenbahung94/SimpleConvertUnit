@@ -37,7 +37,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 
 
@@ -46,7 +45,6 @@ internal fun SearchBar(
     query: String,
     onEvent: (SearchEvent) -> Unit,
 ) {
-    LogCompositions("SearchBar", "SearchBar")
     var isFocused by remember {
         mutableStateOf(false)
     }
@@ -64,7 +62,6 @@ internal fun SearchBar(
                 shape = RoundedCornerShape(12.dp)
             )
     ) {
-        LogCompositions("SearchBar", "in side search bar")
         TextField(
             value = query,
             onValueChange = { onEvent(SearchEvent.OnSearchQueryChange(it)) },
@@ -103,7 +100,6 @@ fun SearchResults(
     results: LazyPagingItems<UnitItemData>,
     onEvent: (SearchEvent) -> Unit
 ) {
-    LogCompositions("SearchResults", "SearchResults")
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()

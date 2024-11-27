@@ -17,7 +17,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
 import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
@@ -31,7 +30,6 @@ fun ItemSearch(
     itemSearch: UnitItemData,
     onEvent: (SearchEvent) -> Unit = {},
 ) {
-    LogCompositions("ItemSearch", "ItemSearch")
     val localCategory = LocalCategoryProvider.current
     val composeNavigator = currentComposeNavigator
     Row(
@@ -57,7 +55,6 @@ fun ItemSearch(
             },
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        LogCompositions("ItemSearch", "inside ItemSearch")
         Box(
             modifier = Modifier
                 .padding(4.dp)

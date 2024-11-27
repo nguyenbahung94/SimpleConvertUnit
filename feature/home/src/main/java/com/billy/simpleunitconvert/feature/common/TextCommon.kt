@@ -1,8 +1,10 @@
 package com.billy.simpleunitconvert.feature.common
 
 import android.util.Log
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.LocalTextStyle
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -12,28 +14,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.layout.SubcomposeLayout
 import androidx.compose.ui.layout.onSizeChanged
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.pxToDp
-import com.billy.simpleunitconvert.core.designsystem.utils.toDp
 
 @Composable
 fun TextUnitCommon(
@@ -53,28 +45,22 @@ fun TextUnitCommon(
     )
 }
 
-//@Composable
-//fun TextSingleLineUnit(
-//    text: String,
-//    defaultFontSize: TextUnit = AppUnitTheme.dimens.sp22,
-//    style: TextStyle = MaterialTheme.typography.bodyMedium.copy(
-//        fontFeatureSettings = "'tnum' on, 'lnum' on"
-//    ),
-//    color: Color = AppUnitTheme.colors.subtitle,
-//    modifier: Modifier = Modifier
-//) {
-//    Log.e("TextSingleLineUnit","defaultFontSize = $defaultFontSize")
-//    Text(
-//        text = text,
-//        maxLines = 1,
-//        softWrap = false,
-//        textAlign = TextAlign.End,
-//        overflow = TextOverflow.Clip,
-//        style = style.copy(fontSize = defaultFontSize), // Update the style with the adjusted font size
-//        color = color,
-//        modifier = modifier
-//    )
-//}
+@Composable
+fun BorderedActionText(
+    text: String,
+    onClick: () -> Unit,
+) {
+    Text(
+        text = text,
+        style = MaterialTheme.typography.bodyMedium,
+        color = AppUnitTheme.colors.absoluteBlack,
+        modifier = Modifier
+            .border(1.dp, AppUnitTheme.colors.backgroundUnit, RoundedCornerShape(4.dp))
+            .clickable(onClick = onClick)
+            .padding(8.dp),
+        textAlign = TextAlign.Center,
+    )
+}
 
 @Composable
 fun TextSingleLineUnit(

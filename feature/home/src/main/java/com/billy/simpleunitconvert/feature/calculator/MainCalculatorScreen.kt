@@ -10,7 +10,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
 
 @Composable
@@ -30,7 +29,6 @@ fun CalculatorScreen(
         modifier = Modifier.fillMaxWidth()
     ) {
 
-        LogCompositions("CalculatorScreen", "CalculatorScreen")
         AppBarCalculatorScreen(
             title = viewModel.getNameCategory(),
             onClickFavorite = {},

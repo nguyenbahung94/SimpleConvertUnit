@@ -25,7 +25,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import com.billy.simpleunitconvert.feature.common.capitalizeFirstChar
 
@@ -36,7 +35,6 @@ internal fun AppBarCalculatorScreen(
     isFavorite: Boolean = false,
     title: String?
 ) {
-    LogCompositions("AppBarCalculatorScreen", "AppBarCalculatorScreen")
     val currentNavigator =  currentComposeNavigator
     Surface(
         color = AppUnitTheme.colors.background,

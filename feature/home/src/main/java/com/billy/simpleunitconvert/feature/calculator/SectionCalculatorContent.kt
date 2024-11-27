@@ -11,7 +11,6 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.designsystem.utils.LogCompositions
 import com.billy.simpleunitconvert.core.model.search.SearchCategory
 import com.billy.simpleunitconvert.feature.common.LocalCategoryProvider
 
@@ -21,7 +20,6 @@ fun SectionCalculatorContent(
     onEvent: (CalculatorEvent) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    LogCompositions("SectionCalculatorContent", "SectionCalculatorContent")
     Column(
         modifier = modifier
             .fillMaxWidth()
