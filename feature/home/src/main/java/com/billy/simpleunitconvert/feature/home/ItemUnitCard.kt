@@ -37,7 +37,7 @@ internal fun HomeUnitCard(
         modifier = modifier
             .padding(horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6)
             .fillMaxWidth()
-            .clickable { currentComposeNavigator.navigate(SimpleUnitScreen.Calculator(UnitCategory(unitConvert.category, unitConvert.categoryName))) },
+            .clickable { currentComposeNavigator.navigate(SimpleUnitScreen.Calculator(UnitCategory(unitConvert.category))) },
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(

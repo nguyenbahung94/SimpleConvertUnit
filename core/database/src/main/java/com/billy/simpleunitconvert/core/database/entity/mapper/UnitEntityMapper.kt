@@ -37,6 +37,17 @@ object UnitEntityMapper : EntityMapper<List<UnitConvertData>, List<UnitConvertEn
     }
 }
 
+fun UnitConvertEntity.asDomain(): UnitConvertData {
+    return UnitConvertData(
+        category = category,
+        homeGroup = homeGroup,
+        name = name,
+        shortName = shortName,
+        image = image,
+        isFavorite = isFavorite
+    )
+}
+
 fun List<UnitConvertData>.asEntity(): List<UnitConvertEntity> {
     return UnitEntityMapper.asEntity(this)
 }

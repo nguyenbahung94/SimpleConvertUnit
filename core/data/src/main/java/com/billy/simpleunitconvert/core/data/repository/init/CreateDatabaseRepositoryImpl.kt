@@ -8,6 +8,10 @@ import com.billy.simpleunitconvert.core.model.home.HomeUnitData
 import com.billy.simpleunitconvert.core.model.home.UnitConvertData
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.single
+import kotlinx.coroutines.flow.singleOrNull
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
 
@@ -18,7 +22,17 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
 ) : CreateDatabaseRepository {
 
     override suspend fun readDataSaveToDatabase() {
-        if (unitDao.getHomeUnitList().isNotEmpty()) return
+        withContext(Dispatchers.IO) {
+            unitDao.getHomeUnitList().collect{
+                if (it.isEmpty()) {
+                    insertAllData()
+                }
+            }
+        }
+    }
+
+    private suspend fun insertAllData() {
+        Log.e("insertAllData", "insertAllData")
         insertHomeUnits()
         insertUnitConverter()
         insertUnitItems()

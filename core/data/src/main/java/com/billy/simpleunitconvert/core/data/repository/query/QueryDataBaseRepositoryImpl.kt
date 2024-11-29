@@ -11,12 +11,15 @@ import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
 import com.billy.simpleunitconvert.core.database.entity.mapper.asDomain
 import com.billy.simpleunitconvert.core.model.home.HomeUnit
 import com.billy.simpleunitconvert.core.model.home.UnitConvert
+import com.billy.simpleunitconvert.core.model.home.UnitConvertData
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.network.Dispatcher
 import com.billy.simpleunitconvert.core.network.SimpleUnitAppDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
@@ -28,12 +31,40 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
     @Dispatcher(SimpleUnitAppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
 ) : QueryDataBaseRepository {
 
-    override fun queryHomeUnits(): Flow<List<HomeUnit>> = flow {
-        val homeUnits = unitDao.getHomeUnitList()
-        emit(transformer(homeUnits))
+    override fun updateFavoriteUnit(category: String, isFavorite: Boolean): Flow<String> = flow<String> {
+        val unitConvert = unitDao.updateFavoriteUnit(category, isFavorite)
+        if (unitConvert > 0) {
+            emit("success")
+        } else {
+            emit("failed")
+        }
     }.flowOn(ioDispatcher)
-        .catch { Log.e("queryHomeUnits", "error: ${it.message}") }
+        .catch { Log.e("updateFavoriteUnit", "error: ${it.message}") }
 
+    override fun getUnitConvert(category: String): Flow<UnitConvertData> = flow<UnitConvertData> {
+        val unitConvert = unitDao.getUnitConvert(category)
+        emit(unitConvert.asDomain())
+    }.flowOn(ioDispatcher)
+        .catch { Log.e("getUnitConvert", "error: ${it.message}") }
+
+    override fun queryHomeUnits(): Flow<List<HomeUnit>> {
+        return combine(
+            unitDao.getHomeUnitList(),
+            unitDao.getFavoriteUnit()
+        ) { homeUnits, favoriteUnits ->
+
+            homeUnits.forEach { itemHomeUnit ->
+                if (itemHomeUnit.homeUnit.shortName == "FAV") {
+                    itemHomeUnit.unitConverts = favoriteUnits
+                } else {
+                    itemHomeUnit.unitConverts = itemHomeUnit.unitConverts.filter { unitConvert ->
+                        !unitConvert.isFavorite
+                    }
+                }
+            }
+            transformer(homeUnits)
+        }.flowOn(ioDispatcher).catch { Log.e("queryHomeUnits", "error: ${it.message}") }
+    }
     override fun queryUnitByKeWord(keyWord: String, category: String?): Flow<PagingData<UnitItemData>> {
         return Pager(config = PagingConfig(
             pageSize = 15,
@@ -53,6 +84,7 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
         emit(unitListByCategory.unitItems.asDomain())
     }.flowOn(ioDispatcher)
         .catch { Log.e("queryUnitByCategory", "error: ${it.message}") }
+
 
     private fun transformer(itemEntity: UnitItemEntity): UnitItemData {
         return with(itemEntity) {

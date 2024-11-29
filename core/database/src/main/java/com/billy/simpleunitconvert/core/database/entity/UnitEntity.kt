@@ -57,8 +57,7 @@ data class HomeUnitWithUnitConvert(
     @Relation(
         parentColumn = "shortName",
         entityColumn = "homeGroup"
-    )
-    val unitConverts: List<UnitConvertEntity>
+    ) var unitConverts: List<UnitConvertEntity>
 )
 
 data class UnitConvertWithUnitItem(

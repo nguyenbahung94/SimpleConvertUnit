@@ -10,11 +10,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
+import com.billy.simpleunitconvert.core.model.calculator.BackResult
 
 @Composable
 fun CalculatorScreen(
-    itemResult: ItemSelected? = null,
+    itemResult: BackResult? = null,
     viewModel: CalculatorViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -30,10 +30,10 @@ fun CalculatorScreen(
     ) {
 
         AppBarCalculatorScreen(
-            title = viewModel.getNameCategory(),
-            onClickFavorite = {},
-            onClickMore = {},
-            isFavorite = false
+            onClickFavorite = {
+                viewModel.onEvent(CalculatorEvent.OnClickFavorite)
+            },
+            isFavorite = uiState.data.isFavorite,
         )
 
         SectionCalculatorContent(

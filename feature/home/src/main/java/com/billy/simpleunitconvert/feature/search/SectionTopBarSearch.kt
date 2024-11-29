@@ -54,7 +54,7 @@ internal fun AppBarSearchScreen(
         }
     }
 }
-@Composable fun getSearchText(searchTitle: String?): String { return if (searchTitle.isNullOrEmpty()) "Search units" else "Search units $searchTitle" }
+@Composable fun getSearchText(searchTitle: String?): String { return if (searchTitle.isNullOrEmpty()) "Search all units" else "Search units $searchTitle" }
 
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)

@@ -37,5 +37,5 @@ sealed class SimpleUnitScreen {
     }
 
     @Serializable
-    data object Settings : SimpleUnitScreen()
+    data object Feedback : SimpleUnitScreen()
 }

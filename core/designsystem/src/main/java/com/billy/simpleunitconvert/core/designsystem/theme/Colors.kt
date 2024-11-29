@@ -22,7 +22,8 @@ data class Colors(
     val title: Color,
     val subtitle: Color,
     val backgroundCard: Color,
-    val backgroundUnit: Color
+    val backgroundUnit: Color,
+    val colorStart: Color
 ) {
 
     companion object { /**
@@ -45,7 +46,8 @@ data class Colors(
             title = colorResource(id = R.color.text_title_dark),
             subtitle = colorResource(id = R.color.text_sub_dark),
             backgroundCard = colorResource(id = R.color.background_card_dark),
-            backgroundUnit = colorResource(id = R.color.color_background_unit)
+            backgroundUnit = colorResource(id = R.color.color_background_unit),
+            colorStart = colorResource(id = R.color.color_star)
         )
         /**
          * Provides the default colors for the light mode of the app.
@@ -67,7 +69,8 @@ data class Colors(
             title = colorResource(id = R.color.text_title),
             subtitle = colorResource(id = R.color.text_sub),
             backgroundCard = colorResource(id = R.color.background_card_light),
-            backgroundUnit = colorResource(id = R.color.color_background_unit)
+            backgroundUnit = colorResource(id = R.color.color_background_unit),
+            colorStart = colorResource(id = R.color.color_star)
         )
     }
 }

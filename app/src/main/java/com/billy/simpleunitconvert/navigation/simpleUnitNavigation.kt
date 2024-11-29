@@ -8,10 +8,11 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
+import com.billy.simpleunitconvert.core.model.calculator.BackResult
 import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.feature.calculator.CalculatorScreen
+import com.billy.simpleunitconvert.feature.feedback.FeedbackScreen
 import com.billy.simpleunitconvert.feature.home.SimpleUnitHome
 import com.billy.simpleunitconvert.feature.search.SearchScreen
 import kotlin.reflect.KType
@@ -34,8 +35,12 @@ fun NavGraphBuilder.simpleUnitNavigation(
         typeMap = SimpleUnitScreen.Calculator.typeMap,
     ) {
         val savedStateHandle = navigationController.currentBackStackEntry?.savedStateHandle
-        val itemResult = savedStateHandle?.get<ItemSelected>("itemSelected")
+        val itemResult = savedStateHandle?.get<BackResult>("itemSelected")
         CalculatorScreen(itemResult)
+    }
+
+    animatedComposable<SimpleUnitScreen.Feedback> {
+        FeedbackScreen()
     }
 }
 

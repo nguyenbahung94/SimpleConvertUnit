@@ -1,5 +1,8 @@
 package com.billy.simpleunitconvert.feature.calculator
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -9,33 +12,43 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.DpOffset
+import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
-import com.billy.simpleunitconvert.feature.common.capitalizeFirstChar
 
 @Composable
 internal fun AppBarCalculatorScreen(
     onClickFavorite: () -> Unit,
-    onClickMore: () -> Unit,
-    isFavorite: Boolean = false,
-    title: String?
+    isFavorite: Boolean,
 ) {
+    val menuItems = listOf("Feedback" )
+    var expanded by remember { mutableStateOf(false) }
+
     val currentNavigator =  currentComposeNavigator
+
     Surface(
         color = AppUnitTheme.colors.background,
         modifier = Modifier
@@ -44,27 +57,64 @@ internal fun AppBarCalculatorScreen(
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth().height(AppUnitTheme.dimens.dp44)
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(AppUnitTheme.dimens.dp44)
         ) {
             IconButton(onClick = { currentNavigator.navigateUp() }) {
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
             Text(
-                text = title?.capitalizeFirstChar() ?: "Convert unit",
+                text = "Convert unit",
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Left,
                 style = MaterialTheme.typography.headlineSmall,
                 fontSize = AppUnitTheme.dimens.sp20
             )
-            IconButton(onClick = {}) {
+            IconButton(onClick = {
+                onClickFavorite()
+            }) {
                 Icon(
                     imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                     contentDescription = "Favorite")
+                     contentDescription = "Favorite",
+                    tint = AppUnitTheme.colors.backgroundUnit )
             }
 
-            IconButton(onClick = {}) {
-                Icon(Icons.Default.MoreVert, contentDescription = "More")
+            Box {
+                IconButton(onClick = {
+                    expanded = true
+                }) {
+                    Icon(Icons.Default.MoreVert, contentDescription = "More")
+                }
+
+                DropdownMenu(
+                    expanded = expanded,
+                    onDismissRequest = { expanded = false },
+                    modifier = Modifier
+                        .wrapContentSize(Alignment.TopStart).padding(4.dp),
+                    offset = DpOffset((-AppUnitTheme.dimens.dp60), (-50).dp)
+                ) {
+                    menuItems.forEach { item ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    expanded = false
+                                    currentNavigator.navigate(SimpleUnitScreen.Feedback)
+                                }
+                                .padding(start = AppUnitTheme.dimens.dp8, end = AppUnitTheme.dimens.dp8),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = item,
+                                style = MaterialTheme.typography.bodyMedium,
+                                modifier = Modifier.weight(1f)
+                            )
+                        }
+                    }
+                }
             }
         }
     }
@@ -74,6 +124,6 @@ internal fun AppBarCalculatorScreen(
 @Preview
 fun AppBarCalculatorScreenPreview() {
     AppUnitTheme {
-       AppBarCalculatorScreen(onClickFavorite = {}, onClickMore = {}, isFavorite = false, title = "Convert unit")
+       AppBarCalculatorScreen(onClickFavorite = {}, isFavorite = false)
    }
 }

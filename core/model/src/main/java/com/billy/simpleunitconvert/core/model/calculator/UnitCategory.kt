@@ -8,12 +8,11 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class UnitCategory(
     val category: String,
-    val categoryName: String,
-    val itemSelected: String? = null
+    val unitName: String? = null
 ) : Parcelable
 
 @Parcelize
 @Serializable
-data class ItemSelected(
+data class BackResult(
     val itemSelected: String
 ) : Parcelable

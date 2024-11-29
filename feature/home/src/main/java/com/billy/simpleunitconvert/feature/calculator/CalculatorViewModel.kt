@@ -5,7 +5,7 @@ import androidx.compose.runtime.Stable
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
-import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
+import com.billy.simpleunitconvert.core.model.calculator.BackResult
 import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.viewmodel.BaseViewModel
@@ -15,8 +15,6 @@ import com.billy.simpleunitconvert.core.viewmodel.ViewModelStateFlow
 import com.billy.simpleunitconvert.feature.common.takeEnoughLength
 import com.billy.simpleunitconvert.feature.common.updateBatchData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -37,10 +35,9 @@ class CalculatorViewModel @Inject constructor(
     init {
          viewModelScope.launch {
              savedStateHandle.getStateFlow<UnitCategory?>("unitCategory", null)
-                 .filterNotNull()
                  .collect { unitCategory ->
                     Log.e("CalculatorViewModel","has new data = unitCategory: $unitCategory")
-                     unitCategory.let { category ->
+                     unitCategory?.let { category ->
                          categorySave = category
                          Log.e("CalculatorViewModel","category: $category")
                          uiState.updateBatchData(
@@ -55,10 +52,17 @@ class CalculatorViewModel @Inject constructor(
 
                 }
          }
-    }
 
-    fun getNameCategory(): String? {
-        return categorySave?.categoryName
+        viewModelScope.launch {
+            categorySave?.category?.let {
+                queryDataBaseRepository.getUnitConvert(it).collect { isFavorite ->
+                    uiState.updateBatchData(
+                        isFavorite = isFavorite.isFavorite
+                    )
+                }
+
+            }
+        }
     }
 
     private fun initDataUnit() {
@@ -70,9 +74,8 @@ class CalculatorViewModel @Inject constructor(
             return
         }
 
-        if (unitInput == null) unitInput = if (categorySave?.itemSelected != null) currentListUnit.find { it.name == categorySave?.itemSelected } else currentListUnit.getOrNull(0)
+        if (unitInput == null) unitInput = if (categorySave?.unitName != null) currentListUnit.find { it.name == categorySave?.unitName } else currentListUnit.getOrNull(0)
         if (unitResult == null) unitResult = currentListUnit.getOrNull(1) ?: unitInput
-         categorySave = null
         if (unitInput == null || unitResult ==  null) {
            uiState.updateState(error = "There is something wrong, please try again", loading = false)
             return
@@ -113,7 +116,16 @@ class CalculatorViewModel @Inject constructor(
     fun onEvent(event: CalculatorEvent) {
         when (event) {
             is CalculatorEvent.OnClickFavorite -> {
-
+               viewModelScope.launch {
+                   categorySave?.category?.let {
+                       queryDataBaseRepository.updateFavoriteUnit(categorySave?.category ?: "", !uiState.value.data.isFavorite).collect {
+                           Log.e("CalculatorViewModel", "updateFavoriteUnit: $it")
+                           uiState.updateBatchData(
+                               isFavorite = !uiState.value.data.isFavorite
+                           )
+                       }
+                   }
+               }
             }
 
             is CalculatorEvent.OnClickButton -> {
@@ -183,13 +195,14 @@ class CalculatorViewModel @Inject constructor(
 sealed interface CalculatorEvent {
     data class OnClickButton(val value: String) : CalculatorEvent
 
+    data class OnClickOpenSearch(val isClickUnitInput: Boolean) : CalculatorEvent
+
+    data class OnItemResult(val itemResult: BackResult) : CalculatorEvent
+
     data object OnClickFavorite : CalculatorEvent
 
     data object OnClickSwap : CalculatorEvent
 
-    data class OnClickOpenSearch(val isClickUnitInput: Boolean) : CalculatorEvent
-
-    data class OnItemResult(val itemResult: ItemSelected) : CalculatorEvent
 }
 
 @Stable

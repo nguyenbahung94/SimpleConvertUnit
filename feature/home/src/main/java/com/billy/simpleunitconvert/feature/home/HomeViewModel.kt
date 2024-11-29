@@ -17,24 +17,22 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val queryDataBaseRepository: QueryDataBaseRepository
-): BaseViewModel() {
-    internal val uiState: ViewModelStateFlow<UiState<HomeState>> =  viewModelStateFlow(UiState(isLoading = true, data = HomeState("Home")))
+    private val queryDataBaseRepository: QueryDataBaseRepository,
+) : BaseViewModel() {
+    internal val uiState: ViewModelStateFlow<UiState<HomeState>> =
+        viewModelStateFlow(UiState(isLoading = true, data = HomeState("Home")))
 
     val homeUnit: StateFlow<List<HomeUnit>> = queryDataBaseRepository.queryHomeUnits()
         .onStart {
             uiState.value = uiState.value.copy(isLoading = true)
-        }
-        .onCompletion { uiState.value = uiState.value.copy(isLoading = false) }
-        .catch { e ->
+        }.onCompletion { uiState.value = uiState.value.copy(isLoading = false) }.catch { e ->
             uiState.value = uiState.value.copy(isLoading = false, error = e.message)
             emit(emptyList())
-        }
-        .stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000L),
-        initialValue = emptyList()
-    )
+        }.stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000L),
+            initialValue = emptyList()
+        )
 
 }
 

@@ -130,6 +130,7 @@ fun TextSingleLineUnitLayout(
     modifier: Modifier = Modifier
 ) {
     var scaledFontSize by remember { mutableStateOf(defaultFontSize) }
+    Log.e("textChange", "text = $text")
 
     SubcomposeLayout(modifier = modifier) { constraints ->
         // First pass: measure with default font size

@@ -10,6 +10,7 @@ import com.billy.simpleunitconvert.core.database.entity.HomeUnitWithUnitConvert
 import com.billy.simpleunitconvert.core.database.entity.UnitConvertEntity
 import com.billy.simpleunitconvert.core.database.entity.UnitConvertWithUnitItem
 import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UnitDao {
@@ -24,11 +25,20 @@ interface UnitDao {
     suspend fun insertUnitItemEntities(unitConvertEntity: List<UnitItemEntity>)
 
     @Query("SELECT * FROM HomeUnitEntity")
-    suspend fun getHomeUnitList(): List<HomeUnitWithUnitConvert>
+    fun getHomeUnitList(): Flow<List<HomeUnitWithUnitConvert>>
 
     @Query(""" SELECT * FROM UnitItemEntity WHERE (symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%') AND (COALESCE(:category, '') = '' OR unitCategory = :category) """)
     fun searchUnitItem(keyword: String, category: String?): PagingSource<Int, UnitItemEntity>
 
     @Query("SELECT * FROM UnitConvertEntity WHERE category = :category")
     suspend fun getUnitListByCategory(category: String): UnitConvertWithUnitItem
+
+    @Query("SELECT * FROM UnitConvertEntity WHERE category = :category")
+    suspend fun getUnitConvert(category: String): UnitConvertEntity
+
+    @Query("UPDATE UnitConvertEntity SET isFavorite = :isFavorite WHERE category = :category")
+    suspend fun updateFavoriteUnit(category: String, isFavorite: Boolean): Int
+
+    @Query("SELECT * FROM UnitConvertEntity WHERE isFavorite = 1")
+    fun getFavoriteUnit(): Flow<List<UnitConvertEntity>>
 }

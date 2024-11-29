@@ -17,7 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.model.calculator.ItemSelected
+import com.billy.simpleunitconvert.core.model.calculator.BackResult
 import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
@@ -45,7 +45,7 @@ fun ItemSearch(
                 )
                 if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
                     composeNavigator.navigateBackWithResult(
-                        "itemSelected", result = ItemSelected(itemSearch.name), null
+                        "itemSelected", result = BackResult(itemSearch.name), null
                     )
                 } else {
                     composeNavigator.navigate(
