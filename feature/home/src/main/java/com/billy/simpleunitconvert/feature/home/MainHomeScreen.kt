@@ -2,7 +2,12 @@ package com.billy.simpleunitconvert.feature.home
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -23,7 +28,7 @@ fun SimpleUnitHome(
     val composeNavigator = currentComposeNavigator
 
    Column(
-       modifier = Modifier.fillMaxSize()
+       modifier = Modifier.fillMaxSize().padding(WindowInsets.statusBars.asPaddingValues())
    ) {
        //App bar
        SimpleUnitConvertAppBar( onNavigateToSearch = {
@@ -34,6 +39,7 @@ fun SimpleUnitHome(
            //content
            HomeContent(unitHomeList.filter { it.unitConvert.isNotEmpty() }.toImmutableList())
        }
+
 
        if (uiState.isLoading) {
            Box(modifier = Modifier.fillMaxSize()) {

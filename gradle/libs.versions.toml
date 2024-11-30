@@ -40,7 +40,11 @@ appcompat = "1.7.0"
 material = "1.12.0"
 jetbrainsKotlinJvm = "1.9.24"
 pagingCompose = "3.3.2"
-animationCore = "1.0.1"
+animationCore = "1.7.5"
+firebaseCrashlytics = "19.2.1"
+googleGmsGoogleServices = "4.4.2"
+googleFirebaseCrashlytics = "3.0.2"
+firebaseBom = "33.6.0"
 
 
 [libraries]
@@ -108,6 +112,9 @@ kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-animation-core = { group = "androidx.compose.animation", name = "animation-core", version.ref = "animationCore" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -131,6 +138,8 @@ simpleUnitConvert-android-library = { id = "simpleUnitConvert.android.library", 
 simpleUnitConvert-android-feature = { id = "simpleUnitConvert.android.feature", version = "unspecified" }
 simpleUnitConvert-android-hilt = { id = "simpleUnitConvert.android.hilt", version = "unspecified" }
 simpleUnitConvert-spotless = { id = "simpleUnitConvert.spotless", version = "unspecified" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleFirebaseCrashlytics" }
 
 
 

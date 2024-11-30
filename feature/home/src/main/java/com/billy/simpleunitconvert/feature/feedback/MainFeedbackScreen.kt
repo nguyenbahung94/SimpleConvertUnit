@@ -70,7 +70,8 @@ fun FeedbackScreen() {
                     contentDescription = "Back"
                 )
             }
-        }, actions = { })
+        },
+            modifier = Modifier.padding(top = dimens.dp15))
     }) { paddingValues ->
         Column(
             modifier = Modifier

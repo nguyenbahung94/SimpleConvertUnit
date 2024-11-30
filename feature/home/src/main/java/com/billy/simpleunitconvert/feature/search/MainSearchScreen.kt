@@ -3,8 +3,12 @@ package com.billy.simpleunitconvert.feature.search
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -29,7 +33,7 @@ fun SearchScreen(
     val composeNavigator = currentComposeNavigator
     val searchCategory = viewModel.searchCategory
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxSize().padding(WindowInsets.statusBars.asPaddingValues())
     ) {
 
         AppBarSearchScreen(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1066359618791",
+    "project_id": "simpleunitconvert",
+    "storage_bucket": "simpleunitconvert.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066359618791:android:aa80b499b5b641ff433642",
+        "android_client_info": {
+          "package_name": "com.billy.simpleunitconvert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5439tVnBmomOpOQ_snngietvCe4QAAZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

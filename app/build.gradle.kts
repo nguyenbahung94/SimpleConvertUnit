@@ -8,6 +8,8 @@ plugins {
     alias(libs.plugins.simpleUnitConvert.spotless)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.baselineprofile)
+    alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.google.firebase.crashlytics)
 }
 
 android {
@@ -105,6 +107,11 @@ dependencies {
 
     //features
     implementation(projects.feature.home)
+
+    //firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
 
     // cores
     implementation(projects.core.model)
