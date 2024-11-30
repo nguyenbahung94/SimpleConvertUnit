@@ -45,6 +45,8 @@ firebaseCrashlytics = "19.2.1"
 googleGmsGoogleServices = "4.4.2"
 googleFirebaseCrashlytics = "3.0.2"
 firebaseBom = "33.6.0"
+firebaseCommonKtx = "21.0.0"
+firebaseFirestoreKtx = "25.1.1"
 
 
 [libraries]
@@ -115,6 +117,8 @@ androidx-animation-core = { group = "androidx.compose.animation", name = "animat
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -3,9 +3,8 @@ package com.billy.simpleunitconvert
 import android.app.Application
 import android.util.Log
 import com.billy.simpleunitconvert.core.data.repository.init.CreateDatabaseRepository
-import com.billy.simpleunitconvert.core.data.repository.query.QueryDataBaseRepository
+import com.google.firebase.FirebaseApp
 import dagger.hilt.android.HiltAndroidApp
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -23,6 +22,7 @@ class SimpleUnitConvertApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         initializeDatabase()
+        FirebaseApp.initializeApp(this)
     }
 
     private fun initializeDatabase() {

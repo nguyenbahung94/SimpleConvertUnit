@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
@@ -26,6 +28,7 @@ import com.billy.simpleunitconvert.core.model.home.UnitConvert
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
+import org.checkerframework.checker.units.qual.s
 
 @Composable
 internal fun HomeUnitCard(
@@ -37,30 +40,47 @@ internal fun HomeUnitCard(
         modifier = modifier
             .padding(horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6)
             .fillMaxWidth()
-            .clickable { currentComposeNavigator.navigate(SimpleUnitScreen.Calculator(UnitCategory(unitConvert.category))) },
-        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
+            .clickable {
+                currentComposeNavigator.navigate(
+                    SimpleUnitScreen.Calculator(
+                        UnitCategory(
+                            unitConvert.category
+                        )
+                    )
+                )
+            },
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp,
+            hoveredElevation = 6.dp,
+            pressedElevation = 2.dp
+        ),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
-            containerColor = AppUnitTheme.colors.primary,
+            containerColor = AppUnitTheme.colors.primary.copy(alpha = 0.95f),
             contentColor = AppUnitTheme.colors.primary,
-            disabledContainerColor = AppUnitTheme.colors.primary,
-            disabledContentColor = AppUnitTheme.colors.primary
         )
     ) {
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(AppUnitTheme.dimens.dp8),
+                .padding(AppUnitTheme.dimens.dp12),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Icon(
                 painter = painterResource(id = unitConvert.image.getResIdByName()),
                 contentDescription = "search",
-                modifier = Modifier.size(AppUnitTheme.dimens.dp25)
+                modifier = Modifier
+                    .size(AppUnitTheme.dimens.dp25)
                     .clip(RoundedCornerShape(10.dp)),
                 tint = Color.Unspecified
             )
-            TextUnitCommon(text = unitConvert.categoryName)
+            TextUnitCommon(
+                text = unitConvert.categoryName, style = TextStyle(
+                    color = AppUnitTheme.colors.absoluteBlack,
+                    fontSize = AppUnitTheme.dimens.sp16,
+                    fontWeight = FontWeight.SemiBold
+                ), modifier = Modifier.weight(1f)
+            )
         }
     }
 }

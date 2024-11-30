@@ -10,7 +10,12 @@ android {
 
 dependencies {
     libs.apply {
-      //  api(bundles.landscapistBundle)
+        // Firebase
+        api(platform(libs.firebase.bom))
+        api(libs.firebase.firestore.ktx)
+        api(libs.firebase.crashlytics)
+        api(libs.firebase.analytics)
+        api(libs.firebase.common.ktx)
 
         api(libs.androidx.compose.runtime)
         api(libs.androidx.compose.ui)

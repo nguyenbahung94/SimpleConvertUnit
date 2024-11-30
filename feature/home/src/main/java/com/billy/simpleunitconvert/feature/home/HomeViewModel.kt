@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
@@ -25,7 +26,13 @@ class HomeViewModel @Inject constructor(
     val homeUnit: StateFlow<List<HomeUnit>> = queryDataBaseRepository.queryHomeUnits()
         .onStart {
             uiState.value = uiState.value.copy(isLoading = true)
-        }.onCompletion { uiState.value = uiState.value.copy(isLoading = false) }.catch { e ->
+        }.onEach {
+            if (it.isNotEmpty()) {
+                uiState.value = uiState.value.copy(isLoading = false)
+            }
+        }
+        .onCompletion { uiState.value = uiState.value.copy(isLoading = false) }
+        .catch { e ->
             uiState.value = uiState.value.copy(isLoading = false, error = e.message)
             emit(emptyList())
         }.stateIn(

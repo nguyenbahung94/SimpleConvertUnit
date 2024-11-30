@@ -108,11 +108,6 @@ dependencies {
     //features
     implementation(projects.feature.home)
 
-    //firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics)
-    implementation(libs.firebase.analytics)
-
     // cores
     implementation(projects.core.model)
     implementation(projects.core.designsystem)

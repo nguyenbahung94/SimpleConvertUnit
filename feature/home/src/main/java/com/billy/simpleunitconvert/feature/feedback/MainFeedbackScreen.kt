@@ -2,6 +2,7 @@ package com.billy.simpleunitconvert.feature.feedback
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -38,16 +39,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.colors
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.dimens
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 @Composable
 fun FeedbackScreen() {
@@ -56,10 +61,9 @@ fun FeedbackScreen() {
     var appExperience by remember { mutableStateOf("") }
     val keyboardController = LocalSoftwareKeyboardController.current
     val composeNavigator = currentComposeNavigator
-
-    Scaffold(containerColor = colors.primary.copy(alpha = 0.1f), topBar = {
+    Scaffold(containerColor = colors.primary, topBar = {
         TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = colors.primary.copy(alpha = 0.1f),
+            containerColor = colors.primary,
             titleContentColor = colors.black,
         ), title = { Text(text = "Feedback") }, navigationIcon = {
             IconButton(onClick = {
@@ -70,15 +74,14 @@ fun FeedbackScreen() {
                     contentDescription = "Back"
                 )
             }
-        },
-            modifier = Modifier.padding(top = dimens.dp15))
+        })
     }) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(horizontal = dimens.dp16)
                 .verticalScroll(rememberScrollState())
+                .padding(horizontal = dimens.dp16)
                 .clickable {
                     keyboardController?.hide()
                 }, horizontalAlignment = Alignment.CenterHorizontally
@@ -188,17 +191,36 @@ fun FeedbackScreen() {
 
             Spacer(modifier = Modifier.size(dimens.dp80))
             Button(
-                onClick = {},
+                onClick = { /* Your click action */ },
                 modifier = Modifier
                     .width(200.dp)
-                    .height(dimens.dp50),
+                    .height(dimens.dp50)
+                    .shadow(
+                        elevation = 4.dp,
+                        shape = RoundedCornerShape(12.dp),
+                        clip = true
+                    ),
+                shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colors.backgroundUnit,
                     contentColor = colors.white,
                     disabledContentColor = colors.primary
-                )
+                ),
+                elevation = ButtonDefaults.buttonElevation(
+                    defaultElevation = 4.dp,
+                    pressedElevation = 1.dp,
+                    hoveredElevation = 6.dp
+                ),
+                interactionSource = remember { MutableInteractionSource() }
             ) {
-                Text(text = "Submit")
+                Text(
+                    text = "Submit",
+                    style = TextStyle(
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp,
+                        letterSpacing = 0.5.sp
+                    )
+                )
             }
         }
     }
