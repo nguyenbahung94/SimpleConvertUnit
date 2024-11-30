@@ -28,7 +28,6 @@ import com.billy.simpleunitconvert.core.model.home.UnitConvert
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
-import org.checkerframework.checker.units.qual.s
 
 @Composable
 internal fun HomeUnitCard(
