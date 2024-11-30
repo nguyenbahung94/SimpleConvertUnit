@@ -20,8 +20,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 
 @Composable
@@ -46,10 +49,16 @@ internal fun AppBarSearchScreen(
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
             Text(
                 text = getSearchText(searchTitle),
-                modifier = Modifier.weight(1f),
-                textAlign = TextAlign.Left,
-                style = MaterialTheme.typography.headlineSmall,
-                fontSize = AppUnitTheme.dimens.sp20,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                textAlign = TextAlign.Start,
+                style = TextStyle(
+                    color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.9f),
+                    fontSize = AppUnitTheme.dimens.sp20,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 0.5.sp
+                )
             )
         }
     }

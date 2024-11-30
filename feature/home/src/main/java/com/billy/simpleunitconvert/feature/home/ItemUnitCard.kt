@@ -75,7 +75,7 @@ internal fun HomeUnitCard(
             )
             TextUnitCommon(
                 text = unitConvert.categoryName, style = TextStyle(
-                    color = AppUnitTheme.colors.absoluteBlack,
+                    color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.75f),
                     fontSize = AppUnitTheme.dimens.sp16,
                     fontWeight = FontWeight.SemiBold
                 ), modifier = Modifier.weight(1f)

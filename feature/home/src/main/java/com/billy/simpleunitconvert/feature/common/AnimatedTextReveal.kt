@@ -86,7 +86,7 @@ fun AnimatedTextRevealBeautiful(
             }
 
             // Pause when fully revealed
-            delay(3500)
+            delay(4500)
 
             // Start hiding/fading out
             characters = characters.map {
@@ -94,7 +94,7 @@ fun AnimatedTextRevealBeautiful(
             }
 
             // Pause before next cycle
-            delay(500)
+            delay(200)
         }
     }
 

@@ -23,9 +23,11 @@ import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.home.HomeUnit
 import com.billy.simpleunitconvert.core.model.home.UnitConvert
@@ -67,13 +69,15 @@ fun VerticalContent(
             .padding(vertical = AppUnitTheme.dimens.dp8), verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = homeUnit.groupName,
-                color = AppUnitTheme.colors.title,
-                fontWeight = FontWeight.Bold,
-                style = MaterialTheme.typography.bodyLarge,
+                color = AppUnitTheme.colors.absoluteBlack,
+                fontWeight = FontWeight.SemiBold,
+                letterSpacing = 0.5.sp,
+                style = MaterialTheme.typography.titleMedium,
                 fontSize = AppUnitTheme.dimens.sp18,
                 modifier = Modifier
                     .padding(start = AppUnitTheme.dimens.dp12)
                     .weight(1f)
+                    .alpha(0.8f)
             )
 
             Icon(

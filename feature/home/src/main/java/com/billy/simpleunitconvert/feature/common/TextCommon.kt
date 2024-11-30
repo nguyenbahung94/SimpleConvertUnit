@@ -32,15 +32,13 @@ fun TextUnitCommon(
     text: String,
     fontSize: TextUnit = 16.sp,
     padding: Int = 12,
-    style: TextStyle = MaterialTheme.typography.bodyMedium,
-    color: Color = AppUnitTheme.colors.subtitle,
+    style: TextStyle,
     modifier: Modifier = Modifier,
 ) {
     Text(
         text = text,
         style = style,
         fontSize = fontSize,
-        color = color,
         modifier = modifier.padding(start = padding.dp),
     )
 }
