@@ -38,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.TextUnitCommon
+import com.billy.simpleunitconvert.feature.common.TitleCommon
 
 @Composable
 internal fun AppBarCalculatorScreen(
@@ -65,12 +67,9 @@ internal fun AppBarCalculatorScreen(
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
-            Text(
+            TitleCommon(
                 text = "Convert unit",
                 modifier = Modifier.weight(1f),
-                textAlign = TextAlign.Left,
-                style = MaterialTheme.typography.headlineSmall,
-                fontSize = AppUnitTheme.dimens.sp20
             )
             IconButton(onClick = {
                 onClickFavorite()

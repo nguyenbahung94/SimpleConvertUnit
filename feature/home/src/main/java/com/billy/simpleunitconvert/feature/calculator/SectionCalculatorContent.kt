@@ -28,7 +28,7 @@ fun SectionCalculatorContent(
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         CompositionLocalProvider(LocalCategoryProvider provides SearchCategory(calculatorState.category)) {
-            UnitDisplayBox(calculatorState, onEvent)
+            UnitDisplayBox(calculatorState, onEvent, modifier = Modifier.fillMaxWidth().weight(0.5f))
         }
         CalculatorButtons(
             onButtonClick = { onEvent(CalculatorEvent.OnClickButton(it)) },
@@ -41,13 +41,13 @@ fun SectionCalculatorContent(
 
 
 @Composable
-@Preview(showBackground = true, device = "spec:width=411dp,height=891dp")
-@Preview(showBackground = true, device = "spec:width=350dp,height=756dp")
-@Preview(showBackground = true, device = "spec:width=673dp,height=841dp")
 @Preview(showBackground = true, device = "id:pixel_4", showSystemUi = true)
 @Preview(showBackground = true, device = "spec:width=1280dp,height=800dp,dpi=240")
 fun SectionCalculatorContentPreview() {
     AppUnitTheme {
-
+        SectionCalculatorContent(
+            calculatorState = CalculatorState(),
+            onEvent = {}
+        )
     }
 }

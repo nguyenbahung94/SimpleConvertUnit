@@ -77,7 +77,7 @@ fun ItemSearch(
                 text = itemSearch.symbol,
                 padding = 0,
                 style = MaterialTheme.typography.bodyLarge.copy(
-                    fontWeight = FontWeight.Bold,
+                    fontWeight = FontWeight.SemiBold,
                     color = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.9f)
                 ),
             )
@@ -86,7 +86,7 @@ fun ItemSearch(
             text = itemSearch.name,
             padding = 4,
             style = MaterialTheme.typography.bodyLarge.copy(
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.8f)
             )
         )

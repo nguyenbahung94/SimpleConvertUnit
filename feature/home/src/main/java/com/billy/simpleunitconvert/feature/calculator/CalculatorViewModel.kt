@@ -96,6 +96,9 @@ class CalculatorViewModel @Inject constructor(
                 if (input.contains(".")) {
                     return null
                 }
+                if (input.isEmpty()) {
+                   return null
+                }
                 input + newNumber
             }
 

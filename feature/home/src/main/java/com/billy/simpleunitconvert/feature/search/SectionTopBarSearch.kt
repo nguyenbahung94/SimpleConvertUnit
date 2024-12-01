@@ -14,7 +14,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.feature.common.TitleCommon
 
 @Composable
 internal fun AppBarSearchScreen(
@@ -47,18 +47,11 @@ internal fun AppBarSearchScreen(
                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
-            Text(
+            TitleCommon(
                 text = getSearchText(searchTitle),
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                textAlign = TextAlign.Start,
-                style = TextStyle(
-                    color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.9f),
-                    fontSize = AppUnitTheme.dimens.sp20,
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp
-                )
             )
         }
     }

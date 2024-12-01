@@ -1,23 +1,36 @@
 package com.billy.simpleunitconvert.feature.common
 
 import android.util.Log
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -47,17 +60,62 @@ fun TextUnitCommon(
 fun BorderedActionText(
     text: String,
     onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true
 ) {
-    Text(
-        text = text,
-        style = MaterialTheme.typography.bodyMedium,
-        color = AppUnitTheme.colors.absoluteBlack,
-        modifier = Modifier
-            .border(1.dp, AppUnitTheme.colors.backgroundUnit, RoundedCornerShape(4.dp))
-            .clickable(onClick = onClick)
-            .padding(8.dp),
-        textAlign = TextAlign.Center,
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+
+    val scale by animateFloatAsState(
+        targetValue = if (isPressed) 0.9f else 1f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessMediumLow
+        )
     )
+
+    Box(
+        modifier = modifier
+            .scale(scale)
+            .background(
+                color = if (enabled)
+                    AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.1f)
+                else AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.3f),
+                shape = RoundedCornerShape(8.dp)
+            )
+            .border(
+                width = 1.dp,
+                color = if (enabled)
+                    AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.2f)
+                else AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.2f),
+                shape = RoundedCornerShape(8.dp)
+            )
+            .clickable(
+                interactionSource = interactionSource,
+                indication = ripple(
+                    color = AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.8f)
+                ),
+                enabled = enabled,
+                onClick = onClick
+            )
+            .padding(
+                horizontal = AppUnitTheme.dimens.dp12,
+                vertical = AppUnitTheme.dimens.dp8
+            )
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyMedium.copy(
+                fontWeight = FontWeight.Medium,
+                letterSpacing = 0.5.sp
+            ),
+            color = if (enabled)
+                AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.9f)
+            else AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.4f),
+            modifier = Modifier.align(Alignment.Center),
+            textAlign = TextAlign.Center,
+        )
+    }
 }
 
 @Composable
@@ -68,7 +126,7 @@ fun TextSingleLineUnit(
         fontFeatureSettings = "'tnum' on, 'lnum' on"
     ),
     color: Color = AppUnitTheme.colors.subtitle,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     var scaledFontSize by remember { mutableStateOf(defaultFontSize) }
     val textMeasurer = rememberTextMeasurer()
@@ -77,16 +135,14 @@ fun TextSingleLineUnit(
         scaledFontSize = defaultFontSize
     }
 
-    Text(
-        text = text,
+    Text(text = text,
         maxLines = 1,
         softWrap = false,
         textAlign = TextAlign.End,
         overflow = TextOverflow.Visible,
         style = style.copy(fontSize = scaledFontSize),
         color = color,
-        modifier = modifier
-            .onSizeChanged { constraints ->
+        modifier = modifier.onSizeChanged { constraints ->
                 if (constraints.width > 0) {
 
                     val textLayoutResult = textMeasurer.measure(
@@ -106,12 +162,8 @@ fun TextSingleLineUnit(
                         Log.e("textChange", "scaledFontSize reset = $scaledFontSize")
                     }
                 }
-            }
-    )
+            })
 }
-
-
-
 
 object Setting {
     const val MAX_NUMBER_LENGTH = 28
@@ -125,7 +177,7 @@ fun TextSingleLineUnitLayout(
         fontFeatureSettings = "'tnum' on, 'lnum' on"
     ),
     color: Color = AppUnitTheme.colors.subtitle,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     var scaledFontSize by remember { mutableStateOf(defaultFontSize) }
     Log.e("textChange", "text = $text")
@@ -169,6 +221,26 @@ fun TextSingleLineUnitLayout(
             finalTextPlaceable.place(0, 0)
         }
     }
+}
+
+@Composable
+fun TitleCommon(
+    text: String,
+    modifier: Modifier = Modifier,
+    textAlign: TextAlign = TextAlign.Start,
+    style: TextStyle =  TextStyle(
+        color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.9f),
+        fontSize = AppUnitTheme.dimens.sp20,
+        fontWeight = FontWeight.Bold,
+        letterSpacing = 0.5.sp
+    ),
+) {
+    Text(
+        text = text,
+        modifier = modifier.fillMaxWidth(),
+        textAlign = textAlign,
+        style = style,
+    )
 }
 
 

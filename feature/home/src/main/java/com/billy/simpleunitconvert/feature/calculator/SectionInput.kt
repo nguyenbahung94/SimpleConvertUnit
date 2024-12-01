@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,24 +19,27 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat.getSystemService
+import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.search.SearchCategory
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
@@ -90,16 +94,20 @@ fun CalculatorActionRow(
         horizontalArrangement = Arrangement.End,
     ) {
         BorderedActionText(
-            text = "Swap unit"
-        ) {
-            onEvent(CalculatorEvent.OnClickSwap)
-        }
+            text = "Swap unit",
+            modifier = Modifier,
+            onClick = {
+                onEvent(CalculatorEvent.OnClickSwap)
+            },
+        )
         Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp10))
         BorderedActionText(
-            text = "Copy unit"
-        ) {
-            copyUnitToClipboard(context, value)
-        }
+            text = "Copy unit",
+            modifier = Modifier,
+            onClick = {
+                copyUnitToClipboard(context, value)
+            }
+        )
     }
 }
 
@@ -143,7 +151,7 @@ fun UnitDisplayNumbers(
             InputTextDisplay(
                 value,
                 Modifier
-                    .height(AppUnitTheme.dimens.dp35)
+                    .height(AppUnitTheme.dimens.dp45)
                     .wrapContentSize(Alignment.CenterEnd)
                     .fillMaxWidth()
             )
@@ -162,19 +170,103 @@ fun DisplayNumbersRow(
 ) {
     val composeNavigator = currentComposeNavigator
     val category = LocalCategoryProvider.current
+    val   colors = listOf(
+        AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.4f),
+        AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.95f)
+    )
+    val brushLocal = remember { Brush.horizontalGradient(
+        colors = colors
+    ) }
     Row(
-        modifier = modifier, verticalAlignment = Alignment.CenterVertically
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         UnitTextBox(text = name,
             color = AppUnitTheme.colors.absoluteWhite,
             showIcon = true,
-            modifier = Modifier.clickable {
+            modifier = Modifier
+                .background(
+                    brushLocal,
+                    shape = RoundedCornerShape(8.dp)
+                )
+                .border(
+                    width = 1.dp,
+                    color = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.25f),
+                    shape = RoundedCornerShape(8.dp)
+                )
+                .clickable(
+                    interactionSource = remember { MutableInteractionSource() },
+                    indication = ripple()
+                ) {
                 onEvent(CalculatorEvent.OnClickOpenSearch(isInput))
                 composeNavigator.navigate(SimpleUnitScreen.Search(SearchCategory(category = category?.category, nameIgnore = anotherName)))
-
             })
         Spacer(modifier = Modifier.weight(1f)) // Spacer for alignment
-        UnitTextBox(text = unit, color = AppUnitTheme.colors.absoluteWhite)
+        UnitTextBox(
+            text = unit,
+            color = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.7f),
+            modifier = Modifier
+                .background(
+                    brushLocal,
+                    shape = RoundedCornerShape(8.dp)
+                )
+                .border(
+                    width = 1.dp,
+                    color = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.25f),
+                    shape = RoundedCornerShape(8.dp)
+                )
+        )
+    }
+}
+
+@Composable
+fun UnitTextBox(
+    text: String,
+    color: Color,
+    showIcon: Boolean = false,
+    modifier: Modifier = Modifier,
+) {
+    Box(
+        modifier = modifier
+            .background(
+                color = AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.5f),
+                shape = RoundedCornerShape(6.dp)
+            )
+            .border(
+                width = 1.dp,
+                color = AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.1f),
+                shape = RoundedCornerShape(6.dp)
+            )
+            .padding(horizontal = AppUnitTheme.dimens.dp8, vertical = AppUnitTheme.dimens.dp6)
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically, // Aligns text and icon vertically centered
+            horizontalArrangement = Arrangement.spacedBy(AppUnitTheme.dimens.dp4)
+        ) {
+            Text(
+                text = text,
+                style = TextStyle(
+                    fontSize = AppUnitTheme.dimens.sp16,
+                    color = color,
+                    fontWeight = FontWeight.Medium,
+                    letterSpacing = 0.5.sp
+                )
+            )
+
+            if (showIcon) {
+                Icon(
+                    imageVector = Icons.Default.ArrowDropDown,
+                    contentDescription = "Dropdown",
+                    tint = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.7f),
+                    modifier = Modifier
+                        .size(AppUnitTheme.dimens.dp16)
+                        .scale(1.5f)
+                        .graphicsLayer {
+                            alpha = 0.7f
+                        }
+                )
+            }
+        }
     }
 }
 
@@ -186,47 +278,6 @@ fun InputTextDisplay(value: String, modifier: Modifier = Modifier) {
         modifier = modifier,
         color = AppUnitTheme.colors.absoluteBlack
     )
-}
-
-@Composable
-fun UnitTextBox(
-    text: String,
-    color: Color,
-    showIcon: Boolean = false,
-    modifier: Modifier = Modifier,
-) {
-    Box(
-        modifier = Modifier
-            .background(
-                AppUnitTheme.colors.backgroundUnit, shape = RoundedCornerShape(4.dp)
-            )
-            .border(
-                1.dp, color = AppUnitTheme.colors.backgroundUnit, shape = RoundedCornerShape(4.dp)
-            )
-            .padding(horizontal = AppUnitTheme.dimens.dp6, vertical = AppUnitTheme.dimens.dp6)
-    ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically, // Aligns text and icon vertically centered
-            modifier = modifier.wrapContentWidth()
-        ) {
-            Text(
-                text = text,
-                fontSize = AppUnitTheme.dimens.sp16,
-                color = color,
-            )
-            if (showIcon) {
-                Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp4)) // Adds space between text and icon
-                Icon(
-                    imageVector = Icons.Default.ArrowDropDown,
-                    contentDescription = "Dropdown",
-                    tint = AppUnitTheme.colors.absoluteWhite,
-                    modifier = Modifier
-                        .size(AppUnitTheme.dimens.dp16)
-                        .scale(1.5f)
-                )
-            }
-        }
-    }
 }
 
 @Composable
