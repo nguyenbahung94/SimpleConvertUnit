@@ -30,6 +30,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -194,9 +195,10 @@ fun DisplayNumbersRow(
                     color = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.25f),
                     shape = RoundedCornerShape(8.dp)
                 )
+                .clip(RoundedCornerShape(8.dp))
                 .clickable(
                     interactionSource = remember { MutableInteractionSource() },
-                    indication = ripple()
+                    indication = ripple(bounded = true)
                 ) {
                 onEvent(CalculatorEvent.OnClickOpenSearch(isInput))
                 composeNavigator.navigate(SimpleUnitScreen.Search(SearchCategory(category = category?.category, nameIgnore = anotherName)))
@@ -214,7 +216,7 @@ fun DisplayNumbersRow(
                     width = 1.dp,
                     color = AppUnitTheme.colors.absoluteWhite.copy(alpha = 0.25f),
                     shape = RoundedCornerShape(8.dp)
-                )
+                ).clip(RoundedCornerShape(8.dp))
         )
     }
 }

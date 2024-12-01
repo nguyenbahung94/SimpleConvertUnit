@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.ripple
@@ -25,11 +24,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.SubcomposeLayout
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
@@ -39,6 +40,8 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.colors
+import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.dimens
 
 @Composable
 fun TextUnitCommon(
@@ -76,31 +79,33 @@ fun BorderedActionText(
 
     Box(
         modifier = modifier
+            .clip(RoundedCornerShape(8.dp))
             .scale(scale)
             .background(
                 color = if (enabled)
-                    AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.1f)
-                else AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.3f),
+                    colors.backgroundUnit.copy(alpha = 0.1f)
+                else colors.backgroundUnit.copy(alpha = 0.3f),
                 shape = RoundedCornerShape(8.dp)
             )
             .border(
                 width = 1.dp,
                 color = if (enabled)
-                    AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.2f)
-                else AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.2f),
+                    colors.backgroundUnit.copy(alpha = 0.2f)
+                else colors.backgroundUnit.copy(alpha = 0.2f),
                 shape = RoundedCornerShape(8.dp)
             )
             .clickable(
                 interactionSource = interactionSource,
                 indication = ripple(
-                    color = AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.8f)
+                    color = colors.backgroundUnit.copy(alpha = 0.8f),
+                    bounded = true
                 ),
                 enabled = enabled,
                 onClick = onClick
             )
             .padding(
-                horizontal = AppUnitTheme.dimens.dp12,
-                vertical = AppUnitTheme.dimens.dp8
+                horizontal = dimens.dp12,
+                vertical = dimens.dp8
             )
     ) {
         Text(
@@ -110,8 +115,8 @@ fun BorderedActionText(
                 letterSpacing = 0.5.sp
             ),
             color = if (enabled)
-                AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.9f)
-            else AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.4f),
+                colors.absoluteBlack.copy(alpha = 0.9f)
+            else colors.absoluteBlack.copy(alpha = 0.4f),
             modifier = Modifier.align(Alignment.Center),
             textAlign = TextAlign.Center,
         )
@@ -229,7 +234,7 @@ fun TitleCommon(
     modifier: Modifier = Modifier,
     textAlign: TextAlign = TextAlign.Start,
     style: TextStyle =  TextStyle(
-        color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.9f),
+        color = colors.absoluteBlack.copy(alpha = 0.9f),
         fontSize = AppUnitTheme.dimens.sp20,
         fontWeight = FontWeight.Bold,
         letterSpacing = 0.5.sp
@@ -243,4 +248,17 @@ fun TitleCommon(
     )
 }
 
+@Composable
+fun HintText(
+    text: String
+) {
+    Text(
+        text = text,
+        color = colors.black.copy(alpha = 0.5f),
+        style = TextStyle(
+            fontSize = dimens.sp16,
+            fontStyle = FontStyle.Italic
+        )
+    )
+}
 

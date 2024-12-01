@@ -90,6 +90,7 @@ fun VerticalContent(
         if (isExpanded) {
             homeUnit.unitConvert.forEach { unitConvert ->
                 HomeUnitCard(unitConvert = unitConvert)
+                Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp4))
             }
         }
     }

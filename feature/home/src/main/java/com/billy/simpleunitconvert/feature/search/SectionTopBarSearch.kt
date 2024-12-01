@@ -15,15 +15,10 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.feature.common.TitleCommon
 
@@ -34,7 +29,7 @@ internal fun AppBarSearchScreen(
 ) {
 
     Surface(
-        color = AppUnitTheme.colors.background,
+        color = AppUnitTheme.colors.primary,
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = WindowInsets.statusBars.asPaddingValues().calculateTopPadding())

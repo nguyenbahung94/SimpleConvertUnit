@@ -42,7 +42,7 @@ fun SimpleUnitConvertAppBar(
 ) {
     TopAppBar(
         colors = TopAppBarDefaults.topAppBarColors().copy(
-            containerColor = colors.background,
+            containerColor = colors.primary,
         ),
         title = {
             Box(
@@ -63,8 +63,7 @@ fun SimpleUnitConvertAppBar(
                     )
                     .clickable(
                         interactionSource = remember { MutableInteractionSource() },
-                        indication = ripple(color = colors.backgroundUnit.copy(alpha = 0.5f),
-                            radius = 24.dp),
+                        indication = ripple(color = colors.backgroundUnit.copy(alpha = 0.5f), bounded = true),
                     ) { onNavigateToSearch() }
                 , contentAlignment = Alignment.CenterStart
             ) {

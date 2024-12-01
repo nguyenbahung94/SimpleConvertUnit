@@ -45,7 +45,7 @@ internal fun HomeUnitCard(
             .fillMaxWidth()
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
-                indication = ripple(color = colors.backgroundUnit, radius = 44.dp),
+                indication = ripple(color = colors.backgroundUnit, bounded = true),
             ) {
                 currentComposeNavigator.navigate(
                     SimpleUnitScreen.Calculator(
@@ -62,8 +62,8 @@ internal fun HomeUnitCard(
         ),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
-            containerColor = AppUnitTheme.colors.primary.copy(alpha = 0.95f),
-            contentColor = AppUnitTheme.colors.primary,
+            containerColor = colors.primary.copy(alpha = 0.95f),
+            contentColor = colors.primary,
         )
     ) {
         Row(

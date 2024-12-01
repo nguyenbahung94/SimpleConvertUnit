@@ -28,7 +28,6 @@ object DimensSet {
     val normal = normalDimens
     val small = smallDimens
     val smallest = smallestDimens
-    val large = largeDimens
 }
 
 fun createCustomDimens(scale: Float): Dimensions {
@@ -278,6 +277,7 @@ data class Dimensions (
     val dp98: Dp = 98.dp,
     val dp99: Dp = 99.dp,
     val dp100: Dp = 100.dp,
+    val dp200: Dp = 200.dp,
     val sp1: TextUnit = 1.sp,
     val sp2: TextUnit = 2.sp,
     val sp3: TextUnit = 3.sp,
