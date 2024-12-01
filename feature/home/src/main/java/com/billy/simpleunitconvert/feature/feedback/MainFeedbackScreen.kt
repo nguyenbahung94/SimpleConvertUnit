@@ -13,24 +13,60 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.colors
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.dimens
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.core.viewmodel.StateExtensions.update
+import com.billy.simpleunitconvert.core.viewmodel.StateExtensions.updateError
+import com.billy.simpleunitconvert.feature.common.CustomSnackbar
+import com.billy.simpleunitconvert.feature.common.SnackbarType
 import com.billy.simpleunitconvert.feature.common.TitleCommon
+import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
+import com.billy.simpleunitconvert.feature.common.showCustomSnackbar
+import kotlinx.coroutines.launch
 
 @Composable
-fun FeedbackScreen() {
+fun FeedbackScreen(
+    feedbackViewModel: FeedbackViewModel = hiltViewModel(),
+) {
+    val uiState by feedbackViewModel.uiState.collectAsStateWithLifecycle()
     val keyboardController = LocalSoftwareKeyboardController.current
     val composeNavigator = currentComposeNavigator
+    val context = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
+    val coroutineScope = rememberCoroutineScope()
+
+
+    LaunchedEffect(uiState.error) {
+        uiState.error?.let {
+            coroutineScope.launch {
+                snackbarHostState.showCustomSnackbar(
+                    message = it, type = SnackbarType.INFO
+                )
+            }
+            feedbackViewModel.uiState.updateError(error = null)
+        }
+    }
+
+
     Scaffold(containerColor = colors.primary, topBar = {
         TopAppBar(colors = TopAppBarDefaults.topAppBarColors(
             containerColor = colors.primary,
@@ -45,8 +81,11 @@ fun FeedbackScreen() {
                 )
             }
         })
+    }, snackbarHost = {
+        SnackbarHost(hostState = snackbarHostState, snackbar = {
+            CustomSnackbar(snackbarData = it)
+        })
     }) { paddingValues ->
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -57,17 +96,30 @@ fun FeedbackScreen() {
                     keyboardController?.hide()
                 }, horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            RatingStar()
+
+            when {
+                uiState.success == true -> {
+                    composeNavigator.navigate(SimpleUnitScreen.Thank) {
+                        popUpTo<SimpleUnitScreen.Calculator> {
+                            inclusive = false
+                        }
+                    }
+                }
+            }
+
+            RatingStar(event = feedbackViewModel::handleEvent)
 
             Spacer(modifier = Modifier.size(dimens.dp8))
 
-            InputFeedback( onFeatureRequestChange = {}, onAppExperienceChange = {})
+            InputFeedback(event = feedbackViewModel::handleEvent)
 
             Spacer(modifier = Modifier.size(dimens.dp80))
 
-            ButtonSubmit( onSubmitted = {
-                composeNavigator.navigate(SimpleUnitScreen.Thank) {
-                    popUpTo<SimpleUnitScreen.Calculator>()
+            ButtonSubmit(onSubmitted = {
+                if (context.isNetworkAvailable()) {
+                    feedbackViewModel.handleEvent(FeedbackEvent.SubmitEvent)
+                } else {
+                    feedbackViewModel.uiState.updateError(error = "This feature requires internet connection")
                 }
             })
 

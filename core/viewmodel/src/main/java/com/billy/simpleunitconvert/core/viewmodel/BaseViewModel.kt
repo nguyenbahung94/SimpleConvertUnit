@@ -18,6 +18,7 @@ abstract class BaseViewModel : ViewModel() {
 data class UiState<T>(
     val isLoading: Boolean = false,
     val error: String? = null,
+    val success: Boolean? = null,
     val data: T,
 )
 
@@ -27,11 +28,13 @@ object StateExtensions {
     fun <T> ViewModelStateFlow<UiState<T>>.updateState(
         loading: Boolean? = null,
         error: String? = null,
+        success: Boolean? = null,
         data: T? = null,
     ) = update { state ->
         state.copy(
             isLoading = loading ?: state.isLoading,
             error = error ?: state.error,
+            success = success ?: state.success,
             data = data ?: state.data
         )
     }
@@ -54,6 +57,11 @@ object StateExtensions {
         error: String?,
     ) = update { state ->
         state.copy(error = error)
+    }
+    fun <T> ViewModelStateFlow<UiState<T>>.updateSuccess(
+        success: Boolean?,
+    ) = update { state ->
+        state.copy(success = success)
     }
 }
 

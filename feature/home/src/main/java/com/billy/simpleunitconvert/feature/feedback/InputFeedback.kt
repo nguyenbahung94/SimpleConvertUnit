@@ -31,31 +31,31 @@ import com.billy.simpleunitconvert.feature.common.HintText
 
 @Composable
 fun InputFeedback(
-    onFeatureRequestChange: (String) -> Unit,
-    onAppExperienceChange: (String) -> Unit,
+    event: (FeedbackEvent) -> Unit,
 ) {
     var featureRequest by remember { mutableStateOf("") }
     var appExperience by remember { mutableStateOf("") }
 
     Column() {
         Text(
-            text = "Request a Feature",
-            style = TextStyle(
+            text = "Request a Feature", style = TextStyle(
                 fontWeight = FontWeight.SemiBold,
                 fontSize = dimens.sp18,
                 color = colors.black.copy(alpha = 0.8f),
                 letterSpacing = 0.5.sp
-            ),
-            modifier = Modifier.padding(bottom = dimens.dp8).align(Alignment.Start)
+            ), modifier = Modifier
+                .padding(bottom = dimens.dp8)
+                .align(Alignment.Start)
         )
 
         TextField(
             value = featureRequest,
-            onValueChange = { featureRequest = it },
+            onValueChange = {
+                featureRequest = it
+                event(FeedbackEvent.FeatureRequestEvent(it))
+            },
             textStyle = TextStyle(
-                fontWeight = FontWeight.Normal,
-                fontSize = dimens.sp16,
-                color = colors.absoluteBlack
+                fontWeight = FontWeight.Normal, fontSize = dimens.sp16, color = colors.absoluteBlack
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -89,25 +89,26 @@ fun InputFeedback(
         Spacer(modifier = Modifier.size(dimens.dp20))
 
         Text(
-            text = "How was your experience?",
-            style = TextStyle(
+            text = "How was your experience?", style = TextStyle(
                 fontWeight = FontWeight.SemiBold,
                 fontSize = dimens.sp18,
                 color = colors.black.copy(alpha = 0.8f),
                 letterSpacing = 0.5.sp
-            ),
-            modifier = Modifier.padding(bottom = dimens.dp8).align(Alignment.Start)
+            ), modifier = Modifier
+                .padding(bottom = dimens.dp8)
+                .align(Alignment.Start)
         )
 
         Spacer(modifier = Modifier.size(dimens.dp8))
 
         TextField(
             value = appExperience,
-            onValueChange = { appExperience = it },
+            onValueChange = {
+                appExperience = it
+                event(FeedbackEvent.AppExperienceEvent(it))
+            },
             textStyle = TextStyle.Default.copy(
-                fontWeight = FontWeight.Normal,
-                fontSize = dimens.sp16,
-                color = colors.absoluteBlack
+                fontWeight = FontWeight.Normal, fontSize = dimens.sp16, color = colors.absoluteBlack
             ),
             modifier = Modifier
                 .fillMaxWidth()

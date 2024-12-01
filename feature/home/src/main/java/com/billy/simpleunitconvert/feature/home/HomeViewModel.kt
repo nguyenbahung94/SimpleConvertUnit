@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val queryDataBaseRepository: QueryDataBaseRepository,
+    queryDataBaseRepository: QueryDataBaseRepository,
 ) : BaseViewModel() {
     internal val uiState: ViewModelStateFlow<UiState<HomeState>> =
         viewModelStateFlow(UiState(isLoading = true, data = HomeState("Home")))
