@@ -17,6 +17,8 @@ dependencies {
         api(libs.firebase.analytics)
         api(libs.firebase.common.ktx)
 
+        api(libs.android.lottie)
+
         api(libs.androidx.compose.runtime)
         api(libs.androidx.compose.ui)
         api(libs.androidx.compose.ui.tooling)

@@ -1,9 +1,7 @@
 package com.billy.simpleunitconvert.core.navigation
 
-import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.NavOptionsBuilder
-import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.onCompletion

@@ -1,18 +1,16 @@
 package com.billy.simpleunitconvert.navigation
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
-import androidx.navigation.toRoute
 import com.billy.simpleunitconvert.core.model.calculator.BackResult
-import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.feature.calculator.CalculatorScreen
 import com.billy.simpleunitconvert.feature.feedback.FeedbackScreen
+import com.billy.simpleunitconvert.feature.thank.ThankScreen
 import com.billy.simpleunitconvert.feature.home.SimpleUnitHome
 import com.billy.simpleunitconvert.feature.search.SearchScreen
 import kotlin.reflect.KType
@@ -41,6 +39,10 @@ fun NavGraphBuilder.simpleUnitNavigation(
 
     animatedComposable<SimpleUnitScreen.Feedback> {
         FeedbackScreen()
+    }
+
+    animatedComposable<SimpleUnitScreen.Thank> {
+        ThankScreen()
     }
 }
 
