@@ -20,6 +20,7 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
 ) : CreateDatabaseRepository {
 
     override suspend fun updateRemoteConfig(value: Boolean ) {
+        Log.e("updateRemoteConfig", "value: $value")
        unitDao.updateEnableAdvertising(value)
     }
 

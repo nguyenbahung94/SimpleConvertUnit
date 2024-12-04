@@ -17,7 +17,6 @@ dependencies {
         api(libs.firebase.crashlytics)
         api(libs.firebase.analytics)
         api(libs.firebase.common.ktx)
-        api(libs.firebase.config)
 
         api(libs.android.lottie)
 
