@@ -23,4 +23,7 @@ interface QueryDataBaseRepository {
 
     @WorkerThread
     fun getUnitConvert(category: String): Flow<UnitConvertData>
+
+    @WorkerThread
+    fun getInformation(): Flow<String?>
 }

@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "b00a03002d672f76d4413d471ba03628",
+    "version": 2,
+    "identityHash": "ee9b5c2911a1fc1b572ac5de11bc3397",
     "entities": [
       {
         "tableName": "HomeUnitEntity",
@@ -168,7 +168,7 @@
       },
       {
         "tableName": "InformationEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` TEXT, `enableAdvertising` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -181,6 +181,12 @@
             "columnName": "uid",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "enableAdvertising",
+            "columnName": "enableAdvertising",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -196,7 +202,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b00a03002d672f76d4413d471ba03628')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ee9b5c2911a1fc1b572ac5de11bc3397')"
     ]
   }
 }

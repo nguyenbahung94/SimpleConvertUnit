@@ -7,6 +7,14 @@ import androidx.room.PrimaryKey
 import androidx.room.Relation
 
 @Entity
+data class InformationEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val uid: String? = null ,
+    val enableAdvertising: Boolean = false,
+)
+
+@Entity
 data class HomeUnitEntity(
     @PrimaryKey val shortName: String,
     val groupName: String,

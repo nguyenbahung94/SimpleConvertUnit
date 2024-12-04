@@ -3,16 +3,14 @@ package com.billy.simpleunitconvert.core.data.repository.init
 import android.content.Context
 import android.util.Log
 import com.billy.simpleunitconvert.core.database.UnitDao
+import com.billy.simpleunitconvert.core.database.entity.InformationEntity
 import com.billy.simpleunitconvert.core.database.entity.mapper.asEntity
 import com.billy.simpleunitconvert.core.model.home.HomeUnitData
 import com.billy.simpleunitconvert.core.model.home.UnitConvertData
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.single
-import kotlinx.coroutines.flow.singleOrNull
-import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
+import java.util.UUID
 import javax.inject.Inject
 
 internal class CreateDatabaseRepositoryImpl @Inject constructor(
@@ -21,18 +19,26 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
     private val json: Json,
 ) : CreateDatabaseRepository {
 
+    override suspend fun updateRemoteConfig(value: Boolean ) {
+       unitDao.updateEnableAdvertising(value)
+    }
+
     override suspend fun readDataSaveToDatabase() {
-        withContext(Dispatchers.IO) {
-            unitDao.getHomeUnitList().collect{
-                if (it.isEmpty()) {
-                    insertAllData()
-                }
+        unitDao.getHomeUnitList().collect {
+            if (it.isEmpty()) {
+                insertAllData()
             }
         }
     }
 
+    override suspend fun insertInformation() {
+        if (unitDao.getInformation() == null) {
+            val uid = UUID.randomUUID().toString()
+            unitDao.insertInformation(InformationEntity(uid = uid))
+        }
+    }
+
     private suspend fun insertAllData() {
-        Log.e("insertAllData", "insertAllData")
         insertHomeUnits()
         insertUnitConverter()
         insertUnitItems()
@@ -120,8 +126,6 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
 
                 val unitConverts: List<UnitItemData> = json.decodeFromString(jsonString)
 
-                Log.i(TAG, "item name == : $item")
-                Log.i(TAG, "allUnits: $unitConverts")
 
                 unitDao.insertUnitItemEntities(unitConverts.asEntity())
 
@@ -161,8 +165,6 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
                 context.assets.open("HomeUnitEntity.json").bufferedReader().use { it.readText() }
 
             val homeUnits: List<HomeUnitData> = json.decodeFromString(jsonString)
-
-            Log.e(TAG, "allUnits: $homeUnits")
 
             unitDao.insertHomeUnits(homeUnits.asEntity())
 

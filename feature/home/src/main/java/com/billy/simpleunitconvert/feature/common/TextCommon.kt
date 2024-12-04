@@ -161,10 +161,8 @@ fun TextSingleLineUnit(
                     if (textWidth > constraints.width) {
                         val scaleFactor = constraints.width / textWidth
                         scaledFontSize = (defaultFontSize.value * scaleFactor).sp
-                        Log.e("textChange", "scaledFontSize change = $scaledFontSize")
                     } else {
                         scaledFontSize = defaultFontSize
-                        Log.e("textChange", "scaledFontSize reset = $scaledFontSize")
                     }
                 }
             })
@@ -185,7 +183,6 @@ fun TextSingleLineUnitLayout(
     modifier: Modifier = Modifier,
 ) {
     var scaledFontSize by remember { mutableStateOf(defaultFontSize) }
-    Log.e("textChange", "text = $text")
 
     SubcomposeLayout(modifier = modifier) { constraints ->
         // First pass: measure with default font size

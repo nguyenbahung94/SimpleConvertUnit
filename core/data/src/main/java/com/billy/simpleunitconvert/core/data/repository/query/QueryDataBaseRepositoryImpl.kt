@@ -17,7 +17,6 @@ import com.billy.simpleunitconvert.core.network.Dispatcher
 import com.billy.simpleunitconvert.core.network.SimpleUnitAppDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
@@ -31,7 +30,7 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
     @Dispatcher(SimpleUnitAppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
 ) : QueryDataBaseRepository {
 
-    override fun updateFavoriteUnit(category: String, isFavorite: Boolean): Flow<String> = flow<String> {
+    override fun updateFavoriteUnit(category: String, isFavorite: Boolean): Flow<String> = flow {
         val unitConvert = unitDao.updateFavoriteUnit(category, isFavorite)
         if (unitConvert > 0) {
             emit("success")
@@ -41,11 +40,17 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
     }.flowOn(ioDispatcher)
         .catch { Log.e("updateFavoriteUnit", "error: ${it.message}") }
 
-    override fun getUnitConvert(category: String): Flow<UnitConvertData> = flow<UnitConvertData> {
+    override fun getUnitConvert(category: String): Flow<UnitConvertData> = flow {
         val unitConvert = unitDao.getUnitConvert(category)
         emit(unitConvert.asDomain())
     }.flowOn(ioDispatcher)
         .catch { Log.e("getUnitConvert", "error: ${it.message}") }
+
+    override fun getInformation(): Flow<String?> = flow {
+        val information = unitDao.getInformation()
+        emit(information?.uid)
+    }.flowOn(ioDispatcher)
+        .catch { Log.e("getInformation", "error: ${it.message}") }
 
     override fun queryHomeUnits(): Flow<List<HomeUnit>> {
         return combine(
@@ -72,7 +77,6 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
             prefetchDistance = 3,
             enablePlaceholders = false
         ), pagingSourceFactory = {
-            Log.e("queryUnitByKeWord", "keyWord: $keyWord, category: $category")
             unitDao.searchUnitItem(keyWord, category)
         }).flow.map { pagingData -> pagingData.map { transformer(it) } }
             .flowOn(ioDispatcher)

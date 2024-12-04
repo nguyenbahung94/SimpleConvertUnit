@@ -9,6 +9,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.config)
     libs.apply {
         // Firebase
         api(platform(libs.firebase.bom))
@@ -16,6 +17,7 @@ dependencies {
         api(libs.firebase.crashlytics)
         api(libs.firebase.analytics)
         api(libs.firebase.common.ktx)
+        api(libs.firebase.config)
 
         api(libs.android.lottie)
 

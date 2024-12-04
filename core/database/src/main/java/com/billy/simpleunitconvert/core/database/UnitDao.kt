@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.billy.simpleunitconvert.core.database.entity.HomeUnitEntity
 import com.billy.simpleunitconvert.core.database.entity.HomeUnitWithUnitConvert
+import com.billy.simpleunitconvert.core.database.entity.InformationEntity
 import com.billy.simpleunitconvert.core.database.entity.UnitConvertEntity
 import com.billy.simpleunitconvert.core.database.entity.UnitConvertWithUnitItem
 import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
@@ -24,6 +25,15 @@ interface UnitDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUnitItemEntities(unitConvertEntity: List<UnitItemEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertInformation(informationEntity: InformationEntity)
+
+    @Query("UPDATE UnitConvertEntity SET isFavorite = :isFavorite WHERE category = :category")
+    suspend fun updateFavoriteUnit(category: String, isFavorite: Boolean): Int
+
+    @Query("UPDATE INFORMATIONENTITY SET enableAdvertising = :enableAdvertising WHERE id = 1")
+    suspend fun updateEnableAdvertising(enableAdvertising: Boolean): Int
+
     @Query("SELECT * FROM HomeUnitEntity")
     fun getHomeUnitList(): Flow<List<HomeUnitWithUnitConvert>>
 
@@ -36,9 +46,9 @@ interface UnitDao {
     @Query("SELECT * FROM UnitConvertEntity WHERE category = :category")
     suspend fun getUnitConvert(category: String): UnitConvertEntity
 
-    @Query("UPDATE UnitConvertEntity SET isFavorite = :isFavorite WHERE category = :category")
-    suspend fun updateFavoriteUnit(category: String, isFavorite: Boolean): Int
-
     @Query("SELECT * FROM UnitConvertEntity WHERE isFavorite = 1")
     fun getFavoriteUnit(): Flow<List<UnitConvertEntity>>
+
+    @Query("SELECT * FROM informationentity")
+    fun getInformation(): InformationEntity?
 }

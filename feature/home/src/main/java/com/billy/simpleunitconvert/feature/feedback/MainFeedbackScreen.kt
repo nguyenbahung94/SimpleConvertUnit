@@ -34,8 +34,6 @@ import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.colors
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.dimens
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
-import com.billy.simpleunitconvert.core.viewmodel.StateExtensions.update
-import com.billy.simpleunitconvert.core.viewmodel.StateExtensions.updateError
 import com.billy.simpleunitconvert.feature.common.CustomSnackbar
 import com.billy.simpleunitconvert.feature.common.SnackbarType
 import com.billy.simpleunitconvert.feature.common.TitleCommon
@@ -55,14 +53,25 @@ fun FeedbackScreen(
     val coroutineScope = rememberCoroutineScope()
 
 
-    LaunchedEffect(uiState.error) {
+    LaunchedEffect(uiState) {
         uiState.error?.let {
             coroutineScope.launch {
                 snackbarHostState.showCustomSnackbar(
                     message = it, type = SnackbarType.INFO
                 )
             }
-            feedbackViewModel.uiState.updateError(error = null)
+            feedbackViewModel.clearError()
+        }
+
+        uiState.success?.let {
+            if (it) {
+                feedbackViewModel.clearSuccess()
+                composeNavigator.navigate(SimpleUnitScreen.Thank) {
+                    popUpTo<SimpleUnitScreen.Calculator> {
+                        inclusive = false
+                    }
+                }
+            }
         }
     }
 
@@ -97,16 +106,6 @@ fun FeedbackScreen(
                 }, horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            when {
-                uiState.success == true -> {
-                    composeNavigator.navigate(SimpleUnitScreen.Thank) {
-                        popUpTo<SimpleUnitScreen.Calculator> {
-                            inclusive = false
-                        }
-                    }
-                }
-            }
-
             RatingStar(event = feedbackViewModel::handleEvent)
 
             Spacer(modifier = Modifier.size(dimens.dp8))
@@ -119,7 +118,7 @@ fun FeedbackScreen(
                 if (context.isNetworkAvailable()) {
                     feedbackViewModel.handleEvent(FeedbackEvent.SubmitEvent)
                 } else {
-                    feedbackViewModel.uiState.updateError(error = "This feature requires internet connection")
+                    feedbackViewModel.updateError(error = "This feature requires internet connection")
                 }
             })
 

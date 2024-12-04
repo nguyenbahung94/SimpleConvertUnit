@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import com.billy.simpleunitconvert.core.data.repository.init.CreateDatabaseRepository
 import com.google.firebase.FirebaseApp
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,11 +12,14 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
 @HiltAndroidApp
 class SimpleUnitConvertApplication: Application() {
 
     @Inject
     lateinit var createDatabaseRepository: CreateDatabaseRepository
+    private lateinit var mFirebaseRemoteConfig: FirebaseRemoteConfig
+
 
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -35,5 +39,15 @@ class SimpleUnitConvertApplication: Application() {
               Log.e("initializeDatabase","success")
           }
        }
+
+        appScope.launch {
+            runCatching {
+                createDatabaseRepository.insertInformation()
+            }.onFailure {
+                Log.e("insertInformation","error: ${it.message}")
+            }.onSuccess {
+                Log.e("insertInformation","success")
+            }
+        }
     }
 }

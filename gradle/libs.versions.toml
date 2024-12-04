@@ -47,6 +47,7 @@ googleFirebaseCrashlytics = "3.0.2"
 firebaseBom = "33.6.0"
 firebaseCommonKtx = "21.0.0"
 firebaseFirestoreKtx = "25.1.1"
+firebaseConfig = "22.0.1"
 
 
 [libraries]
@@ -120,6 +121,7 @@ firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-common-ktx = { group = "com.google.firebase", name = "firebase-common-ktx" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx"}
+firebase-config = { group = "com.google.firebase", name = "firebase-config", version.ref = "firebaseConfig" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

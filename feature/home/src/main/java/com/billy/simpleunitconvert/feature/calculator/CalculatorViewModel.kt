@@ -1,6 +1,5 @@
 package com.billy.simpleunitconvert.feature.calculator
 
-import android.util.Log
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
@@ -36,15 +35,12 @@ class CalculatorViewModel @Inject constructor(
          viewModelScope.launch {
              savedStateHandle.getStateFlow<UnitCategory?>("unitCategory", null)
                  .collect { unitCategory ->
-                    Log.e("CalculatorViewModel","has new data = unitCategory: $unitCategory")
                      unitCategory?.let { category ->
                          categorySave = category
-                         Log.e("CalculatorViewModel","category: $category")
                          uiState.updateBatchData(
                              category = category.category
                          )
                          queryDataBaseRepository.queryUnitByCategory(category.category).collect {
-                             Log.e("CalculatorViewModel","it: $it")
                              currentListUnit = it.toMutableList()
                              initDataUnit()
                          }
@@ -80,8 +76,7 @@ class CalculatorViewModel @Inject constructor(
            uiState.updateState(error = "There is something wrong, please try again", loading = false)
             return
         }
-        Log.e("CalculatorViewModel", "unitInput: $unitInput")
-        Log.e("CalculatorViewModel", "unitResult: $unitResult")
+
         uiState.updateBatchData(
             updateUnitResult = { copy(name = unitResult!!.name, symbol = unitResult!!.symbol)},
             updateUnitInput = { copy(name = unitInput!!.name, symbol = unitInput!!.symbol)},
@@ -122,7 +117,6 @@ class CalculatorViewModel @Inject constructor(
                viewModelScope.launch {
                    categorySave?.category?.let {
                        queryDataBaseRepository.updateFavoriteUnit(categorySave?.category ?: "", !uiState.value.data.isFavorite).collect {
-                           Log.e("CalculatorViewModel", "updateFavoriteUnit: $it")
                            uiState.updateBatchData(
                                isFavorite = !uiState.value.data.isFavorite
                            )
