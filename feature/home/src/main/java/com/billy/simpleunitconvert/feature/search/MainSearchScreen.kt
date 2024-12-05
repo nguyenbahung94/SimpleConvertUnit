@@ -18,7 +18,9 @@ import com.billy.simpleunitconvert.core.designsystem.component.CircularProgress
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.colors
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.BannerAdView
 import com.billy.simpleunitconvert.feature.common.LocalCategoryProvider
+import com.billy.simpleunitconvert.feature.common.Utils
 
 
 @Composable
@@ -40,7 +42,9 @@ fun SearchScreen(
         }
     ) { innerPadding ->
         Column(
-            modifier = Modifier.fillMaxSize().padding(innerPadding)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
         ) {
 
             SearchBar(
@@ -57,16 +61,22 @@ fun SearchScreen(
             }
 
             if (searchQuery.isNotEmpty() && searchResults.itemCount == 0) {
-                EmptyResults()
-                return@Column
+                EmptyResults(modifier = Modifier
+                    .fillMaxSize()
+                    .weight(1f))
+            } else {
+                CompositionLocalProvider(LocalCategoryProvider provides searchCategory) {
+                    SearchResults(
+                        results = searchResults,
+                        onEvent = viewModel::onEvent,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .weight(1f)
+                    )
+                }
             }
 
-            CompositionLocalProvider( LocalCategoryProvider provides searchCategory) {
-                SearchResults(
-                    results = searchResults,
-                    onEvent = viewModel::onEvent
-                )
-            }
+            BannerAdView(adUnitId = Utils.ADSID.BANNER) // Replace with your Ad Unit ID
         }
     }
 

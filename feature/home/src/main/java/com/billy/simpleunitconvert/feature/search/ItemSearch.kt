@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -24,16 +25,21 @@ import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
 import com.billy.simpleunitconvert.feature.common.LocalCategoryProvider
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
+import com.billy.simpleunitconvert.feature.common.Utils
+import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
 
 @Composable
 fun ItemSearch(
     itemSearch: UnitItemData,
     onEvent: (SearchEvent) -> Unit = {},
+    interstitialHelper: InterstitialAdHelper
 ) {
     val localCategory = LocalCategoryProvider.current
     val composeNavigator = currentComposeNavigator
+    val context = LocalContext.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -46,14 +52,30 @@ fun ItemSearch(
                         itemSearch.category, itemSearch.name
                     )
                 )
-                if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
-                    composeNavigator.navigateBackWithResult(
-                        "itemSelected", result = BackResult(itemSearch.name), null
-                    )
+                if (Utils.isTimeVisitEnough() && Utils.isEnableAds && context.isNetworkAvailable()) {
+                    interstitialHelper.showAd {
+                        Utils.resetCountAndIncreaseMaxCount()
+                        if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
+                            composeNavigator.navigateBackWithResult(
+                                "itemSelected", result = BackResult(itemSearch.name), null
+                            )
+                        } else {
+                            composeNavigator.navigate(
+                                route
+                            )
+                        }
+                    }
+
                 } else {
-                    composeNavigator.navigate(
-                        route
-                    )
+                    if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
+                        composeNavigator.navigateBackWithResult(
+                            "itemSelected", result = BackResult(itemSearch.name), null
+                        )
+                    } else {
+                        composeNavigator.navigate(
+                            route
+                        )
+                    }
                 }
             },
         verticalAlignment = Alignment.CenterVertically,
@@ -83,9 +105,7 @@ fun ItemSearch(
             )
         }
         TextUnitCommon(
-            text = itemSearch.name,
-            padding = 4,
-            style = MaterialTheme.typography.bodyLarge.copy(
+            text = itemSearch.name, padding = 4, style = MaterialTheme.typography.bodyLarge.copy(
                 fontWeight = FontWeight.Normal,
                 color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.8f)
             )
@@ -107,6 +127,10 @@ fun ItemSearchPreview() {
                 offset = null,
                 category = "cras",
                 popular = false
+            ),
+            onEvent = {},
+            interstitialHelper = InterstitialAdHelper(
+                TODO(), adUnitId = TODO()
             )
         )
     }

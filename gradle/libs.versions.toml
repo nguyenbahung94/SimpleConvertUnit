@@ -48,7 +48,7 @@ firebaseBom = "33.6.0"
 firebaseCommonKtx = "21.0.0"
 firebaseFirestoreKtx = "25.1.1"
 firebaseConfig = "22.0.1"
-playServicesAds = "23.5.0"
+playServicesAds = "23.6.0"
 
 
 [libraries]

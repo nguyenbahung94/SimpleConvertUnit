@@ -3,6 +3,9 @@ package com.billy.simpleunitconvert
 import android.app.Application
 import android.util.Log
 import com.billy.simpleunitconvert.core.data.repository.init.CreateDatabaseRepository
+import com.billy.simpleunitconvert.feature.common.Utils.isEnableAds
+import com.billy.simpleunitconvert.core.data.utils.logError
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
 import com.google.firebase.remoteconfig.ConfigUpdate
 import com.google.firebase.remoteconfig.ConfigUpdateListener
@@ -29,26 +32,32 @@ class SimpleUnitConvertApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         initializeDatabase()
-        FirebaseApp.initializeApp(this)
+        FirebaseApp.initializeApp(this@SimpleUnitConvertApplication)
+
+        appScope.launch {
+            MobileAds.initialize(this@SimpleUnitConvertApplication)
+
+        }
+
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
         val configSettings =
-            FirebaseRemoteConfigSettings.Builder().setMinimumFetchIntervalInSeconds(0).build()
+            FirebaseRemoteConfigSettings.Builder().setMinimumFetchIntervalInSeconds(12 * 3600)
+                .build()
         mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings)
         listenerFirebaseRemoteConfig()
     }
 
     private fun listenerFirebaseRemoteConfig() {
-        mFirebaseRemoteConfig.fetchAndActivate().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
+        mFirebaseRemoteConfig.fetchAndActivate().addOnCompleteListener {
+            if (it.isSuccessful) {
                 updateRemoteConfig()
-            } else {
-                Log.e("mFirebaseRemoteConfig", "Fetch failed")
             }
         }
         mFirebaseRemoteConfig.addOnConfigUpdateListener(object : ConfigUpdateListener {
             override fun onUpdate(configUpdate: ConfigUpdate) {
-                if (configUpdate.updatedKeys.contains("AppSimpleUnitConvert")) {
+                if (configUpdate.updatedKeys.contains(KEY_REMOTE_ADS)) {
                     mFirebaseRemoteConfig.activate().addOnCompleteListener {
                         updateRemoteConfig()
                     }
@@ -63,16 +72,8 @@ class SimpleUnitConvertApplication : Application() {
     }
 
     private fun updateRemoteConfig() {
-        val simpleUnitConvert = mFirebaseRemoteConfig.getBoolean("AppSimpleUnitConvert")
-        appScope.launch(Dispatchers.IO) {
-            runCatching {
-                createDatabaseRepository.updateRemoteConfig(simpleUnitConvert)
-            }.onFailure {
-                createDatabaseRepository.updateRemoteConfig(false)
-            }.onSuccess {
-                Log.e("mFirebaseRemoteConfig", "onSuccess")
-            }
-        }
+        val simpleUnitConvert = mFirebaseRemoteConfig.getBoolean(KEY_REMOTE_ADS)
+        isEnableAds = simpleUnitConvert
     }
 
     private fun initializeDatabase() {
@@ -80,7 +81,7 @@ class SimpleUnitConvertApplication : Application() {
             runCatching {
                 createDatabaseRepository.readDataSaveToDatabase()
             }.onFailure {
-                Log.e("initializeDatabase", "error: ${it.message}")
+                logError("error readDataSaveToDatabase: ${it.message}")
             }.onSuccess {
                 Log.e("initializeDatabase", "success")
             }
@@ -90,10 +91,14 @@ class SimpleUnitConvertApplication : Application() {
             runCatching {
                 createDatabaseRepository.insertInformation()
             }.onFailure {
-                Log.e("insertInformation", "error: ${it.message}")
+                logError("error insert Uid: ${it.message}")
             }.onSuccess {
                 Log.e("insertInformation", "success")
             }
         }
+    }
+
+    companion object {
+        const val KEY_REMOTE_ADS = "AppSimpleUnitConvert"
     }
 }

@@ -14,6 +14,9 @@ dependencies {
     implementation(projects.core.network)
     implementation(projects.core.database)
 
+    // optional
+    implementation(projects.core.designsystem)
+
     // kotlinx
     api(libs.kotlinx.immutable.collection)
     implementation(libs.androidx.paging.runtime)

@@ -21,12 +21,16 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -35,17 +39,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
-import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
-import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
-import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
+import com.billy.simpleunitconvert.feature.common.Utils
+import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
+import kotlinx.coroutines.launch
 
 @Composable
 fun ThankScreen() {
     val composeNavigator = currentComposeNavigator
+    val context = LocalContext.current
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.REWARDED_VIDEO) }
+    val coroutineScope = rememberCoroutineScope()
+    LaunchedEffect(true) {
+        if (Utils.isEnableAds) {
+            coroutineScope.launch {
+                interstitialHelper.loadAd()
+            }
+        }
+    }
     val composition by rememberLottieComposition(
         LottieCompositionSpec.RawRes(
             com.billy.simpleunitconvert.core.designsystem.R.raw.thank_animation
@@ -53,21 +68,16 @@ fun ThankScreen() {
     )
 
     val progress by animateLottieCompositionAsState(
-        composition = composition,
-        iterations = 1
+        composition = composition, iterations = 1
     )
 
     val infiniteTransition = rememberInfiniteTransition()
 
     // Floating Animation
     val floatAnimation by infiniteTransition.animateFloat(
-        initialValue = -15f,
-        targetValue = 15f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(2000, easing = EaseInOut),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "Floating Animation"
+        initialValue = -15f, targetValue = 15f, animationSpec = infiniteRepeatable(
+            animation = tween(2000, easing = EaseInOut), repeatMode = RepeatMode.Reverse
+        ), label = "Floating Animation"
     )
 
     // Color Pulse Animation
@@ -75,8 +85,7 @@ fun ThankScreen() {
         initialValue = AppUnitTheme.colors.colorStart,
         targetValue = AppUnitTheme.colors.colorStart.copy(alpha = 0.6f),
         animationSpec = infiniteRepeatable(
-            animation = tween(2000, easing = EaseInOut),
-            repeatMode = RepeatMode.Reverse
+            animation = tween(2000, easing = EaseInOut), repeatMode = RepeatMode.Reverse
         ),
         label = "Color Pulse"
     )
@@ -91,19 +100,16 @@ fun ThankScreen() {
                         AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.2f)
                     )
                 )
-            ),
-        contentAlignment = Alignment.Center
+            ), contentAlignment = Alignment.Center
     ) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+        Column(horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
                 .graphicsLayer {
                     translationY = floatAnimation
-                }
-        ) {
+                }) {
             LottieAnimation(
                 composition = composition,
                 progress = { progress },
@@ -114,13 +120,9 @@ fun ThankScreen() {
 
             // Thank You Title
             Text(
-                text = "Thank You!",
-                style = TextStyle(
-                    fontSize = 32.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = colorAnimation
-                ),
-                modifier = Modifier.padding(vertical = 16.dp)
+                text = "Thank You! ❤\uFE0F", style = TextStyle(
+                    fontSize = 32.sp, fontWeight = FontWeight.Bold, color = colorAnimation
+                ), modifier = Modifier.padding(vertical = 16.dp)
             )
 
             // Feedback Appreciation Message
@@ -137,7 +139,14 @@ fun ThankScreen() {
 
             Button(
                 onClick = {
-                    composeNavigator.navigateUp()
+                    if (context.isNetworkAvailable() && Utils.isEnableAds) {
+                        interstitialHelper.showAd {
+                            composeNavigator.navigateUp()
+                        }
+                    } else {
+                        composeNavigator.navigateUp()
+                    }
+
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = AppUnitTheme.colors.backgroundUnit,
@@ -149,10 +158,8 @@ fun ThankScreen() {
                     .height(56.dp)
             ) {
                 Text(
-                    text = "Continue",
-                    style = TextStyle(
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.SemiBold
+                    text = "Continue", style = TextStyle(
+                        fontSize = 18.sp, fontWeight = FontWeight.SemiBold
                     )
                 )
             }

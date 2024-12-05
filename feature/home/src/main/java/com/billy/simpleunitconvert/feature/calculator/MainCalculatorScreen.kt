@@ -14,6 +14,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme.colors
 import com.billy.simpleunitconvert.core.model.calculator.BackResult
+import com.billy.simpleunitconvert.feature.common.Utils
 
 @Composable
 fun CalculatorScreen(
@@ -26,6 +27,10 @@ fun CalculatorScreen(
         itemResult?.let {
             viewModel.onEvent(CalculatorEvent.OnItemResult(it))
         }
+    }
+
+    LaunchedEffect(true) {
+        Utils.incrementCount()
     }
 
     Scaffold(

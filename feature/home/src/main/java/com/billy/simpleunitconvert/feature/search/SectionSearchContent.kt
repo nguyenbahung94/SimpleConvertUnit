@@ -25,27 +25,25 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -53,6 +51,10 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
+import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
+import com.billy.simpleunitconvert.feature.common.Utils
+import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
+import kotlinx.coroutines.launch
 
 
 @Composable
@@ -146,16 +148,28 @@ internal fun SearchBar(
 @Composable
 fun SearchResults(
     results: LazyPagingItems<UnitItemData>,
-    onEvent: (SearchEvent) -> Unit
+    onEvent: (SearchEvent) -> Unit,
+    modifier: Modifier = Modifier
 ) {
+    val context = LocalContext.current
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.REWARDED_VIDEO) }
+    val coroutineScope = rememberCoroutineScope()
+
+    LaunchedEffect(Unit) {
+        if (Utils.isTimeVisitEnough() && Utils.isEnableAds && context.isNetworkAvailable()) {
+            coroutineScope.launch {
+                interstitialHelper.loadAd()
+            }
+        }
+    }
     LazyColumn(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(top = AppUnitTheme.dimens.dp8)
     ) {
         items(results.itemCount) { index ->
            results[index]?.let {
-               ItemSearch(itemSearch = it, onEvent)
+               ItemSearch(itemSearch = it, onEvent = onEvent, interstitialHelper = interstitialHelper)
                Spacer(modifier = Modifier.padding(AppUnitTheme.dimens.dp4))
            }
         }
@@ -172,7 +186,6 @@ fun EmptyResults(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
-            .fillMaxSize()
             .padding(horizontal = 24.dp)
     ) {
         Text(

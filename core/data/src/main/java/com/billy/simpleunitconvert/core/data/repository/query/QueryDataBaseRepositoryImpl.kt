@@ -5,6 +5,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
+import com.billy.simpleunitconvert.core.data.utils.logError
 import com.billy.simpleunitconvert.core.database.UnitDao
 import com.billy.simpleunitconvert.core.database.entity.HomeUnitWithUnitConvert
 import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
@@ -38,19 +39,19 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
             emit("failed")
         }
     }.flowOn(ioDispatcher)
-        .catch { Log.e("updateFavoriteUnit", "error: ${it.message}") }
+        .catch { logError("error updateFavoriteUnit: ${it.message}") }
 
     override fun getUnitConvert(category: String): Flow<UnitConvertData> = flow {
         val unitConvert = unitDao.getUnitConvert(category)
         emit(unitConvert.asDomain())
     }.flowOn(ioDispatcher)
-        .catch { Log.e("getUnitConvert", "error: ${it.message}") }
+        .catch { logError("error getUnitConvert: ${it.message}") }
 
     override fun getInformation(): Flow<String?> = flow {
         val information = unitDao.getInformation()
         emit(information?.uid)
     }.flowOn(ioDispatcher)
-        .catch { Log.e("getInformation", "error: ${it.message}") }
+        .catch { logError("error getInformation: ${it.message}") }
 
     override fun queryHomeUnits(): Flow<List<HomeUnit>> {
         return combine(
@@ -68,7 +69,7 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
                 }
             }
             transformer(homeUnits)
-        }.flowOn(ioDispatcher).catch { Log.e("queryHomeUnits", "error: ${it.message}") }
+        }.flowOn(ioDispatcher).catch { logError("error queryHome: ${it.message}") }
     }
     override fun queryUnitByKeWord(keyWord: String, category: String?): Flow<PagingData<UnitItemData>> {
         return Pager(config = PagingConfig(
@@ -80,14 +81,14 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
             unitDao.searchUnitItem(keyWord, category)
         }).flow.map { pagingData -> pagingData.map { transformer(it) } }
             .flowOn(ioDispatcher)
-            .catch { Log.e("queryUnitByKeWord", "error: ${it.message}") }
+            .catch { logError("error queryUnitByKeWord: ${it.message}") }
     }
 
     override fun queryUnitByCategory(category: String): Flow<List<UnitItemData>> = flow {
         val unitListByCategory = unitDao.getUnitListByCategory(category)
         emit(unitListByCategory.unitItems.asDomain())
     }.flowOn(ioDispatcher)
-        .catch { Log.e("queryUnitByCategory", "error: ${it.message}") }
+        .catch { logError("error queryUnitByCategory: ${it.message}") }
 
 
     private fun transformer(itemEntity: UnitItemEntity): UnitItemData {

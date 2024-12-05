@@ -19,11 +19,6 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
     private val json: Json,
 ) : CreateDatabaseRepository {
 
-    override suspend fun updateRemoteConfig(value: Boolean ) {
-        Log.e("updateRemoteConfig", "value: $value")
-       unitDao.updateEnableAdvertising(value)
-    }
-
     override suspend fun readDataSaveToDatabase() {
         unitDao.getHomeUnitList().collect {
             if (it.isEmpty()) {

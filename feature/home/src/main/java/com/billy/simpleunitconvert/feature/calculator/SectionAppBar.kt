@@ -25,29 +25,45 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
 import com.billy.simpleunitconvert.feature.common.TitleCommon
+import com.billy.simpleunitconvert.feature.common.Utils
+import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
+import kotlinx.coroutines.launch
 
 @Composable
 internal fun AppBarCalculatorScreen(
     onClickFavorite: () -> Unit,
     isFavorite: Boolean,
 ) {
-    val menuItems = listOf("Feedback" )
+    val menuItems = listOf("Feedback")
     var expanded by remember { mutableStateOf(false) }
-
-    val currentNavigator =  currentComposeNavigator
+    val context = LocalContext.current
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.INTERSTITIAL) }
+    val coroutineScope = rememberCoroutineScope()
+    LaunchedEffect(true) {
+        if (Utils.isEnableAds && context.isNetworkAvailable()) {
+            coroutineScope.launch {
+                interstitialHelper.loadAd()
+            }
+        }
+    }
+    val currentNavigator = currentComposeNavigator
 
     Surface(
         color = AppUnitTheme.colors.primary,
@@ -74,8 +90,9 @@ internal fun AppBarCalculatorScreen(
             }) {
                 Icon(
                     imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                     contentDescription = "Favorite",
-                    tint = AppUnitTheme.colors.backgroundUnit )
+                    contentDescription = "Favorite",
+                    tint = AppUnitTheme.colors.backgroundUnit
+                )
             }
 
             Box {
@@ -90,21 +107,28 @@ internal fun AppBarCalculatorScreen(
                     expanded = expanded,
                     onDismissRequest = { expanded = false },
                     modifier = Modifier
-                        .wrapContentSize(Alignment.TopStart).padding(4.dp),
+                        .wrapContentSize(Alignment.TopStart)
+                        .padding(8.dp),
                     offset = DpOffset((-AppUnitTheme.dimens.dp60), (-50).dp)
                 ) {
                     menuItems.forEach { item ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable {
-                                    expanded = false
+                        Row(modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                expanded = false
+                                if (context.isNetworkAvailable() && Utils.isEnableAds) {
+                                    interstitialHelper.showAd {
+                                        currentNavigator.navigate(SimpleUnitScreen.Feedback)
+                                    }
+                                } else {
                                     currentNavigator.navigate(SimpleUnitScreen.Feedback)
                                 }
-                                .padding(start = AppUnitTheme.dimens.dp8, end = AppUnitTheme.dimens.dp8),
+                            }
+                            .padding(
+                                start = AppUnitTheme.dimens.dp8, end = AppUnitTheme.dimens.dp8
+                            ),
                             verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.Center
-                        ) {
+                            horizontalArrangement = Arrangement.Center) {
                             Text(
                                 text = item,
                                 style = MaterialTheme.typography.bodyMedium,
@@ -122,6 +146,6 @@ internal fun AppBarCalculatorScreen(
 @Preview
 fun AppBarCalculatorScreenPreview() {
     AppUnitTheme {
-       AppBarCalculatorScreen(onClickFavorite = {}, isFavorite = false)
-   }
+        AppBarCalculatorScreen(onClickFavorite = {}, isFavorite = false)
+    }
 }

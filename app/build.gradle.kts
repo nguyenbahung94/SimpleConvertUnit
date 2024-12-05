@@ -120,10 +120,6 @@ dependencies {
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.foundation)
 
-    // firebase
-   // implementation(libs.play.services.ads)
-    implementation(libs.firebase.config)
-
     // di
     implementation(libs.hilt.android)
     implementation(libs.androidx.animation.core)

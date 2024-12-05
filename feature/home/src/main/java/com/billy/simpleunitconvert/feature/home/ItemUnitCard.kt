@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -31,37 +32,54 @@ import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitConvert
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
+import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
 import com.billy.simpleunitconvert.feature.common.TextUnitCommon
+import com.billy.simpleunitconvert.feature.common.Utils
+import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
 
 @Composable
 internal fun HomeUnitCard(
     unitConvert: UnitConvert,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    interstitialAdHelper: InterstitialAdHelper
 ) {
     val currentComposeNavigator = currentComposeNavigator
+    val context = LocalContext.current
     Card(
         modifier = modifier
-            .padding(horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6)
+            .padding(
+                horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6
+            )
             .fillMaxWidth()
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = ripple(color = colors.backgroundUnit, bounded = true),
             ) {
-                currentComposeNavigator.navigate(
-                    SimpleUnitScreen.Calculator(
-                        UnitCategory(
-                            unitConvert.category
+                if (Utils.isTimeVisitEnough() && context.isNetworkAvailable() && Utils.isEnableAds) {
+                    interstitialAdHelper.showAd {
+                        Utils.resetCountAndIncreaseMaxCount()
+                        currentComposeNavigator.navigate(
+                            SimpleUnitScreen.Calculator(
+                                UnitCategory(
+                                    unitConvert.category
+                                )
+                            )
+                        )
+                    }
+
+                } else {
+                    currentComposeNavigator.navigate(
+                        SimpleUnitScreen.Calculator(
+                            UnitCategory(
+                                unitConvert.category
+                            )
                         )
                     )
-                )
-            },
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 4.dp,
-            hoveredElevation = 6.dp,
-            pressedElevation = 2.dp
-        ),
-        shape = RoundedCornerShape(14.dp),
-        colors = CardDefaults.cardColors(
+                }
+
+            }, elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp, hoveredElevation = 6.dp, pressedElevation = 2.dp
+        ), shape = RoundedCornerShape(14.dp), colors = CardDefaults.cardColors(
             containerColor = colors.primary.copy(alpha = 0.95f),
             contentColor = colors.primary,
         )
@@ -92,19 +110,20 @@ internal fun HomeUnitCard(
 }
 
 
-
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun UnitCardPreview() {
     AppUnitTheme {
-       HomeUnitCard(
-           unitConvert = UnitConvert(
-               image = "image",
-               categoryName = "name",
-               shortName = "shortName",
-               category = "category"
-           )
-       )
-   }
+        HomeUnitCard(
+            unitConvert = UnitConvert(
+                image = "image",
+                categoryName = "name",
+                shortName = "shortName",
+                category = "category"
+            ),
+            modifier = Modifier,
+            interstitialAdHelper = TODO(),
+        )
+    }
 }
