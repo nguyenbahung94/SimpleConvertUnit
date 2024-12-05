@@ -7,6 +7,7 @@ import com.billy.simpleunitconvert.feature.common.Utils.isEnableAds
 import com.billy.simpleunitconvert.core.data.utils.logError
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.remoteconfig.ConfigUpdate
 import com.google.firebase.remoteconfig.ConfigUpdateListener
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -32,21 +33,29 @@ class SimpleUnitConvertApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        try {
+            initializeDatabase()
+            FirebaseApp.initializeApp(this@SimpleUnitConvertApplication)
 
-        initializeDatabase()
-        FirebaseApp.initializeApp(this@SimpleUnitConvertApplication)
+            appScope.launch {
+                MobileAds.initialize(this@SimpleUnitConvertApplication)
 
-        appScope.launch {
-            MobileAds.initialize(this@SimpleUnitConvertApplication)
+            }
+            if (!BuildConfig.DEBUG) {
+                FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = true
+            }
+            mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
+            val configSettings =
+                FirebaseRemoteConfigSettings.Builder().setMinimumFetchIntervalInSeconds(12 * 3600)
+                    .build()
+            mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings)
+            listenerFirebaseRemoteConfig()
 
+        } catch (e: Exception) {
+            logError("error application: ${e.message}")
         }
 
-        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
-        val configSettings =
-            FirebaseRemoteConfigSettings.Builder().setMinimumFetchIntervalInSeconds(12 * 3600)
-                .build()
-        mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings)
-        listenerFirebaseRemoteConfig()
+
     }
 
     private fun listenerFirebaseRemoteConfig() {

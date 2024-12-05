@@ -19,3 +19,18 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Firebase Analytics
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.measurement.** { *; }
+-dontwarn com.google.android.gms.measurement.**
+
+# Enum-related keep rules
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# Google Play Services
+-keep class com.google.android.gms.** { *; }
+-dontwarn com.google.android.gms.**

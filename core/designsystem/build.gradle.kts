@@ -9,6 +9,7 @@ android {
 }
 
 dependencies {
+
     libs.apply {
         // Firebase
         api(platform(libs.firebase.bom))
@@ -18,6 +19,8 @@ dependencies {
         api(libs.firebase.common.ktx)
         api(libs.play.services.ads)
         api(libs.firebase.config)
+
+        api(libs.androidx.core.splashscreen)
 
         api(libs.android.lottie)
 

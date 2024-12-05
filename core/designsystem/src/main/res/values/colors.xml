@@ -6,6 +6,7 @@
     <color name="colorAccent">#F4F9F4</color>
     <color name="color_background_unit">#788CE2</color>
     <color name="color_star">#F68705</color>
+    <color name="color_background_splash">#D9FDFD</color>
 
     <!-- dark colors-->
     <color name="background_dark">#F4F9F4</color>

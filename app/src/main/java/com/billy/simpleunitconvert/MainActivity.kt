@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.billy.simpleunitconvert.core.data.repository.init.CreateDatabaseRepository
 import com.billy.simpleunitconvert.core.navigation.AppComposeNavigator
 import com.billy.simpleunitconvert.core.navigation.LocalComposeNavigator
@@ -26,6 +27,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
+
         setContent {
             CompositionLocalProvider(
                 LocalComposeNavigator provides composeNavigator

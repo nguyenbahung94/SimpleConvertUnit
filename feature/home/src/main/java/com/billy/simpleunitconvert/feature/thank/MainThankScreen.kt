@@ -120,7 +120,7 @@ fun ThankScreen() {
 
             // Thank You Title
             Text(
-                text = "Thank You! ❤\uFE0F", style = TextStyle(
+                text = "Thank You! \uD83D\uDC90", style = TextStyle(
                     fontSize = 32.sp, fontWeight = FontWeight.Bold, color = colorAnimation
                 ), modifier = Modifier.padding(vertical = 16.dp)
             )

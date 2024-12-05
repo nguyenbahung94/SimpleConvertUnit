@@ -2,6 +2,7 @@ package com.billy.simpleunitconvert.core.data.repository.init
 
 import android.content.Context
 import android.util.Log
+import com.billy.simpleunitconvert.core.data.utils.logError
 import com.billy.simpleunitconvert.core.database.UnitDao
 import com.billy.simpleunitconvert.core.database.entity.InformationEntity
 import com.billy.simpleunitconvert.core.database.entity.mapper.asEntity
@@ -126,7 +127,7 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
                 unitDao.insertUnitItemEntities(unitConverts.asEntity())
 
             }.onFailure {
-                Log.e(TAG, "error at $item vs  ${it.message}")
+               logError("error insertUnitItems: $item: ${it.message}")
             }.onSuccess {
                 Log.i(TAG, "success with $item")
             }
@@ -147,7 +148,7 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
             unitDao.insertUnitConverts(unitConverts.asEntity())
 
         }.onFailure {
-            Log.e(TAG, "error: ${it.message}")
+           logError("error insertUnitConverter: ${it.message}")
         }.onSuccess {
             Log.i(TAG, "success")
         }
@@ -165,7 +166,7 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
             unitDao.insertHomeUnits(homeUnits.asEntity())
 
         }.onFailure {
-            Log.e(TAG, "error: ${it.message}")
+           logError("error insertHomeUnits: ${it.message}")
         }.onSuccess {
             Log.i(TAG, "success")
         }

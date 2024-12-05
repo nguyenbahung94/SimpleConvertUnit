@@ -29,6 +29,12 @@ android {
         if (localPropertyFile.canRead()) {
             properties.load(FileInputStream("$rootDir/local.properties"))
         }
+        create("release") {
+            storeFile = file(properties["RELEASE_KEYSTORE_PATH"] ?: "../keystores/simpleunit")
+            keyAlias = properties["RELEASE_KEY_ALIAS"].toString()
+            keyPassword = properties["RELEASE_KEY_PASSWORD"].toString()
+            storePassword = properties["RELEASE_KEYSTORE_PASSWORD"].toString()
+        }
     }
 
     buildTypes {
@@ -36,7 +42,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles("proguard-rules.pro",)
-            //  signingConfig = signingConfigs.getByName("release")
+              signingConfig = signingConfigs.getByName("release")
 
             kotlinOptions {
                 freeCompilerArgs += listOf(
