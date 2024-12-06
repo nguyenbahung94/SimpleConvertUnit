@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -47,6 +48,7 @@ internal fun HomeUnitCard(
     val context = LocalContext.current
     Card(
         modifier = modifier
+            .testTag("itemConvert")
             .padding(
                 horizontal = AppUnitTheme.dimens.dp11, vertical = AppUnitTheme.dimens.dp6
             )

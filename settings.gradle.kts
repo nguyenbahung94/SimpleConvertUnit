@@ -1,5 +1,7 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
+include(":baselineprofile")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {

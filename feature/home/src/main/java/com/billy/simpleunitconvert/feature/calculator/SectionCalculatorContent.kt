@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.search.SearchCategory
@@ -26,6 +27,7 @@ fun SectionCalculatorContent(
 ) {
     Column(
         modifier = modifier
+            .testTag("UnitCalculate")
             .fillMaxWidth()
             .fillMaxSize()
             .padding(horizontal = AppUnitTheme.dimens.dp16),

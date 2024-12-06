@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.baselineprofile)
     alias(libs.plugins.google.gms.google.services)
     alias(libs.plugins.google.firebase.crashlytics)
+    alias(libs.plugins.android.application)
 }
 
 android {
@@ -129,6 +130,8 @@ dependencies {
     // di
     implementation(libs.hilt.android)
     implementation(libs.androidx.animation.core)
+    implementation(libs.profileinstaller)
+    baselineProfile(project(":baselineprofile"))
 
 
     ksp(libs.hilt.compiler)
