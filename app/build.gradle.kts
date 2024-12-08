@@ -121,6 +121,8 @@ dependencies {
     implementation(projects.core.navigation)
     implementation(projects.core.data)
 
+    implementation(libs.androidx.lifecycle.process)
+
     // compose
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.ui)

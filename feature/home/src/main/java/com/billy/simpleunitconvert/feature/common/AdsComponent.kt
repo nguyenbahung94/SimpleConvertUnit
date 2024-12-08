@@ -19,6 +19,11 @@ import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.DefaultLifecycleObserver
+import com.google.android.gms.ads.appopen.AppOpenAd
+
 
 @Composable
 fun BannerAdView(adUnitId: String) {
@@ -86,21 +91,72 @@ class InterstitialAdHelper(private val context: Context, private val adUnitId: S
     }
 }
 
+class AppOpenAdManager(private val application: Application) : DefaultLifecycleObserver {
+
+    private var appOpenAd: AppOpenAd? = null
+    var isShowingAd = false
+
+    // Load App Open Ad
+    fun loadAd() {
+        val adRequest = AdRequest.Builder().build()
+        AppOpenAd.load(
+            application,
+            "/21775744923/example/app-open",
+            adRequest,
+            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
+            object : AppOpenAd.AppOpenAdLoadCallback() {
+                override fun onAdLoaded(ad: AppOpenAd) {
+                    appOpenAd = ad
+                    Log.e("AppOpenAdManager", "Ad Loaded")
+                }
+
+                override fun onAdFailedToLoad(error: LoadAdError) {
+                    Log.e("AppOpenAdManager", "Failed to load ad: ${error.message}")
+                }
+            }
+        )
+    }
+
+    // Show App Open Ad
+    fun showAdIfAvailable(context: Context, onAdDismissed: () -> Unit) {
+        if (isShowingAd || appOpenAd == null) {
+            Log.e("AppOpenAdManager", "Ad is not ready or already showing")
+            onAdDismissed()
+            return
+        }
+
+        isShowingAd = true
+        appOpenAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                isShowingAd = false
+                appOpenAd = null
+                onAdDismissed()
+                Log.e("AppOpenAdManager", "Ad dismissed")
+            }
+
+            override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                isShowingAd = false
+                appOpenAd = null
+                Log.e("AppOpenAdManager", "Failed to show ad: ${error.message}")
+                onAdDismissed()
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                Log.e("AppOpenAdManager", "Ad is showing")
+            }
+        }
+        Log.e("AppOpenAdManager", "appOpenAd = $appOpenAd")
+        appOpenAd?.show(context as Activity)
+    }
+}
+
+
+
 
 
 
 
 /*
-val interstitialHelper = InterstitialAdHelper(this, "ca-app-pub-3940256099942544/1033173712")
-interstitialHelper.loadAd()
-
-Button(onClick = {
-    interstitialHelper.showAd {
-        Log.d("AdMob", "Interstitial Ad Closed")
-    }
-}) {
-    Text("Show Interstitial Ad")
-}
 Test Ad Units
 Banner: ca-app-pub-3940256099942544/6300978111
 Interstitial: ca-app-pub-3940256099942544/1033173712

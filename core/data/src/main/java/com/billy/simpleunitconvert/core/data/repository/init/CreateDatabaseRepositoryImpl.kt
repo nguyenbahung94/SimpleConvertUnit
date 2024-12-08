@@ -13,6 +13,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.serialization.json.Json
 import java.util.UUID
 import javax.inject.Inject
+import javax.security.auth.login.LoginException
 
 internal class CreateDatabaseRepositoryImpl @Inject constructor(
     private val unitDao: UnitDao,
@@ -33,6 +34,15 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
             val uid = UUID.randomUUID().toString()
             unitDao.insertInformation(InformationEntity(uid = uid))
         }
+    }
+
+    override suspend fun getCountOpenApp(): Int {
+        return unitDao.getCountOpenApp()
+    }
+
+    override suspend fun updateCountOpenApp(countOpenApp: Int) {
+        Log.e("updateCountOpenApp", "countOpenApp: $countOpenApp")
+        unitDao.updateCountOpenApp(countOpenApp)
     }
 
     private suspend fun insertAllData() {

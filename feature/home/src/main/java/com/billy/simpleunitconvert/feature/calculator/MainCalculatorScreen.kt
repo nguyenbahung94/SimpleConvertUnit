@@ -30,6 +30,7 @@ fun CalculatorScreen(
     }
 
     LaunchedEffect(true) {
+        Utils.isJustShowOpenApp = false
         Utils.incrementCount()
     }
 

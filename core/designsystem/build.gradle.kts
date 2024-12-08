@@ -20,6 +20,7 @@ dependencies {
         api(libs.play.services.ads)
         api(libs.firebase.config)
 
+        api(libs.android.play.app.update.ktx)
         api(libs.androidx.core.splashscreen)
 
         api(libs.android.lottie)

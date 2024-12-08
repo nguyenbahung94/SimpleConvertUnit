@@ -34,6 +34,12 @@ interface UnitDao {
     @Query("UPDATE INFORMATIONENTITY SET enableAdvertising = :enableAdvertising WHERE id = 1")
     suspend fun updateEnableAdvertising(enableAdvertising: Boolean): Int
 
+    @Query("UPDATE INFORMATIONENTITY SET countOpenApp = :countOpenApp WHERE id = 1")
+    suspend fun updateCountOpenApp(countOpenApp: Int): Int
+
+    @Query("SELECT countOpenApp FROM INFORMATIONENTITY WHERE id = 1")
+    suspend fun getCountOpenApp(): Int
+
     @Query("SELECT * FROM HomeUnitEntity")
     fun getHomeUnitList(): Flow<List<HomeUnitWithUnitConvert>>
 
@@ -51,4 +57,6 @@ interface UnitDao {
 
     @Query("SELECT * FROM informationentity")
     fun getInformation(): InformationEntity?
+
+
 }

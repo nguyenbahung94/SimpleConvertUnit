@@ -49,7 +49,9 @@ fun SimpleUnitHome(
                     unitHomeList.filter { it.unitConvert.isNotEmpty() }.toImmutableList(),
                     modifier = Modifier.fillMaxWidth().weight(1f)
                 )
-                BannerAdView(adUnitId = Utils.ADSID.BANNER) // Replace with your Ad Unit ID
+                if (!Utils.isJustShowOpenApp) {
+                    BannerAdView(adUnitId = Utils.ADSID.BANNER)
+                }
             }
 
 

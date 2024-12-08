@@ -37,6 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
@@ -49,7 +50,9 @@ import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
 import kotlinx.coroutines.launch
 
 @Composable
-fun ThankScreen() {
+fun ThankScreen(
+    viewModel: ThankViewModel = hiltViewModel()
+) {
     val composeNavigator = currentComposeNavigator
     val context = LocalContext.current
     val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.REWARDED_VIDEO) }
@@ -141,6 +144,7 @@ fun ThankScreen() {
                 onClick = {
                     if (context.isNetworkAvailable() && Utils.isEnableAds) {
                         interstitialHelper.showAd {
+                            viewModel.updateCountOpenApp(0)
                             composeNavigator.navigateUp()
                         }
                     } else {

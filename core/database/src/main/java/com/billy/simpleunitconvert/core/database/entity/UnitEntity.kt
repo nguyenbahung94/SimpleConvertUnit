@@ -12,6 +12,7 @@ data class InformationEntity(
     val id: Int = 0,
     val uid: String? = null ,
     val enableAdvertising: Boolean = false,
+    val countOpenApp: Int = 0
 )
 
 @Entity

@@ -46,7 +46,7 @@ fun SearchScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-
+            Utils.isJustShowOpenApp = false
             SearchBar(
                 query = searchQuery,
                 onEvent = viewModel::onEvent

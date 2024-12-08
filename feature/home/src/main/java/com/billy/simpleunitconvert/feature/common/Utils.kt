@@ -6,6 +6,7 @@ import java.util.Locale
 
 object Utils {
     var isEnableAds = false
+    var isJustShowOpenApp = false
     private var maxCount = 2
     private var currentCount = 0
 
