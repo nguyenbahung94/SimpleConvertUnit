@@ -10,10 +10,11 @@ import com.billy.simpleunitconvert.core.model.home.HomeUnitData
 import com.billy.simpleunitconvert.core.model.home.UnitConvertData
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import java.util.UUID
 import javax.inject.Inject
-import javax.security.auth.login.LoginException
 
 internal class CreateDatabaseRepositoryImpl @Inject constructor(
     private val unitDao: UnitDao,
@@ -22,18 +23,22 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
 ) : CreateDatabaseRepository {
 
     override suspend fun readDataSaveToDatabase() {
-        unitDao.getHomeUnitList().collect {
-            if (it.isEmpty()) {
-                insertAllData()
-            }
-        }
+      withContext(Dispatchers.IO) {
+          unitDao.getHomeUnitList().collect {
+              if (it.isEmpty()) {
+                  insertAllData()
+              }
+          }
+      }
     }
 
     override suspend fun insertInformation() {
-        if (unitDao.getInformation() == null) {
-            val uid = UUID.randomUUID().toString()
-            unitDao.insertInformation(InformationEntity(uid = uid))
-        }
+       withContext(Dispatchers.IO) {
+           if (unitDao.getInformation() == null) {
+               val uid = UUID.randomUUID().toString()
+               unitDao.insertInformation(InformationEntity(uid = uid))
+           }
+       }
     }
 
     override suspend fun getCountOpenApp(): Int {
@@ -41,14 +46,27 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
     }
 
     override suspend fun updateCountOpenApp(countOpenApp: Int) {
-        Log.e("updateCountOpenApp", "countOpenApp: $countOpenApp")
-        unitDao.updateCountOpenApp(countOpenApp)
+        withContext(Dispatchers.IO) {
+            unitDao.updateCountOpenApp(countOpenApp)
+        }
+    }
+
+    override suspend fun setFlagEnableAds(isEnableAds: Boolean) {
+       withContext(Dispatchers.IO) {
+           unitDao.updateIsEnableAds(isEnableAds)
+       }
+    }
+
+    override suspend fun isEnableAds(): Boolean {
+        return unitDao.isEnableAds()
     }
 
     private suspend fun insertAllData() {
-        insertHomeUnits()
-        insertUnitConverter()
-        insertUnitItems()
+       withContext(Dispatchers.IO) {
+           insertHomeUnits()
+           insertUnitConverter()
+           insertUnitItems()
+       }
     }
 
     private suspend fun insertUnitItems() {

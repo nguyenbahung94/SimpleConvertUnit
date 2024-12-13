@@ -23,7 +23,6 @@
 # Firebase Analytics
 -keep class com.google.firebase.** { *; }
 -keep class com.google.android.gms.measurement.** { *; }
--dontwarn com.google.android.gms.measurement.**
 
 # Enum-related keep rules
 -keepclassmembers enum * {
@@ -34,3 +33,7 @@
 # Google Play Services
 -keep class com.google.android.gms.** { *; }
 -dontwarn com.google.android.gms.**
+-keep class com.google.android.gms.ads.** { *; }
+-keepattributes Signature
+-dontwarn com.google.**
+

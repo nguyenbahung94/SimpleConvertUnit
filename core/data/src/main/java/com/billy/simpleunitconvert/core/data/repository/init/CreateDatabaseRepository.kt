@@ -5,4 +5,6 @@ interface CreateDatabaseRepository {
     suspend fun insertInformation()
     suspend fun getCountOpenApp(): Int
     suspend fun updateCountOpenApp(countOpenApp: Int)
+    suspend fun setFlagEnableAds(isEnableAds: Boolean)
+    suspend fun isEnableAds(): Boolean
 }

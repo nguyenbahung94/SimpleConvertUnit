@@ -31,14 +31,20 @@ interface UnitDao {
     @Query("UPDATE UnitConvertEntity SET isFavorite = :isFavorite WHERE category = :category")
     suspend fun updateFavoriteUnit(category: String, isFavorite: Boolean): Int
 
-    @Query("UPDATE INFORMATIONENTITY SET enableAdvertising = :enableAdvertising WHERE id = 1")
+    @Query("UPDATE informationentity SET enableAdvertising = :enableAdvertising WHERE id = 1")
     suspend fun updateEnableAdvertising(enableAdvertising: Boolean): Int
 
-    @Query("UPDATE INFORMATIONENTITY SET countOpenApp = :countOpenApp WHERE id = 1")
-    suspend fun updateCountOpenApp(countOpenApp: Int): Int
+    @Query("UPDATE informationentity SET countOpenApp = :countOpenApp WHERE id = 1")
+    fun updateCountOpenApp(countOpenApp: Int): Int
+
+    @Query("UPDATE informationentity SET isEnableAds = :isEnableAds WHERE id = 1")
+    suspend fun updateIsEnableAds(isEnableAds: Boolean): Int
 
     @Query("SELECT countOpenApp FROM INFORMATIONENTITY WHERE id = 1")
     suspend fun getCountOpenApp(): Int
+
+    @Query("SELECT isEnableAds FROM INFORMATIONENTITY WHERE id = 1")
+    suspend fun isEnableAds(): Boolean
 
     @Query("SELECT * FROM HomeUnitEntity")
     fun getHomeUnitList(): Flow<List<HomeUnitWithUnitConvert>>

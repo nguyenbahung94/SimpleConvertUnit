@@ -47,6 +47,7 @@ import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
 import com.billy.simpleunitconvert.feature.common.Utils
 import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
@@ -55,7 +56,7 @@ fun ThankScreen(
 ) {
     val composeNavigator = currentComposeNavigator
     val context = LocalContext.current
-    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.REWARDED_VIDEO) }
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSUNITID.REWARDED_VIDEO) }
     val coroutineScope = rememberCoroutineScope()
     LaunchedEffect(true) {
         if (Utils.isEnableAds) {
@@ -143,10 +144,13 @@ fun ThankScreen(
             Button(
                 onClick = {
                     if (context.isNetworkAvailable() && Utils.isEnableAds) {
-                        interstitialHelper.showAd {
-                            viewModel.updateCountOpenApp(0)
-                            composeNavigator.navigateUp()
-                        }
+                       coroutineScope.launch {
+                           delay(1000)
+                           interstitialHelper.showAd {
+                               viewModel.updateCountOpenApp(0)
+                               composeNavigator.navigateUp()
+                           }
+                       }
                     } else {
                         composeNavigator.navigateUp()
                     }

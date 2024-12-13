@@ -2,27 +2,27 @@ package com.billy.simpleunitconvert.feature.common
 
 import android.app.Activity
 import android.content.Context
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
+import com.billy.simpleunitconvert.core.data.utils.logError
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.appopen.AppOpenAd
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import android.app.Application
-import android.util.Log
-import androidx.lifecycle.DefaultLifecycleObserver
-import com.google.android.gms.ads.appopen.AppOpenAd
 
 
 @Composable
@@ -35,23 +35,29 @@ fun BannerAdView(adUnitId: String) {
                 setAdUnitId(adUnitId)
             }
         }
+
+        DisposableEffect(adView) {
+            onDispose {
+                adView.destroy() // Ensure the AdView is properly cleaned up
+            }
+        }
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(40.dp)
         ) {
-            AndroidView(modifier = Modifier.fillMaxWidth(), factory = { adView},
-                update = { view ->
-                    if (view.adListener == null) {
-                        view.loadAd(AdRequest.Builder().build())
-                    }
-                })
+            AndroidView(modifier = Modifier.fillMaxWidth(), factory = { adView }, update = { view ->
+                if (view.adListener == null) {
+                    view.loadAd(AdRequest.Builder().build())
+                }
+            })
         }
     }
 }
 
 
-class InterstitialAdHelper(private val context: Context, private val adUnitId: String) {
+class InterstitialAdHelper(val context: Context, private val adUnitId: String) {
     private var interstitialAd: InterstitialAd? = null
     private var isAdLoaded = false
 
@@ -59,12 +65,14 @@ class InterstitialAdHelper(private val context: Context, private val adUnitId: S
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(context, adUnitId, adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdLoaded(ad: InterstitialAd) {
+                Log.e("AppOpenAdManager", "Ad is loaded, ad: $ad")
                 interstitialAd = ad
                 isAdLoaded = true
             }
 
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 isAdLoaded = false
+                logError("InterstitialAdHelper: Failed to load ad: ${adError.message}")
             }
         })
     }
@@ -79,19 +87,19 @@ class InterstitialAdHelper(private val context: Context, private val adUnitId: S
                 }
 
                 override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                    logError("InterstitialAdHelper: Failed to show ad: ${adError.message}")
                     interstitialAd = null
                     isAdLoaded = false
                 }
             }
             interstitialAd?.show(context as Activity)
         } else {
-            loadAd()
             onAdClosed()
         }
     }
 }
 
-class AppOpenAdManager(private val application: Application) : DefaultLifecycleObserver {
+class AppOpenAdManager(val context: Context) {
 
     private var appOpenAd: AppOpenAd? = null
     var isShowingAd = false
@@ -99,45 +107,35 @@ class AppOpenAdManager(private val application: Application) : DefaultLifecycleO
     // Load App Open Ad
     fun loadAd() {
         val adRequest = AdRequest.Builder().build()
-        AppOpenAd.load(
-            application,
-            "/21775744923/example/app-open",
+        AppOpenAd.load(context,
+            Utils.ADSUNITID.APP_OPEN,
             adRequest,
-            AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
             object : AppOpenAd.AppOpenAdLoadCallback() {
                 override fun onAdLoaded(ad: AppOpenAd) {
+                    Log.e("AppOpenAdManager", "Ad is loaded, ad: $ad")
                     appOpenAd = ad
-                    Log.e("AppOpenAdManager", "Ad Loaded")
                 }
 
                 override fun onAdFailedToLoad(error: LoadAdError) {
-                    Log.e("AppOpenAdManager", "Failed to load ad: ${error.message}")
+                    logError(" AppOpenAdManager: Failed to load ad: ${error.message}")
                 }
-            }
-        )
+
+            })
     }
 
     // Show App Open Ad
     fun showAdIfAvailable(context: Context, onAdDismissed: () -> Unit) {
-        if (isShowingAd || appOpenAd == null) {
-            Log.e("AppOpenAdManager", "Ad is not ready or already showing")
-            onAdDismissed()
-            return
-        }
-
-        isShowingAd = true
         appOpenAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
             override fun onAdDismissedFullScreenContent() {
-                isShowingAd = false
+                isShowingAd = true
                 appOpenAd = null
                 onAdDismissed()
-                Log.e("AppOpenAdManager", "Ad dismissed")
             }
 
             override fun onAdFailedToShowFullScreenContent(error: AdError) {
-                isShowingAd = false
+                isShowingAd = true
                 appOpenAd = null
-                Log.e("AppOpenAdManager", "Failed to show ad: ${error.message}")
+                logError("onAdFailedToShowFullScreenContent failed to show ad: ${error.message}")
                 onAdDismissed()
             }
 
@@ -145,15 +143,13 @@ class AppOpenAdManager(private val application: Application) : DefaultLifecycleO
                 Log.e("AppOpenAdManager", "Ad is showing")
             }
         }
-        Log.e("AppOpenAdManager", "appOpenAd = $appOpenAd")
         appOpenAd?.show(context as Activity)
+        if (appOpenAd == null) {
+            isShowingAd = true
+            onAdDismissed()
+        }
     }
 }
-
-
-
-
-
 
 
 /*

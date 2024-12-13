@@ -1,14 +1,12 @@
 package com.billy.simpleunitconvert
 
-import android.app.Activity
 import android.app.Application
-import android.os.Bundle
 import android.util.Log
-import androidx.lifecycle.ProcessLifecycleOwner
+import androidx.appcompat.app.AppCompatDelegate
 import com.billy.simpleunitconvert.core.data.repository.init.CreateDatabaseRepository
-import com.billy.simpleunitconvert.feature.common.Utils.isEnableAds
 import com.billy.simpleunitconvert.core.data.utils.logError
 import com.billy.simpleunitconvert.feature.common.AppOpenAdManager
+import com.billy.simpleunitconvert.feature.common.Utils.isEnableAds
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
 import com.google.firebase.crashlytics.FirebaseCrashlytics
@@ -26,48 +24,44 @@ import javax.inject.Inject
 
 
 @HiltAndroidApp
-class SimpleUnitConvertApplication : Application(), Application.ActivityLifecycleCallbacks {
+class SimpleUnitConvertApplication : Application() {
 
     @Inject
     lateinit var createDatabaseRepository: CreateDatabaseRepository
     private lateinit var mFirebaseRemoteConfig: FirebaseRemoteConfig
 
-    lateinit var appOpenAdManager: AppOpenAdManager
-    private var currentActivity: Activity? = null
-
     private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
-
-    init {
-        appScope.launch {
-            MobileAds.initialize(this@SimpleUnitConvertApplication)
-        }
-    }
+    lateinit var appOpenAdManager: AppOpenAdManager
 
     override fun onCreate() {
+        try {
+            MobileAds.initialize(this@SimpleUnitConvertApplication)
+        } catch (e: Exception) {
+            logError("error MobileAds: ${e.message}")
+        }
         appOpenAdManager = AppOpenAdManager(this@SimpleUnitConvertApplication)
         appOpenAdManager.loadAd()
-        ProcessLifecycleOwner.get().lifecycle.addObserver(appOpenAdManager)
 
         super.onCreate()
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         try {
-            initializeDatabase()
             FirebaseApp.initializeApp(this@SimpleUnitConvertApplication)
-
-
-            if (!BuildConfig.DEBUG) {
-                FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = true
-            }
+            FirebaseCrashlytics.getInstance().isCrashlyticsCollectionEnabled = true
             mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
             val configSettings =
                 FirebaseRemoteConfigSettings.Builder().setMinimumFetchIntervalInSeconds(12 * 3600)
                     .build()
             mFirebaseRemoteConfig.setConfigSettingsAsync(configSettings)
             listenerFirebaseRemoteConfig()
+            initializeDatabase()
 
         } catch (e: Exception) {
             logError("error application: ${e.message}")
+        }
+
+        Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
+            logError("Application has Uncaught exception in thread ${thread.name}, error: ${throwable.message}")
         }
 
 
@@ -97,6 +91,9 @@ class SimpleUnitConvertApplication : Application(), Application.ActivityLifecycl
 
     private fun updateRemoteConfig() {
         val simpleUnitConvert = mFirebaseRemoteConfig.getBoolean(KEY_REMOTE_ADS)
+        appScope.launch {
+            createDatabaseRepository.setFlagEnableAds(simpleUnitConvert)
+        }
         isEnableAds = simpleUnitConvert
     }
 
@@ -124,37 +121,6 @@ class SimpleUnitConvertApplication : Application(), Application.ActivityLifecycl
 
     companion object {
         const val KEY_REMOTE_ADS = "EnableAdsInApp"
-        
-    }
 
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-        // onActivityCreated
-    }
-
-    override fun onActivityStarted(activity: Activity) {
-        currentActivity = activity
-        appOpenAdManager.showAdIfAvailable(activity) {
-            // onActivityResumed
-        }
-    }
-
-    override fun onActivityResumed(activity: Activity) {
-        // onActivityResumed
-    }
-
-    override fun onActivityPaused(activity: Activity) {
-        // onActivityPaused
-    }
-
-    override fun onActivityStopped(activity: Activity) {
-        // onActivityStopped
-    }
-
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
-        // onActivitySaveInstanceState
-    }
-
-    override fun onActivityDestroyed(activity: Activity) {
-        // onActivityDestroyed
     }
 }

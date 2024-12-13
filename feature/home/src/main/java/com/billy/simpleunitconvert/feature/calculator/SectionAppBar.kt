@@ -54,7 +54,7 @@ internal fun AppBarCalculatorScreen(
     val menuItems = listOf("Feedback")
     var expanded by remember { mutableStateOf(false) }
     val context = LocalContext.current
-    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.INTERSTITIAL) }
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSUNITID.INTERSTITIAL) }
     val coroutineScope = rememberCoroutineScope()
     LaunchedEffect(true) {
         if (Utils.isEnableAds && context.isNetworkAvailable()) {

@@ -13,7 +13,7 @@ import com.billy.simpleunitconvert.core.database.entity.UnitItemEntity
     HomeUnitEntity::class,
     UnitConvertEntity::class,
     UnitItemEntity::class,
-    InformationEntity::class], version = 2, exportSchema = true)
+    InformationEntity::class], version = 3, exportSchema = true)
 
 abstract class UnitDatabase : RoomDatabase() {
     abstract fun unitDao(): UnitDao

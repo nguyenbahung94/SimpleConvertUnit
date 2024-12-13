@@ -39,6 +39,8 @@ import com.billy.simpleunitconvert.feature.common.SnackbarType
 import com.billy.simpleunitconvert.feature.common.TitleCommon
 import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
 import com.billy.simpleunitconvert.feature.common.showCustomSnackbar
+import com.billy.simpleunitconvert.feature.feedback.FeedbackViewModel.Companion.COLLECTION_FEEDBACK
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 
 @Composable

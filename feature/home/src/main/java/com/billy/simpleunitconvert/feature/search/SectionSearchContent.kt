@@ -152,7 +152,7 @@ fun SearchResults(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.REWARDED_VIDEO) }
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSUNITID.REWARDED_VIDEO) }
     val coroutineScope = rememberCoroutineScope()
 
     LaunchedEffect(Unit) {

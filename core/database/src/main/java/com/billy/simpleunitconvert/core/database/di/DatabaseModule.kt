@@ -2,7 +2,6 @@ package com.billy.simpleunitconvert.core.database.di
 
 import android.content.Context
 import androidx.room.Room
-import com.billy.simpleunitconvert.core.database.MIGRATION_1_2
 import com.billy.simpleunitconvert.core.database.UnitDatabase
 import dagger.Module
 import dagger.Provides
@@ -20,9 +19,8 @@ internal object DatabaseModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): UnitDatabase {
         return Room.databaseBuilder(
-            context, UnitDatabase::class.java,
-            "unit_database.db"
-        ).addMigrations(MIGRATION_1_2).build()
+            context, UnitDatabase::class.java, "unit_database.db"
+        ).fallbackToDestructiveMigration().build()
     }
 
     @Provides

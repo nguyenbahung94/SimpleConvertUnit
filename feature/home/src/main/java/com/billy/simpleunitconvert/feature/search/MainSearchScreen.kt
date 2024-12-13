@@ -76,7 +76,7 @@ fun SearchScreen(
                 }
             }
 
-            BannerAdView(adUnitId = Utils.ADSID.BANNER) // Replace with your Ad Unit ID
+            BannerAdView(adUnitId = Utils.ADSUNITID.BANNER) // Replace with your Ad Unit ID
         }
     }
 

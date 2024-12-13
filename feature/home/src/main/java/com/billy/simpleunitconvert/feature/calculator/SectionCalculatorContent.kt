@@ -44,7 +44,7 @@ fun SectionCalculatorContent(
                 .fillMaxHeight(0.45f)
         )
         Spacer(modifier = Modifier.height(AppUnitTheme.dimens.dp5))
-        BannerAdView(adUnitId = Utils.ADSID.BANNER) // Replace with your Ad Unit ID
+        BannerAdView(adUnitId = Utils.ADSUNITID.BANNER) // Replace with your Ad Unit ID
     }
 }
 

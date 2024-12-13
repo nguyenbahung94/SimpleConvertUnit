@@ -49,7 +49,7 @@ internal fun HomeContent(
 ) {
     val expandedStates = remember { mutableStateMapOf<String, Boolean>() }
     val context = LocalContext.current
-    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSID.REWARDED_VIDEO) }
+    val interstitialHelper = remember { InterstitialAdHelper(context, Utils.ADSUNITID.REWARDED_VIDEO) }
     val coroutineScope = rememberCoroutineScope()
     LaunchedEffect(true) {
         if (Utils.isTimeVisitEnough() && Utils.isEnableAds && context.isNetworkAvailable()) {

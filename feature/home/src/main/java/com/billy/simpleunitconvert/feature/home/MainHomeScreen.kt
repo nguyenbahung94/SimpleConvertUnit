@@ -50,7 +50,7 @@ fun SimpleUnitHome(
                     modifier = Modifier.fillMaxWidth().weight(1f)
                 )
                 if (!Utils.isJustShowOpenApp) {
-                    BannerAdView(adUnitId = Utils.ADSID.BANNER)
+                    BannerAdView(adUnitId = Utils.ADSUNITID.BANNER)
                 }
             }
 

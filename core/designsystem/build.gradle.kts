@@ -19,6 +19,7 @@ dependencies {
         api(libs.firebase.common.ktx)
         api(libs.play.services.ads)
         api(libs.firebase.config)
+        api(libs.play.services.base)
 
         api(libs.android.play.app.update.ktx)
         api(libs.androidx.core.splashscreen)
