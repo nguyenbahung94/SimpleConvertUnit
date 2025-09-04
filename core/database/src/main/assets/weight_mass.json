@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Gram",
+    "symbol": "g",
+    "conversionFactor": 0.001,
+    "category": "weight_mass",
+    "popular": true
+  },
+  {
+    "name": "Milligram",
+    "symbol": "mg",
+    "conversionFactor": 0.000001,
+    "category": "weight_mass",
+    "popular": true
+  },
+  {
+    "name": "Kilogram",
+    "symbol": "kg",
+    "conversionFactor": 1,
+    "category": "weight_mass",
+    "popular": true
+  },
+  {
+    "name": "Ton (Metric)",
+    "symbol": "t",
+    "conversionFactor": 1000,
+    "category": "weight_mass",
+    "popular": true
+  },
+  {
+    "name": "Pound",
+    "symbol": "lbs",
+    "conversionFactor": 0.45359237,
+    "category": "weight_mass",
+    "popular": true
+  },
+  {
+    "name": "Ounce",
+    "symbol": "oz",
+    "conversionFactor": 0.0283495231,
+    "category": "weight_mass",
+    "popular": true
+  },
+  {
+    "name": "Carat",
+    "symbol": "car",
+    "conversionFactor": 0.0002,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Short Ton (US)",
+    "symbol": "ton (US)",
+    "conversionFactor": 907.18474,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Long Ton (UK)",
+    "symbol": "ton (UK)",
+    "conversionFactor": 1016.0469088,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Atomic weight_mass Unit",
+    "symbol": "u",
+    "conversionFactor": 1.6605402E-27,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Exagram",
+    "symbol": "Eg",
+    "conversionFactor": 1.0E+15,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Petagram",
+    "symbol": "Pg",
+    "conversionFactor": 1.0E+12,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Teragram",
+    "symbol": "Tg",
+    "conversionFactor": 1.0E+9,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Gigagram",
+    "symbol": "Gg",
+    "conversionFactor": 1.0E+6,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Megagram",
+    "symbol": "Mg",
+    "conversionFactor": 1000,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Hectogram",
+    "symbol": "hg",
+    "conversionFactor": 0.1,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Dekagram",
+    "symbol": "dag",
+    "conversionFactor": 0.01,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Decigram",
+    "symbol": "dg",
+    "conversionFactor": 0.0001,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Centigram",
+    "symbol": "cg",
+    "conversionFactor": 0.00001,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Microgram",
+    "symbol": "µg",
+    "conversionFactor": 1.0E-9,
+    "category": "weight_mass",
+    "popular": false
+  },
+  {
+    "name": "Nanogram",
+    "symbol": "ng",
+    "conversionFactor": 1.0E-12,
+    "category": "weight_mass",
+    "popular": false
+  }
+]

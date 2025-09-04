@@ -72,6 +72,8 @@ internal class CreateDatabaseRepositoryImpl @Inject constructor(
     private suspend fun insertUnitItems() {
         val TAG = "insertUnitItems == "
         val listItems = listOf(
+            "weight_mass.json",
+            "length.json",
             "volume.json",
             "temperature.json",
             "area.json",

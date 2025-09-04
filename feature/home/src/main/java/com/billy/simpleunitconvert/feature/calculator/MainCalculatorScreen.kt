@@ -42,6 +42,7 @@ fun CalculatorScreen(
                     viewModel.onEvent(CalculatorEvent.OnClickFavorite)
                 },
                 isFavorite = uiState.data.isFavorite,
+                title = uiState.data.category
             )
 
         }

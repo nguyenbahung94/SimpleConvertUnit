@@ -1,5 +1,6 @@
 package com.billy.simpleunitconvert.feature.search
 
+import android.util.Log
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
@@ -19,6 +20,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.map
@@ -37,15 +39,25 @@ class SearchViewModel @Inject constructor(
 
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery
-    var searchCategory: SearchCategory? = null
-        private set
+
+    private val _nameChecked = MutableStateFlow(true)
+    private val nameChecked: StateFlow<Boolean> = _nameChecked
+
+    private val _symbolChecked = MutableStateFlow(true)
+    private val symbolChecked: StateFlow<Boolean> = _symbolChecked
+
+    private val _categoryChecked = MutableStateFlow(true)
+    private val categoryChecked: StateFlow<Boolean> = _categoryChecked
+
+    private val _searchCategory = MutableStateFlow<SearchCategory?>(null)
+    val searchCategory: StateFlow<SearchCategory?> = _searchCategory
 
     init {
         viewModelScope.launch {
             savedStateHandle.getStateFlow<SearchCategory?>("searchCategory", null)
                 .collect { valueSearchCategory ->
                     valueSearchCategory?.let {
-                        searchCategory = it
+                        _searchCategory.value = it
                         _searchQuery.update { "" }
                     }
 
@@ -54,22 +66,35 @@ class SearchViewModel @Inject constructor(
     }
 
     @OptIn(FlowPreview::class)
-    val searchResults: StateFlow<PagingData<UnitItemData>> =
-        searchQuery.debounce(400).flatMapLatest { query ->
-                queryDataBaseRepository.queryUnitByKeWord(query, searchCategory?.category)
-                    .onStart { uiState.value = uiState.value.copy(isLoading = true) }
-                    .map {
-                        uiState.value = uiState.value.copy(isLoading = false)
-                        it.filter { item -> item.name != searchCategory?.nameIgnore }
-                    }.catch { e ->
-                        uiState.value = uiState.value.copy(isLoading = false, error = e.message)
-                        emit(PagingData.empty())
-                    }
-            }.cachedIn(viewModelScope).stateIn(
-                scope = viewModelScope,
-                started = SharingStarted.WhileSubscribed(5000L),
-                initialValue = PagingData.empty()
-            )
+    val searchResults: StateFlow<PagingData<UnitItemData>> = combine(
+        searchQuery.debounce(500),
+        nameChecked,
+        symbolChecked,
+        categoryChecked
+    ) { query, nameChecked, symbolChecked, categoryChecked ->
+        SearchParams(query, nameChecked, symbolChecked, categoryChecked)
+    }.flatMapLatest { params ->
+        queryDataBaseRepository.queryUnitByKeWord(
+            keyWord = params.query,
+            category = searchCategory.value?.category,
+            includeName = params.nameChecked,
+            includeSymbol = params.symbolChecked,
+            includeCategory = params.categoryChecked
+        ).onStart {
+            uiState.value = uiState.value.copy(isLoading = true)
+        }.map { pagingData ->
+            Log.e("HungLog", "pagingData: new data")
+            uiState.value = uiState.value.copy(isLoading = false)
+            pagingData.filter { item -> item.name != searchCategory.value?.nameIgnore }
+        }.catch { e ->
+            uiState.value = uiState.value.copy(isLoading = false, error = e.message)
+            emit(PagingData.empty())
+        }
+    }.cachedIn(viewModelScope).stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000L),
+        initialValue = PagingData.empty()
+    )
 
 
     fun onSearchQueryChange(query: String) {
@@ -79,6 +104,12 @@ class SearchViewModel @Inject constructor(
     fun onEvent(event: SearchEvent) {
         when (event) {
             is SearchEvent.OnSearchQueryChange -> onSearchQueryChange(event.query)
+            is SearchEvent.ChangeSearchSetting -> {
+                val listSettings = event.searchSettings
+                _nameChecked.value = listSettings.contains(SearchSetting.NAME)
+                _symbolChecked.value = listSettings.contains(SearchSetting.SYMBOL)
+                _categoryChecked.value = listSettings.contains(SearchSetting.CATEGORY)
+            }
         }
     }
 
@@ -87,9 +118,22 @@ class SearchViewModel @Inject constructor(
 
 sealed interface SearchEvent {
     data class OnSearchQueryChange(val query: String) : SearchEvent
+    data class ChangeSearchSetting(val searchSettings: List<SearchSetting>) : SearchEvent
+}
+
+
+enum class SearchSetting {
+    ALL, NAME, SYMBOL, CATEGORY
 }
 
 @Stable
 data class SearchState(
     val search: String,
+)
+
+data class SearchParams(
+    val query: String,
+    val nameChecked: Boolean,
+    val symbolChecked: Boolean,
+    val categoryChecked: Boolean
 )

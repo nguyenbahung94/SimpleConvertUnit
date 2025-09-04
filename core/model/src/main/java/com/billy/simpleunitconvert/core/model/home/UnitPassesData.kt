@@ -39,6 +39,8 @@ data class UnitItemData(
     val name: String,
     @SerialName("conversionFactor")
     val conversionFactor: Double? = null,
+    @SerialName("factor")
+    val factor: Double? = null,
     @SerialName("scaleFactor")
     val scaleFactor: Double? = null,
     @SerialName("offset")

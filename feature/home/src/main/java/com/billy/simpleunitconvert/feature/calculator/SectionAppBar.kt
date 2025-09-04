@@ -50,6 +50,7 @@ import kotlinx.coroutines.launch
 internal fun AppBarCalculatorScreen(
     onClickFavorite: () -> Unit,
     isFavorite: Boolean,
+    title: String
 ) {
     val menuItems = listOf("Feedback")
     var expanded by remember { mutableStateOf(false) }
@@ -82,7 +83,7 @@ internal fun AppBarCalculatorScreen(
             }
             Spacer(modifier = Modifier.width(AppUnitTheme.dimens.dp8))
             TitleCommon(
-                text = "Convert unit",
+                text = "Convert unit ${title.replace("_", " ")}",
                 modifier = Modifier.weight(1f),
             )
             IconButton(onClick = {
@@ -146,6 +147,6 @@ internal fun AppBarCalculatorScreen(
 @Preview
 fun AppBarCalculatorScreenPreview() {
     AppUnitTheme {
-        AppBarCalculatorScreen(onClickFavorite = {}, isFavorite = false)
+        AppBarCalculatorScreen(onClickFavorite = {}, isFavorite = false, title = "")
     }
 }

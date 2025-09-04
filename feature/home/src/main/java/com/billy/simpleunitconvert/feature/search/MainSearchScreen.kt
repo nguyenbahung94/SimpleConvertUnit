@@ -1,6 +1,7 @@
 package com.billy.simpleunitconvert.feature.search
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,18 +30,16 @@ fun SearchScreen(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
-    val searchResults =  viewModel.searchResults.collectAsLazyPagingItems()
+    val searchResults = viewModel.searchResults.collectAsLazyPagingItems()
     val composeNavigator = currentComposeNavigator
-    val searchCategory = viewModel.searchCategory
-    Scaffold(
-        containerColor = colors.primary,
-        topBar = {
-            AppBarSearchScreen(
-                onClickBack = { composeNavigator.navigateUp() },
-                searchTitle = viewModel.searchCategory?.category
-            )
-        }
-    ) { innerPadding ->
+    val searchCategory by  viewModel.searchCategory.collectAsStateWithLifecycle()
+
+    Scaffold(containerColor = colors.primary, topBar = {
+        AppBarSearchScreen(
+            onClickBack = { composeNavigator.navigateUp() },
+            searchTitle = searchCategory?.category ?: "",
+        )
+    }) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -48,9 +47,12 @@ fun SearchScreen(
         ) {
             Utils.isJustShowOpenApp = false
             SearchBar(
-                query = searchQuery,
-                onEvent = viewModel::onEvent
+                query = searchQuery, onEvent = viewModel::onEvent
             )
+
+            if (searchCategory?.category?.isEmpty() == true &&  searchCategory?.nameIgnore == null) {
+                CheckBoxList(viewModel::onEvent)
+            }
 
             if (uiState.isLoading) {
                 //loading
@@ -60,10 +62,18 @@ fun SearchScreen(
                 return@Column
             }
 
+            Log.e("searchResults", "searchResults: ${searchResults.itemCount}")
+
             if (searchQuery.isNotEmpty() && searchResults.itemCount == 0) {
-                EmptyResults(modifier = Modifier
-                    .fillMaxSize()
-                    .weight(1f))
+                EmptyResults(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .weight(1f)
+                )
+            } else if ((searchQuery.isEmpty() || searchQuery.isBlank())
+                        && (searchCategory?.category?.isEmpty() == true
+                        && searchCategory?.nameIgnore == null)) {
+                SearchEmptyState()
             } else {
                 CompositionLocalProvider(LocalCategoryProvider provides searchCategory) {
                     SearchResults(
@@ -79,13 +89,12 @@ fun SearchScreen(
             BannerAdView(adUnitId = Utils.ADSUNITID.BANNER) // Replace with your Ad Unit ID
         }
     }
-
 }
 
 @Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun SearchScreenPreview() {
     AppUnitTheme {
-       SearchScreen()
-   }
+        SearchScreen()
+    }
 }

@@ -170,7 +170,7 @@ fun SearchResults(
         items(results.itemCount) { index ->
            results[index]?.let {
                ItemSearch(itemSearch = it, onEvent = onEvent, interstitialHelper = interstitialHelper)
-               Spacer(modifier = Modifier.padding(AppUnitTheme.dimens.dp4))
+               Spacer(modifier = Modifier.padding(AppUnitTheme.dimens.dp8))
            }
         }
     }
@@ -211,6 +211,38 @@ fun EmptyResults(
 }
 
 @Composable
+fun SearchEmptyState() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Icon(
+            imageVector = Icons.Default.Search,
+            contentDescription = "Search Icon",
+            modifier = Modifier.size(64.dp),
+            tint = MaterialTheme.colorScheme.primary
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Start your search",
+            style = MaterialTheme.typography.titleMedium,
+            textAlign = TextAlign.Center
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "Type a keyword to find the unit you're looking for.",
+            style = MaterialTheme.typography.titleSmall,
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
+        )
+    }
+}
+
+
+@Composable
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 fun SearchBarPreview() {
     AppUnitTheme {
@@ -226,6 +258,14 @@ fun SearchBarPreview() {
 fun EmptyResultsPreview() {
     AppUnitTheme {
         EmptyResults()
+    }
+}
+
+@Composable
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
+fun SearchEmptyStatePreview() {
+    AppUnitTheme {
+        SearchEmptyState()
     }
 }
 

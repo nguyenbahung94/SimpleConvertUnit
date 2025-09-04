@@ -49,8 +49,25 @@ interface UnitDao {
     @Query("SELECT * FROM HomeUnitEntity")
     fun getHomeUnitList(): Flow<List<HomeUnitWithUnitConvert>>
 
-    @Query(""" SELECT * FROM UnitItemEntity WHERE (symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%') AND (COALESCE(:category, '') = '' OR unitCategory = :category) """)
-    fun searchUnitItem(keyword: String, category: String?): PagingSource<Int, UnitItemEntity>
+    @Query(""" 
+                SELECT * FROM UnitItemEntity
+                WHERE 
+                    (:includeSymbol == 1 AND symbol LIKE '%' || :keyword || '%')
+                    OR (:includeName == 1 AND unitName LIKE '%' || :keyword || '%')
+                    OR (:includeCategory == 1 AND unitCategory LIKE '%' || :keyword || '%')
+                    """)
+    fun searchUnitItem(
+        keyword: String,
+        includeName: Int,
+        includeSymbol: Int,
+        includeCategory: Int,
+    ): PagingSource<Int, UnitItemEntity>
+
+    @Query("SELECT * FROM UnitItemEntity WHERE (symbol LIKE '%' || :keyword || '%' OR unitName LIKE '%' || :keyword || '%') AND unitCategory = :category")
+    fun searchUnitItemInCategory(
+        keyword: String,
+        category: String,
+    ): PagingSource<Int, UnitItemEntity>
 
     @Query("SELECT * FROM UnitConvertEntity WHERE category = :category")
     suspend fun getUnitListByCategory(category: String): UnitConvertWithUnitItem

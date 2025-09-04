@@ -93,7 +93,9 @@ fun CalculatorActionRow(
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.End,
+        verticalAlignment = Alignment.CenterVertically
     ) {
+        DecimalPlacesDropdown(onEvent)
         BorderedActionText(
             text = "Swap unit",
             modifier = Modifier,

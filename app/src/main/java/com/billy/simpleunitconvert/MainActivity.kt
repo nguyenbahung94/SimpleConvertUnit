@@ -82,14 +82,11 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             val count = createDatabaseRepository.getCountOpenApp()
             val isEnableAds = createDatabaseRepository.isEnableAds()
-            Log.e("MainActivity", "count: $count")
-            Log.e("MainActivity", "isEnableAds: $isEnableAds")
             if (isNetworkAvailable() && isEnableAds && count >= 1) {
                 createDatabaseRepository.updateCountOpenApp(0)
                 Utils.isJustShowOpenApp = true
                 displayAdsOpen(splashScreen)
             } else {
-                Log.e("MainActivity", "initializeAppContent")
                 initializeAppContent()
                 createDatabaseRepository.updateCountOpenApp(count + 1)
             }

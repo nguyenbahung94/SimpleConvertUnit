@@ -84,6 +84,8 @@ fun String.getResIdByName(): Int {
         "radiation_activity" -> R.drawable.radiation_activity
         "radiation_exposure" -> R.drawable.radiation_exposure
         "radiation_absorbed_dose" -> R.drawable.radiation_absorbed_dose
+        "length" -> R.drawable.length
+        "weight_mass" -> R.drawable.weight_mass
         else -> R.drawable.icon_swap
     }
 }

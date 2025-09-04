@@ -1,0 +1,198 @@
+[
+  {
+    "name": "Meter",
+    "symbol": "m",
+    "conversionFactor": 1,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Kilometer",
+    "symbol": "km",
+    "conversionFactor": 1000,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Decimeter",
+    "symbol": "dm",
+    "conversionFactor": 0.1,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Centimeter",
+    "symbol": "cm",
+    "conversionFactor": 0.01,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Millimeter",
+    "symbol": "mm",
+    "conversionFactor": 0.001,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Micrometer",
+    "symbol": "µm",
+    "conversionFactor": 1.0E-6,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Nanometer",
+    "symbol": "nm",
+    "conversionFactor": 1.0E-9,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Mile",
+    "symbol": "mi",
+    "conversionFactor": 1609.344,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Yard",
+    "symbol": "yd",
+    "conversionFactor": 0.9144,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Foot",
+    "symbol": "ft",
+    "conversionFactor": 0.3048,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Inch",
+    "symbol": "in",
+    "conversionFactor": 0.0254,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Light Year",
+    "symbol": "ly",
+    "conversionFactor": 9.46073047258E+15,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Exameter",
+    "symbol": "Em",
+    "conversionFactor": 1.0E+18,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Petameter",
+    "symbol": "Pm",
+    "conversionFactor": 1.0E+15,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Terameter",
+    "symbol": "Tm",
+    "conversionFactor": 1.0E+12,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Gigameter",
+    "symbol": "Gm",
+    "conversionFactor": 1.0E+9,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Megameter",
+    "symbol": "Mm",
+    "conversionFactor": 1.0E+6,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Hectometer",
+    "symbol": "hm",
+    "conversionFactor": 100,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Dekameter",
+    "symbol": "dam",
+    "conversionFactor": 10,
+    "category": "length",
+    "popular": true
+  },
+  {
+    "name": "Picometer",
+    "symbol": "pm",
+    "conversionFactor": 1.0E-12,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Femtometer",
+    "symbol": "fm",
+    "conversionFactor": 1.0E-15,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Attometer",
+    "symbol": "am",
+    "conversionFactor": 1.0E-18,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Planck Length",
+    "symbol": "Planck",
+    "conversionFactor": 1.61605E-35,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Electron Radius",
+    "symbol": "e-",
+    "conversionFactor": 2.81794092E-15,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Bohr Radius",
+    "symbol": "b",
+    "conversionFactor": 5.2917724900001E-11,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Earth's Equatorial Radius",
+    "symbol": "eqr",
+    "conversionFactor": 6378160,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Earth's Polar Radius",
+    "symbol": "pr",
+    "conversionFactor": 6356777,
+    "category": "length",
+    "popular": false
+  },
+  {
+    "name": "Sun's Radius",
+    "symbol": "sr",
+    "conversionFactor": 696000000,
+    "category": "length",
+    "popular": false
+  }
+]

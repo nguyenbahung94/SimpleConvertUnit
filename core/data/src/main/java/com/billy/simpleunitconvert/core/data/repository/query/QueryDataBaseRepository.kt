@@ -13,7 +13,13 @@ interface QueryDataBaseRepository {
     fun queryHomeUnits(): Flow<List<HomeUnit>>
 
     @WorkerThread
-    fun queryUnitByKeWord(keyWord: String, category: String?):  Flow<PagingData<UnitItemData>>
+    fun queryUnitByKeWord(
+        keyWord: String,
+        category: String?,
+        includeName: Boolean = true,
+        includeSymbol: Boolean = true,
+        includeCategory: Boolean = true,
+    ): Flow<PagingData<UnitItemData>>
 
     @WorkerThread
     fun queryUnitByCategory(category: String): Flow<List<UnitItemData>>

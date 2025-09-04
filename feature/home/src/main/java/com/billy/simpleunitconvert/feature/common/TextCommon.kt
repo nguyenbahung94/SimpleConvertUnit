@@ -1,6 +1,5 @@
 package com.billy.simpleunitconvert.feature.common
 
-import android.util.Log
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
@@ -169,7 +168,7 @@ fun TextSingleLineUnit(
 }
 
 object Setting {
-    const val MAX_NUMBER_LENGTH = 28
+    const val MAX_NUMBER_LENGTH = 26
 }
 
 @Composable

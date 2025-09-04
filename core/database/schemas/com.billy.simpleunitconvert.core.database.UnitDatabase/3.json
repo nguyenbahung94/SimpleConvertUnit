@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "0c70f63174cba3c60aa03362b82fa911",
+    "identityHash": "a91e8b938f1e3512808c42b7f4f7b45b",
     "entities": [
       {
         "tableName": "HomeUnitEntity",
@@ -94,7 +94,7 @@
       },
       {
         "tableName": "UnitItemEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unitCategory` TEXT NOT NULL, `unitName` TEXT NOT NULL, `symbol` TEXT NOT NULL, `conversion` REAL, `scale` REAL, `offset` REAL, `popular` INTEGER NOT NULL, FOREIGN KEY(`unitCategory`) REFERENCES `UnitConvertEntity`(`category`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unitCategory` TEXT NOT NULL, `unitName` TEXT NOT NULL, `symbol` TEXT NOT NULL, `conversion` REAL, `factor` REAL, `scale` REAL, `offset` REAL, `popular` INTEGER NOT NULL, FOREIGN KEY(`unitCategory`) REFERENCES `UnitConvertEntity`(`category`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -123,6 +123,12 @@
           {
             "fieldPath": "conversion",
             "columnName": "conversion",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "factor",
+            "columnName": "factor",
             "affinity": "REAL",
             "notNull": false
           },
@@ -214,7 +220,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0c70f63174cba3c60aa03362b82fa911')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a91e8b938f1e3512808c42b7f4f7b45b')"
     ]
   }
 }

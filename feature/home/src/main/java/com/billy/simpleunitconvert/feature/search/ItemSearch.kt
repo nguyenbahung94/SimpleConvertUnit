@@ -1,11 +1,13 @@
 package com.billy.simpleunitconvert.feature.search
 
-import android.content.res.Configuration
+import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
@@ -19,10 +21,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.billy.simpleunitconvert.core.designsystem.theme.AppUnitTheme
 import com.billy.simpleunitconvert.core.model.calculator.BackResult
 import com.billy.simpleunitconvert.core.model.calculator.UnitCategory
 import com.billy.simpleunitconvert.core.model.home.UnitItemData
+import com.billy.simpleunitconvert.core.model.search.SearchCategory
+import com.billy.simpleunitconvert.core.navigation.AppComposeNavigator
 import com.billy.simpleunitconvert.core.navigation.SimpleUnitScreen
 import com.billy.simpleunitconvert.core.navigation.currentComposeNavigator
 import com.billy.simpleunitconvert.feature.common.InterstitialAdHelper
@@ -35,38 +40,25 @@ import com.billy.simpleunitconvert.feature.common.isNetworkAvailable
 fun ItemSearch(
     itemSearch: UnitItemData,
     onEvent: (SearchEvent) -> Unit = {},
-    interstitialHelper: InterstitialAdHelper
+    interstitialHelper: InterstitialAdHelper,
+    context: Context = LocalContext.current,
+    localCategory: SearchCategory? = LocalCategoryProvider.current,
+    composeNavigator: AppComposeNavigator<SimpleUnitScreen> = currentComposeNavigator
 ) {
-    val localCategory = LocalCategoryProvider.current
-    val composeNavigator = currentComposeNavigator
-    val context = LocalContext.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = AppUnitTheme.dimens.dp8)
             .clip(RoundedCornerShape(16.dp))
             .clickable {
-                onEvent(SearchEvent.OnSearchQueryChange(""))
-                val route = SimpleUnitScreen.Calculator(
-                    UnitCategory(
-                        itemSearch.category, itemSearch.name
+                if (itemSearch.name.isNotEmpty()) {
+                    onEvent(SearchEvent.OnSearchQueryChange(""))
+                    val route = SimpleUnitScreen.Calculator(
+                        UnitCategory(
+                            itemSearch.category, itemSearch.name
+                        )
                     )
-                )
-                if (Utils.isTimeVisitEnough() && Utils.isEnableAds && context.isNetworkAvailable()) {
-                    interstitialHelper.showAd {
-                        Utils.resetCountAndIncreaseMaxCount()
-                        if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
-                            composeNavigator.navigateBackWithResult(
-                                "itemSelected", result = BackResult(itemSearch.name), null
-                            )
-                        } else {
-                            composeNavigator.navigate(
-                                route
-                            )
-                        }
-                    }
 
-                } else {
                     if (localCategory != null && !localCategory.category.isNullOrEmpty()) {
                         composeNavigator.navigateBackWithResult(
                             "itemSelected", result = BackResult(itemSearch.name), null
@@ -83,6 +75,7 @@ fun ItemSearch(
         Box(
             modifier = Modifier
                 .padding(4.dp)
+                .defaultMinSize(35.dp)
                 .clip(RoundedCornerShape(16.dp))
                 .background(
                     color = AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.8f),
@@ -93,7 +86,8 @@ fun ItemSearch(
                     color = AppUnitTheme.colors.backgroundUnit.copy(alpha = 0.4f),
                     shape = CircleShape
                 )
-                .padding(horizontal = AppUnitTheme.dimens.dp8, vertical = AppUnitTheme.dimens.dp8)
+                .padding(horizontal = AppUnitTheme.dimens.dp8, vertical = AppUnitTheme.dimens.dp8),
+            contentAlignment = Alignment.Center
         ) {
             TextUnitCommon(
                 text = itemSearch.symbol,
@@ -104,18 +98,37 @@ fun ItemSearch(
                 ),
             )
         }
-        TextUnitCommon(
-            text = itemSearch.name, padding = 4, style = MaterialTheme.typography.bodyLarge.copy(
-                fontWeight = FontWeight.Normal,
-                color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.8f)
-            )
-        )
-    }
 
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .padding(start = AppUnitTheme.dimens.dp4)
+        ) {
+            TextUnitCommon(
+                text = itemSearch.name.replace("_", " "), padding = 4, style = MaterialTheme.typography.bodyLarge.copy(
+                    fontWeight = FontWeight.Normal,
+                    color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.8f)
+                )
+            )
+            // Category
+            TextUnitCommon(
+                text = itemSearch.category.replace("_", " "),
+                padding = 4,
+                style = MaterialTheme.typography.bodySmall.copy(
+                    fontWeight = FontWeight.Normal,
+                    color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.6f)
+                ),
+                fontSize = 14.sp,
+                modifier = Modifier.padding(top = 0.dp)
+            )
+        }
+    }
 }
 
 @Composable
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(
+    showBackground = true,
+)
 fun ItemSearchPreview() {
     AppUnitTheme {
         ItemSearch(
@@ -130,7 +143,8 @@ fun ItemSearchPreview() {
             ),
             onEvent = {},
             interstitialHelper = InterstitialAdHelper(
-                TODO(), adUnitId = TODO()
+                context = LocalContext.current,
+                adUnitId = "adUnitId"
             )
         )
     }

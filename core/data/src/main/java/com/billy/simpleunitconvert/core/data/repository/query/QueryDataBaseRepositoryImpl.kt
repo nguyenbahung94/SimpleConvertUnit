@@ -38,25 +38,21 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
         } else {
             emit("failed")
         }
-    }.flowOn(ioDispatcher)
-        .catch { logError("error updateFavoriteUnit: ${it.message}") }
+    }.flowOn(ioDispatcher).catch { logError("error updateFavoriteUnit: ${it.message}") }
 
     override fun getUnitConvert(category: String): Flow<UnitConvertData> = flow {
         val unitConvert = unitDao.getUnitConvert(category)
         emit(unitConvert.asDomain())
-    }.flowOn(ioDispatcher)
-        .catch { logError("error getUnitConvert: ${it.message}") }
+    }.flowOn(ioDispatcher).catch { logError("error getUnitConvert: ${it.message}") }
 
     override fun getInformation(): Flow<String?> = flow {
         val information = unitDao.getInformation()
         emit(information?.uid)
-    }.flowOn(ioDispatcher)
-        .catch { logError("error getInformation: ${it.message}") }
+    }.flowOn(ioDispatcher).catch { logError("error getInformation: ${it.message}") }
 
     override fun queryHomeUnits(): Flow<List<HomeUnit>> {
         return combine(
-            unitDao.getHomeUnitList(),
-            unitDao.getFavoriteUnit()
+            unitDao.getHomeUnitList(), unitDao.getFavoriteUnit()
         ) { homeUnits, favoriteUnits ->
 
             homeUnits.forEach { itemHomeUnit ->
@@ -71,24 +67,45 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
             transformer(homeUnits)
         }.flowOn(ioDispatcher).catch { logError("error queryHome: ${it.message}") }
     }
-    override fun queryUnitByKeWord(keyWord: String, category: String?): Flow<PagingData<UnitItemData>> {
+
+    override fun queryUnitByKeWord(
+        keyWord: String,
+        category: String?,
+        includeName: Boolean,
+        includeSymbol: Boolean,
+        includeCategory: Boolean,
+    ): Flow<PagingData<UnitItemData>> {
+        Log.e("HungLog", "keyWord: $keyWord")
+        Log.e("HungLog", "category: $category")
+        Log.e("HungLog", "includeName: $includeName")
+        Log.e("HungLog", "includeSymbol: $includeSymbol")
+        Log.e("HungLog", "includeCategory: $includeCategory")
         return Pager(config = PagingConfig(
             pageSize = 15,
             initialLoadSize = 15,
             prefetchDistance = 3,
             enablePlaceholders = false
         ), pagingSourceFactory = {
-            unitDao.searchUnitItem(keyWord, category)
-        }).flow.map { pagingData -> pagingData.map { transformer(it) } }
-            .flowOn(ioDispatcher)
+            if (category.isNullOrEmpty()) {
+                unitDao.searchUnitItem(
+                    keyword = keyWord,
+                    includeSymbol = if (includeSymbol) 1 else 0,
+                    includeName = if (includeName) 1 else 0,
+                    includeCategory = if (includeCategory) 1 else 0
+                )
+            } else {
+                unitDao.searchUnitItemInCategory(
+                    keyword = keyWord, category = category
+                )
+            }
+        }).flow.map { pagingData -> pagingData.map { transformer(it) } }.flowOn(ioDispatcher)
             .catch { logError("error queryUnitByKeWord: ${it.message}") }
     }
 
     override fun queryUnitByCategory(category: String): Flow<List<UnitItemData>> = flow {
         val unitListByCategory = unitDao.getUnitListByCategory(category)
         emit(unitListByCategory.unitItems.asDomain())
-    }.flowOn(ioDispatcher)
-        .catch { logError("error queryUnitByCategory: ${it.message}") }
+    }.flowOn(ioDispatcher).catch { logError("error queryUnitByCategory: ${it.message}") }
 
 
     private fun transformer(itemEntity: UnitItemEntity): UnitItemData {
@@ -112,7 +129,11 @@ internal class QueryDataBaseRepositoryImpl @Inject constructor(
                     unitConvert.image, unitConvert.name, unitConvert.shortName, unitConvert.category
                 )
             }
-            HomeUnit(homeUnitWithUnitConvert.homeUnit.groupName, homeUnitWithUnitConvert.homeUnit.shortName,  unitConverts)
+            HomeUnit(
+                homeUnitWithUnitConvert.homeUnit.groupName,
+                homeUnitWithUnitConvert.homeUnit.shortName,
+                unitConverts
+            )
         }
     }
 }

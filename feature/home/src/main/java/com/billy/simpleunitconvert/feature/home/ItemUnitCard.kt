@@ -82,7 +82,7 @@ internal fun HomeUnitCard(
             }, elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp, hoveredElevation = 6.dp, pressedElevation = 2.dp
         ), shape = RoundedCornerShape(14.dp), colors = CardDefaults.cardColors(
-            containerColor = colors.primary.copy(alpha = 0.95f),
+            containerColor = colors.primary,
             contentColor = colors.primary,
         )
     ) {
@@ -102,7 +102,7 @@ internal fun HomeUnitCard(
             )
             TextUnitCommon(
                 text = unitConvert.categoryName, style = TextStyle(
-                    color = AppUnitTheme.colors.absoluteBlack.copy(alpha = 0.75f),
+                    color = colors.absoluteBlack.copy(alpha = 0.75f),
                     fontSize = AppUnitTheme.dimens.sp16,
                     fontWeight = FontWeight.SemiBold
                 ), modifier = Modifier.weight(1f)
@@ -125,7 +125,7 @@ private fun UnitCardPreview() {
                 category = "category"
             ),
             modifier = Modifier,
-            interstitialAdHelper = TODO(),
+            interstitialAdHelper = InterstitialAdHelper(LocalContext.current,""),
         )
     }
 }

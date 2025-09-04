@@ -13,6 +13,7 @@ object UnitItemEntityMapper : EntityMapper<List<UnitItemData>, List<UnitItemEnti
                     unitName = name,
                     symbol = symbol,
                     conversion = conversionFactor,
+                    factor = factor,
                     scale = scaleFactor,
                     offset = offset,
                     popular = popular

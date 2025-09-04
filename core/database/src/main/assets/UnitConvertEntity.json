@@ -1,6 +1,22 @@
 [
   {
     "homeGroup": "ENG",
+    "name": "Length",
+    "shortName": "LEN",
+    "image": "length.png",
+    "category": "length",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
+    "name": "Weight and Mass",
+    "shortName": "WeightAndMass",
+    "image": "weight_mass.png",
+    "category": "weight_mass",
+    "isFavorite": false
+  },
+  {
+    "homeGroup": "ENG",
     "name": "Volume",
     "shortName": "VOL",
     "image": "volume.png",

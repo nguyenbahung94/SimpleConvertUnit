@@ -57,6 +57,7 @@ data class UnitItemEntity(
     val unitName: String,
     val symbol: String,
     val conversion: Double?,
+    val factor: Double?,
     val scale: Double?,
     val offset: Double?,
     val popular: Boolean

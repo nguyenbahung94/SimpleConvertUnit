@@ -1,5 +1,6 @@
 package com.billy.simpleunitconvert.feature.calculator
 
+import android.util.Log
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
@@ -15,6 +16,9 @@ import com.billy.simpleunitconvert.feature.common.takeEnoughLength
 import com.billy.simpleunitconvert.feature.common.updateBatchData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import org.checkerframework.checker.units.qual.s
+import java.math.BigDecimal
+import java.math.RoundingMode
 import javax.inject.Inject
 
 @HiltViewModel
@@ -30,11 +34,13 @@ class CalculatorViewModel @Inject constructor(
     private var unitResult: UnitItemData? = null
     private var categorySave: UnitCategory? = null
     private var isClickUnitInput: Boolean? = null
-
+    private val TPW_OFFSET = 273.16
+    private var decimalScale = 1
     init {
          viewModelScope.launch {
              savedStateHandle.getStateFlow<UnitCategory?>("unitCategory", null)
                  .collect { unitCategory ->
+                     Log.e("HungLog", "unitCategory: $unitCategory")
                      unitCategory?.let { category ->
                          categorySave = category
                          uiState.updateBatchData(
@@ -111,6 +117,10 @@ class CalculatorViewModel @Inject constructor(
         }
     }
 
+    private fun formatBigDecimalWithoutScientificNotation(input: Double): String {
+        val bigDecimal = BigDecimal(input)
+        return bigDecimal.setScale(decimalScale, RoundingMode.HALF_UP).toPlainString() // 1 decimal place
+    }
     fun onEvent(event: CalculatorEvent) {
         when (event) {
             is CalculatorEvent.OnClickFavorite -> {
@@ -127,12 +137,11 @@ class CalculatorViewModel @Inject constructor(
 
             is CalculatorEvent.OnClickButton -> {
                 handleButtonClick(event.value)?.let { resultForInPut ->
-                   val result = calculatorResult(resultForInPut)
-                    uiState.updateBatchData(
-                        updateUnitCalculatorDisplay = {
-                            setValidData(input = resultForInPut,result = result)
-                        }
-                    )
+                    val result = calculatorResult(resultForInPut)
+                    val formattedMeters = formatBigDecimalWithoutScientificNotation(result.toDouble())
+                    uiState.updateBatchData(updateUnitCalculatorDisplay = {
+                        setValidData(input = resultForInPut, result = formattedMeters)
+                    })
                 }
             }
 
@@ -152,6 +161,11 @@ class CalculatorViewModel @Inject constructor(
                 }
                 recalculate(uiState.value.data.calculatorDisplay.input)
             }
+
+            is CalculatorEvent.OnChangeScale -> {
+                decimalScale = event.scale
+                recalculate(uiState.value.data.calculatorDisplay.input)
+            }
         }
     }
 
@@ -159,6 +173,21 @@ class CalculatorViewModel @Inject constructor(
         if (value.isEmpty()) {
             return ""
         }
+
+        if (unitInput?.symbol == "TPWSA" || unitResult?.symbol == "TPWSA") {
+            if (unitResult?.symbol == "TPWSA") {
+                // Convert from another unit to TPW
+                val kelvin = (value.toDouble() * (unitInput?.scaleFactor ?: 1.0)) + (unitInput?.offset ?: 0.0)
+                return (kelvin / TPW_OFFSET).toString()
+            }
+
+            if (unitInput?.symbol == "TPWSA") {
+                // Convert from TPW to another unit
+                val kelvin = value.toDouble() * TPW_OFFSET
+                return ((kelvin - (unitResult?.offset ?: 0.0)) / (unitResult?.scaleFactor ?: 1.0)).toString()
+            }
+        }
+
         if (unitInput?.conversionFactor !=null && unitResult?.conversionFactor != null) {
            val baseValue = value.toDouble() * unitInput!!.conversionFactor!!
             return (baseValue / unitResult!!.conversionFactor!!).toString()
@@ -173,10 +202,14 @@ class CalculatorViewModel @Inject constructor(
 
     private fun recalculate(value: String) {
        val result = calculatorResult(value)
+        val formattedMeters = if (result.isNotEmpty()) {
+            formatBigDecimalWithoutScientificNotation(result.toDouble())
+        } else result
+
         uiState.updateBatchData(
             updateUnitResult = { copy(name = unitResult!!.name, symbol = unitResult!!.symbol)},
             updateUnitInput = { copy(name = unitInput!!.name, symbol = unitInput!!.symbol)},
-            updateUnitCalculatorDisplay = {copy(input = value, result = result)}
+            updateUnitCalculatorDisplay = {copy(input = value, result = formattedMeters)}
         )
     }
 
@@ -195,6 +228,8 @@ sealed interface CalculatorEvent {
     data class OnClickOpenSearch(val isClickUnitInput: Boolean) : CalculatorEvent
 
     data class OnItemResult(val itemResult: BackResult) : CalculatorEvent
+
+    data class OnChangeScale(val scale: Int) : CalculatorEvent
 
     data object OnClickFavorite : CalculatorEvent
 
